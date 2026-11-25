@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1860" viewBox="0 0 2200 1860" role="img" aria-labelledby="title desc">
+<title id="title">Compact candidate: full Hankel multiplier with dual two-path passive accumulators</title>
+<desc id="desc">Proposed functional SiN and thin-film lithium-niobate photonic integrated circuit on a silicon substrate. A held input comb in band A mixes with a tap of pump-band coefficient memory in DFG 1, is filtered in band B, mixes with shared b in DFG 2, and is filtered back into band A. Two whole-comb electro-optic Mach-Zehnder cells route alternating coefficient frames into two fixed 70-tap weighted two-path delay networks and select a valid window. There is no output shutter: raw partial-sum light remains outside the acceptance window of the receiving nonlinear stage. Each lattice has eight two-path cells, five balanced and three weighted, with component delays from 10 to 200 picoseconds. The compact 400-picosecond frame schedule is a candidate that requires optically formatted pump bursts confined to the 390-picosecond completed plateau; 35 picoseconds of margin remain on each side of the useful 320-picosecond window. A separate write-mode panel reuses DFG 1 and its band-B filter, then adds one cross-SFG and pump-band filtering for optical coefficient updates. All read and write modes are scheduled separately; dual accumulators do not imply concurrent writing. External comb generation, data encoding, optical replay and recirculating fiber memory are explicit. Functional candidate only, not a scaled or fabricated layout. Pump-edge and filter-settling requirements have not been validated.</desc>
+<defs>
+<marker id="arrow-data" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#0f766e"/></marker>
+<marker id="arrow-pump" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#7c3aed"/></marker>
+<marker id="arrow-ctrl" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#b45309"/></marker>
+<marker id="arrow-error" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#be123c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#475569"/></marker>
+</defs>
+<rect width="2200" height="1860" fill="#f8fafc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="48" y="61" font-size="35" fill="#0f172a" font-weight="700" text-anchor="start">Margin-configurable Hankel multiplier · 70-tap example</text>
+<text x="48" y="98" font-size="22" fill="#475569" font-weight="400" text-anchor="start">One spatial lane on a hybrid SiN / thin-film LN PIC · functional design, not a scaled floorplan</text>
+<rect x="48" y="122" width="2104" height="74" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="72" y="168" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">A: input / output · K lines</text>
+<text x="690" y="168" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">B: intermediate · K lines</text>
+<text x="1350" y="168" font-size="23" fill="#7c3aed" font-weight="600" text-anchor="start">P = A + B: coefficients · 2K−1 lines</text>
+<rect x="60" y="230" width="650" height="130" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="385.0" y="264" font-size="23" fill="#7c3aed" font-weight="700" text-anchor="middle">Recirculating coefficient memory</text>
+<text x="385.0" y="295" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">aₘ stays in pump band P; only a read tap enters the core</text>
+<text x="385.0" y="322" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Persistent fiber path bypasses computation and is reinjected</text>
+<rect x="755" y="230" width="650" height="130" rx="16" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<text x="1080.0" y="264" font-size="23" fill="#b45309" font-weight="700" text-anchor="middle">Data encoders + optical replay</text>
+<text x="1080.0" y="295" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Hold x = k or q during the R coefficient slots</text>
+<text x="1080.0" y="322" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Supply optical v, e and replayed k for update mode</text>
+<rect x="1450" y="230" width="690" height="130" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1795.0" y="264" font-size="23" fill="#7c3aed" font-weight="700" text-anchor="middle">Shared reference-comb source</text>
+<text x="1795.0" y="295" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">bₘ: fixed envelope + scheduled spectral phase ramps</text>
+<text x="1795.0" y="322" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Amortized across the array; distribution power is budgeted</text>
+<text x="60" y="391" font-size="19" fill="#475569" font-weight="400" text-anchor="start">Outside the drawn PIC or co-packaged: source lasers, encoders, long fiber storage, key / residual replay, timing electronics.</text>
+<rect x="40" y="420" width="2120" height="685" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="461" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">READER · two fixed nonlinear sections, followed by an electrically scheduled passive accumulator</text>
+<text x="68" y="493" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Read x = k to predict; read x = q after coefficient writes commit. All lines of each comb share each optical path.</text>
+<rect x="90" y="555" width="220" height="114" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="200.0" y="589" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">Input / mode</text>
+<text x="200.0" y="620" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Held x in band A</text>
+<text x="200.0" y="647" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Write mode: optical e</text>
+<rect x="370" y="555" width="250" height="114" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="495.0" y="589" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">DFG 1 · PPLN</text>
+<text x="495.0" y="620" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pump: tapped aₘ in P</text>
+<text x="495.0" y="647" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">A → B</text>
+<rect x="690" y="555" width="220" height="114" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="800.0" y="589" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">Fixed B filter</text>
+<text x="800.0" y="620" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Keep K desired lines</text>
+<text x="800.0" y="647" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Reject other bands</text>
+<rect x="980" y="555" width="250" height="114" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1105.0" y="589" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">DFG 2 · PPLN</text>
+<text x="1105.0" y="620" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pump: shared bₘ in P</text>
+<text x="1105.0" y="647" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">B → A</text>
+<rect x="1300" y="555" width="220" height="114" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1410.0" y="589" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">Fixed A filter</text>
+<text x="1410.0" y="620" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Keep K desired lines</text>
+<text x="1410.0" y="647" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Output term zₘ</text>
+<path d="M310 612 H370" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M620 612 H690" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M910 612 H980" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1230 612 H1300" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="495" y="530" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">aₘ read tap · P</text>
+<path d="M495 534 V555" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-pump)"/>
+<text x="1105" y="530" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">bₘ · P</text>
+<path d="M1105 534 V555" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-pump)"/>
+<text x="1570" y="582" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">zₘ = H(bₘ) H(conj aₘ) x</text>
+<text x="1570" y="617" font-size="19" fill="#475569" font-weight="400" text-anchor="start">R = 32 successive coefficient slots</text>
+<path d="M1520 640 H2070 V707 H330 V820" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="1330" y="699" font-size="18" fill="#0f766e" font-weight="600" text-anchor="start">No frequency demultiplexing</text>
+<rect x="250" y="820" width="170" height="112" rx="16" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<text x="335.0" y="854" font-size="27" fill="#b45309" font-weight="700" text-anchor="middle">Sᵢₙ</text>
+<text x="335.0" y="885" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2×2 EO MZI</text>
+<text x="335.0" y="912" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Frame routing</text>
+<rect x="600" y="750" width="550" height="125" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="875.0" y="784" font-size="25" fill="#0f766e" font-weight="700" text-anchor="middle">Passive filter 0 · SiN</text>
+<text x="875.0" y="815" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">70 taps / 8 two-path cells; nested branches</text>
+<text x="875.0" y="842" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">5 balanced cells + 3 fixed unequal joins</text>
+<rect x="600" y="930" width="550" height="125" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="875.0" y="964" font-size="25" fill="#0f766e" font-weight="700" text-anchor="middle">Passive filter 1 · SiN</text>
+<text x="875.0" y="995" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Same fixed network; staggered coefficient frames</text>
+<text x="875.0" y="1022" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Field sum / 70 during the completed plateau</text>
+<path d="M420 851 H500 V812 H600" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M420 899 H500 V992 H600" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<rect x="1330" y="820" width="180" height="112" rx="16" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<text x="1420.0" y="854" font-size="27" fill="#b45309" font-weight="700" text-anchor="middle">Sₒᵤₜ</text>
+<text x="1420.0" y="885" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2×2 EO MZI</text>
+<text x="1420.0" y="912" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Plateau selection</text>
+<path d="M1150 812 H1220 V851 H1330" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1150 992 H1220 V899 H1330" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1510 857 H2090" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1510 903 H1560 V974" fill="none" stroke="#475569" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-muted)"/>
+<path d="M1549 978 h22 m-22 6 h22 m-18 6 h14" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1510" y="1021" font-size="17" fill="#475569" font-weight="400" text-anchor="start">unused port</text>
+<text x="1810" y="795" font-size="25" fill="#0f766e" font-weight="700" text-anchor="middle">Raw comb in A</text>
+<text x="1810" y="828" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">ŷ = Σ zₘ / 70 within accepted window</text>
+<text x="1810" y="898" font-size="19" fill="#be123c" font-weight="600" text-anchor="middle">Partial sums remain outside that window</text>
+<rect x="1640" y="934" width="480" height="109" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8" stroke-dasharray="7 5"/>
+<text x="1880" y="966" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">Receiving-stage interface</text>
+<text x="1880" y="996" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Timed coefficient pump + DFG + B filter</text>
+<text x="1880" y="1025" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Accept useful field; reject unconverted light</text>
+<text x="74" y="1080" font-size="19" fill="#475569" font-weight="400" text-anchor="start">Two active EO cells route the accumulator. No output shutter; pump, replay and memory acceptance remain scheduled interfaces.</text>
+<rect x="40" y="1140" width="2120" height="365" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="1182" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">OPTIONAL COEFFICIENT WRITER · compact reuse of DFG 1 in separate time windows</text>
+<text x="68" y="1217" font-size="20" fill="#475569" font-weight="400" text-anchor="start">DFG 1 and its B filter are reused. Residual capture, replay and coefficient injection must accept only valid time windows.</text>
+<rect x="80" y="1270" width="300" height="121" rx="16" fill="#fff1f2" stroke="#be123c" stroke-width="1.8"/>
+<text x="230.0" y="1304" font-size="21" fill="#be123c" font-weight="700" text-anchor="middle">Residual + replay</text>
+<text x="230.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">e = v − ŷ, in band A</text>
+<text x="230.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Optical subtraction + hold</text>
+<rect x="440" y="1270" width="250" height="121" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="565.0" y="1304" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">DFG 1 reused</text>
+<text x="565.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pump bₘ; optical e</text>
+<text x="565.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">rₘ = DFG(bₘ, e)</text>
+<rect x="750" y="1270" width="230" height="121" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="865.0" y="1304" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">B filter reused</text>
+<text x="865.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Keep K lines</text>
+<text x="865.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Route to writer</text>
+<rect x="1040" y="1270" width="260" height="121" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1170.0" y="1304" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Cross-SFG · PPLN</text>
+<text x="1170.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Replayed k in A + rₘ in B</text>
+<text x="1170.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">gₘ = k ∗ rₘ in P</text>
+<rect x="1360" y="1270" width="240" height="121" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1480.0" y="1304" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Fixed P filter</text>
+<text x="1480.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Keep 2K−1 P lines</text>
+<text x="1480.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Reject seeds / self-SFG</text>
+<rect x="1660" y="1270" width="420" height="121" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1870.0" y="1304" font-size="23" fill="#7c3aed" font-weight="700" text-anchor="middle">Scalar η / 70 + phase</text>
+<text x="1870.0" y="1335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Coherent injection into gated aₘ in P</text>
+<text x="1870.0" y="1362" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Gradient scale follows ŷ = F(x)/70</text>
+<path d="M380 1330 H440" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M690 1330 H750" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M980 1330 H1040" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1300 1330 H1360" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-pump)"/>
+<path d="M1600 1330 H1660" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-pump)"/>
+<text x="1170" y="1250" font-size="18" fill="#0f766e" font-weight="600" text-anchor="middle">key replay</text>
+<path d="M1170 1255 V1270" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="78" y="1433" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Physical nonlinear count: 2 DFG + 1 cross-SFG with reuse. Dedicated error DFG is an optional fourth section.</text>
+<text x="78" y="1470" font-size="19" fill="#475569" font-weight="400" text-anchor="start">Predict → form / replay residual → write all coefficient slots → query. Dual read filters do not establish simultaneous read / write operation.</text>
+<rect x="40" y="1540" width="2120" height="243" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="1581" font-size="23" fill="#0f172a" font-weight="700" text-anchor="start">FUNCTIONAL MATERIAL REGIONS ON A SILICON SUBSTRATE · placement and dimensions remain to be designed</text>
+<rect x="70" y="1610" width="560" height="130" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="350.0" y="1644" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Periodically poled thin-film LN</text>
+<text x="350.0" y="1675" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">DFG 1 / DFG 2 / optional cross-SFG</text>
+<text x="350.0" y="1702" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Broadband phase matching; distinct A, B, P ports</text>
+<rect x="660" y="1610" width="870" height="130" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1095.0" y="1644" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">SiN routing + two nested delay networks</text>
+<text x="1095.0" y="1675" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">103.5 mm differential path per lattice at τ = 10 ps, n_g = 2</text>
+<text x="1095.0" y="1702" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">207 mm across both lattices; excludes common paths and bends</text>
+<rect x="1560" y="1610" width="560" height="130" rx="16" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+<text x="1840.0" y="1644" font-size="23" fill="#b45309" font-weight="700" text-anchor="middle">LN push–pull EO switches</text>
+<text x="1840.0" y="1675" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Two accumulator cells + local timing / bias</text>
+<text x="1840.0" y="1702" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Slow trim of fixed lattice phases as needed</text>
+<text x="48" y="1822" font-size="20" fill="#475569" font-weight="400" text-anchor="start">No pump-band frequency translator. P-band paths must use suitable LN / SiN; ordinary telecom silicon routing is not assumed.</text>
+</g>
+</svg>

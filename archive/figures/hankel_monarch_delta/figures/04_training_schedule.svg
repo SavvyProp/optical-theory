@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1370" viewBox="0 0 1600 1370" role="img" aria-labelledby="title desc">
+  <title id="title">Optical token timing and layerwise digital training</title>
+  <desc id="desc">For each token, each bank applies forgetting, predicts with the old coefficients, forms a local residual, computes full coefficient gradients, commits the write, and reads a query. Bank one completes before its shuffled output drives bank two. Digital training evaluates the complete first-bank sequence in affine chunks, then the complete second-bank sequence, followed by ordinary end-to-end outer backpropagation. The full joint state is not claimed to be globally affine, and a custom efficient Hankel chunk kernel remains unvalidated.</desc>
+  <defs>
+    <marker id="dataArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#0f766e"/></marker>
+    <marker id="memoryArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/></marker>
+    <marker id="controlArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#b45309"/></marker>
+    <marker id="errorArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#be123c"/></marker>
+    <marker id="grayArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#475569"/></marker>
+  </defs>
+  <rect width="1600" height="1370" fill="#f8fafc"/>
+  <g font-family="Inter, DejaVu Sans, Arial, sans-serif" fill="#0f172a">
+<text x="60" y="65" font-size="34" fill="#0f172a" font-weight="700" text-anchor="start">Two time scales: optical adaptation and digital training</text>
+<text x="60" y="105" font-size="22" fill="#475569" font-weight="400" text-anchor="start">Sequential work inside one optical token does not imply a token-by-token GPU implementation.</text>
+<rect x="45" y="145" width="1510" height="600" rx="16" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<text x="75" y="188" font-size="20" fill="#0f766e" font-weight="700" text-anchor="start">ONLINE OPTICAL EXECUTION · ONE TOKEN t · ONE SELECTED HEAD</text>
+<text x="75" y="223" font-size="18" fill="#0f766e" font-weight="700" text-anchor="start">BANK 1</text>
+<rect x="75" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="90" y="271" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">1 · FORGET</text>
+<text x="90" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Scale stored a</text>
+<text x="90" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">a₁⁻ = α₁ a₁,prev</text>
+<path d="M295,317 L321,317" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="321" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#0f766e" stroke-width="1.7"/>
+<text x="336" y="271" font-size="16" fill="#0f766e" font-weight="700" text-anchor="start">2 · PREDICT</text>
+<text x="336" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Read old state</text>
+<text x="336" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">p₁ = B₁⁻ k₁</text>
+<path d="M541,317 L567,317" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="567" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#be123c" stroke-width="1.7"/>
+<text x="582" y="271" font-size="16" fill="#be123c" font-weight="700" text-anchor="start">3 · RESIDUAL</text>
+<text x="582" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Subtract fields</text>
+<text x="582" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">e₁ = v₁ − p₁</text>
+<path d="M787,317 L813,317" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="813" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="828" y="271" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">4 · GRADIENT</text>
+<text x="828" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Hankel → SFG</text>
+<text x="828" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">All 2K − 1 lines</text>
+<text x="828" y="365" font-size="16" fill="#475569" font-weight="400" text-anchor="start">Replay e and key</text>
+<path d="M1033,317 L1059,317" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1059" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="1074" y="271" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">5 · COMMIT</text>
+<text x="1074" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Inject all slots</text>
+<text x="1074" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">a₁⁺ = a₁⁻ + Δa₁</text>
+<path d="M1279,317 L1305,317" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1305" y="242" width="220" height="147" rx="12" fill="#f8fafc" stroke="#0f766e" stroke-width="1.7"/>
+<text x="1320" y="271" font-size="16" fill="#0f766e" font-weight="700" text-anchor="start">6 · QUERY</text>
+<text x="1320" y="305" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Read updated state</text>
+<text x="1320" y="340" font-size="16" fill="#475569" font-weight="400" text-anchor="start">u = B₁⁺ q₁</text>
+<path d="M1415,389 L1415,432 L184,432 L184,499" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="356" y="408" width="865" height="49" rx="8" fill="white" stroke="white" stroke-width="0"/>
+<text x="788" y="440" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">Forward shuffle: z = P u; reuse z as the second-bank key and query</text>
+<text x="75" y="481" font-size="18" fill="#0f766e" font-weight="700" text-anchor="start">BANK 2</text>
+<rect x="75" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="90" y="529" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">1 · FORGET</text>
+<text x="90" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Scale stored a</text>
+<text x="90" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">a₂⁻ = α₂ a₂,prev</text>
+<path d="M295,575 L321,575" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="321" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#0f766e" stroke-width="1.7"/>
+<text x="336" y="529" font-size="16" fill="#0f766e" font-weight="700" text-anchor="start">2 · PREDICT</text>
+<text x="336" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Read old state</text>
+<text x="336" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">p₂ = B₂⁻ z</text>
+<path d="M541,575 L567,575" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="567" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#be123c" stroke-width="1.7"/>
+<text x="582" y="529" font-size="16" fill="#be123c" font-weight="700" text-anchor="start">3 · RESIDUAL</text>
+<text x="582" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Subtract fields</text>
+<text x="582" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">e₂ = v₂ − p₂</text>
+<path d="M787,575 L813,575" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="813" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="828" y="529" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">4 · GRADIENT</text>
+<text x="828" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Hankel → SFG</text>
+<text x="828" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">All 2K − 1 lines</text>
+<text x="828" y="623" font-size="16" fill="#475569" font-weight="400" text-anchor="start">Replay e and key</text>
+<path d="M1033,575 L1059,575" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1059" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#7c3aed" stroke-width="1.7"/>
+<text x="1074" y="529" font-size="16" fill="#7c3aed" font-weight="700" text-anchor="start">5 · COMMIT</text>
+<text x="1074" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Inject all slots</text>
+<text x="1074" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">a₂⁺ = a₂⁻ + Δa₂</text>
+<path d="M1279,575 L1305,575" fill="none" stroke="#0f766e" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1305" y="500" width="220" height="147" rx="12" fill="#f8fafc" stroke="#0f766e" stroke-width="1.7"/>
+<text x="1320" y="529" font-size="16" fill="#0f766e" font-weight="700" text-anchor="start">6 · QUERY</text>
+<text x="1320" y="563" font-size="18" fill="#0f172a" font-weight="600" text-anchor="start">Read updated state</text>
+<text x="1320" y="598" font-size="16" fill="#475569" font-weight="400" text-anchor="start">y = B₂⁺ z</text>
+<text x="75" y="691" font-size="20" fill="#475569" font-weight="400" text-anchor="start">The same pre-commit state must be used for prediction and every slot contributing to its residual.</text>
+<text x="75" y="720" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Delay / replay keeps key, query and target combs available until their scheduled operation.</text>
+<rect x="45" y="790" width="1510" height="390" rx="16" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<text x="75" y="834" font-size="20" fill="#b45309" font-weight="700" text-anchor="start">DIGITAL TRAINING · ENTIRE TOKEN SEQUENCE</text>
+<rect x="75" y="870" width="470" height="179" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+<text x="100" y="909" font-size="23" fill="#0f172a" font-weight="600" text-anchor="start">1. First bank across tokens 1 … T</text>
+<text x="100" y="947" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Input token projections are available.</text>
+<text x="100" y="980" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Evaluate affine recurrence in chunks.</text>
+<text x="100" y="1017" font-size="19" fill="#0f766e" font-weight="400" text-anchor="start">Produce all outputs u₁, …, uT.</text>
+<path d="M545,959 L610,959" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="610" y="892" width="345" height="134" rx="16" fill="#f0fdfa" stroke="#99f6e4" stroke-width="2"/>
+<text x="782" y="931" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">2. Fixed forward shuffle</text>
+<text x="782" y="966" font-size="20" fill="#0f172a" font-weight="400" text-anchor="middle">zₜ = P uₜ for every token</text>
+<text x="782" y="998" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">No online error feedback</text>
+<path d="M955,959 L1020,959" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1020" y="870" width="505" height="179" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+<text x="1045" y="909" font-size="23" fill="#0f172a" font-weight="600" text-anchor="start">3. Second bank across tokens 1 … T</text>
+<text x="1045" y="947" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">The complete z sequence is available.</text>
+<text x="1045" y="980" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Evaluate its affine recurrence in chunks.</text>
+<text x="1045" y="1017" font-size="19" fill="#0f766e" font-weight="400" text-anchor="start">Produce all final outputs y₁, …, yT.</text>
+<path d="M1272,1049 L1272,1090" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#controlArrow)"/>
+<rect x="75" y="1090" width="1450" height="61" rx="10" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+<text x="800" y="1130" font-size="21" fill="#b45309" font-weight="600" text-anchor="middle">Outer loss → end-to-end backpropagation through both banks, the shuffle and the token projections</text>
+<rect x="60" y="1220" width="1480" height="108" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+<text x="85" y="1259" font-size="21" fill="#0f172a" font-weight="600" text-anchor="start">Each bank is affine conditional on its input sequence; the joint two-bank state is not globally affine.</text>
+<text x="85" y="1297" font-size="19" fill="#475569" font-weight="400" text-anchor="start">A custom efficient Hankel chunk kernel remains to be derived and benchmarked; stock DeltaNet kernels are not established here.</text>
+</g></svg>

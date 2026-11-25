@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="400" height="160" viewBox="0 114 400 160"
+     version="1.1" role="img" aria-labelledby="bpf-title bpf-description">
+  <title id="bpf-title">Optical bandpass filter — inline component</title>
+  <desc id="bpf-description">Editable conceptual symbol for an optical
+    bandpass filter, matching the top-down component library. One input and one
+    filtered output share a straight optical path through an amber filter body.
+    The small curve above the path represents transmission versus optical
+    frequency; it is a response symbol, not the physical waveguide route.
+    The curve illustrates a selected passband without specifying its center,
+    width, transmission, rejection, ripple or spectral phase. This generic
+    component does not prescribe a ring, grating, thin-film or other filter
+    implementation, or the routing of rejected light. Amber is an identifying
+    diagram color, not an emitted wavelength. Geometry is schematic and has no
+    physical scale. Text labels, axes and direction arrows are omitted. The
+    Response symbol layer can be edited or hidden independently. All elements
+    are native SVG with a transparent background and a compact canvas.</desc>
+
+  <g id="bpf-geometry" inkscape:groupmode="layer" inkscape:label="Filter geometry">
+    <g id="bpf-access-fibers" fill="#e3e8ef" stroke="none">
+      <rect id="bpf-input-guide" x="32" y="208" width="108" height="16"/>
+      <rect id="bpf-output-guide" x="260" y="208" width="108" height="16"/>
+    </g>
+    <g id="bpf-access-cores" fill="none" stroke="#5d8db4" stroke-width="3.5">
+      <path id="bpf-input-core" d="M 32,216 H 140"/>
+      <path id="bpf-output-core" d="M 260,216 H 368"/>
+    </g>
+    <rect id="bpf-filter-body" x="140" y="132" width="120" height="124" rx="8"
+          fill="#f4e7d0" stroke="#9b773e" stroke-width="1.75"/>
+    <path id="bpf-through-path" d="M 140,216 H 260"
+          fill="none" stroke="#b78337" stroke-width="3.5"/>
+  </g>
+
+  <g id="bpf-response-symbol" inkscape:groupmode="layer" inkscape:label="Response symbol">
+    <path id="bpf-transmission-curve"
+          d="M 167,186 H 176
+             C 183,186 180,160 187,160 H 214
+             C 221,160 218,186 225,186 H 235"
+          fill="none" stroke="#9b6723" stroke-width="2.5"
+          stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+</svg>

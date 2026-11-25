@@ -1,0 +1,653 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="500mm" height="310mm" viewBox="0 0 1900 1178" version="1.1" id="hankel-cell-cleaned" role="img" aria-labelledby="hankel-cell-title hankel-cell-description">
+  <title id="hankel-cell-title">Hankel multiplier cell: forward, adjoint and coefficient update</title>
+  <desc id="hankel-cell-description">Cleaned, editable functional optical layout based on the user-corrected Hankel_multiplier.svg. Four DFG sections, one cross-SFG writer, two seven-stage 128-tap temporal accumulators. Optical arrows indicate propagation; gold terminals denote electrical controls. The old coefficient source supplies both forward and adjoint pump taps. The writer receives a separately aligned copy of the same old coefficient frame and the held local input. A and B denote distinguishable 64-line data bands or modes; P denotes the 127-line coefficient/pump band. Pump mux symbols combine P with A or B. The writer input mux combines A and B for cross-SFG. The final two-input coupler coherently injects a calibrated P-band gradient into matching old coefficients. All splitter, conversion, filter, coupler and gain transfers require complex calibration. Forward pumps are a_m^- then b_m; backward pumps are b_m then a_m^-. With D(h,x)=H(h)conjugate(x), the forward operator is c sum H(b_m)H(conjugate(a_m^-))x, and the adjoint is c sum H(a_m^-)H(conjugate(b_m))e, c=1/128. The shared error field is r_m=H(b_m)conjugate(e). The writer applies a_m^+=a_m^-+eta*c*(x*r_m), where * denotes full frequency-index convolution, without summing across slots. Persistent memory, its once-per-update retention before both old-state reads, query reader, final target subtraction, inverse spatial shuffle and physical hold/replay implementations are external to this cell diagram. The coefficient-branch MZI is injection calibration, not a second retention operation. A/B selection includes residual-P rejection before SFG, and P selection retains all 127 gradient lines. Three spiral motifs in each accumulator abbreviate seven stages (10,20,40,80,160,320,640 ps). Routing length is schematic and does not validate timing, delay, loss, phase matching, gain bandwidth or noise. The updated source file is preserved. Components and optical nets have role-based unique IDs; annotations and direction arrows are independent Inkscape layers.</desc>
+  <metadata id="source-and-design-provenance">{
+  "source": "inkscape_diagrams/Hankel_multiplier.svg",
+  "source_sha256": "20552d611a1f0c73dcbae8b7daf7a0ea0b146df9733fbfd430c4f560307d9ed9",
+  "authority": "hankel_monarch_delta/cell_pathways.md",
+  "secondary_notes": [
+    "hankel_monarch_delta/coefficient_loop_gain.md",
+    "hankel_monarch_delta/paper_design_point.md"
+  ],
+  "coordinate_units": "schematic",
+  "data_lines": 64,
+  "coefficient_lines": 127,
+  "coefficient_slots": 64,
+  "accumulator_taps": 128,
+  "accumulator_stages": 7
+}</metadata>
+  <g id="layout-guides" inkscape:groupmode="layer" inkscape:label="Layout guides">
+    <path id="heading-rule" d="M 80,119 H 1800" fill="none" stroke="#e0e5eb" stroke-width="1" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="notes-rule" d="M 80,1122 H 1800" fill="none" stroke="#e0e5eb" stroke-width="1" stroke-linejoin="round" stroke-linecap="butt"/>
+  </g>
+  <g id="optical-cladding" inkscape:groupmode="layer" inkscape:label="Optical cladding" mask="url(#inline-mzi-clearance-mask)">
+    <path id="forward-signal-cladding" d="M 80,240 H 1800" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="old-coefficient-source-cladding" d="M 80,350 H 260" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="old-coefficient-forward-pump-cladding" d="M 260,350 H 320 Q 360,350 360,310 V 270 Q 360,240 380,240" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="old-coefficient-adjoint-pump-cladding" d="M 260,350 C 300,350 300,420 340,420 H 1040 Q 1080,420 1080,460 V 590" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="reference-source-cladding" d="M 690,350 H 825" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="reference-forward-pump-cladding" d="M 825,350 V 240" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="reference-error-pump-cladding" d="M 825,350 H 1690 Q 1730,350 1730,390 V 460 Q 1730,500 1690,500 H 1680 Q 1650,500 1650,530 V 590" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="backward-signal-cladding" d="M 1800,590 H 80" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="shared-error-to-writer-cladding" d="M 1260,590 V 710 Q 1260,740 1230,740 H 670 Q 640,740 640,770 V 840 Q 640,870 660,870" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="writer-held-input-cladding" d="M 80,870 H 660" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="writer-gradient-cladding" d="M 660,870 H 1370" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="writer-old-coefficient-cladding" d="M 900,1030 H 1280 Q 1340,1030 1340,970 V 934 Q 1340,894 1370,894" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="updated-coefficient-cladding" d="M 1420,870 H 1800" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="injection-complementary-output-cladding" d="M 1420,894 H 1460" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+  </g>
+  <g id="optical-cores" inkscape:groupmode="layer" inkscape:label="Optical cores" mask="url(#inline-mzi-clearance-mask)">
+    <path id="forward-signal" d="M 80,240 H 1800" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="A-B-A" data-role="forward reader" data-start="80,240" data-end="1800,240"/>
+    <path id="old-coefficient-source" d="M 80,350 H 260" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="old-state read tap source" data-start="80,350" data-end="260,350"/>
+    <path id="old-coefficient-forward-pump" d="M 260,350 H 320 Q 360,350 360,310 V 270 Q 360,240 380,240" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="old coefficient to forward DFG 1" data-start="260,350" data-end="380,240"/>
+    <path id="old-coefficient-adjoint-pump" d="M 260,350 C 300,350 300,420 340,420 H 1040 Q 1080,420 1080,460 V 590" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="matched old coefficient to backward DFG" data-start="260,350" data-end="1080,590"/>
+    <path id="reference-source" d="M 690,350 H 825" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="shared timed reference" data-start="690,350" data-end="825,350"/>
+    <path id="reference-forward-pump" d="M 825,350 V 240" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="reference to forward DFG 2" data-start="825,350" data-end="825,240"/>
+    <path id="reference-error-pump" d="M 825,350 H 1690 Q 1730,350 1730,390 V 460 Q 1730,500 1690,500 H 1680 Q 1650,500 1650,530 V 590" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="delayed reference to error DFG" data-start="825,350" data-end="1650,590"/>
+    <path id="backward-signal" d="M 1800,590 H 80" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="A-B-A" data-role="error transform and old-state adjoint" data-start="1800,590" data-end="80,590"/>
+    <path id="shared-error-to-writer" d="M 1260,590 V 710 Q 1260,740 1230,740 H 670 Q 640,740 640,770 V 840 Q 640,870 660,870" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="B" data-role="slotwise transformed error to cross-SFG" data-start="1260,590" data-end="660,870"/>
+    <path id="writer-held-input" d="M 80,870 H 660" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="A" data-role="held or replayed old local input" data-start="80,870" data-end="660,870"/>
+    <path id="writer-gradient" d="M 660,870 H 1370" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="A+B-P" data-role="cross-SFG, coefficient filter and write control" data-start="660,870" data-end="1370,870"/>
+    <path id="writer-old-coefficient" d="M 900,1030 H 1280 Q 1340,1030 1340,970 V 934 Q 1340,894 1370,894" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="matching old state through injection calibration" data-start="900,1030" data-end="1370,894"/>
+    <path id="updated-coefficient" d="M 1420,870 H 1800" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="updated memory coefficient" data-start="1420,870" data-end="1800,870"/>
+    <path id="injection-complementary-output" d="M 1420,894 H 1460" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt" data-band="P" data-role="terminated complementary injection output" data-start="1420,894" data-end="1460,894"/>
+  </g>
+  <g id="optical-components" inkscape:groupmode="layer" inkscape:label="Optical components">
+    <g id="forward-adaptive-pump-mux" data-component="pump-mux" inkscape:label="Forward adaptive pump mux">
+      <path id="forward-adaptive-pump-mux-body" d="M 366,240 L 380,226 L 394,240 L 380,254 Z" fill="#dceaf7" stroke="#7089a5" stroke-width="1.5"/>
+      <path id="forward-adaptive-pump-mux-through" d="M 366,240 H 394" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-reference-pump-mux" data-component="pump-mux" inkscape:label="Forward reference pump mux">
+      <path id="forward-reference-pump-mux-body" d="M 811,240 L 825,226 L 839,240 L 825,254 Z" fill="#dceaf7" stroke="#7089a5" stroke-width="1.5"/>
+      <path id="forward-reference-pump-mux-through" d="M 811,240 H 839" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="backward-reference-pump-mux" data-component="pump-mux" inkscape:label="Backward reference pump mux">
+      <path id="backward-reference-pump-mux-body" d="M 1636,590 L 1650,576 L 1664,590 L 1650,604 Z" fill="#dceaf7" stroke="#7089a5" stroke-width="1.5"/>
+      <path id="backward-reference-pump-mux-through" d="M 1636,590 H 1664" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="backward-adaptive-pump-mux" data-component="pump-mux" inkscape:label="Backward adaptive pump mux">
+      <path id="backward-adaptive-pump-mux-body" d="M 1066,590 L 1080,576 L 1094,590 L 1080,604 Z" fill="#dceaf7" stroke="#7089a5" stroke-width="1.5"/>
+      <path id="backward-adaptive-pump-mux-through" d="M 1066,590 H 1094" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="writer-input-mode-mux" data-component="cross-band-mux" inkscape:label="Writer input mode mux">
+      <path id="writer-input-mode-mux-body" d="M 646,870 L 660,856 L 674,870 L 660,884 Z" fill="#dceaf7" stroke="#7089a5" stroke-width="1.5"/>
+      <path id="writer-input-mode-mux-through" d="M 646,870 H 674" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-dfg-1" data-component="dfg" inkscape:label="Forward dfg 1">
+      <rect id="forward-dfg-1-waveguide" x="430" y="230" width="120" height="20" fill="#e6daf1"/>
+      <rect id="forward-dfg-1-domain-01" x="430.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-02" x="440.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-03" x="450.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-04" x="460.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-05" x="470.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-06" x="480.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-07" x="490.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-08" x="500.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-09" x="510.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-10" x="520.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-11" x="530.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-1-domain-12" x="540.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <path id="forward-dfg-1-optical-axis" d="M 430,240 H 550" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-dfg-2" data-component="dfg" inkscape:label="Forward dfg 2">
+      <rect id="forward-dfg-2-waveguide" x="880" y="230" width="120" height="20" fill="#e6daf1"/>
+      <rect id="forward-dfg-2-domain-01" x="880.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-02" x="890.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-03" x="900.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-04" x="910.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-05" x="920.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-06" x="930.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-07" x="940.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-08" x="950.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-09" x="960.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-10" x="970.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-11" x="980.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="forward-dfg-2-domain-12" x="990.0" y="230" width="5.0" height="20" fill="#b69acb"/>
+      <path id="forward-dfg-2-optical-axis" d="M 880,240 H 1000" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="error-dfg" data-component="dfg" inkscape:label="Error dfg">
+      <rect id="error-dfg-waveguide" x="1460" y="580" width="120" height="20" fill="#e6daf1"/>
+      <rect id="error-dfg-domain-01" x="1460.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-02" x="1470.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-03" x="1480.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-04" x="1490.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-05" x="1500.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-06" x="1510.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-07" x="1520.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-08" x="1530.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-09" x="1540.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-10" x="1550.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-11" x="1560.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="error-dfg-domain-12" x="1570.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <path id="error-dfg-optical-axis" d="M 1460,590 H 1580" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="adjoint-dfg" data-component="dfg" inkscape:label="Adjoint dfg">
+      <rect id="adjoint-dfg-waveguide" x="900" y="580" width="120" height="20" fill="#e6daf1"/>
+      <rect id="adjoint-dfg-domain-01" x="900.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-02" x="910.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-03" x="920.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-04" x="930.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-05" x="940.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-06" x="950.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-07" x="960.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-08" x="970.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-09" x="980.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-10" x="990.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-11" x="1000.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <rect id="adjoint-dfg-domain-12" x="1010.0" y="580" width="5.0" height="20" fill="#b69acb"/>
+      <path id="adjoint-dfg-optical-axis" d="M 900,590 H 1020" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="gradient-cross-sfg" data-component="sfg" inkscape:label="Gradient cross sfg">
+      <rect id="gradient-cross-sfg-waveguide" x="720" y="860" width="120" height="20" fill="#d6eee7"/>
+      <rect id="gradient-cross-sfg-domain-01" x="720.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-02" x="730.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-03" x="740.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-04" x="750.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-05" x="760.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-06" x="770.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-07" x="780.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-08" x="790.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-09" x="800.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-10" x="810.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-11" x="820.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <rect id="gradient-cross-sfg-domain-12" x="830.0" y="860" width="5.0" height="20" fill="#8bc5b7"/>
+      <path id="gradient-cross-sfg-optical-axis" d="M 720,870 H 840" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-intermediate-b-filter" data-component="filter" data-passband="B" data-lines="64" inkscape:label="Forward intermediate b filter">
+      <rect id="forward-intermediate-b-filter-body" x="610" y="210" width="75" height="60" rx="6" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.5"/>
+      <path id="forward-intermediate-b-filter-through" d="M 610,240 H 685" fill="none" stroke="#b78337" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="forward-intermediate-b-filter-passband-glyph" d="M 624,233 H 631 C 636,233 633,217 639,217 H 656 C 662,217 659,233 664,233 H 671" fill="none" stroke="#9b6723" stroke-width="2" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-output-a-filter" data-component="filter" data-passband="A" data-lines="64" inkscape:label="Forward output a filter">
+      <rect id="forward-output-a-filter-body" x="1055" y="210" width="75" height="60" rx="6" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.5"/>
+      <path id="forward-output-a-filter-through" d="M 1055,240 H 1130" fill="none" stroke="#b78337" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="forward-output-a-filter-passband-glyph" d="M 1069,233 H 1076 C 1081,233 1078,217 1084,217 H 1101 C 1107,217 1104,233 1109,233 H 1116" fill="none" stroke="#9b6723" stroke-width="2" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="error-intermediate-b-filter" data-component="filter" data-passband="B" data-lines="64" inkscape:label="Error intermediate b filter">
+      <rect id="error-intermediate-b-filter-body" x="1340" y="560" width="75" height="60" rx="6" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.5"/>
+      <path id="error-intermediate-b-filter-through" d="M 1340,590 H 1415" fill="none" stroke="#b78337" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="error-intermediate-b-filter-passband-glyph" d="M 1354,583 H 1361 C 1366,583 1363,567 1369,567 H 1386 C 1392,567 1389,583 1394,583 H 1401" fill="none" stroke="#9b6723" stroke-width="2" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="adjoint-output-a-filter" data-component="filter" data-passband="A" data-lines="64" inkscape:label="Adjoint output a filter">
+      <rect id="adjoint-output-a-filter-body" x="795" y="560" width="75" height="60" rx="6" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.5"/>
+      <path id="adjoint-output-a-filter-through" d="M 795,590 H 870" fill="none" stroke="#b78337" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="adjoint-output-a-filter-passband-glyph" d="M 809,583 H 816 C 821,583 818,567 824,567 H 841 C 847,567 844,583 849,583 H 856" fill="none" stroke="#9b6723" stroke-width="2" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="gradient-p-filter" data-component="filter" data-passband="P" data-lines="127" inkscape:label="Gradient p filter">
+      <rect id="gradient-p-filter-body" x="900" y="840" width="75" height="60" rx="6" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.5"/>
+      <path id="gradient-p-filter-through" d="M 900,870 H 975" fill="none" stroke="#b78337" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-p-filter-passband-glyph" d="M 914,863 H 921 C 926,863 923,847 929,847 H 946 C 952,847 949,863 954,863 H 961" fill="none" stroke="#9b6723" stroke-width="2" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+    <g id="forward-temporal-accumulator" data-component="temporal-accumulator" data-stages="7" data-taps="128" transform="matrix(0.8 0 0 0.8 1192 145.6)" inkscape:label="Forward temporal accumulator"><g id="forward-temporal-accumulator-fibers">
+    <g id="forward-temporal-accumulator-access-fibers" fill="#e3e8ef" stroke="none">
+      <rect id="forward-temporal-accumulator-input-guide" x="10" y="110.5" width="18" height="15"/>
+      <rect id="forward-temporal-accumulator-output-guide" x="268" y="110.5" width="18" height="15"/>
+    </g>
+    <g id="forward-temporal-accumulator-access-cores" fill="none" stroke="#5d8db4" stroke-width="3.5">
+      <path id="forward-temporal-accumulator-input-core" d="M 10,118 H 28"/>
+      <path id="forward-temporal-accumulator-output-core" d="M 268,118 H 286"/>
+    </g>
+  </g>
+
+  <g id="forward-temporal-accumulator-body">
+    <rect id="forward-temporal-accumulator-enclosure" x="28" y="14" width="240" height="132" rx="8" fill="#e6edf6" stroke="#7089a5" stroke-width="1.75"/>
+  </g>
+
+  <g id="forward-temporal-accumulator-motif">
+    <g id="forward-temporal-accumulator-selected-path" fill="none" stroke="#52749c" stroke-width="2.5">
+      <path id="forward-temporal-accumulator-stage-input-1" d="M 28,118 H 36"/>
+      <path id="forward-temporal-accumulator-reference-1" d="M 42,118 H 98"/>
+      <path id="forward-temporal-accumulator-stage-input-2" d="M 104,118 H 114"/>
+      <path id="forward-temporal-accumulator-reference-2" d="M 120,118 H 176"/>
+      <path id="forward-temporal-accumulator-stage-input-3" d="M 182,118 H 192"/>
+      <path id="forward-temporal-accumulator-reference-3" d="M 198,118 H 254"/>
+      <path id="forward-temporal-accumulator-output-connection" d="M 260,118 H 268"/>
+    </g>
+
+    
+    <g id="forward-temporal-accumulator-delay-paths" fill="none" stroke="#52749c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path id="forward-temporal-accumulator-delay-1" d="M 42,108 C 45,108 45,106 45,103                V 87 C 45,82 48,82 52,82                C 58,82 64,80.682 70,80                C 72.443,79.722 74.732,78.792 76.583,77.403                C 78.435,76.013 79.845,74.17 80.681,72.167                C 81.517,70.164 81.778,68.007 81.5,66                C 81.222,63.993 80.409,62.14 79.238,60.667                C 78.066,59.193 76.542,58.102 74.917,57.484                C 73.291,56.867 71.571,56.722 70,57                C 68.429,57.278 67.012,57.974 65.917,58.927                C 64.821,59.881 64.049,61.086 63.649,62.333                C 63.25,63.581 63.222,64.866 63.5,66                C 63.778,67.134 64.357,68.116 65.093,68.833                C 65.828,69.551 66.714,70.005 67.583,70.186                C 68.453,70.367 69.302,70.278 70,70                C 74.46,68.225 65.54,63.775 70,62                C 70.698,61.722 71.547,61.633 72.417,61.814                C 73.286,61.995 74.172,62.449 74.907,63.167                C 75.643,63.884 76.222,64.866 76.5,66                C 76.778,67.134 76.75,68.419 76.351,69.667                C 75.951,70.914 75.179,72.119 74.083,73.073                C 72.988,74.026 71.571,74.722 70,75                C 68.429,75.278 66.709,75.133 65.083,74.516                C 63.458,73.898 61.934,72.807 60.762,71.333                C 59.591,69.86 58.778,68.007 58.5,66                C 58.222,63.993 58.483,61.836 59.319,59.833                C 60.155,57.83 61.565,55.987 63.417,54.597                C 65.268,53.208 67.557,52.278 70,52                C 76,51.318 95,47 95,56                V 103 C 95,106 95,108 98,108"/>
+      <path id="forward-temporal-accumulator-delay-2" d="M 120,108 C 123,108 123,106 123,103                V 91 C 123,86 126,86 130,86                C 136,86 142,84.495 148,84                C 151.142,83.741 154.138,82.642 156.611,80.915                C 159.085,79.187 161.031,76.837 162.241,74.222                C 163.452,71.607 163.926,68.734 163.667,66                C 163.407,63.266 162.418,60.676 160.894,58.556                C 159.37,56.435 157.318,54.786 155.056,53.779                C 152.793,52.773 150.327,52.407 148,52.667                C 145.673,52.926 143.49,53.806 141.722,55.127                C 139.954,56.447 138.603,58.201 137.8,60.111                C 136.997,62.021 136.741,64.08 137,66                C 137.259,67.92 138.031,69.696 139.147,71.111                C 140.264,72.527 141.721,73.579 143.278,74.179                C 144.835,74.779 146.487,74.926 148,74.667                C 149.513,74.407 150.882,73.745 151.944,72.832                C 153.007,71.919 153.762,70.76 154.158,69.556                C 154.554,68.351 154.593,67.105 154.333,66                C 154.074,64.895 153.521,63.932 152.811,63.222                C 152.102,62.512 151.241,62.055 150.389,61.862                C 149.537,61.67 148.698,61.741 148,62                C 143.5,63.671 152.5,68.329 148,70                C 147.302,70.259 146.463,70.33 145.611,70.138                C 144.759,69.945 143.898,69.488 143.189,68.778                C 142.479,68.068 141.926,67.105 141.667,66                C 141.407,64.895 141.446,63.649 141.842,62.444                C 142.238,61.24 142.993,60.081 144.056,59.168                C 145.118,58.255 146.487,57.593 148,57.333                C 149.513,57.074 151.165,57.221 152.722,57.821                C 154.279,58.421 155.736,59.473 156.853,60.889                C 157.969,62.304 158.741,64.08 159,66                C 159.259,67.92 159.003,69.979 158.2,71.889                C 157.397,73.799 156.046,75.553 154.278,76.873                C 152.51,78.194 150.327,79.074 148,79.333                C 145.673,79.593 143.207,79.227 140.944,78.221                C 138.682,77.214 136.63,75.565 135.106,73.444                C 133.582,71.324 132.593,68.734 132.333,66                C 132.074,63.266 132.548,60.393 133.759,57.778                C 134.969,55.163 136.915,52.813 139.389,51.085                C 141.862,49.358 144.858,48.259 148,48                C 154,47.505 173,43 173,52                V 103 C 173,106 173,108 176,108"/>
+      <path id="forward-temporal-accumulator-delay-3" d="M 198,108 C 201,108 201,106 201,103                V 95 C 201,90 204,90 208,90                C 214,90 220,88.391 226,88                C 229.84,87.75 233.538,86.474 236.625,84.403                C 239.712,82.332 242.181,79.474 243.754,76.25                C 245.326,73.026 246,69.447 245.75,66                C 245.5,62.553 244.329,59.247 242.454,56.5                C 240.58,53.753 238.008,51.571 235.125,50.195                C 232.242,48.819 229.054,48.25 226,48.5                C 222.946,48.75 220.032,49.816 217.625,51.494                C 215.218,53.172 213.323,55.457 212.144,58                C 210.964,60.543 210.5,63.338 210.75,66                C 211,68.662 211.961,71.183 213.443,73.25                C 214.925,75.317 216.922,76.924 219.125,77.908                C 221.328,78.891 223.731,79.25 226,79                C 228.269,78.75 230.398,77.894 232.125,76.609                C 233.852,75.323 235.172,73.613 235.959,71.75                C 236.746,69.887 237,67.876 236.75,66                C 236.5,64.124 235.749,62.386 234.66,61                C 233.571,59.614 232.148,58.58 230.625,57.989                C 229.102,57.399 227.484,57.25 226,57.5                C 224.516,57.75 223.171,58.395 222.125,59.288                C 221.079,60.181 220.332,61.317 219.938,62.5                C 219.543,63.683 219.5,64.909 219.75,66                C 220,67.091 220.54,68.044 221.237,68.75                C 221.933,69.456 222.782,69.916 223.625,70.114                C 224.468,70.312 225.302,70.25 226,70                C 230.519,68.382 221.481,63.618 226,62                C 226.698,61.75 227.532,61.688 228.375,61.886                C 229.218,62.084 230.067,62.544 230.763,63.25                C 231.46,63.956 232,64.909 232.25,66                C 232.5,67.091 232.457,68.317 232.062,69.5                C 231.668,70.683 230.921,71.819 229.875,72.712                C 228.829,73.605 227.484,74.25 226,74.5                C 224.516,74.75 222.898,74.601 221.375,74.011                C 219.852,73.42 218.429,72.386 217.34,71                C 216.251,69.614 215.5,67.876 215.25,66                C 215,64.124 215.254,62.113 216.041,60.25                C 216.828,58.387 218.148,56.677 219.875,55.391                C 221.602,54.106 223.731,53.25 226,53                C 228.269,52.75 230.672,53.109 232.875,54.092                C 235.078,55.076 237.075,56.683 238.557,58.75                C 240.039,60.817 241,63.338 241.25,66                C 241.5,68.662 241.036,71.457 239.856,74                C 238.677,76.543 236.782,78.828 234.375,80.506                C 231.968,82.184 229.054,83.25 226,83.5                C 222.946,83.75 219.758,83.181 216.875,81.805                C 213.992,80.429 211.42,78.247 209.546,75.5                C 207.671,72.753 206.5,69.447 206.25,66                C 206,62.553 206.674,58.974 208.246,55.75                C 209.819,52.526 212.288,49.668 215.375,47.597                C 218.462,45.526 222.16,44.25 226,44                C 232,43.609 251,39 251,48                V 103 C 251,106 251,108 254,108"/>
+    </g>
+
+    
+    <g id="forward-temporal-accumulator-unused-ports" fill="none" stroke="#8d9bad" stroke-width="1.5">
+      <path id="forward-temporal-accumulator-unused-input-1" d="M 33,108 H 36 M 33,105.5 V 110.5"/>
+      <path id="forward-temporal-accumulator-unused-output-1" d="M 104,108 H 107 M 107,105.5 V 110.5"/>
+      <path id="forward-temporal-accumulator-unused-input-2" d="M 111,108 H 114 M 111,105.5 V 110.5"/>
+      <path id="forward-temporal-accumulator-unused-output-2" d="M 182,108 H 185 M 185,105.5 V 110.5"/>
+      <path id="forward-temporal-accumulator-unused-input-3" d="M 189,108 H 192 M 189,105.5 V 110.5"/>
+      <path id="forward-temporal-accumulator-unused-output-3" d="M 260,108 H 263 M 263,105.5 V 110.5"/>
+    </g>
+    <g id="forward-temporal-accumulator-couplers" fill="#6b89ab" stroke="none">
+      <rect id="forward-temporal-accumulator-splitter-1" x="36" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="forward-temporal-accumulator-recombiner-1" x="98" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="forward-temporal-accumulator-splitter-2" x="114" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="forward-temporal-accumulator-recombiner-2" x="176" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="forward-temporal-accumulator-splitter-3" x="192" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="forward-temporal-accumulator-recombiner-3" x="254" y="103" width="6" height="20" rx="1.5"/>
+    </g>
+  </g>
+</g>
+    <g id="adjoint-temporal-accumulator" data-component="temporal-accumulator" data-stages="7" data-taps="128" transform="matrix(-0.8 0 0 0.8 743.8 495.6)" inkscape:label="Adjoint temporal accumulator"><g id="adjoint-temporal-accumulator-fibers">
+    <g id="adjoint-temporal-accumulator-access-fibers" fill="#e3e8ef" stroke="none">
+      <rect id="adjoint-temporal-accumulator-input-guide" x="10" y="110.5" width="18" height="15"/>
+      <rect id="adjoint-temporal-accumulator-output-guide" x="268" y="110.5" width="18" height="15"/>
+    </g>
+    <g id="adjoint-temporal-accumulator-access-cores" fill="none" stroke="#5d8db4" stroke-width="3.5">
+      <path id="adjoint-temporal-accumulator-input-core" d="M 10,118 H 28"/>
+      <path id="adjoint-temporal-accumulator-output-core" d="M 268,118 H 286"/>
+    </g>
+  </g>
+
+  <g id="adjoint-temporal-accumulator-body">
+    <rect id="adjoint-temporal-accumulator-enclosure" x="28" y="14" width="240" height="132" rx="8" fill="#e6edf6" stroke="#7089a5" stroke-width="1.75"/>
+  </g>
+
+  <g id="adjoint-temporal-accumulator-motif">
+    <g id="adjoint-temporal-accumulator-selected-path" fill="none" stroke="#52749c" stroke-width="2.5">
+      <path id="adjoint-temporal-accumulator-stage-input-1" d="M 28,118 H 36"/>
+      <path id="adjoint-temporal-accumulator-reference-1" d="M 42,118 H 98"/>
+      <path id="adjoint-temporal-accumulator-stage-input-2" d="M 104,118 H 114"/>
+      <path id="adjoint-temporal-accumulator-reference-2" d="M 120,118 H 176"/>
+      <path id="adjoint-temporal-accumulator-stage-input-3" d="M 182,118 H 192"/>
+      <path id="adjoint-temporal-accumulator-reference-3" d="M 198,118 H 254"/>
+      <path id="adjoint-temporal-accumulator-output-connection" d="M 260,118 H 268"/>
+    </g>
+
+    
+    <g id="adjoint-temporal-accumulator-delay-paths" fill="none" stroke="#52749c" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path id="adjoint-temporal-accumulator-delay-1" d="M 42,108 C 45,108 45,106 45,103                V 87 C 45,82 48,82 52,82                C 58,82 64,80.682 70,80                C 72.443,79.722 74.732,78.792 76.583,77.403                C 78.435,76.013 79.845,74.17 80.681,72.167                C 81.517,70.164 81.778,68.007 81.5,66                C 81.222,63.993 80.409,62.14 79.238,60.667                C 78.066,59.193 76.542,58.102 74.917,57.484                C 73.291,56.867 71.571,56.722 70,57                C 68.429,57.278 67.012,57.974 65.917,58.927                C 64.821,59.881 64.049,61.086 63.649,62.333                C 63.25,63.581 63.222,64.866 63.5,66                C 63.778,67.134 64.357,68.116 65.093,68.833                C 65.828,69.551 66.714,70.005 67.583,70.186                C 68.453,70.367 69.302,70.278 70,70                C 74.46,68.225 65.54,63.775 70,62                C 70.698,61.722 71.547,61.633 72.417,61.814                C 73.286,61.995 74.172,62.449 74.907,63.167                C 75.643,63.884 76.222,64.866 76.5,66                C 76.778,67.134 76.75,68.419 76.351,69.667                C 75.951,70.914 75.179,72.119 74.083,73.073                C 72.988,74.026 71.571,74.722 70,75                C 68.429,75.278 66.709,75.133 65.083,74.516                C 63.458,73.898 61.934,72.807 60.762,71.333                C 59.591,69.86 58.778,68.007 58.5,66                C 58.222,63.993 58.483,61.836 59.319,59.833                C 60.155,57.83 61.565,55.987 63.417,54.597                C 65.268,53.208 67.557,52.278 70,52                C 76,51.318 95,47 95,56                V 103 C 95,106 95,108 98,108"/>
+      <path id="adjoint-temporal-accumulator-delay-2" d="M 120,108 C 123,108 123,106 123,103                V 91 C 123,86 126,86 130,86                C 136,86 142,84.495 148,84                C 151.142,83.741 154.138,82.642 156.611,80.915                C 159.085,79.187 161.031,76.837 162.241,74.222                C 163.452,71.607 163.926,68.734 163.667,66                C 163.407,63.266 162.418,60.676 160.894,58.556                C 159.37,56.435 157.318,54.786 155.056,53.779                C 152.793,52.773 150.327,52.407 148,52.667                C 145.673,52.926 143.49,53.806 141.722,55.127                C 139.954,56.447 138.603,58.201 137.8,60.111                C 136.997,62.021 136.741,64.08 137,66                C 137.259,67.92 138.031,69.696 139.147,71.111                C 140.264,72.527 141.721,73.579 143.278,74.179                C 144.835,74.779 146.487,74.926 148,74.667                C 149.513,74.407 150.882,73.745 151.944,72.832                C 153.007,71.919 153.762,70.76 154.158,69.556                C 154.554,68.351 154.593,67.105 154.333,66                C 154.074,64.895 153.521,63.932 152.811,63.222                C 152.102,62.512 151.241,62.055 150.389,61.862                C 149.537,61.67 148.698,61.741 148,62                C 143.5,63.671 152.5,68.329 148,70                C 147.302,70.259 146.463,70.33 145.611,70.138                C 144.759,69.945 143.898,69.488 143.189,68.778                C 142.479,68.068 141.926,67.105 141.667,66                C 141.407,64.895 141.446,63.649 141.842,62.444                C 142.238,61.24 142.993,60.081 144.056,59.168                C 145.118,58.255 146.487,57.593 148,57.333                C 149.513,57.074 151.165,57.221 152.722,57.821                C 154.279,58.421 155.736,59.473 156.853,60.889                C 157.969,62.304 158.741,64.08 159,66                C 159.259,67.92 159.003,69.979 158.2,71.889                C 157.397,73.799 156.046,75.553 154.278,76.873                C 152.51,78.194 150.327,79.074 148,79.333                C 145.673,79.593 143.207,79.227 140.944,78.221                C 138.682,77.214 136.63,75.565 135.106,73.444                C 133.582,71.324 132.593,68.734 132.333,66                C 132.074,63.266 132.548,60.393 133.759,57.778                C 134.969,55.163 136.915,52.813 139.389,51.085                C 141.862,49.358 144.858,48.259 148,48                C 154,47.505 173,43 173,52                V 103 C 173,106 173,108 176,108"/>
+      <path id="adjoint-temporal-accumulator-delay-3" d="M 198,108 C 201,108 201,106 201,103                V 95 C 201,90 204,90 208,90                C 214,90 220,88.391 226,88                C 229.84,87.75 233.538,86.474 236.625,84.403                C 239.712,82.332 242.181,79.474 243.754,76.25                C 245.326,73.026 246,69.447 245.75,66                C 245.5,62.553 244.329,59.247 242.454,56.5                C 240.58,53.753 238.008,51.571 235.125,50.195                C 232.242,48.819 229.054,48.25 226,48.5                C 222.946,48.75 220.032,49.816 217.625,51.494                C 215.218,53.172 213.323,55.457 212.144,58                C 210.964,60.543 210.5,63.338 210.75,66                C 211,68.662 211.961,71.183 213.443,73.25                C 214.925,75.317 216.922,76.924 219.125,77.908                C 221.328,78.891 223.731,79.25 226,79                C 228.269,78.75 230.398,77.894 232.125,76.609                C 233.852,75.323 235.172,73.613 235.959,71.75                C 236.746,69.887 237,67.876 236.75,66                C 236.5,64.124 235.749,62.386 234.66,61                C 233.571,59.614 232.148,58.58 230.625,57.989                C 229.102,57.399 227.484,57.25 226,57.5                C 224.516,57.75 223.171,58.395 222.125,59.288                C 221.079,60.181 220.332,61.317 219.938,62.5                C 219.543,63.683 219.5,64.909 219.75,66                C 220,67.091 220.54,68.044 221.237,68.75                C 221.933,69.456 222.782,69.916 223.625,70.114                C 224.468,70.312 225.302,70.25 226,70                C 230.519,68.382 221.481,63.618 226,62                C 226.698,61.75 227.532,61.688 228.375,61.886                C 229.218,62.084 230.067,62.544 230.763,63.25                C 231.46,63.956 232,64.909 232.25,66                C 232.5,67.091 232.457,68.317 232.062,69.5                C 231.668,70.683 230.921,71.819 229.875,72.712                C 228.829,73.605 227.484,74.25 226,74.5                C 224.516,74.75 222.898,74.601 221.375,74.011                C 219.852,73.42 218.429,72.386 217.34,71                C 216.251,69.614 215.5,67.876 215.25,66                C 215,64.124 215.254,62.113 216.041,60.25                C 216.828,58.387 218.148,56.677 219.875,55.391                C 221.602,54.106 223.731,53.25 226,53                C 228.269,52.75 230.672,53.109 232.875,54.092                C 235.078,55.076 237.075,56.683 238.557,58.75                C 240.039,60.817 241,63.338 241.25,66                C 241.5,68.662 241.036,71.457 239.856,74                C 238.677,76.543 236.782,78.828 234.375,80.506                C 231.968,82.184 229.054,83.25 226,83.5                C 222.946,83.75 219.758,83.181 216.875,81.805                C 213.992,80.429 211.42,78.247 209.546,75.5                C 207.671,72.753 206.5,69.447 206.25,66                C 206,62.553 206.674,58.974 208.246,55.75                C 209.819,52.526 212.288,49.668 215.375,47.597                C 218.462,45.526 222.16,44.25 226,44                C 232,43.609 251,39 251,48                V 103 C 251,106 251,108 254,108"/>
+    </g>
+
+    
+    <g id="adjoint-temporal-accumulator-unused-ports" fill="none" stroke="#8d9bad" stroke-width="1.5">
+      <path id="adjoint-temporal-accumulator-unused-input-1" d="M 33,108 H 36 M 33,105.5 V 110.5"/>
+      <path id="adjoint-temporal-accumulator-unused-output-1" d="M 104,108 H 107 M 107,105.5 V 110.5"/>
+      <path id="adjoint-temporal-accumulator-unused-input-2" d="M 111,108 H 114 M 111,105.5 V 110.5"/>
+      <path id="adjoint-temporal-accumulator-unused-output-2" d="M 182,108 H 185 M 185,105.5 V 110.5"/>
+      <path id="adjoint-temporal-accumulator-unused-input-3" d="M 189,108 H 192 M 189,105.5 V 110.5"/>
+      <path id="adjoint-temporal-accumulator-unused-output-3" d="M 260,108 H 263 M 263,105.5 V 110.5"/>
+    </g>
+    <g id="adjoint-temporal-accumulator-couplers" fill="#6b89ab" stroke="none">
+      <rect id="adjoint-temporal-accumulator-splitter-1" x="36" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="adjoint-temporal-accumulator-recombiner-1" x="98" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="adjoint-temporal-accumulator-splitter-2" x="114" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="adjoint-temporal-accumulator-recombiner-2" x="176" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="adjoint-temporal-accumulator-splitter-3" x="192" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="adjoint-temporal-accumulator-recombiner-3" x="254" y="103" width="6" height="20" rx="1.5"/>
+    </g>
+  </g>
+</g>
+    <g id="forward-output-amplifier" data-component="amplifier" inkscape:label="Forward output amplifier">
+      <path id="forward-output-amplifier-body" d="M 1510,203 L 1595,240 L 1510,277 Z" fill="#f3dfe3" stroke="#9b6472" stroke-width="1.75" stroke-linejoin="round"/>
+    </g>
+    <g id="backward-output-amplifier" data-component="amplifier" inkscape:label="Backward output amplifier">
+      <path id="backward-output-amplifier-body" d="M 440,553 L 355,590 L 440,627 Z" fill="#f3dfe3" stroke="#9b6472" stroke-width="1.75" stroke-linejoin="round"/>
+    </g>
+    <g id="coefficient-loss-compensation" data-component="amplifier" inkscape:label="Coefficient loss compensation">
+      <path id="coefficient-loss-compensation-body" d="M 1510,833 L 1595,870 L 1510,907 Z" fill="#f3dfe3" stroke="#9b6472" stroke-width="1.75" stroke-linejoin="round"/>
+    </g>
+    <g id="gradient-write-control" data-component="amplitude-phase-control" inkscape:label="Gradient write control">
+      <path id="gradient-write-control-guide-1" d="M 1060,870 H 1078" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-guide-2" d="M 1078,870 C 1100,870 1100,845 1122,845 H 1178 C 1200,845 1200,870 1222,870" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-guide-3" d="M 1078,870 C 1100,870 1100,895 1122,895 H 1178 C 1200,895 1200,870 1222,870" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-guide-4" d="M 1222,870 H 1240" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-core-1" d="M 1060,870 H 1078" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-core-2" d="M 1078,870 C 1100,870 1100,845 1122,845 H 1178 C 1200,845 1200,870 1222,870" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-core-3" d="M 1078,870 C 1100,870 1100,895 1122,895 H 1178 C 1200,895 1200,870 1222,870" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="gradient-write-control-core-4" d="M 1222,870 H 1240" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <rect id="gradient-write-control-electrode-upper" x="1122.0" y="830.5" width="56" height="5" rx="2" fill="#d5b477"/>
+      <path id="gradient-write-control-electrical-lead-upper" d="M 1150.0,830.5 V 820" fill="none" stroke="#b18a4c" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="butt"/>
+      <circle id="gradient-write-control-terminal-upper" cx="1150.0" cy="817" r="3" fill="none" stroke="#b18a4c" stroke-width="1.7"/>
+      <rect id="gradient-write-control-electrode-lower" x="1122.0" y="904.5" width="56" height="5" rx="2" fill="#d5b477"/>
+      <path id="gradient-write-control-electrical-lead-lower" d="M 1150.0,909.5 V 920" fill="none" stroke="#b18a4c" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="butt"/>
+      <circle id="gradient-write-control-terminal-lower" cx="1150.0" cy="923" r="3" fill="none" stroke="#b18a4c" stroke-width="1.7"/>
+    </g>
+    <g id="old-state-injection-control" data-component="amplitude-phase-control" inkscape:label="Old state injection control">
+      <path id="old-state-injection-control-guide-1" d="M 1060,1030 H 1078" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-guide-2" d="M 1078,1030 C 1100,1030 1100,1005 1122,1005 H 1178 C 1200,1005 1200,1030 1222,1030" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-guide-3" d="M 1078,1030 C 1100,1030 1100,1055 1122,1055 H 1178 C 1200,1055 1200,1030 1222,1030" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-guide-4" d="M 1222,1030 H 1240" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-core-1" d="M 1060,1030 H 1078" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-core-2" d="M 1078,1030 C 1100,1030 1100,1005 1122,1005 H 1178 C 1200,1005 1200,1030 1222,1030" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-core-3" d="M 1078,1030 C 1100,1030 1100,1055 1122,1055 H 1178 C 1200,1055 1200,1030 1222,1030" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="old-state-injection-control-core-4" d="M 1222,1030 H 1240" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <rect id="old-state-injection-control-electrode-upper" x="1122.0" y="990.5" width="56" height="5" rx="2" fill="#d5b477"/>
+      <path id="old-state-injection-control-electrical-lead-upper" d="M 1150.0,990.5 V 980" fill="none" stroke="#b18a4c" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="butt"/>
+      <circle id="old-state-injection-control-terminal-upper" cx="1150.0" cy="977" r="3" fill="none" stroke="#b18a4c" stroke-width="1.7"/>
+      <rect id="old-state-injection-control-electrode-lower" x="1122.0" y="1064.5" width="56" height="5" rx="2" fill="#d5b477"/>
+      <path id="old-state-injection-control-electrical-lead-lower" d="M 1150.0,1069.5 V 1080" fill="none" stroke="#b18a4c" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="butt"/>
+      <circle id="old-state-injection-control-terminal-lower" cx="1150.0" cy="1083" r="3" fill="none" stroke="#b18a4c" stroke-width="1.7"/>
+    </g>
+    <g id="coherent-update-injection" data-component="coherent-injection" inkscape:label="Coherent update injection">
+      <rect id="coherent-update-injection-body" x="1370" y="858" width="50" height="48" rx="5" fill="#dceaf7" stroke="#7089a5" stroke-width="1.7"/>
+      <path id="coherent-update-selected-path" d="M 1370,870 H 1420" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="coherent-update-complementary-path" d="M 1370,894 H 1420" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="butt"/>
+      <path id="coherent-update-dump-termination" d="M 1460,886 V 902" fill="none" stroke="#647087" stroke-width="4" stroke-linejoin="round" stroke-linecap="butt"/>
+    </g>
+  </g>
+  <g id="optical-propagation-arrows" inkscape:groupmode="layer" inkscape:label="Optical direction arrows">
+    <path id="propagation-01-shaft" d="M 145,240 L 167.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-01-head" d="M 177,240 L 167.0,245.0 L 167.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-02-shaft" d="M 391,240 L 408.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-02-head" d="M 418,240 L 408.0,245.0 L 408.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-03-shaft" d="M 567,240 L 585.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-03-head" d="M 595,240 L 585.0,245.0 L 585.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-04-shaft" d="M 733,240 L 753.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-04-head" d="M 763,240 L 753.0,245.0 L 753.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-05-shaft" d="M 840,240 L 858.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-05-head" d="M 868,240 L 858.0,245.0 L 858.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-06-shaft" d="M 1012,240 L 1030.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-06-head" d="M 1040,240 L 1030.0,245.0 L 1030.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-07-shaft" d="M 1150,240 L 1170.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-07-head" d="M 1180,240 L 1170.0,245.0 L 1170.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-08-shaft" d="M 1450,240 L 1470.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-08-head" d="M 1480,240 L 1470.0,245.0 L 1470.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-09-shaft" d="M 1650,240 L 1675.0,240.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-09-head" d="M 1685,240 L 1675.0,245.0 L 1675.0,235.0 Z" fill="#315c7f"/>
+    <path id="propagation-10-shaft" d="M 150,350 L 172.0,350.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-10-head" d="M 182,350 L 172.0,355.0 L 172.0,345.0 Z" fill="#315c7f"/>
+    <path id="propagation-11-shaft" d="M 360,310 L 360.0,290.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-11-head" d="M 360,280 L 365.0,290.0 L 355.0,290.0 Z" fill="#315c7f"/>
+    <path id="propagation-12-shaft" d="M 620,420 L 645.0,420.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-12-head" d="M 655,420 L 645.0,425.0 L 645.0,415.0 Z" fill="#315c7f"/>
+    <path id="propagation-13-shaft" d="M 1080,505 L 1080.0,527.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-13-head" d="M 1080,537 L 1075.0,527.0 L 1085.0,527.0 Z" fill="#315c7f"/>
+    <path id="propagation-14-shaft" d="M 740,350 L 760.0,350.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-14-head" d="M 770,350 L 760.0,355.0 L 760.0,345.0 Z" fill="#315c7f"/>
+    <path id="propagation-15-shaft" d="M 825,305 L 825.0,285.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-15-head" d="M 825,275 L 830.0,285.0 L 820.0,285.0 Z" fill="#315c7f"/>
+    <path id="propagation-16-shaft" d="M 1250,350 L 1275.0,350.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-16-head" d="M 1285,350 L 1275.0,355.0 L 1275.0,345.0 Z" fill="#315c7f"/>
+    <path id="propagation-17-shaft" d="M 1730,412 L 1730.0,432.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-17-head" d="M 1730,442 L 1725.0,432.0 L 1735.0,432.0 Z" fill="#315c7f"/>
+    <path id="propagation-18-shaft" d="M 1650,538 L 1650.0,558.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-18-head" d="M 1650,568 L 1645.0,558.0 L 1655.0,558.0 Z" fill="#315c7f"/>
+    <path id="propagation-19-shaft" d="M 1770,590 L 1745.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-19-head" d="M 1735,590 L 1745.0,585.0 L 1745.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-20-shaft" d="M 1631,590 L 1611.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-20-head" d="M 1601,590 L 1611.0,585.0 L 1611.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-21-shaft" d="M 1446,590 L 1434.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-21-head" d="M 1424,590 L 1434.0,585.0 L 1434.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-22-shaft" d="M 1315,590 L 1295.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-22-head" d="M 1285,590 L 1295.0,585.0 L 1295.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-23-shaft" d="M 1150,590 L 1130.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-23-head" d="M 1120,590 L 1130.0,585.0 L 1130.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-24-shaft" d="M 1060,590 L 1042.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-24-head" d="M 1032,590 L 1042.0,585.0 L 1042.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-25-shaft" d="M 891,590 L 887.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-25-head" d="M 877,590 L 887.0,585.0 L 887.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-26-shaft" d="M 781,590 L 763.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-26-head" d="M 753,590 L 763.0,585.0 L 763.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-27-shaft" d="M 491,590 L 473.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-27-head" d="M 463,590 L 473.0,585.0 L 473.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-28-shaft" d="M 275,590 L 250.0,590.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-28-head" d="M 240,590 L 250.0,585.0 L 250.0,595.0 Z" fill="#315c7f"/>
+    <path id="propagation-29-shaft" d="M 1260,657 L 1260.0,679.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-29-head" d="M 1260,689 L 1255.0,679.0 L 1265.0,679.0 Z" fill="#315c7f"/>
+    <path id="propagation-30-shaft" d="M 990,740 L 965.0,740.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-30-head" d="M 955,740 L 965.0,735.0 L 965.0,745.0 Z" fill="#315c7f"/>
+    <path id="propagation-31-shaft" d="M 640,795 L 640.0,815.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-31-head" d="M 640,825 L 635.0,815.0 L 645.0,815.0 Z" fill="#315c7f"/>
+    <path id="propagation-32-shaft" d="M 150,870 L 175.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-32-head" d="M 185,870 L 175.0,875.0 L 175.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-33-shaft" d="M 575,870 L 600.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-33-head" d="M 610,870 L 600.0,875.0 L 600.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-34-shaft" d="M 680,870 L 698.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-34-head" d="M 708,870 L 698.0,875.0 L 698.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-35-shaft" d="M 853,870 L 875.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-35-head" d="M 885,870 L 875.0,875.0 L 875.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-36-shaft" d="M 1000,870 L 1022.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-36-head" d="M 1032,870 L 1022.0,875.0 L 1022.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-37-shaft" d="M 1280,870 L 1305.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-37-head" d="M 1315,870 L 1305.0,875.0 L 1305.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-38-shaft" d="M 1440,870 L 1465.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-38-head" d="M 1475,870 L 1465.0,875.0 L 1465.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-39-shaft" d="M 1650,870 L 1675.0,870.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-39-head" d="M 1685,870 L 1675.0,875.0 L 1675.0,865.0 Z" fill="#315c7f"/>
+    <path id="propagation-40-shaft" d="M 975,1030 L 1000.0,1030.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-40-head" d="M 1010,1030 L 1000.0,1035.0 L 1000.0,1025.0 Z" fill="#315c7f"/>
+    <path id="propagation-41-shaft" d="M 1300,1025 L 1312.9289321881345,1012.0710678118654" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-41-head" d="M 1320,1005 L 1316.4644660940671,1015.6066017177982 L 1309.3933982822018,1008.5355339059327 Z" fill="#315c7f"/>
+    <path id="propagation-42-shaft" d="M 1340,970 L 1340.0,952.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-42-head" d="M 1340,942 L 1345.0,952.0 L 1335.0,952.0 Z" fill="#315c7f"/>
+    <path id="propagation-43-shaft" d="M 1431,894 L 1442.0,894.0" fill="none" stroke="#315c7f" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="butt"/>
+    <path id="propagation-43-head" d="M 1452,894 L 1442.0,899.0 L 1442.0,889.0 Z" fill="#315c7f"/>
+  </g>
+  <g id="component-labels" inkscape:groupmode="layer" inkscape:label="Component and signal labels" font-family="DejaVu Sans, Arial, sans-serif" fill="#253246">
+    <text id="forward-adaptive-pump-mux-label" x="380" y="209" font-size="15" text-anchor="middle" font-weight="400" fill="#253246">Pump mux</text>
+    <text id="forward-reference-pump-mux-label" x="825" y="209" font-size="15" text-anchor="middle" font-weight="400" fill="#253246">Pump mux</text>
+    <text id="backward-reference-pump-mux-label" x="1650" y="632" font-size="15" text-anchor="middle" font-weight="400" fill="#253246">Pump mux</text>
+    <text id="backward-adaptive-pump-mux-label" x="1080" y="632" font-size="15" text-anchor="middle" font-weight="400" fill="#253246">Pump mux</text>
+    <text id="writer-input-mode-mux-label" x="660" y="912" font-size="15" text-anchor="middle" font-weight="400" fill="#253246">A/B mux</text>
+    <text id="forward-dfg-1-label" x="490.0" y="282" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">DFG 1</text>
+    <text id="forward-dfg-2-label" x="940.0" y="282" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">DFG 2</text>
+    <text id="error-dfg-label" x="1520.0" y="632" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">Error DFG</text>
+    <text id="adjoint-dfg-label" x="960.0" y="632" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">Adjoint DFG</text>
+    <text id="gradient-cross-sfg-label" x="780.0" y="912" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">Cross-SFG</text>
+    <text id="forward-intermediate-b-filter-label" x="647.5" y="298" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">B filter · 64 lines</text>
+    <text id="forward-output-a-filter-label" x="1092.5" y="298" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">A filter · 64 lines</text>
+    <text id="error-intermediate-b-filter-label" x="1377.5" y="648" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">B filter · 64 lines</text>
+    <text id="adjoint-output-a-filter-label" x="832.5" y="648" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">A filter · 64 lines</text>
+    <text id="gradient-p-filter-label" x="937.5" y="928" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">P filter · 127 lines</text>
+    <text id="forward-temporal-accumulator-label" x="1310.4" y="298" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">128-tap accumulator</text>
+    <text id="forward-temporal-accumulator-stage-label" x="1310.4" y="321" font-size="15" text-anchor="middle" font-weight="400" fill="#647087">7 stages · c = 1/128</text>
+    <text id="adjoint-temporal-accumulator-label" x="625.4" y="648" font-size="18" text-anchor="middle" font-weight="600" fill="#253246">128-tap accumulator</text>
+    <text id="adjoint-temporal-accumulator-stage-label" x="625.4" y="671" font-size="15" text-anchor="middle" font-weight="400" fill="#647087">7 stages · c = 1/128</text>
+    <text id="forward-output-amplifier-label" x="1552.5" y="305" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">Output gain*</text>
+    <text id="backward-output-amplifier-label" x="397.5" y="655" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">Output gain*</text>
+    <text id="coefficient-loss-compensation-label" x="1552.5" y="935" font-size="16" text-anchor="middle" font-weight="400" fill="#253246">P-band loop gain*</text>
+    <text id="gradient-write-control-label" x="1150.0" y="799" font-size="17" text-anchor="middle" font-weight="600" fill="#253246">Write amplitude / phase · ηc</text>
+    <text id="old-state-injection-control-label" x="1150.0" y="959" font-size="17" text-anchor="middle" font-weight="600" fill="#253246">Injection balance / phase</text>
+    <text id="old-state-injection-control-subtitle" x="1150.0" y="1108" font-size="15" text-anchor="middle" font-weight="400" fill="#647087">old frame aₘ⁻; no extra retention</text>
+    <text id="coherent-update-injection-label" x="1395" y="826" font-size="17" text-anchor="middle" font-weight="600" fill="#253246">Coherent injection</text>
+    <text id="coherent-update-dump-label" x="1460" y="923" font-size="13" text-anchor="middle" font-weight="400" fill="#647087">dump</text>
+    <text id="diagram-heading" x="80" y="62" font-size="30" text-anchor="start" font-weight="600" fill="#253246">Hankel multiplier cell</text>
+    <text id="diagram-subheading" x="80" y="92" font-size="18" text-anchor="start" font-weight="400" fill="#647087">Old-state prediction, complex adjoint and slotwise coefficient update</text>
+    <text id="band-legend" x="1800" y="62" font-size="17" text-anchor="end" font-weight="400" fill="#647087">A / B: 64 data lines     P: 127 coefficient lines</text>
+    <text id="arrow-legend" x="1800" y="92" font-size="16" text-anchor="end" font-weight="400" fill="#647087">Blue arrows: optical propagation    Gold: electrical control</text>
+    <text id="forward-row" x="80" y="161" font-size="15" text-anchor="start" font-weight="600" fill="#647087" letter-spacing="1.3">FORWARD  →</text>
+    <text id="backward-row" x="80" y="490" font-size="15" text-anchor="start" font-weight="600" fill="#647087" letter-spacing="1.3">ADJOINT  ←</text>
+    <text id="writer-row" x="80" y="785" font-size="15" text-anchor="start" font-weight="600" fill="#647087" letter-spacing="1.3">COEFFICIENT UPDATE  →</text>
+    <text id="forward-input-label" x="80" y="216" font-size="19" text-anchor="start" font-weight="600" fill="#253246">Input x · A</text>
+    <text id="forward-output-label" x="1800" y="216" font-size="19" text-anchor="end" font-weight="600" fill="#253246">Fₐ⁻(x) · A</text>
+    <text id="old-coefficient-source-label" x="80" y="322" font-size="18" text-anchor="start" font-weight="600" fill="#253246">Old coefficient aₘ⁻ · P</text>
+    <text id="old-coefficient-backward-label" x="670" y="450" font-size="16" text-anchor="middle" font-weight="400" fill="#647087">matched old-state copy · P</text>
+    <text id="reference-source-label" x="690" y="386" font-size="18" text-anchor="start" font-weight="600" fill="#253246">Reference bₘ · P</text>
+    <text id="reference-delay-label" x="1430" y="386" font-size="16" text-anchor="middle" font-weight="400" fill="#647087">delay / align reference burst</text>
+    <text id="backward-input-label" x="1800" y="557" font-size="19" text-anchor="end" font-weight="600" fill="#253246">Error e · A</text>
+    <text id="backward-output-label" x="80" y="557" font-size="19" text-anchor="start" font-weight="600" fill="#253246">(Fₐ⁻)†e · A</text>
+    <text id="shared-error-label" x="1280" y="688" font-size="17" text-anchor="start" font-weight="400" fill="#253246">rₘ = H(bₘ)e̅</text>
+    <text id="slotwise-writer-label" x="940" y="719" font-size="16" text-anchor="middle" font-weight="400" fill="#647087">rₘ · B — preserve each slot m</text>
+    <text id="writer-input-label" x="80" y="843" font-size="19" text-anchor="start" font-weight="600" fill="#253246">Held input x · A</text>
+    <text id="writer-input-alignment-label" x="360" y="902" font-size="15" text-anchor="middle" font-weight="400" fill="#647087">same saved local input; hold / replay supplied externally</text>
+    <text id="writer-old-state-label" x="900" y="1005" font-size="18" text-anchor="start" font-weight="600" fill="#253246">Aligned aₘ⁻ · P</text>
+    <text id="writer-output-label" x="1800" y="843" font-size="19" text-anchor="end" font-weight="600" fill="#253246">Updated aₘ⁺ · P</text>
+  </g>
+  <g id="design-notes" inkscape:groupmode="layer" inkscape:label="Design notes — hide for publication" font-family="DejaVu Sans, Arial, sans-serif" fill="#253246">
+    <text id="accumulator-abbreviation-note" x="80" y="1146" font-size="14" text-anchor="start" font-weight="400" fill="#647087">Lattice icons abbreviate seven stages (10–640 ps); c = 1/128. No temporal accumulator in the writer.</text>
+    <text id="calibration-boundary-note" x="80" y="1167" font-size="14" text-anchor="start" font-weight="400" fill="#647087">*Gains are assumed calibrated interfaces. Memory, once-per-update retention, query reader and physical holds are outside this cell view.</text>
+  </g>
+  <defs id="component-route-masks">
+    <mask id="inline-mzi-clearance-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1900" height="1178">
+      <rect id="inline-mzi-mask-base" x="0" y="0" width="1900" height="1178" fill="white"/>
+      <rect id="gradient-write-mask-cutout" x="1060" y="863" width="180" height="14" fill="black"/>
+      <rect id="old-state-injection-mask-cutout" x="1060" y="1023" width="180" height="14" fill="black"/>
+    </mask>
+  </defs>
+  <metadata id="optical-net-inventory">{
+  "forward-signal": {
+    "start": [
+      80,
+      240
+    ],
+    "end": [
+      1800,
+      240
+    ],
+    "band": "A-B-A",
+    "role": "forward reader"
+  },
+  "old-coefficient-source": {
+    "start": [
+      80,
+      350
+    ],
+    "end": [
+      260,
+      350
+    ],
+    "band": "P",
+    "role": "old-state read tap source"
+  },
+  "old-coefficient-forward-pump": {
+    "start": [
+      260,
+      350
+    ],
+    "end": [
+      380,
+      240
+    ],
+    "band": "P",
+    "role": "old coefficient to forward DFG 1"
+  },
+  "old-coefficient-adjoint-pump": {
+    "start": [
+      260,
+      350
+    ],
+    "end": [
+      1080,
+      590
+    ],
+    "band": "P",
+    "role": "matched old coefficient to backward DFG"
+  },
+  "reference-source": {
+    "start": [
+      690,
+      350
+    ],
+    "end": [
+      825,
+      350
+    ],
+    "band": "P",
+    "role": "shared timed reference"
+  },
+  "reference-forward-pump": {
+    "start": [
+      825,
+      350
+    ],
+    "end": [
+      825,
+      240
+    ],
+    "band": "P",
+    "role": "reference to forward DFG 2"
+  },
+  "reference-error-pump": {
+    "start": [
+      825,
+      350
+    ],
+    "end": [
+      1650,
+      590
+    ],
+    "band": "P",
+    "role": "delayed reference to error DFG"
+  },
+  "backward-signal": {
+    "start": [
+      1800,
+      590
+    ],
+    "end": [
+      80,
+      590
+    ],
+    "band": "A-B-A",
+    "role": "error transform and old-state adjoint"
+  },
+  "shared-error-to-writer": {
+    "start": [
+      1260,
+      590
+    ],
+    "end": [
+      660,
+      870
+    ],
+    "band": "B",
+    "role": "slotwise transformed error to cross-SFG"
+  },
+  "writer-held-input": {
+    "start": [
+      80,
+      870
+    ],
+    "end": [
+      660,
+      870
+    ],
+    "band": "A",
+    "role": "held or replayed old local input"
+  },
+  "writer-gradient": {
+    "start": [
+      660,
+      870
+    ],
+    "end": [
+      1370,
+      870
+    ],
+    "band": "A+B-P",
+    "role": "cross-SFG, coefficient filter and write control"
+  },
+  "writer-old-coefficient": {
+    "start": [
+      900,
+      1030
+    ],
+    "end": [
+      1370,
+      894
+    ],
+    "band": "P",
+    "role": "matching old state through injection calibration"
+  },
+  "updated-coefficient": {
+    "start": [
+      1420,
+      870
+    ],
+    "end": [
+      1800,
+      870
+    ],
+    "band": "P",
+    "role": "updated memory coefficient"
+  },
+  "injection-complementary-output": {
+    "start": [
+      1420,
+      894
+    ],
+    "end": [
+      1460,
+      894
+    ],
+    "band": "P",
+    "role": "terminated complementary injection output"
+  }
+}</metadata>
+</svg>

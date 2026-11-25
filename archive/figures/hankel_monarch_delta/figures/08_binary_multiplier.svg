@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1570" viewBox="0 0 2200 1570" role="img" aria-labelledby="title desc">
+<title id="title">Full Hankel reader with one passive binary delay lattice</title><desc id="desc">A fixed-optics full Hankel reader uses two DFG sections, fixed band filters and a single six-stage balanced 64-tap delay lattice. A shared external b_m reference comb supplies 320 picosecond amplitude-gated sequences every 640 picoseconds. Its absence prevents DFG 2 from generating terms during rejected input intervals. The first B filter rejects original A light and the coefficient pump to prevent bypass. The raw lattice output contains transients outside valid 320 picosecond windows; the next reader accepts only these windows through its own timed b_m sequence. There are no reader electro-optic routing switches or output shutter. Six two-way balanced cells contain 94.5 millimeters of differential delay waveguide at group index two. Memory writing and replay controls are outside this reader baseline; fixed components still require optical pump power and externally synchronized signals.</desc>
+<defs>
+<marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#0f766e"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#7c3aed"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#475569"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#be123c"/></marker>
+</defs>
+<rect width="2200" height="1570" fill="#f8fafc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="48" y="62" font-size="35" fill="#0f172a" font-weight="700" text-anchor="start">Full Hankel reader · one passive binary delay lattice</text>
+<text x="48" y="102" font-size="23" fill="#475569" font-weight="400" text-anchor="start">Main theoretical design · fixed optical components, externally timed pumps · perfect timing</text>
+<rect x="48" y="132" width="2104" height="70" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="72" y="176" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">A: input / output · K lines</text>
+<text x="720" y="176" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">B: intermediate · K lines</text>
+<text x="1370" y="176" font-size="23" fill="#7c3aed" font-weight="600" text-anchor="start">P = A + B: pump comb · 2K−1 lines</text>
+<rect x="60" y="238" width="650" height="144" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="385.0" y="273" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Recirculating coefficient memory</text>
+<text x="385.0" y="306" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">aₘ is available continuously at the DFG 1 tap</text>
+<text x="385.0" y="335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Persistent fiber path bypasses the reader</text>
+<text x="385.0" y="364" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Memory capture / injection controls are separate</text>
+<rect x="755" y="238" width="650" height="144" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1080.0" y="273" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Input / replay interface</text>
+<text x="1080.0" y="306" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">x = k or q is held during its valid input window</text>
+<text x="1080.0" y="335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">A preceding reader may send raw transient light</text>
+<text x="1080.0" y="364" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Replay and data encoding are external interfaces</text>
+<rect x="1450" y="238" width="690" height="144" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1795.0" y="273" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Shared external reference-comb source</text>
+<text x="1795.0" y="306" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">bₘ: phase sequence + timed amplitude bursts</text>
+<text x="1795.0" y="335" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">320 ps on / 320 ps off; bₘ = 0 outside the burst</text>
+<text x="1795.0" y="364" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">A phase ramp alone does not provide blanking</text>
+<text x="60" y="413" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Sources and timing are shared outside the reader PIC. Optical pump power is still required.</text>
+<rect x="40" y="442" width="2120" height="665" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="68" y="483" font-size="25" fill="#0f172a" font-weight="700" text-anchor="start">FIXED READER OPTICS · two nonlinear sections → one passive coherent accumulator</text>
+<text x="68" y="519" font-size="21" fill="#475569" font-weight="400" text-anchor="start">The timed bₘ pump controls term generation optically; the core has no EO routing switch and no output shutter.</text>
+<rect x="80" y="590" width="245" height="118" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="202.5" y="625" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Raw input A</text>
+<text x="202.5" y="658" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Held x inside its window</text>
+<text x="202.5" y="687" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Transients may be present</text>
+<rect x="380" y="590" width="260" height="118" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="510.0" y="625" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">DFG 1 · PPLN</text>
+<text x="510.0" y="658" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pump: available aₘ in P</text>
+<text x="510.0" y="687" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">A → B</text>
+<rect x="700" y="590" width="270" height="118" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="835.0" y="625" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Fixed B filter</text>
+<text x="835.0" y="658" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pass desired B lines</text>
+<text x="835.0" y="687" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Reject original A and P</text>
+<rect x="1030" y="590" width="260" height="118" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1160.0" y="625" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">DFG 2 · PPLN</text>
+<text x="1160.0" y="658" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pump: timed bₘ in P</text>
+<text x="1160.0" y="687" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">B → A; no bₘ ⇒ no term</text>
+<rect x="1350" y="590" width="245" height="118" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1472.5" y="625" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Fixed A filter</text>
+<text x="1472.5" y="658" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Pass desired A lines</text>
+<text x="1472.5" y="687" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Reject B and pump P</text>
+<path d="M325 649 H380" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M640 649 H700" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M970 649 H1030" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<path d="M1290 649 H1350" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="510" y="561" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">aₘ read tap · P</text>
+<path d="M510 567 V590" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<text x="1160" y="561" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">bₘ burst · P</text>
+<path d="M1160 567 V590" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-purple)"/>
+<text x="1650" y="622" font-size="24" fill="#0f766e" font-weight="700" text-anchor="start">Generated term zₘ</text>
+<text x="1650" y="658" font-size="21" fill="#475569" font-weight="400" text-anchor="start">R = 32 slots × 10 ps</text>
+<text x="1650" y="692" font-size="21" fill="#7c3aed" font-weight="600" text-anchor="start">Then 32 blank slots</text>
+<path d="M1595 674 H1620 V758 H325 V830" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="1290" y="750" font-size="19" fill="#0f766e" font-weight="600" text-anchor="start">All comb lines share each optical path</text>
+<rect x="170" y="830" width="1060" height="154" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="700.0" y="865" font-size="25" fill="#0f766e" font-weight="700" text-anchor="middle">ONE passive SiN binary lattice</text>
+<text x="700.0" y="898" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">6 balanced two-arm cells · 64 equal field-weight taps</text>
+<text x="700.0" y="927" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Delays: 10, 20, 40, 80, 160, 320 ps</text>
+<text x="700.0" y="956" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Selected lattice port carries ŷ = Σ zₘ / 64 during the valid window</text>
+<path d="M1230 878 H2090" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="1660" y="840" font-size="25" fill="#0f766e" font-weight="700" text-anchor="middle">Raw output comb in A</text>
+<text x="1660" y="917" font-size="21" fill="#be123c" font-weight="600" text-anchor="middle">Valid windows + unaccepted transients</text>
+<rect x="1370" y="951" width="740" height="106" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8" stroke-dasharray="7 5"/>
+<text x="1740" y="984" font-size="20" fill="#0f766e" font-weight="700" text-anchor="middle">NEXT READER: bₘ is present only during the valid input</text>
+<text x="1740" y="1016" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">Its DFG 2 accepts the window; no interstage shutter.</text>
+<text x="1740" y="1044" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">Fixed propagation delays shift that pump schedule.</text>
+<text x="73" y="1025" font-size="22" fill="#0f766e" font-weight="600" text-anchor="start">6 passive cells · 12 balanced couplers · 94.5 mm differential delay</text>
+<text x="73" y="1069" font-size="21" fill="#475569" font-weight="400" text-anchor="start">One lattice serves successive frames at 640 ps intervals. The raw output is not dark between windows.</text>
+<rect x="40" y="1136" width="1040" height="338" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="68" y="1179" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">OPTICAL ACCEPTANCE RULE</text>
+<text x="68" y="1222" font-size="23" fill="#7c3aed" font-weight="600" text-anchor="start">bₘ(t) = g(t) bₘ, with g(t) = 0 outside the valid input</text>
+<text x="68" y="1268" font-size="24" fill="#0f766e" font-weight="600" text-anchor="start">zₘ(t) = g(t) H(bₘ) H(conj aₘ(t)) xraw(t)</text>
+<text x="68" y="1317" font-size="21" fill="#475569" font-weight="400" text-anchor="start">The first filter removes A / P bypass before DFG 2.</text>
+<text x="68" y="1355" font-size="21" fill="#475569" font-weight="400" text-anchor="start">The second filter rejects unconverted B and pump P.</text>
+<text x="68" y="1393" font-size="21" fill="#475569" font-weight="400" text-anchor="start">DFG 1 may still use pump energy during rejected intervals.</text>
+<text x="68" y="1438" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Ideal gates and spectral isolation; device errors are omitted.</text>
+<rect x="1110" y="1136" width="1050" height="338" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="1138" y="1179" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">BASELINE AND OPTIONAL WRITER</text>
+<text x="1138" y="1222" font-size="22" fill="#0f766e" font-weight="600" text-anchor="start">No reader EO routers, shutter, or electrical timing wires.</text>
+<text x="1138" y="1268" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Shared bₘ timing remains an external source requirement.</text>
+<text x="1138" y="1317" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Optical residual and gradient arithmetic can reuse the core.</text>
+<text x="1138" y="1355" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Writing, replay and memory injection need separate controls.</text>
+<text x="1138" y="1393" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Their complete system is not claimed to be passive.</text>
+<text x="1138" y="1438" font-size="20" fill="#475569" font-weight="400" text-anchor="start">640 ps is a reader frame interval, not a model token time.</text>
+<text x="48" y="1526" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Functional schematic, not a fabricated layout. Figure 09 gives the binary lattice and timing; figure 12 gives the revised area budget.</text>
+</g></svg>

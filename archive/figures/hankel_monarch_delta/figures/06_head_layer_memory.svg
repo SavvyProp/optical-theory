@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1920" viewBox="0 0 1760 1920" role="img" aria-labelledby="title desc">
+  <title id="title">Earlier global-ring reference with direct pump-band coefficient access</title>
+  <desc id="desc">Synchronized parallel fiber loops retain separate coefficient frames for every layer, head and Monarch bank. Each bank frame has R time slots, each carrying the complete 2K minus 1 frequency coefficient comb. A shared two-bank optical processor taps the selected frame and later injects its optical update into the matching returning slot. A known reference comb with selectable phase ramps supplies fixed partners. Temporary optical key, error and accumulator buffers are separate from recurrent memory. Detected head outputs stream into a digital projection accumulator, then wait at an all-head barrier before normalization, MLP and next-layer input encoding. A conservative schedule predicts on lap r, writes on lap r plus jW and reads the query on lap r plus jW plus jQ. Other frames bypass the update, and a next-layer start requires both ready inputs and an available memory frame. A guard interval never stops circulation or eliminates multi-pass timing and loss.</desc>
+  <defs>
+    <marker id="teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9Z" fill="#0f766e"/></marker>
+    <marker id="violet" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9Z" fill="#7c3aed"/></marker>
+    <marker id="amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9Z" fill="#b45309"/></marker>
+    <marker id="red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9Z" fill="#be123c"/></marker>
+    <marker id="gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9Z" fill="#475569"/></marker>
+  </defs>
+  <rect width="1760" height="1920" fill="#f8fafc"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif" fill="#0f172a">
+    <text x="40" y="54" font-size="32" font-weight="700">Earlier global-ring reference: heads and layers share one optical engine</text>
+    <text x="40" y="91" font-size="21" fill="#475569">Current direction uses separate layer modules. This reference retains the conservative later-lap access schedule.</text>
+    <path d="M45 122H82" stroke="#7c3aed" stroke-width="3"/>
+    <text x="95" y="129" font-size="18" fill="#475569">Persistent coefficients / pumps</text>
+    <path d="M440 122H477" stroke="#0f766e" stroke-width="3"/>
+    <text x="490" y="129" font-size="18" fill="#475569">Optical data</text>
+    <path d="M705 122H742" stroke="#be123c" stroke-width="3"/>
+    <text x="755" y="129" font-size="18" fill="#475569">Optical residual</text>
+    <path d="M1015 122H1052" stroke="#b45309" stroke-width="3"/>
+    <text x="1065" y="129" font-size="18" fill="#475569">Digital data / electrical control</text>
+
+    <!-- Persistent storage is physically separate from temporary operand buffers. -->
+    <rect x="40" y="155" width="1680" height="380" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+    <text x="65" y="193" font-size="24" fill="#7c3aed" font-weight="700">PERSISTENT MEMORY — n synchronized fiber lanes</text>
+    <text x="65" y="224" font-size="19" fill="#475569">Temporal address: (layer p, head h, bank ℓ, partner slot m). Spatial lane f and coefficient frequency s are not serialized here.</text>
+    <path d="M95 268H1670V426H95V268" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M95 320V272" stroke="#7c3aed" stroke-width="3" marker-end="url(#violet)"/>
+    <path d="M1610 426H1540" stroke="#7c3aed" stroke-width="3" marker-end="url(#violet)"/>
+
+    <rect x="125" y="250" width="285" height="125" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="267" y="280" text-anchor="middle" font-size="20" fill="#7c3aed" font-weight="700">Layer 1 · head 1</text>
+    <rect x="140" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <rect x="275" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <text x="200" y="322" text-anchor="middle" font-size="18">Bank 1</text>
+    <text x="200" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="335" y="322" text-anchor="middle" font-size="18">Bank 2</text>
+    <text x="335" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <rect x="430" y="250" width="285" height="125" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="572" y="280" text-anchor="middle" font-size="20" fill="#7c3aed" font-weight="700">Layer 1 · head 2</text>
+    <rect x="445" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <rect x="580" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <text x="505" y="322" text-anchor="middle" font-size="18">Bank 1</text>
+    <text x="505" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="640" y="322" text-anchor="middle" font-size="18">Bank 2</text>
+    <text x="640" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="757" y="323" text-anchor="middle" font-size="32" fill="#7c3aed">…</text>
+    <rect x="800" y="250" width="285" height="125" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="942" y="280" text-anchor="middle" font-size="20" fill="#7c3aed" font-weight="700">Layer 1 · head H</text>
+    <rect x="815" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <rect x="950" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <text x="875" y="322" text-anchor="middle" font-size="18">Bank 1</text>
+    <text x="875" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="1010" y="322" text-anchor="middle" font-size="18">Bank 2</text>
+    <text x="1010" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <rect x="1105" y="250" width="205" height="125" rx="12" fill="#fffbeb" stroke="#d97706" stroke-dasharray="7 5" stroke-width="1.6"/>
+    <text x="1207" y="283" text-anchor="middle" font-size="19" fill="#b45309" font-weight="700">Reserved gap</text>
+    <text x="1207" y="314" text-anchor="middle" font-size="17" fill="#475569">Optional guard slots</text>
+    <text x="1207" y="343" text-anchor="middle" font-size="17" fill="#475569">Memory still moves</text>
+    <rect x="1330" y="250" width="285" height="125" rx="12" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="1472" y="280" text-anchor="middle" font-size="20" fill="#7c3aed" font-weight="700">Layer 2 · head 1 …</text>
+    <rect x="1345" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <rect x="1480" y="297" width="120" height="59" rx="8" fill="white" stroke="#c4b5fd"/>
+    <text x="1405" y="322" text-anchor="middle" font-size="18">Bank 1</text>
+    <text x="1405" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="1540" y="322" text-anchor="middle" font-size="18">Bank 2</text>
+    <text x="1540" y="344" text-anchor="middle" font-size="16" fill="#475569">R slots</text>
+    <text x="125" y="403" font-size="18" fill="#475569">Each slot contains the full 2K−1-line coefficient comb. This is frame order, not a one-pass execution schedule.</text>
+    <circle cx="330" cy="426" r="8" fill="white" stroke="#7c3aed" stroke-width="3"/>
+    <text x="350" y="461" font-size="18" fill="#7c3aed">Selected-frame tap</text>
+    <rect x="700" y="407" width="420" height="39" rx="9" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="910" y="433" text-anchor="middle" font-size="18" fill="#7c3aed">Loop phase / dispersion / loss control</text>
+    <circle cx="1450" cy="426" r="15" fill="white" stroke="#7c3aed" stroke-width="3"/>
+    <text x="1450" y="433" text-anchor="middle" font-size="23" fill="#7c3aed">+</text>
+    <text x="1475" y="461" font-size="17" fill="#7c3aed">Matched-slot write</text>
+    <text x="65" y="505" font-size="20" fill="#475569">Unselected frames bypass update. Apply the model’s forgetting gate once per token update; extra laps add physical loss.</text>
+
+    <!-- Shared processing: all residual and coefficient-update arithmetic remains optical. -->
+    <rect x="40" y="565" width="1680" height="675" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+    <rect x="460" y="585" width="615" height="70" rx="13" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="767" y="615" text-anchor="middle" font-size="19" fill="#7c3aed" font-weight="700">Known reference comb + spectral phase-ramp selector</text>
+    <text x="767" y="640" text-anchor="middle" font-size="18" fill="#475569">Same calibrated bₘ for prediction, gradient and query sweeps</text>
+    <path d="M767 655V690" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#violet)"/>
+    <path d="M330 434V474H25V715H460" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" marker-end="url(#violet)"/>
+    <text x="72" y="607" font-size="18" fill="#7c3aed">Direct pump-band tap</text>
+    <text x="72" y="632" font-size="18" fill="#7c3aed">to selected read branch</text>
+    <text x="72" y="664" font-size="17" fill="#475569">Retain all coefficient lines</text>
+    <rect x="65" y="750" width="285" height="122" rx="15" fill="#f0fdfa" stroke="#5eead4" stroke-width="1.6"/>
+    <text x="207" y="784" text-anchor="middle" font-size="20" fill="#0f766e" font-weight="700">Coherent input encoder</text>
+    <text x="207" y="817" text-anchor="middle" font-size="19">q, k, targets; token gates</text>
+    <text x="207" y="846" text-anchor="middle" font-size="18" fill="#475569">K data frequencies at once</text>
+    <path d="M350 811H460" fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#teal)"/>
+    <text x="370" y="791" font-size="17" fill="#0f766e">q / k / v</text>
+
+    <rect x="460" y="690" width="615" height="218" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+    <text x="767" y="726" text-anchor="middle" font-size="23" fill="#0f766e" font-weight="700">SHARED HANKEL–MONARCH ENGINE</text>
+    <text x="767" y="755" text-anchor="middle" font-size="18" fill="#475569">Reuse across heads and layers; n spatial lanes in parallel</text>
+    <rect x="480" y="778" width="202" height="81" rx="10" fill="white" stroke="#99f6e4" stroke-width="1.6"/>
+    <text x="581" y="808" text-anchor="middle" font-size="21" font-weight="700">Bank 1</text>
+    <text x="581" y="838" text-anchor="middle" font-size="17" fill="#475569">Predict · update · read</text>
+    <rect x="715" y="778" width="103" height="81" rx="10" fill="white" stroke="#99f6e4" stroke-width="1.6"/>
+    <text x="766" y="811" text-anchor="middle" font-size="23" fill="#0f766e" font-weight="700">P</text>
+    <text x="766" y="838" text-anchor="middle" font-size="17" fill="#475569">Shuffle</text>
+    <rect x="852" y="778" width="202" height="81" rx="10" fill="white" stroke="#99f6e4" stroke-width="1.6"/>
+    <text x="953" y="808" text-anchor="middle" font-size="21" font-weight="700">Bank 2</text>
+    <text x="953" y="838" text-anchor="middle" font-size="17" fill="#475569">Predict · update · read</text>
+    <path d="M682 818H715" stroke="#0f766e" stroke-width="3" marker-end="url(#teal)"/>
+    <path d="M818 818H852" stroke="#0f766e" stroke-width="3" marker-end="url(#teal)"/>
+    <text x="767" y="887" text-anchor="middle" font-size="18" fill="#be123c">Local optical residuals → full SFG coefficient updates</text>
+    <path d="M1075 717H1120V548H1735V474H1450V441" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linejoin="round" marker-end="url(#violet)"/>
+    <text x="1140" y="579" font-size="18" fill="#7c3aed">Inject Δa directly in the pump band</text>
+    <text x="1140" y="606" font-size="18" fill="#475569">Inject only when its original slot returns</text>
+    <text x="1140" y="634" font-size="18" fill="#475569">Calibrate read-to-write port timing offset</text>
+
+    <rect x="1190" y="665" width="490" height="243" rx="16" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.6"/>
+    <text x="1212" y="702" font-size="23" font-weight="700">TEMPORARY OPTICAL BUFFERS</text>
+    <text x="1212" y="741" font-size="20" fill="#0f766e">Key / query replay and bank-1 output</text>
+    <text x="1212" y="778" font-size="20" fill="#be123c">Completed residual replay across R slots</text>
+    <text x="1212" y="815" font-size="20" fill="#0f766e">Prediction / query coherent accumulators</text>
+    <text x="1212" y="854" font-size="18" fill="#475569">Separate lifetimes and resets from memory.</text>
+    <text x="1212" y="881" font-size="18" fill="#475569">Time gradient generation to match write slots.</text>
+    <path d="M1075 771H1190" stroke="#0f766e" stroke-width="3" marker-end="url(#teal)"/>
+    <path d="M1190 844H1075" stroke="#be123c" stroke-width="3" marker-end="url(#red)"/>
+    <text x="1129" y="802" text-anchor="middle" font-size="16" fill="#475569">replay /</text>
+    <text x="1129" y="824" text-anchor="middle" font-size="16" fill="#475569">accumulate</text>
+
+    <!-- Detection is at the digital-layer boundary, not in the inner update. -->
+    <path d="M955 908V970H1480V1000" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" marker-end="url(#teal)"/>
+    <text x="1080" y="953" font-size="18" fill="#0f766e">Completed head output yₜ⁽ʰ⁾</text>
+    <rect x="1320" y="1000" width="360" height="98" rx="13" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.6"/>
+    <text x="1500" y="1037" text-anchor="middle" font-size="22" fill="#0f766e" font-weight="700">Coherent receiver → ADC</text>
+    <text x="1500" y="1071" text-anchor="middle" font-size="18" fill="#475569">Preserve signed / complex outputs</text>
+    <path d="M1320 1049H1260" stroke="#b45309" stroke-width="3" marker-end="url(#amber)"/>
+    <rect x="925" y="1000" width="335" height="98" rx="13" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.6"/>
+    <text x="1092" y="1035" text-anchor="middle" font-size="22" fill="#b45309" font-weight="700">Digital head processing</text>
+    <text x="1092" y="1071" text-anchor="middle" font-size="20">u ← u + Wₒ,ₕ yₜ⁽ʰ⁾</text>
+    <path d="M925 1049H865" stroke="#b45309" stroke-width="3" marker-end="url(#amber)"/>
+    <rect x="670" y="1000" width="195" height="98" rx="13" fill="#fffbeb" stroke="#d97706" stroke-width="2"/>
+    <text x="767" y="1035" text-anchor="middle" font-size="21" fill="#b45309" font-weight="700">All-head barrier</text>
+    <text x="767" y="1071" text-anchor="middle" font-size="18" fill="#475569">Wait for head H</text>
+    <path d="M670 1049H610" stroke="#b45309" stroke-width="3" marker-end="url(#amber)"/>
+    <rect x="350" y="1000" width="260" height="98" rx="13" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.6"/>
+    <text x="480" y="1035" text-anchor="middle" font-size="20" fill="#b45309" font-weight="700">Residual / norm / MLP</text>
+    <text x="480" y="1071" text-anchor="middle" font-size="18" fill="#475569">Finish digital layer</text>
+    <path d="M350 1049H290" stroke="#b45309" stroke-width="3" marker-end="url(#amber)"/>
+    <rect x="65" y="1000" width="225" height="98" rx="13" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.6"/>
+    <text x="177" y="1035" text-anchor="middle" font-size="22" fill="#b45309" font-weight="700">Next-layer inputs</text>
+    <text x="177" y="1071" text-anchor="middle" font-size="18" fill="#475569">q, k, v and gate maps</text>
+    <path d="M177 1000V872" stroke="#b45309" stroke-width="3" marker-end="url(#amber)"/>
+    <text x="65" y="1140" font-size="20" fill="#475569">Digital work streams while later heads run. Dense cross-head mixing and nonlinearities leave a final dependency after head H.</text>
+    <text x="65" y="1177" font-size="20" fill="#475569">A scheduler aligns frame address, pass type, reference phase, optical replay and injection; unready frames circulate on bypass.</text>
+    <text x="65" y="1210" font-size="18" fill="#475569">Sharing the processor changes timing and resources, not the independent recurrent state assigned to each layer–head pair.</text>
+
+    <!-- The physical schedule is intentionally conservative and does not assume one-pass updates. -->
+    <rect x="40" y="1270" width="1680" height="405" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+    <text x="65" y="1310" font-size="24" font-weight="700">CONSERVATIVE SERVICE SCHEDULE — one selected bank frame</text>
+    <text x="65" y="1342" font-size="19" fill="#475569">jW and jQ are positive integer lap offsets set by latency; this is a causal schedule assuming adequate optical retention.</text>
+    <rect x="75" y="1372" width="410" height="123" rx="14" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="280" y="1405" text-anchor="middle" font-size="23" fill="#7c3aed" font-weight="700">Lap r: PREDICT</text>
+    <text x="280" y="1440" text-anchor="middle" font-size="19">Tap all R old-state slots with key k</text>
+    <text x="280" y="1473" text-anchor="middle" font-size="18" fill="#475569">Finish summed prediction → residual e</text>
+    <path d="M485 1431H665" stroke="#475569" stroke-width="3" marker-end="url(#gray)"/>
+    <text x="575" y="1401" text-anchor="middle" font-size="17" fill="#475569">Residual ready +</text>
+    <text x="575" y="1465" text-anchor="middle" font-size="17" fill="#475569">matching slot return</text>
+    <rect x="665" y="1372" width="410" height="123" rx="14" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+    <text x="870" y="1405" text-anchor="middle" font-size="23" fill="#7c3aed" font-weight="700">Lap r + jW: WRITE</text>
+    <text x="870" y="1440" text-anchor="middle" font-size="19">Replay k, e and matching bₘ</text>
+    <text x="870" y="1473" text-anchor="middle" font-size="18" fill="#475569">Generate / align Δa; inject into all R slots</text>
+    <path d="M1075 1431H1255" stroke="#475569" stroke-width="3" marker-end="url(#gray)"/>
+    <text x="1165" y="1401" text-anchor="middle" font-size="17" fill="#475569">Write complete +</text>
+    <text x="1165" y="1465" text-anchor="middle" font-size="16" fill="#475569">frame returns</text>
+    <rect x="1255" y="1372" width="410" height="123" rx="14" fill="#f0fdfa" stroke="#99f6e4" stroke-width="1.6"/>
+    <text x="1460" y="1405" text-anchor="middle" font-size="23" fill="#0f766e" font-weight="700">Lap r + jW + jQ: QUERY</text>
+    <text x="1460" y="1440" text-anchor="middle" font-size="19">Read updated frame with qₜ</text>
+    <text x="1460" y="1473" text-anchor="middle" font-size="18" fill="#475569">Accumulate output; advance dependency</text>
+    <text x="65" y="1532" font-size="19" fill="#475569">Finish bank 1 before its shuffled output supplies bank 2. Finish bank 2 before emitting that head’s digital output.</text>
+    <rect x="75" y="1560" width="350" height="66" rx="10" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="250" y="1587" text-anchor="middle" font-size="20" fill="#0f766e" font-weight="700">Layer p: heads 1 → H</text>
+    <text x="250" y="1613" text-anchor="middle" font-size="17" fill="#475569">Digital accumulation overlaps</text>
+    <path d="M425 1593H475" stroke="#475569" stroke-width="3" marker-end="url(#gray)"/>
+    <rect x="475" y="1560" width="430" height="66" rx="10" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="690" y="1587" text-anchor="middle" font-size="20" fill="#b45309" font-weight="700">Digital tail + encode / settle</text>
+    <text x="690" y="1613" text-anchor="middle" font-size="17" fill="#475569">Memory continues circulating</text>
+    <path d="M905 1593H955" stroke="#475569" stroke-width="3" marker-end="url(#gray)"/>
+    <rect x="955" y="1560" width="330" height="66" rx="10" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="1120" y="1587" text-anchor="middle" font-size="20" fill="#7c3aed" font-weight="700">Wait for frame alignment</text>
+    <text x="1120" y="1613" text-anchor="middle" font-size="17" fill="#475569">May require extra laps</text>
+    <path d="M1285 1593H1335" stroke="#475569" stroke-width="3" marker-end="url(#gray)"/>
+    <rect x="1335" y="1560" width="330" height="66" rx="10" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="1500" y="1600" text-anchor="middle" font-size="20" fill="#0f766e" font-weight="700">Layer p + 1: head 1 …</text>
+    <text x="65" y="1656" font-size="18" fill="#475569">The logical inter-layer gap ends only when both next-layer inputs and the required coefficient frame are available.</text>
+
+    <rect x="40" y="1705" width="1680" height="160" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+    <text x="65" y="1746" font-size="24" font-weight="700">What the recirculating-memory design must establish</text>
+    <text x="65" y="1784" font-size="20" fill="#475569">Round-trip time and frame packing · residual and write latency · buffer lifetimes · head-service order · digital-tail budget</text>
+    <text x="65" y="1821" font-size="20" fill="#475569">Per-lap attenuation / phase / noise · calibrated read taps and coherent injection · loss during skipped frames and extra laps</text>
+    <text x="40" y="1897" font-size="18" fill="#475569">Functional proposal, not fabrication geometry. Guard intervals consume loop duration; they do not by themselves guarantee timing closure or memory fidelity.</text>
+  </g>
+</svg>

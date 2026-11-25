@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="188" height="48" viewBox="0 0 188 48"
+     version="1.1" role="img" aria-labelledby="wg-title wg-description">
+  <title id="wg-title">Straight optical waveguide</title>
+  <desc id="wg-description">Horizontal waveguide with pale gray cladding and
+    a blue core, matching the component library. Ports are at (16,24) and
+    (172,24). Flat ends allow adjoining components to connect continuously.
+    No labels, arrows, outlines or enclosing box. Native editable SVG on a
+    transparent background, with separate cladding and core layers.
+    Geometry is schematic and does not specify physical dimensions.</desc>
+
+  <g id="wg-cladding" inkscape:groupmode="layer" inkscape:label="Waveguide cladding"
+     fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt">
+    <path id="wg-cladding-path" d="M 16,24 H 172"/>
+  </g>
+
+  <g id="wg-core" inkscape:groupmode="layer" inkscape:label="Waveguide core"
+     fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt">
+    <path id="wg-core-path" d="M 16,24 H 172"/>
+  </g>
+</svg>

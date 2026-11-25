@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="1740" height="1060" viewBox="0 0 1740 1060" id="shared-interleaver-hankel-cell" role="img" aria-labelledby="cell-title cell-description">
+  <title id="cell-title">Shared-interleaver Hankel cell</title>
+  <desc id="cell-description">Three unfolded paths show separate operations of the same cell. Forward runs left to right: A input, shared interleaver outward, stored weights and reference, Kerr FWM, B-family selection, G1, same interleaver returning, the B-band two-copy interferometer, gate, G2, B output. Adjoint runs right to left: a B residual advanced by 63δ enters the B copier then the shared interleaver, mixes with the same weights and reference, and returns in A through G1, the interleaver, gate and G2. Both passes use a co-propagating guide in its physical forward direction. The write sends saved A and coded B concurrently through the interleaver, mixes them with R, selects the full 127-tooth coefficient family, and injects the selected slot into the circulating weights. The old weight read tap is off during the write. A separate port initializes the loop. The long TTT memory returns all 127 weight teeth through one in-line section of dispersion-compensating fiber. Repeated interleaver, copier, guide, selector and amplifier symbols denote scheduled reuse. Arrows show propagation. Colored lines identify the indicated signal band; pump multiplexers admit multiple bands. Optical path lengths and couplers are schematic. Gate starts are 63P+T forward and 63P adjoint; the B residual is advanced by 63δ, with P=45 ps, T=20 ps and δ=T/64. G1 is +10 dB; G2 is +29.8 dB at identity calibration and +31.07 dB for the trained-matrix budget. Logical labels omit the fixed spectral phase and field-conjugation convention. Amplifier loading, backprop accuracy and memory retention are separate design questions.</desc>
+  <defs>
+    <path id="weight-dcf-winding" d="M -56 0 C -46 0 -45 -10 -36 -10
+      c 7 0 16 4 17 13  1 6 -2 10 -7 10  -7 0 -11 -7 -9 -13  2 -6 9 -10 17 -10
+      c 7 0 16 4 17 13  1 6 -2 10 -7 10  -7 0 -11 -7 -9 -13  2 -6 9 -10 17 -10
+      c 7 0 16 4 17 13  1 6 -2 10 -7 10  -7 0 -11 -7 -9 -13  2 -6 9 -10 17 -10
+      c 7 0 16 4 17 13  1 6 -2 10 -7 10  -7 0 -11 -7 -9 -13  2 -6 9 -10 17 -10
+      C 45 -10 46 0 56 0"/>
+    <style>text { font-family:"DejaVu Sans",sans-serif;fill:#253246 } .title{font-size:34px;font-weight:700}.subtitle{font-size:18px;fill:#647087}.port{font-size:20px;font-weight:700}.label{font-size:18px;font-weight:600}.small{font-size:16px;fill:#647087}.source{font-size:17px;font-weight:600}.head{font-size:16px;letter-spacing:1.4px;font-weight:700;fill:#526481}.legend{font-size:16px;font-weight:600}.rule{stroke:#dde4eb;stroke-width:1.35}.symline{stroke-linecap:round;stroke-linejoin:round;fill:none}</style>
+    <linearGradient id="core-A" x1="0" x2="1740" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#497597"/>
+      <stop offset="0.52" stop-color="#609cc1"/>
+      <stop offset="1" stop-color="#397599"/>
+    </linearGradient>
+    <linearGradient id="core-B" x1="0" x2="1740" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#347d7e"/>
+      <stop offset="0.52" stop-color="#549d95"/>
+      <stop offset="1" stop-color="#277974"/>
+    </linearGradient>
+    <linearGradient id="core-h" x1="0" x2="1740" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#75618f"/>
+      <stop offset="0.52" stop-color="#a084b3"/>
+      <stop offset="1" stop-color="#806298"/>
+    </linearGradient>
+    <linearGradient id="core-R" x1="0" x2="1740" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ab783e"/>
+      <stop offset="0.52" stop-color="#bc8b51"/>
+      <stop offset="1" stop-color="#9e6939"/>
+    </linearGradient>
+    <linearGradient id="core-d" x1="0" x2="1740" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b45a7c"/>
+      <stop offset="0.52" stop-color="#cc7b90"/>
+      <stop offset="1" stop-color="#a45078"/>
+    </linearGradient>
+    <linearGradient id="weight-after-injection" x1="1390" x2="1610" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#c75a7c"/>
+      <stop offset="0.38" stop-color="#af7196"/>
+      <stop offset="1" stop-color="#806298"/>
+    </linearGradient>
+    <linearGradient id="kerr-body" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#ece5f2"/>
+      <stop offset="0.5" stop-color="#c8b6d8"/>
+      <stop offset="1" stop-color="#e9e0ef"/>
+    </linearGradient>
+    <linearGradient id="amplifier-body" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5e9ed"/>
+      <stop offset="1" stop-color="#ead1da"/>
+    </linearGradient>
+    <g id="mux-A">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#427fa7" stroke-width="2.4"/>
+    </g>
+    <g id="mux-B">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#297f7b" stroke-width="2.4"/>
+    </g>
+    <g id="mux-h">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#8563a2" stroke-width="2.4"/>
+    </g>
+    <g id="mux-R">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#a26930" stroke-width="2.4"/>
+    </g>
+    <g id="mux-d">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#bd547b" stroke-width="2.4"/>
+    </g>
+    <g id="mux-ab">
+      <path d="M -11 0 L 0 -11 L 11 0 L 0 11 Z" fill="#e5edf4" stroke="#788ba3" stroke-width="1.5"/>
+      <path d="M -11 0 H 11" stroke="#526e88" stroke-width="2.4"/>
+    </g>
+    <g id="filter-A">
+      <rect x="-29" y="-25" width="58" height="39" rx="4" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.6"/>
+      <path d="M -29 0 H 29" stroke="#427fa7" stroke-width="2.6"/>
+      <path d="M -20 -8 H -14 C -9 -8 -12 -19 -6 -19 H 7 C 13 -19 9 -8 14 -8 H 20" fill="none" stroke="#ac712d" stroke-width="1.9"/>
+    </g>
+    <g id="filter-B">
+      <rect x="-29" y="-25" width="58" height="39" rx="4" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.6"/>
+      <path d="M -29 0 H 29" stroke="#297f7b" stroke-width="2.6"/>
+      <path d="M -20 -8 H -14 C -9 -8 -12 -19 -6 -19 H 7 C 13 -19 9 -8 14 -8 H 20" fill="none" stroke="#ac712d" stroke-width="1.9"/>
+    </g>
+    <g id="filter-d">
+      <rect x="-29" y="-25" width="58" height="39" rx="4" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.6"/>
+      <path d="M -29 0 H 29" stroke="#bd547b" stroke-width="2.6"/>
+      <path d="M -20 -8 H -14 C -9 -8 -12 -19 -6 -19 H 7 C 13 -19 9 -8 14 -8 H 20" fill="none" stroke="#ac712d" stroke-width="1.9"/>
+    </g>
+    <g id="bank-A">
+      <rect x="-65" y="-40" width="130" height="55" rx="6" fill="#eaf0f7" stroke="#7992af" stroke-width="1.5"/>
+      <path d="M -64 0 H -44 C -34 0 -35 -9 -27 -9 H 29 C 37 -9 35 0 45 0 H 64" stroke="#427fa7" stroke-width="2.3" class="symline"/>
+      <path d="M -64 6 H -45 C -36 6 -36 1 -30 1 H -26 C -22 1 -24 -4 -21 -4 H -18 V -20 C -18 -29 -10 -33 -3 -33 H 3 C 11 -33 17 -28 17 -21 C 17 -15 12 -12 5 -12 H -1 C -8 -12 -12 -15 -12 -20 C -12 -25 -8 -28 -2 -28 H 3 C 9 -28 12 -25 12 -21 C 12 -18 9 -16 3 -16 H 1 C -3 -16 -5 -18 -5 -20 C -5 -23 -2 -24 1 -24 C 4 -24 6 -23 6 -21 C 6 -20 7 -19 8 -20 M 8 -20 C 8 -22 8 -26 2 -26 H 0 C -5 -26 -9 -24 -9 -20 C -9 -16 -5 -14 1 -14 H 5 C 11 -14 15 -17 15 -21 C 15 -27 11 -30 3 -30 H -2 C -11 -30 -15 -25 -15 -20 C -15 -11 -7 -10 2 -10 H 8 C 19 -10 21 -15 21 -21 V -30 Q 21 -36 27 -36 H 29 Q 34 -36 34 -31 V -7 Q 34 1 40 1 C 45 1 43 6 51 6 H 64" stroke="#697f9c" stroke-width="1.15" class="symline"/>
+      <rect x="-39" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+      <rect x="37" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+    </g>
+    <g id="bank-B">
+      <rect x="-65" y="-40" width="130" height="55" rx="6" fill="#eaf0f7" stroke="#7992af" stroke-width="1.5"/>
+      <path d="M -64 0 H -44 C -34 0 -35 -9 -27 -9 H 29 C 37 -9 35 0 45 0 H 64" stroke="#297f7b" stroke-width="2.3" class="symline"/>
+      <path d="M -64 6 H -45 C -36 6 -36 1 -30 1 H -26 C -22 1 -24 -4 -21 -4 H -18 V -20 C -18 -29 -10 -33 -3 -33 H 3 C 11 -33 17 -28 17 -21 C 17 -15 12 -12 5 -12 H -1 C -8 -12 -12 -15 -12 -20 C -12 -25 -8 -28 -2 -28 H 3 C 9 -28 12 -25 12 -21 C 12 -18 9 -16 3 -16 H 1 C -3 -16 -5 -18 -5 -20 C -5 -23 -2 -24 1 -24 C 4 -24 6 -23 6 -21 C 6 -20 7 -19 8 -20 M 8 -20 C 8 -22 8 -26 2 -26 H 0 C -5 -26 -9 -24 -9 -20 C -9 -16 -5 -14 1 -14 H 5 C 11 -14 15 -17 15 -21 C 15 -27 11 -30 3 -30 H -2 C -11 -30 -15 -25 -15 -20 C -15 -11 -7 -10 2 -10 H 8 C 19 -10 21 -15 21 -21 V -30 Q 21 -36 27 -36 H 29 Q 34 -36 34 -31 V -7 Q 34 1 40 1 C 45 1 43 6 51 6 H 64" stroke="#697f9c" stroke-width="1.15" class="symline"/>
+      <rect x="-39" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+      <rect x="37" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+    </g>
+    <g id="bank-ab">
+      <rect x="-65" y="-40" width="130" height="55" rx="6" fill="#eaf0f7" stroke="#7992af" stroke-width="1.5"/>
+      <path d="M -64 0 H -44 C -34 0 -35 -9 -27 -9 H 29 C 37 -9 35 0 45 0 H 64" stroke="#526e88" stroke-width="2.3" class="symline"/>
+      <path d="M -64 6 H -45 C -36 6 -36 1 -30 1 H -26 C -22 1 -24 -4 -21 -4 H -18 V -20 C -18 -29 -10 -33 -3 -33 H 3 C 11 -33 17 -28 17 -21 C 17 -15 12 -12 5 -12 H -1 C -8 -12 -12 -15 -12 -20 C -12 -25 -8 -28 -2 -28 H 3 C 9 -28 12 -25 12 -21 C 12 -18 9 -16 3 -16 H 1 C -3 -16 -5 -18 -5 -20 C -5 -23 -2 -24 1 -24 C 4 -24 6 -23 6 -21 C 6 -20 7 -19 8 -20 M 8 -20 C 8 -22 8 -26 2 -26 H 0 C -5 -26 -9 -24 -9 -20 C -9 -16 -5 -14 1 -14 H 5 C 11 -14 15 -17 15 -21 C 15 -27 11 -30 3 -30 H -2 C -11 -30 -15 -25 -15 -20 C -15 -11 -7 -10 2 -10 H 8 C 19 -10 21 -15 21 -21 V -30 Q 21 -36 27 -36 H 29 Q 34 -36 34 -31 V -7 Q 34 1 40 1 C 45 1 43 6 51 6 H 64" stroke="#697f9c" stroke-width="1.15" class="symline"/>
+      <rect x="-39" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+      <rect x="37" y="-3" width="6" height="9" rx="1.3" fill="#849bb4"/>
+    </g>
+    <g id="kerr-A-B">
+      <path d="M -67 -5 L -49 -13 H 49 L 67 -5 V 5 L 49 13 H -49 L -67 5 Z" fill="url(#kerr-body)" stroke="#8d789e" stroke-width="1.6"/>
+      <path d="M -67 0 H 0" stroke="#427fa7" stroke-width="2.6"/>
+      <path d="M 0 0 H 67" stroke="#297f7b" stroke-width="2.6"/>
+    </g>
+    <g id="kerr-B-A">
+      <path d="M -67 -5 L -49 -13 H 49 L 67 -5 V 5 L 49 13 H -49 L -67 5 Z" fill="url(#kerr-body)" stroke="#8d789e" stroke-width="1.6"/>
+      <path d="M -67 0 H 0" stroke="#297f7b" stroke-width="2.6"/>
+      <path d="M 0 0 H 67" stroke="#427fa7" stroke-width="2.6"/>
+    </g>
+    <g id="kerr-ab-d">
+      <path d="M -67 -5 L -49 -13 H 49 L 67 -5 V 5 L 49 13 H -49 L -67 5 Z" fill="url(#kerr-body)" stroke="#8d789e" stroke-width="1.6"/>
+      <path d="M -67 0 H 0" stroke="#526e88" stroke-width="2.6"/>
+      <path d="M 0 0 H 67" stroke="#bd547b" stroke-width="2.6"/>
+    </g>
+    <g id="gate-A">
+      <rect x="-18" y="-15" width="36" height="30" rx="3.5" fill="#edf1f6" stroke="#7b8ca1" stroke-width="1.5"/>
+      <path d="M -11 4 H -6 V -6 H 5 V 4 H 11" stroke="#427fa7" stroke-width="1.8" fill="none"/>
+    </g>
+    <g id="amp-A">
+      <path d="M -22 -19 L 24 0 L -22 19 Z" fill="url(#amplifier-body)" stroke="#9b6472" stroke-width="1.7"/>
+    </g>
+    <g id="gate-B">
+      <rect x="-18" y="-15" width="36" height="30" rx="3.5" fill="#edf1f6" stroke="#7b8ca1" stroke-width="1.5"/>
+      <path d="M -11 4 H -6 V -6 H 5 V 4 H 11" stroke="#297f7b" stroke-width="1.8" fill="none"/>
+    </g>
+    <g id="amp-B">
+      <path d="M -22 -19 L 24 0 L -22 19 Z" fill="url(#amplifier-body)" stroke="#9b6472" stroke-width="1.7"/>
+    </g>
+    <g id="two-period-copier">
+      <path d="M -41 0 H -29 C -19 0 -21 -15 -9 -15 H 9 C 21 -15 19 0 29 0 H 41 M -29 0 H 29" class="symline" stroke="#dce6e9" stroke-width="7"/>
+      <path d="M -41 0 H -29 C -19 0 -21 -15 -9 -15 H 9 C 21 -15 19 0 29 0 H 41 M -29 0 H 29" class="symline" stroke="#297f7b" stroke-width="2.3"/>
+    </g>
+  </defs>
+  <g id="layout-guides" inkscape:groupmode="layer" inkscape:label="Layout guides">
+    <rect x="0" y="0" width="1740" height="1060" fill="#ffffff"/>
+    <path d="M 62 112 H 1678" class="rule"/>
+    <path d="M 62 312 H 1678" class="rule"/>
+    <path d="M 62 509 H 1678" class="rule"/>
+    <path d="M 62 773 H 1678" class="rule"/>
+  </g>
+  <g id="optical-cladding" inkscape:groupmode="layer" inkscape:label="Optical cladding">
+    <path d="M 62 225 H 227" id="forward-a-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 357 225 H 693" id="forward-a-2-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 827 225 H 1090" id="forward-b-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1220 225 H 1260" id="forward-b-2-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1342 225 H 1678" id="forward-b-3-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 456 171 H 484 Q 500 171 500 187 V 225" id="forward-weight-from-memory-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 598 171 H 626 Q 642 171 642 187 V 225" id="forward-reference-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 827 423 H 1110" id="adjoint-b-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1240 423 H 1340" id="adjoint-b-2-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1422 423 H 1678" id="adjoint-b-3-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 62 423 H 326" id="adjoint-a-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 456 423 H 693" id="adjoint-a-2-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1084 369 H 1056 Q 1040 369 1040 385 V 423" id="adjoint-weight-from-memory-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 936 369 H 908 Q 892 369 892 385 V 423" id="adjoint-reference-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 62 608 H 347" id="write-held-a-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 62 684 H 171" id="write-error-b-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 253 684 H 275" id="write-error-b-2-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 275 684 H 282 C 315 684 304 608 347 608" id="write-error-merge-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 358 608 H 394" id="write-ab-to-bank-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 524 608 H 693" id="write-ab-to-guide-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 595 554 H 623 Q 639 554 639 570 V 608" id="write-reference-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 827 608 H 1216" id="generated-coefficient-update-1-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 989 552 H 1066 Q 1088 552 1088 574 V 608" id="initial-weight-packets-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1216 608 H 1259 C 1291 608 1290 628 1322 628 H 1391 C 1425 628 1420 604 1450 604 H 1478" id="injection-upper-rail-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1394 640 H 1332 C 1303 640 1290 651 1267 651 H 1203 C 1150 651 1150 721 1203 721 H 1304 M 1416 721 H 1591" id="memory-old-weight-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1394 640 C 1420 640 1436 651 1460 651 H 1591 C 1644 651 1644 721 1591 721" id="memory-updated-weight-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+    <path d="M 1530 651 C 1560 651 1541 569 1580 569 H 1678" id="inactive-weight-read-tap-cladding" stroke="#e3e8ef" stroke-width="10" class="symline"/>
+  </g>
+  <g id="optical-cores" inkscape:groupmode="layer" inkscape:label="Optical cores">
+    <path d="M 62 225 H 227" id="forward-a-1-core" stroke="url(#core-A)" stroke-width="2.9" class="symline"/>
+    <path d="M 357 225 H 693" id="forward-a-2-core" stroke="url(#core-A)" stroke-width="2.9" class="symline"/>
+    <path d="M 827 225 H 1090" id="forward-b-1-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 1220 225 H 1260" id="forward-b-2-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 1342 225 H 1678" id="forward-b-3-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 456 171 H 484 Q 500 171 500 187 V 225" id="forward-weight-from-memory-core" stroke="url(#core-h)" stroke-width="2.9" class="symline"/>
+    <path d="M 598 171 H 626 Q 642 171 642 187 V 225" id="forward-reference-core" stroke="url(#core-R)" stroke-width="2.9" class="symline"/>
+    <path d="M 827 423 H 1110" id="adjoint-b-1-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 1240 423 H 1340" id="adjoint-b-2-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 1422 423 H 1678" id="adjoint-b-3-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 62 423 H 326" id="adjoint-a-1-core" stroke="url(#core-A)" stroke-width="2.9" class="symline"/>
+    <path d="M 456 423 H 693" id="adjoint-a-2-core" stroke="url(#core-A)" stroke-width="2.9" class="symline"/>
+    <path d="M 1084 369 H 1056 Q 1040 369 1040 385 V 423" id="adjoint-weight-from-memory-core" stroke="url(#core-h)" stroke-width="2.9" class="symline"/>
+    <path d="M 936 369 H 908 Q 892 369 892 385 V 423" id="adjoint-reference-core" stroke="url(#core-R)" stroke-width="2.9" class="symline"/>
+    <path d="M 62 608 H 347" id="write-held-a-1-core" stroke="url(#core-A)" stroke-width="2.9" class="symline"/>
+    <path d="M 62 684 H 171" id="write-error-b-1-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 253 684 H 275" id="write-error-b-2-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 275 684 H 282 C 315 684 304 608 347 608" id="write-error-merge-core" stroke="url(#core-B)" stroke-width="2.9" class="symline"/>
+    <path d="M 358 606.3 H 394" id="write-ab-to-bank-A" stroke="#427fa7" stroke-width="1.9"/>
+    <path d="M 358 609.7 H 394" id="write-ab-to-bank-B" stroke="#297f7b" stroke-width="1.9"/>
+    <path d="M 524 606.3 H 693" id="write-ab-to-guide-A" stroke="#427fa7" stroke-width="1.9"/>
+    <path d="M 524 609.7 H 693" id="write-ab-to-guide-B" stroke="#297f7b" stroke-width="1.9"/>
+    <path d="M 595 554 H 623 Q 639 554 639 570 V 608" id="write-reference-core" stroke="url(#core-R)" stroke-width="2.9" class="symline"/>
+    <path d="M 827 608 H 1216" id="generated-coefficient-update-1-core" stroke="url(#core-d)" stroke-width="2.9" class="symline"/>
+    <path d="M 1216 608 H 1259 C 1291 608 1290 628 1322 628 H 1391 C 1425 628 1420 604 1450 604 H 1478" id="injection-upper-rail-core" stroke="url(#core-d)" stroke-width="2.9" class="symline"/>
+    <path d="M 1394 640 H 1332 C 1303 640 1290 651 1267 651 H 1203 C 1150 651 1150 721 1203 721 H 1304 M 1416 721 H 1591" id="memory-old-weight-core" stroke="url(#core-h)" stroke-width="2.9" class="symline"/>
+    <path d="M 1394 640 C 1420 640 1436 651 1460 651 H 1591 C 1644 651 1644 721 1591 721" id="memory-updated-weight-core" stroke="url(#weight-after-injection)" stroke-width="2.9" class="symline"/>
+  </g>
+  <g id="optical-components" inkscape:groupmode="layer" inkscape:label="Optical components">
+    <g id="forward-extension" data-shared-device="interleaver">
+      <use transform="translate(292 225)" xlink:href="#bank-A"/>
+    </g>
+    <g id="forward-pump-mux-500">
+      <use transform="translate(500 225)" xlink:href="#mux-A"/>
+    </g>
+    <g id="forward-pump-mux-642">
+      <use transform="translate(642 225)" xlink:href="#mux-A"/>
+    </g>
+    <g id="forward-converter" data-shared-device="kerr">
+      <use transform="translate(760 225)" xlink:href="#kerr-A-B"/>
+    </g>
+    <g id="forward-band-selection" data-shared-device="family-selector">
+      <use transform="translate(895 225)" xlink:href="#filter-B"/>
+    </g>
+    <g id="forward-raw-idler-gain" data-shared-device="G1">
+      <use transform="translate(1013 225)" xlink:href="#amp-B"/>
+    </g>
+    <g id="forward-collection" data-shared-device="interleaver">
+      <use transform="translate(1155 225) scale(-1 1)" xlink:href="#bank-B"/>
+    </g>
+    <g id="forward-b-copier" data-shared-device="B-copier">
+      <use transform="translate(1301 225)" xlink:href="#two-period-copier"/>
+    </g>
+    <g id="forward-gate" data-shared-device="gate">
+      <use transform="translate(1426 225)" xlink:href="#gate-B"/>
+    </g>
+    <g id="forward-output-gain" data-shared-device="G2">
+      <use transform="translate(1532 225)" xlink:href="#amp-B"/>
+    </g>
+    <g id="adjoint-b-copier" data-shared-device="B-copier">
+      <use transform="translate(1381 423) scale(-1 1)" xlink:href="#two-period-copier"/>
+    </g>
+    <g id="adjoint-extension" data-shared-device="interleaver">
+      <use transform="translate(1175 423) scale(-1 1)" xlink:href="#bank-B"/>
+    </g>
+    <g id="adjoint-pump-mux-1040">
+      <use transform="translate(1040 423)" xlink:href="#mux-B"/>
+    </g>
+    <g id="adjoint-pump-mux-892">
+      <use transform="translate(892 423)" xlink:href="#mux-B"/>
+    </g>
+    <g id="adjoint-converter" data-shared-device="kerr">
+      <use transform="translate(760 423) scale(-1 1)" xlink:href="#kerr-B-A"/>
+    </g>
+    <g id="adjoint-band-selection" data-shared-device="family-selector">
+      <use transform="translate(638 423) scale(-1 1)" xlink:href="#filter-A"/>
+    </g>
+    <g id="adjoint-raw-idler-gain" data-shared-device="G1">
+      <use transform="translate(515 423) scale(-1 1)" xlink:href="#amp-A"/>
+    </g>
+    <g id="adjoint-collection" data-shared-device="interleaver">
+      <use transform="translate(391 423)" xlink:href="#bank-A"/>
+    </g>
+    <g id="adjoint-gate" data-shared-device="gate">
+      <use transform="translate(247 423) scale(-1 1)" xlink:href="#gate-A"/>
+    </g>
+    <g id="adjoint-output-gain" data-shared-device="G2">
+      <use transform="translate(149 423) scale(-1 1)" xlink:href="#amp-A"/>
+    </g>
+    <g id="write-b-copier" data-shared-device="B-copier">
+      <use transform="translate(212 684)" xlink:href="#two-period-copier"/>
+    </g>
+    <g id="write-ab-mux">
+      <use transform="translate(347 608)" xlink:href="#mux-ab"/>
+    </g>
+    <g id="write-extension" data-shared-device="interleaver">
+      <use transform="translate(459 608)" xlink:href="#bank-ab"/>
+    </g>
+    <g id="write-reference-mux">
+      <use transform="translate(639 608)" xlink:href="#mux-ab"/>
+    </g>
+    <g id="write-converter" data-shared-device="kerr">
+      <use transform="translate(760 608)" xlink:href="#kerr-ab-d"/>
+    </g>
+    <g id="write-band-selection" data-shared-device="family-selector">
+      <use transform="translate(901 608)" xlink:href="#filter-d"/>
+    </g>
+    <g id="write-load-selector" data-shared-device="load-or-write">
+      <use transform="translate(1088 608)" xlink:href="#mux-d"/>
+    </g>
+    <g id="memory-dispersion-compensating-fiber" inkscape:label="Dispersion-compensating fiber (TTT loop)" transform="translate(1360 721)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <title>Dispersion-compensating fiber for the long TTT weight loop</title>
+      <use xlink:href="#weight-dcf-winding" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt"/>
+      <use xlink:href="#weight-dcf-winding" stroke="#8f71a4" stroke-width="2.9"/>
+    </g>
+    <g id="weight-read-tap">
+      <path d="M 1520 651 l10 -8 10 8 -10 8 Z" fill="#e5eaf1" stroke="#8292a3" stroke-width="1.2"/>
+      <path d="M 1520 651 H 1540" stroke="#8563a2" stroke-width="2.7"/>
+    </g>
+    <rect x="1593" y="556" width="31" height="26" rx="3" fill="#f1f3f7" stroke="#99a5b2" stroke-width="1.3"/>
+    <path d="M 1598 571 h20" stroke="#93a0af" stroke-width="1.6"/>
+    <rect x="1333" y="620" width="59" height="28" rx="5" fill="#dde8f2" fill-opacity="0.33" stroke="#8197b0" stroke-width="1.5" id="coherent-injection-coupler"/>
+    <path d="M 1478 597 v 14" stroke="#9caaba" stroke-width="2" id="injection-unused-port"/>
+  </g>
+  <g id="optical-arrows" inkscape:groupmode="layer" inkscape:label="Propagation arrows">
+    <g id="forward-weight-from-memory-direction" transform="translate(500 207) rotate(90)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#8563a2"/>
+    </g>
+    <g id="forward-reference-direction" transform="translate(642 207) rotate(90)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#a26930"/>
+    </g>
+    <g id="forward-arrow-173" transform="translate(173 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="forward-arrow-463" transform="translate(463 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="forward-arrow-673" transform="translate(673 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="forward-arrow-847" transform="translate(847 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-963" transform="translate(963 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-1062" transform="translate(1062 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-1243" transform="translate(1243 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-1380" transform="translate(1380 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-1481" transform="translate(1481 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="forward-arrow-1610" transform="translate(1610 225) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-weight-from-memory-direction" transform="translate(1040 405) rotate(90)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#8563a2"/>
+    </g>
+    <g id="adjoint-reference-direction" transform="translate(892 405) rotate(90)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#a26930"/>
+    </g>
+    <g id="adjoint-arrow-1600" transform="translate(1600 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-arrow-1462" transform="translate(1462 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-arrow-1294" transform="translate(1294 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-arrow-1082" transform="translate(1082 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-arrow-850" transform="translate(850 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="adjoint-arrow-680" transform="translate(680 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="adjoint-arrow-575" transform="translate(575 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="adjoint-arrow-475" transform="translate(475 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="adjoint-arrow-289" transform="translate(289 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="adjoint-arrow-204" transform="translate(204 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="adjoint-arrow-88" transform="translate(88 423) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="write-reference-direction" transform="translate(639 590) rotate(90)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#a26930"/>
+    </g>
+    <g id="write-arrow-152" transform="translate(152 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#427fa7"/>
+    </g>
+    <g id="write-arrow-129" transform="translate(129 684) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#297f7b"/>
+    </g>
+    <g id="write-arrow-375" transform="translate(375 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#526e88"/>
+    </g>
+    <g id="write-arrow-559" transform="translate(559 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#526e88"/>
+    </g>
+    <g id="write-arrow-672" transform="translate(672 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#526e88"/>
+    </g>
+    <g id="write-arrow-850" transform="translate(850 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#bd547b"/>
+    </g>
+    <g id="write-arrow-1000" transform="translate(1000 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#bd547b"/>
+    </g>
+    <g id="write-arrow-1161" transform="translate(1161 608) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#bd547b"/>
+    </g>
+    <g id="write-arrow-1316" transform="translate(1316 628) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#bd547b"/>
+    </g>
+    <g id="write-arrow-1510" transform="translate(1510 651) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#8563a2"/>
+    </g>
+    <g id="write-arrow-1462" transform="translate(1462 721) rotate(180)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#8563a2"/>
+    </g>
+    <g id="write-arrow-1217" transform="translate(1217 651) rotate(0)">
+      <path d="M -5.5 -4.2 L 6.5 0 L -5.5 4.2 Z" fill="#8563a2"/>
+    </g>
+  </g>
+  <g id="pass-labels" inkscape:groupmode="layer" inkscape:label="Ports and component labels">
+    <text x="62" y="53" class="title" text-anchor="start">Shared-interleaver Hankel cell</text>
+    <text x="63" y="84" class="subtitle" text-anchor="start">Each read crosses the same interleaver twice and the Kerr guide once</text>
+    <path d="M 1030 42 h 18" stroke="#427fa7" stroke-width="3.3" stroke-linecap="round"/>
+    <text x="1055" y="47" class="legend" text-anchor="start">A · data band</text>
+    <path d="M 1200 42 h 18" stroke="#297f7b" stroke-width="3.3" stroke-linecap="round"/>
+    <text x="1225" y="47" class="legend" text-anchor="start">B · data band</text>
+    <path d="M 1395 42 h 18" stroke="#8563a2" stroke-width="3.3" stroke-linecap="round"/>
+    <text x="1420" y="47" class="legend" text-anchor="start">h · weights</text>
+    <path d="M 1549 42 h 18" stroke="#a26930" stroke-width="3.3" stroke-linecap="round"/>
+    <text x="1574" y="47" class="legend" text-anchor="start">R · reference</text>
+    <text x="1678" y="82" class="small" text-anchor="end">64 data teeth   ·   50 GHz spacing   ·   20 ps packet</text>
+    <text x="62" y="146" class="head" text-anchor="start">FORWARD  →</text>
+    <text x="498" y="162" class="source" text-anchor="end" fill="#8563a2" style="fill:#8563a2">Read tap hₘ</text>
+    <text x="640" y="162" class="source" text-anchor="end" fill="#a26930" style="fill:#a26930">Reference R</text>
+    <text x="62" y="207" class="port" text-anchor="start" fill="#427fa7" style="fill:#427fa7">Input x · A</text>
+    <text x="1678" y="207" class="port" text-anchor="end" fill="#297f7b" style="fill:#297f7b">Wx · B</text>
+    <text x="292" y="272" class="label" text-anchor="middle">Shared bank</text>
+    <text x="292" y="294" class="small" text-anchor="middle">64 copies</text>
+    <text x="760" y="272" class="label" text-anchor="middle">Kerr FWM</text>
+    <text x="895" y="272" class="label" text-anchor="middle">Select B</text>
+    <text x="895" y="294" class="small" text-anchor="middle">reject pumps</text>
+    <text x="1013" y="272" class="label" text-anchor="middle">G₁</text>
+    <text x="1013" y="294" class="small" text-anchor="middle">+10 dB</text>
+    <text x="1155" y="272" class="label" text-anchor="middle">Same bank</text>
+    <text x="1155" y="294" class="small" text-anchor="middle">coherent sum</text>
+    <text x="1301" y="272" class="label" text-anchor="middle">Two copies</text>
+    <text x="1301" y="294" class="small" text-anchor="middle">B · 20 ps</text>
+    <text x="1426" y="272" class="label" text-anchor="middle">Gate</text>
+    <text x="1426" y="294" class="small" text-anchor="middle">20 ps</text>
+    <text x="1532" y="272" class="label" text-anchor="middle">G₂</text>
+    <text x="1532" y="294" class="small" text-anchor="middle">≈30–31 dB</text>
+    <text x="62" y="345" class="head" text-anchor="start">ADJOINT  ←</text>
+    <text x="1042" y="360" class="source" text-anchor="start" fill="#8563a2" style="fill:#8563a2">Read tap hₘ</text>
+    <text x="894" y="360" class="source" text-anchor="start" fill="#a26930" style="fill:#a26930">Reference R</text>
+    <text x="1678" y="401" class="port" text-anchor="end" fill="#297f7b" style="fill:#297f7b">Residual e · B</text>
+    <text x="62" y="401" class="port" text-anchor="start" fill="#427fa7" style="fill:#427fa7">W<tspan dy="-6" font-size="14">†</tspan><tspan dy="6">e · A</tspan></text>
+    <text x="1381" y="470" class="label" text-anchor="middle">Two copies</text>
+    <text x="1381" y="492" class="small" text-anchor="middle">B · 20 ps</text>
+    <text x="1175" y="470" class="label" text-anchor="middle">Shared bank</text>
+    <text x="1175" y="492" class="small" text-anchor="middle">64 coded copies</text>
+    <text x="760" y="470" class="label" text-anchor="middle">Kerr FWM</text>
+    <text x="638" y="470" class="label" text-anchor="middle">Select A</text>
+    <text x="638" y="492" class="small" text-anchor="middle">reject pumps</text>
+    <text x="515" y="470" class="label" text-anchor="middle">G₁</text>
+    <text x="515" y="492" class="small" text-anchor="middle">+10 dB</text>
+    <text x="391" y="470" class="label" text-anchor="middle">Same bank</text>
+    <text x="391" y="492" class="small" text-anchor="middle">coherent sum</text>
+    <text x="247" y="470" class="label" text-anchor="middle">Gate</text>
+    <text x="247" y="492" class="small" text-anchor="middle">20 ps</text>
+    <text x="149" y="470" class="label" text-anchor="middle">G₂</text>
+    <text x="149" y="492" class="small" text-anchor="middle">≈30–31 dB</text>
+    <text x="62" y="544" class="head" text-anchor="start">WEIGHT UPDATE  →</text>
+    <text x="637" y="545" class="source" text-anchor="end" fill="#a26930" style="fill:#a26930">Reference R</text>
+    <text x="989" y="540" class="small" text-anchor="start">Initialize h</text>
+    <text x="1678" y="546" class="small" text-anchor="end">Read tap hₘ · closed</text>
+    <text x="62" y="592" class="port" text-anchor="start" fill="#427fa7" style="fill:#427fa7">Saved x · A</text>
+    <text x="62" y="657" class="port" text-anchor="start" fill="#297f7b" style="fill:#297f7b">Residual e · B</text>
+    <text x="212" y="727" class="label" text-anchor="middle">Two copies</text>
+    <text x="212" y="749" class="small" text-anchor="middle">B · 20 ps</text>
+    <text x="459" y="658" class="label" text-anchor="middle">Shared bank</text>
+    <text x="459" y="680" class="small" text-anchor="middle">64 aligned A/B pairs</text>
+    <text x="760" y="658" class="label" text-anchor="middle">Kerr FWM</text>
+    <text x="901" y="658" class="label" text-anchor="middle">Select Δhₘ</text>
+    <text x="901" y="680" class="small" text-anchor="middle">127 teeth</text>
+    <text x="1088" y="658" class="label" text-anchor="middle">Load / write</text>
+    <text x="1187" y="590" class="source" text-anchor="middle" fill="#bd547b" style="fill:#bd547b">Δhₘ</text>
+    <text x="1360" y="580" class="label" text-anchor="middle">Coherent injection</text>
+    <text x="1488" y="610" class="small" text-anchor="start">dump</text>
+    <text x="1393" y="680" class="label" text-anchor="middle">Fiber weight memory</text>
+    <text x="1393" y="699" class="small" text-anchor="middle">64 slots per frame · 127 teeth per slot</text>
+    <text id="memory-dcf-label" x="1360" y="758" class="small" text-anchor="middle">Dispersion-compensating fiber (TTT loop)</text>
+    <text x="450" y="751" class="small" text-anchor="start">Adjoint and write launch e 19.6875 ps before the weight frame</text>
+  </g>
+  <g id="shared-hardware-detail" inkscape:groupmode="layer" inkscape:label="Shared physical hardware">
+    <g id="detail-insets" font-family="DejaVu Sans, Arial, sans-serif" fill="#253246">
+  <title>Folded optical path and one stage of the shared interleaver</title>
+  <desc>Forward read: band A travels outward through the shared interleaver and the co-propagating Kerr guide. The selected B idler is amplified and routed back through the same interleaver. In stage b both bands share the long delay, and the entire B band takes an additional delay before rejoining A.</desc>
+  <defs>
+    <style>
+      .detail-clad,.detail-core,.detail-glyph{fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .detail-clad{stroke:#e3e8ef;stroke-width:8}
+      .detail-core{stroke:#69869b;stroke-width:2.2}
+      .detail-glyph{stroke:#6f8fae;stroke-width:1.7}
+      .detail-label{font-size:16px;fill:#253246;font-weight:600}
+      .detail-minor{font-size:15px;fill:#647087}
+      .detail-head{font-size:16px;fill:#536780;font-weight:700;letter-spacing:1.4px}
+    </style>
+  </defs>
+  <g id="detail-folded-path">
+    <text class="detail-head" x="60" y="808">SHARED OPTICAL PATH  ·  FORWARD READ</text>
+    <path class="detail-clad" d="M62 906 H417"/>
+    <path class="detail-core" d="M62 906 H417"/>
+    <!-- The two direction indicators straddle a single waveguide. -->
+    <g fill="#427fa7">
+      <path d="M76 897 h16 v-3 l9 4 -9 4 v-3 H76z"/>
+      <path d="M357 897 h16 v-3 l9 4 -9 4 v-3 h-16z"/>
+    </g>
+    <g fill="#297f7b">
+      <path d="M101 916 H85 v-3 l-9 4 9 4 v-3 h16z"/>
+      <path d="M382 916 h-16 v-3 l-9 4 9 4 v-3 h16z"/>
+    </g>
+    <g id="detail-reciprocal-bank">
+      <rect x="121" y="866" width="210" height="82" rx="7" fill="#eef2f7" stroke="#839bb3" stroke-width="1.4"/>
+      <path class="detail-glyph" d="M121 906 H145 C155 906 157 890 170 890 H184 C194 890 198 898 206 898 h14 C227 898 232 890 240 890 h30 C281 890 284 906 298 906 H331"/>
+      <path class="detail-glyph" d="M135 920 H146 C157 920 159 925 170 925 h14 C195 925 196 911 207 911 h13 C230 911 231 925 241 925 h29 C281 925 282 920 298 920 h16"/>
+      <circle cx="251" cy="908" r="1.6" fill="#839bb3"/><circle cx="259" cy="908" r="1.6" fill="#839bb3"/><circle cx="267" cy="908" r="1.6" fill="#839bb3"/>
+      <text class="detail-label" x="226" y="851" text-anchor="middle">Shared interleaver</text>
+    <rect x="303" y="900" width="14" height="15" rx="2" fill="#d9e4ef" stroke="#7c92ad" stroke-width="1.2" id="detail-guide-end-coupler"/><path d="M 303 906 H 317 M 303 910 H 317" fill="none" stroke="#7089a5" stroke-width="1.3"/></g>
+    <g id="detail-band-router">
+      <rect x="417" y="869" width="66" height="85" rx="6" fill="#edf2f7" stroke="#839bb3" stroke-width="1.4"/>
+      <path class="detail-glyph" d="M417 906 h12 c15 0 16 -20 33 -20 h21 M429 906 c15 0 16 31 33 31 h21"/>
+      <text class="detail-label" x="450" y="850" text-anchor="middle">Band router</text>
+    </g>
+    <path class="detail-clad" d="M483 886 H758 Q785 886 785 913 V914 Q785 937 760 937 H483"/>
+    <path fill="none" stroke="#427fa7" stroke-width="2.2" d="M483 886 H649"/>
+    <path fill="none" stroke="#297f7b" stroke-width="2.2" d="M649 886 H758 Q785 886 785 913 V914 Q785 937 760 937 H483"/>
+    <path d="M519 882 l9 4 -9 4z" fill="#427fa7"/><path d="M749 882 l9 4 -9 4z" fill="#297f7b"/>
+    <path d="M547 933 l-9 4 9 4z" fill="#297f7b"/>
+    <rect x="581" y="875" width="121" height="22" rx="5" fill="#e9e2f0" stroke="#907da7" stroke-width="1.5"/>
+    <path d="M582 886 H701" stroke="#937ca3" stroke-width="2.2"/>
+    <text class="detail-label" x="643" y="856" text-anchor="middle">Kerr FWM guide</text>
+    <g id="detail-idler-selector">
+      <rect x="697" y="924" width="46" height="26" rx="4" fill="#f4e7d0" stroke="#9b773e" stroke-width="1.3"/>
+      <path fill="none" stroke="#a57936" stroke-width="1.6" stroke-linecap="round" d="M704 940 h6 c3 0 2 -9 5 -9 h10 c3 0 2 9 5 9 h6"/>
+      <text class="detail-minor" x="717" y="976" text-anchor="middle">Select idler</text>
+    </g>
+    <path d="M635 924 L604 937 L635 950 Z" fill="#f3dfe3" stroke="#9b6472" stroke-width="1.4" stroke-linejoin="round"/>
+    <text class="detail-minor" x="620" y="976" text-anchor="middle">G₁</text>
+    <text class="detail-minor" x="226" y="976" text-anchor="middle">6 stages · 50:50 guide-end coupler</text>
+  </g>
+  <path d="M852 795 V1023" fill="none" stroke="#e0e5eb" stroke-width="1"/>
+  <g id="detail-interleaver-stage">
+    <text class="detail-head" x="890" y="808">ONE INTERLEAVER STAGE</text>
+    <text class="detail-minor" x="1176" y="808">b = 0…5</text>
+    <text class="detail-minor" x="1676" y="808" text-anchor="end">P = 45 ps  ·  δ = 0.3125 ps</text>
+    <text class="detail-minor" x="1300" y="866" text-anchor="middle">Short arm · A and B together</text>
+    <path class="detail-clad" d="M893 884 H934 C955 884 955 905 975 905 H995 C1015 905 1016 884 1036 884 H1674"/>
+    <path class="detail-core" d="M893 884 H934 C955 884 955 905 975 905 H995 C1015 905 1016 884 1036 884 H1674"/>
+    <path class="detail-clad" d="M893 948 H934 C954 948 955 916 975 916 H995 C1015 916 1016 948 1036 948 H1090 Q1100 948 1100 938 V926 Q1100 917 1110 917 H1155 Q1165 917 1165 927 V938 Q1165 948 1175 948 H1273 M1510 948 H1674"/>
+    <path class="detail-core" d="M893 948 H934 C954 948 955 916 975 916 H995 C1015 916 1016 948 1036 948 H1090 Q1100 948 1100 938 V926 Q1100 917 1110 917 H1155 Q1165 917 1165 927 V938 Q1165 948 1175 948 H1273 M1510 948 H1674"/>
+    <path class="detail-clad" d="M1273 948 H1510 M1273 948 C1307 948 1300 984 1336 984 H1447 C1483 984 1476 948 1510 948"/>
+    <path d="M1273 948 H1510" fill="none" stroke="#427fa7" stroke-width="2.2"/>
+    <path d="M1273 948 C1307 948 1300 984 1336 984 H1447 C1483 984 1476 948 1510 948" fill="none" stroke="#297f7b" stroke-width="2.2"/>
+    <g fill="#dceaf7" stroke="#7089a5" stroke-width="1.3">
+      <path d="M1265 948 l8 -8 8 8 -8 8z"/><path d="M1502 948 l8 -8 8 8 -8 8z"/>
+    </g>
+    <text class="detail-minor" x="976" y="976" text-anchor="middle">50:50 coupler</text>
+    <text class="detail-minor" x="1140" y="976" text-anchor="middle">Common delay 2ᵇP</text>
+    <text class="detail-minor" x="1273" y="921" text-anchor="middle">Band splitter</text>
+    <text class="detail-minor" x="1510" y="921" text-anchor="middle">Band combiner</text>
+    <text x="1392" y="939" text-anchor="middle" style="fill:#427fa7" font-size="15">All of A · direct</text>
+    <text x="1392" y="1012" text-anchor="middle" style="fill:#297f7b" font-size="15">All of B · extra delay 2ᵇδ</text>
+  </g>
+</g>
+  </g>
+</svg>

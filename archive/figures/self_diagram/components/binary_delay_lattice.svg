@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="296" height="160" viewBox="0 0 296 160"
+     version="1.1" role="img" aria-labelledby="bdl-title bdl-description">
+  <title id="bdl-title">Binary delay lattice — compact optical symbol</title>
+  <desc id="bdl-description">Editable, annotation-free functional symbol for
+    the passive binary delay lattice. Three representative split-delay-recombine
+    stages use interleaved spiral waveguides with central S bends. Each delay
+    is one continuous path with two external ends; the access bends run outside
+    its windings. Increasing spiral radii and winding counts suggest increasing
+    delays, without specifying physical delay ratios. The current seven-stage
+    design is specified in cell_pathways.md: differential delays tau, 2 tau,
+    4 tau, 8 tau, 16 tau, 32 tau and 64 tau, with fourteen couplers. This
+    three-stage motif abbreviates that network; it is not its complete physical
+    layout. At each depicted stage, two small coupler bars connect a direct arm
+    and a delayed arm. The splitter's upper input and the recombiner's upper
+    output have short terminated stubs. The lower selected output feeds the
+    next stage. Coupler phases are assumed calibrated for addition. The ideal
+    selected transfer of the full lattice is the product of (1 + D^(2^j))/2
+    for j from 0 to 6, where D is a one-slot delay. Delays and bends are
+    schematic, not to scale. No gain, fast switching or physical phase trim
+    implementation is depicted. Short external fiber stubs have pale gray
+    cladding and blue cores with no outer outlines. All artwork is native
+    editable SVG on a transparent background. Fiber connections, body and
+    lattice motif are separate Inkscape layers.</desc>
+
+  <g id="bdl-fibers" inkscape:groupmode="layer" inkscape:label="Fiber connections">
+    <g id="bdl-access-fibers" fill="#e3e8ef" stroke="none">
+      <rect id="bdl-input-guide" x="10" y="110" width="18" height="16"/>
+      <rect id="bdl-output-guide" x="268" y="110" width="18" height="16"/>
+    </g>
+    <g id="bdl-access-cores" fill="none" stroke="#5d8db4" stroke-width="3.5">
+      <path id="bdl-input-core" d="M 10,118 H 28"/>
+      <path id="bdl-output-core" d="M 268,118 H 286"/>
+    </g>
+  </g>
+
+  <g id="bdl-body" inkscape:groupmode="layer" inkscape:label="Lattice body">
+    <rect id="bdl-enclosure" x="28" y="14" width="240" height="132" rx="8"
+          fill="#e6edf6" stroke="#7089a5" stroke-width="1.75"/>
+  </g>
+
+  <g id="bdl-motif" inkscape:groupmode="layer" inkscape:label="Lattice motif">
+    <g id="bdl-selected-path" fill="none" stroke="#52749c" stroke-width="2.5">
+      <path id="bdl-stage-input-1" d="M 28,118 H 36"/>
+      <path id="bdl-reference-1" d="M 42,118 H 98"/>
+      <path id="bdl-stage-input-2" d="M 104,118 H 114"/>
+      <path id="bdl-reference-2" d="M 120,118 H 176"/>
+      <path id="bdl-stage-input-3" d="M 182,118 H 192"/>
+      <path id="bdl-reference-3" d="M 198,118 H 254"/>
+      <path id="bdl-output-connection" d="M 260,118 H 268"/>
+    </g>
+
+    <!-- Through-connected spiral pairs with smooth central S bends. -->
+    <g id="bdl-delay-paths" fill="none" stroke="#52749c" stroke-width="1.75"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path id="bdl-delay-1"
+            d="M 42,108 C 45,108 45,106 45,103
+               V 87 C 45,82 48,82 52,82
+               C 58,82 64,80.682 70,80
+               C 72.443,79.722 74.732,78.792 76.583,77.403
+               C 78.435,76.013 79.845,74.17 80.681,72.167
+               C 81.517,70.164 81.778,68.007 81.5,66
+               C 81.222,63.993 80.409,62.14 79.238,60.667
+               C 78.066,59.193 76.542,58.102 74.917,57.484
+               C 73.291,56.867 71.571,56.722 70,57
+               C 68.429,57.278 67.012,57.974 65.917,58.927
+               C 64.821,59.881 64.049,61.086 63.649,62.333
+               C 63.25,63.581 63.222,64.866 63.5,66
+               C 63.778,67.134 64.357,68.116 65.093,68.833
+               C 65.828,69.551 66.714,70.005 67.583,70.186
+               C 68.453,70.367 69.302,70.278 70,70
+               C 74.46,68.225 65.54,63.775 70,62
+               C 70.698,61.722 71.547,61.633 72.417,61.814
+               C 73.286,61.995 74.172,62.449 74.907,63.167
+               C 75.643,63.884 76.222,64.866 76.5,66
+               C 76.778,67.134 76.75,68.419 76.351,69.667
+               C 75.951,70.914 75.179,72.119 74.083,73.073
+               C 72.988,74.026 71.571,74.722 70,75
+               C 68.429,75.278 66.709,75.133 65.083,74.516
+               C 63.458,73.898 61.934,72.807 60.762,71.333
+               C 59.591,69.86 58.778,68.007 58.5,66
+               C 58.222,63.993 58.483,61.836 59.319,59.833
+               C 60.155,57.83 61.565,55.987 63.417,54.597
+               C 65.268,53.208 67.557,52.278 70,52
+               C 76,51.318 95,47 95,56
+               V 103 C 95,106 95,108 98,108"/>
+      <path id="bdl-delay-2"
+            d="M 120,108 C 123,108 123,106 123,103
+               V 91 C 123,86 126,86 130,86
+               C 136,86 142,84.495 148,84
+               C 151.142,83.741 154.138,82.642 156.611,80.915
+               C 159.085,79.187 161.031,76.837 162.241,74.222
+               C 163.452,71.607 163.926,68.734 163.667,66
+               C 163.407,63.266 162.418,60.676 160.894,58.556
+               C 159.37,56.435 157.318,54.786 155.056,53.779
+               C 152.793,52.773 150.327,52.407 148,52.667
+               C 145.673,52.926 143.49,53.806 141.722,55.127
+               C 139.954,56.447 138.603,58.201 137.8,60.111
+               C 136.997,62.021 136.741,64.08 137,66
+               C 137.259,67.92 138.031,69.696 139.147,71.111
+               C 140.264,72.527 141.721,73.579 143.278,74.179
+               C 144.835,74.779 146.487,74.926 148,74.667
+               C 149.513,74.407 150.882,73.745 151.944,72.832
+               C 153.007,71.919 153.762,70.76 154.158,69.556
+               C 154.554,68.351 154.593,67.105 154.333,66
+               C 154.074,64.895 153.521,63.932 152.811,63.222
+               C 152.102,62.512 151.241,62.055 150.389,61.862
+               C 149.537,61.67 148.698,61.741 148,62
+               C 143.5,63.671 152.5,68.329 148,70
+               C 147.302,70.259 146.463,70.33 145.611,70.138
+               C 144.759,69.945 143.898,69.488 143.189,68.778
+               C 142.479,68.068 141.926,67.105 141.667,66
+               C 141.407,64.895 141.446,63.649 141.842,62.444
+               C 142.238,61.24 142.993,60.081 144.056,59.168
+               C 145.118,58.255 146.487,57.593 148,57.333
+               C 149.513,57.074 151.165,57.221 152.722,57.821
+               C 154.279,58.421 155.736,59.473 156.853,60.889
+               C 157.969,62.304 158.741,64.08 159,66
+               C 159.259,67.92 159.003,69.979 158.2,71.889
+               C 157.397,73.799 156.046,75.553 154.278,76.873
+               C 152.51,78.194 150.327,79.074 148,79.333
+               C 145.673,79.593 143.207,79.227 140.944,78.221
+               C 138.682,77.214 136.63,75.565 135.106,73.444
+               C 133.582,71.324 132.593,68.734 132.333,66
+               C 132.074,63.266 132.548,60.393 133.759,57.778
+               C 134.969,55.163 136.915,52.813 139.389,51.085
+               C 141.862,49.358 144.858,48.259 148,48
+               C 154,47.505 173,43 173,52
+               V 103 C 173,106 173,108 176,108"/>
+      <path id="bdl-delay-3"
+            d="M 198,108 C 201,108 201,106 201,103
+               V 95 C 201,90 204,90 208,90
+               C 214,90 220,88.391 226,88
+               C 229.84,87.75 233.538,86.474 236.625,84.403
+               C 239.712,82.332 242.181,79.474 243.754,76.25
+               C 245.326,73.026 246,69.447 245.75,66
+               C 245.5,62.553 244.329,59.247 242.454,56.5
+               C 240.58,53.753 238.008,51.571 235.125,50.195
+               C 232.242,48.819 229.054,48.25 226,48.5
+               C 222.946,48.75 220.032,49.816 217.625,51.494
+               C 215.218,53.172 213.323,55.457 212.144,58
+               C 210.964,60.543 210.5,63.338 210.75,66
+               C 211,68.662 211.961,71.183 213.443,73.25
+               C 214.925,75.317 216.922,76.924 219.125,77.908
+               C 221.328,78.891 223.731,79.25 226,79
+               C 228.269,78.75 230.398,77.894 232.125,76.609
+               C 233.852,75.323 235.172,73.613 235.959,71.75
+               C 236.746,69.887 237,67.876 236.75,66
+               C 236.5,64.124 235.749,62.386 234.66,61
+               C 233.571,59.614 232.148,58.58 230.625,57.989
+               C 229.102,57.399 227.484,57.25 226,57.5
+               C 224.516,57.75 223.171,58.395 222.125,59.288
+               C 221.079,60.181 220.332,61.317 219.938,62.5
+               C 219.543,63.683 219.5,64.909 219.75,66
+               C 220,67.091 220.54,68.044 221.237,68.75
+               C 221.933,69.456 222.782,69.916 223.625,70.114
+               C 224.468,70.312 225.302,70.25 226,70
+               C 230.519,68.382 221.481,63.618 226,62
+               C 226.698,61.75 227.532,61.688 228.375,61.886
+               C 229.218,62.084 230.067,62.544 230.763,63.25
+               C 231.46,63.956 232,64.909 232.25,66
+               C 232.5,67.091 232.457,68.317 232.062,69.5
+               C 231.668,70.683 230.921,71.819 229.875,72.712
+               C 228.829,73.605 227.484,74.25 226,74.5
+               C 224.516,74.75 222.898,74.601 221.375,74.011
+               C 219.852,73.42 218.429,72.386 217.34,71
+               C 216.251,69.614 215.5,67.876 215.25,66
+               C 215,64.124 215.254,62.113 216.041,60.25
+               C 216.828,58.387 218.148,56.677 219.875,55.391
+               C 221.602,54.106 223.731,53.25 226,53
+               C 228.269,52.75 230.672,53.109 232.875,54.092
+               C 235.078,55.076 237.075,56.683 238.557,58.75
+               C 240.039,60.817 241,63.338 241.25,66
+               C 241.5,68.662 241.036,71.457 239.856,74
+               C 238.677,76.543 236.782,78.828 234.375,80.506
+               C 231.968,82.184 229.054,83.25 226,83.5
+               C 222.946,83.75 219.758,83.181 216.875,81.805
+               C 213.992,80.429 211.42,78.247 209.546,75.5
+               C 207.671,72.753 206.5,69.447 206.25,66
+               C 206,62.553 206.674,58.974 208.246,55.75
+               C 209.819,52.526 212.288,49.668 215.375,47.597
+               C 218.462,45.526 222.16,44.25 226,44
+               C 232,43.609 251,39 251,48
+               V 103 C 251,106 251,108 254,108"/>
+    </g>
+
+    <!-- Terminated upper ports make each coupler explicitly four-port. -->
+    <g id="bdl-unused-ports" fill="none" stroke="#8d9bad" stroke-width="1.5">
+      <path id="bdl-unused-input-1" d="M 33,108 H 36 M 33,105.5 V 110.5"/>
+      <path id="bdl-unused-output-1" d="M 104,108 H 107 M 107,105.5 V 110.5"/>
+      <path id="bdl-unused-input-2" d="M 111,108 H 114 M 111,105.5 V 110.5"/>
+      <path id="bdl-unused-output-2" d="M 182,108 H 185 M 185,105.5 V 110.5"/>
+      <path id="bdl-unused-input-3" d="M 189,108 H 192 M 189,105.5 V 110.5"/>
+      <path id="bdl-unused-output-3" d="M 260,108 H 263 M 263,105.5 V 110.5"/>
+    </g>
+    <g id="bdl-couplers" fill="#6b89ab" stroke="none">
+      <rect id="bdl-splitter-1" x="36" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="bdl-recombiner-1" x="98" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="bdl-splitter-2" x="114" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="bdl-recombiner-2" x="176" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="bdl-splitter-3" x="192" y="103" width="6" height="20" rx="1.5"/>
+      <rect id="bdl-recombiner-3" x="254" y="103" width="6" height="20" rx="1.5"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="188" height="160" viewBox="0 0 188 160"
+     version="1.1" role="img" aria-labelledby="ut-title ut-description">
+  <title id="ut-title">Fiber U-turn loop — right-hand bend</title>
+  <desc id="ut-description">Editable, annotation-free fiber routing symbol.
+    Two parallel horizontal arms end on the left and connect through a smooth
+    semicircular U-turn on the right. The fiber is one continuous open path,
+    with pale gray cladding and a blue core throughout. There is no enclosing
+    box, outer outline or direction arrow. The geometry is schematic and does
+    not specify a physical bend radius or delay. All artwork is native SVG on
+    a transparent background. Cladding and core are separate Inkscape layers.</desc>
+
+  <g id="ut-cladding" inkscape:groupmode="layer" inkscape:label="Fiber cladding"
+     fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt">
+    <path id="ut-cladding-path" d="M 16,40 H 124 A 40,40 0 0 1 124,120 H 16"/>
+  </g>
+
+  <g id="ut-core" inkscape:groupmode="layer" inkscape:label="Fiber core"
+     fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt">
+    <path id="ut-core-path" d="M 16,40 H 124 A 40,40 0 0 1 124,120 H 16"/>
+  </g>
+</svg>

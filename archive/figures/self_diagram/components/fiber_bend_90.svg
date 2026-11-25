@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="104" height="104" viewBox="0 0 104 104"
+     version="1.1" role="img" aria-labelledby="b90-title b90-description">
+  <title id="b90-title">Fiber 90-degree bend — left to downward</title>
+  <desc id="b90-description">Editable quarter-circle fiber segment with a
+    horizontal tangent at the left end and a downward vertical tangent at
+    the lower end. Continuous pale gray cladding surrounds a blue core,
+    matching the component library. There are no labels, direction arrows,
+    outer outlines or enclosing box. Geometry is schematic and does not
+    specify a physical bend radius. All artwork is native SVG on a transparent
+    background. Cladding and core are separate Inkscape layers.</desc>
+
+  <g id="b90-cladding" inkscape:groupmode="layer" inkscape:label="Fiber cladding"
+     fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt">
+    <path id="b90-cladding-path" d="M 16,24 A 64,64 0 0 1 80,88"/>
+  </g>
+
+  <g id="b90-core" inkscape:groupmode="layer" inkscape:label="Fiber core"
+     fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt">
+    <path id="b90-core-path" d="M 16,24 A 64,64 0 0 1 80,88"/>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="960" height="240" viewBox="0 0 960 240"
+     version="1.1" role="img" aria-labelledby="dfg-title dfg-description">
+  <title id="dfg-title">DFG nonlinear waveguide — top view</title>
+  <desc id="dfg-description">Editable conceptual component for the Hankel
+    multiplier. A single straight waveguide carries the already-combined pump
+    and signal through a second-order nonlinear interaction region. The
+    generated idler shares the output with the remaining input fields. The
+    upstream combiner and downstream filter are separate components. Alternating
+    purple domains illustrate an optional periodically poled implementation;
+    they are not electrodes or etched grooves. Geometry, widths, domain count
+    and pitch are schematic, with no physical scale implied. Hide the
+    Annotations layer for a plain component; hide Periodic poling for an
+    unpatterned nonlinear region. All artwork is native editable SVG.</desc>
+
+  <defs>
+    <marker id="dfg-flow-arrow" markerWidth="9" markerHeight="8"
+            refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0,0 L 9,4 L 0,8 Z" fill="#516176"/>
+    </marker>
+  </defs>
+
+  <!-- A continuous shared guide: no implicit wavelength separation. -->
+  <g id="dfg-geometry" inkscape:groupmode="layer" inkscape:label="Waveguide geometry">
+    <rect id="dfg-access-guide" x="64" y="98" width="832" height="44"
+          fill="#e3e8ef"/>
+    <rect id="dfg-nonlinear-region" x="224" y="98" width="512" height="44"
+          fill="#e6ddf3"/>
+
+    <!-- Optional domain inversion, deliberately schematic and easy to hide. -->
+    <g id="dfg-periodic-poling" inkscape:groupmode="layer"
+       inkscape:label="Periodic poling (optional)" fill="#bca4d8">
+      <rect id="dfg-domain-01" x="224" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-02" x="288" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-03" x="352" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-04" x="416" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-05" x="480" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-06" x="544" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-07" x="608" y="98" width="32" height="44"/>
+      <rect id="dfg-domain-08" x="672" y="98" width="32" height="44"/>
+    </g>
+
+    <path id="dfg-active-boundaries" d="M 224,98 V 142 M 736,98 V 142"
+          fill="none" stroke="#76608e" stroke-width="1.5"/>
+    <rect id="dfg-guide-outline" x="64" y="98" width="832" height="44"
+          fill="none" stroke="#455267" stroke-width="1.75"/>
+  </g>
+
+  <!-- Keep this layer outside any later projection of the geometry. -->
+  <g id="dfg-annotations" inkscape:groupmode="layer" inkscape:label="Annotations"
+     font-family="DejaVu Sans, Arial, sans-serif" font-size="18" fill="#253246">
+    <text id="dfg-input-label" x="64" y="62">Pump + signal</text>
+    <text id="dfg-operation-label" x="480" y="62" text-anchor="middle"
+          font-size="23" font-weight="600" fill="#654780">DFG · χ²</text>
+    <text id="dfg-output-label" x="896" y="62" text-anchor="end">Mixed output</text>
+
+    <g id="dfg-flow-indicators" fill="none" stroke="#516176" stroke-width="1.6">
+      <path id="dfg-input-flow" d="M 64,81 H 200" marker-end="url(#dfg-flow-arrow)"/>
+      <path id="dfg-output-flow" d="M 760,81 H 896" marker-end="url(#dfg-flow-arrow)"/>
+    </g>
+
+    <g id="dfg-component-notes" font-size="14" fill="#647087">
+      <text id="dfg-input-note" x="64" y="174">Already combined</text>
+      <text id="dfg-output-note" x="896" y="174" text-anchor="end">Pump + signal + idler</text>
+      <path id="dfg-poling-leader" d="M 480,147 V 165"
+            fill="none" stroke="#8b799e" stroke-width="1.2"/>
+      <text id="dfg-poling-note" x="480" y="184" text-anchor="middle">Periodic domain inversion (schematic)</text>
+    </g>
+    <text id="dfg-frequency-relation" x="480" y="219" text-anchor="middle"
+          font-size="18" fill="#654780">ωᵢ = ωₚ − ωₛ</text>
+  </g>
+</svg>

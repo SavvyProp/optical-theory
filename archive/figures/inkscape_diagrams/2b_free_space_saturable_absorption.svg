@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="figure-2b-free-space-saturable-absorption" version="1.1" width="200mm" height="61mm" viewBox="0 0 2000 610" role="img" aria-labelledby="figure-title figure-description" font-family="DejaVu Sans, sans-serif">
+  <title id="figure-title">Figure 2b. Free-space saturable absorption</title>
+  <desc id="figure-description">Proposed reflective activation after the temporal sum of a full FFN Matmul. The left-hand dispersion-plane section traces four adjacent comb lines from fiber 0. Each of the eight fibers has a three-port optical circulator. Light from port 1 exits port 2 toward the fiber array, collimator and transmission grating. A common focusing lens brings each wavelength to a separate spot on a reflective saturable absorber. Solid and dashed rays show incidence and reflection in the same folded relay. The grating remultiplexes the reflected comb into its original fiber, and port 2 routes to port 3. Both miniature spectra use the same illustrative power scale. The uncalibrated spot-reflectance curve shows the illustrative saturating response used for these spectra. The front view shows the orthogonal spatial imaging axis as eight fiber rows, with comb lines 0–3 and 63 visible. The intervening columns are omitted. The continuous mirror has 8 × 64 = 512 nominal spot locations, each for one complex vector entry. Wavelength colors, optical powers, angles and spacing are illustrative.</desc>
+  <defs id="optical-definitions">
+    <linearGradient id="data-core" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#2368a3" stop-opacity="1"/>
+      <stop offset="0.56" stop-color="#579bd0" stop-opacity="1"/>
+      <stop offset="1" stop-color="#2477bc" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="circulator-face" x1="0%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0" stop-color="#fdfefe" stop-opacity="1"/>
+      <stop offset="0.6" stop-color="#f0f5f9" stop-opacity="1"/>
+      <stop offset="1" stop-color="#e0e8f1" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="optical-glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#afcfdc" stop-opacity="0.78"/>
+      <stop offset="0.32" stop-color="#effbff" stop-opacity="0.67"/>
+      <stop offset="0.55" stop-color="#d7eff5" stop-opacity="0.73"/>
+      <stop offset="1" stop-color="#9dc0d0" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="collimated-field" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#7daed2" stop-opacity="0.26"/>
+      <stop offset="0.48" stop-color="#6ca4d1" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#5f93c2" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="grating-substrate" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#bdcfdc" stop-opacity="0.91"/>
+      <stop offset="0.55" stop-color="#eef7fa" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#99b2bf" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="mirror-coating-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#9b729d" stop-opacity="1"/>
+      <stop offset="0.48" stop-color="#885780" stop-opacity="1"/>
+      <stop offset="1" stop-color="#67476b" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="mirror-backing-edge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#435267" stop-opacity="1"/>
+      <stop offset="0.52" stop-color="#758499" stop-opacity="1"/>
+      <stop offset="1" stop-color="#66758a" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="mirror-front-surface" x1="0%" y1="0%" x2="95%" y2="100%">
+      <stop offset="0" stop-color="#35455b" stop-opacity="1"/>
+      <stop offset="0.48" stop-color="#2a394f" stop-opacity="1"/>
+      <stop offset="1" stop-color="#202e42" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="beam-0" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#b58bdf" stop-opacity="0.22"/>
+      <stop offset="0.67" stop-color="#b58bdf" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#b58bdf" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="peak-0" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0" stop-color="#b58bdf" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#7652a2" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="spot-0">
+      <stop offset="0" stop-color="#edddff" stop-opacity="1"/>
+      <stop offset="0.19" stop-color="#edddff" stop-opacity="0.99"/>
+      <stop offset="0.37" stop-color="#b58bdf" stop-opacity="0.94"/>
+      <stop offset="0.56" stop-color="#b58bdf" stop-opacity="0.54"/>
+      <stop offset="0.8" stop-color="#b58bdf" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#b58bdf" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#69b1e5" stop-opacity="0.22"/>
+      <stop offset="0.67" stop-color="#69b1e5" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#69b1e5" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="peak-1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0" stop-color="#69b1e5" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#276fa7" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="spot-1">
+      <stop offset="0" stop-color="#d9f1ff" stop-opacity="1"/>
+      <stop offset="0.19" stop-color="#d9f1ff" stop-opacity="0.99"/>
+      <stop offset="0.37" stop-color="#69b1e5" stop-opacity="0.94"/>
+      <stop offset="0.56" stop-color="#69b1e5" stop-opacity="0.54"/>
+      <stop offset="0.8" stop-color="#69b1e5" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#69b1e5" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#61cbb8" stop-opacity="0.22"/>
+      <stop offset="0.67" stop-color="#61cbb8" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#61cbb8" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="peak-2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0" stop-color="#61cbb8" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#167b72" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="spot-2">
+      <stop offset="0" stop-color="#d4fff0" stop-opacity="1"/>
+      <stop offset="0.19" stop-color="#d4fff0" stop-opacity="0.99"/>
+      <stop offset="0.37" stop-color="#61cbb8" stop-opacity="0.94"/>
+      <stop offset="0.56" stop-color="#61cbb8" stop-opacity="0.54"/>
+      <stop offset="0.8" stop-color="#61cbb8" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#61cbb8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="beam-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#edaa68" stop-opacity="0.22"/>
+      <stop offset="0.67" stop-color="#edaa68" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#edaa68" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="peak-3" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0" stop-color="#edaa68" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#ac621e" stop-opacity="0.85"/>
+    </linearGradient>
+    <radialGradient id="spot-3">
+      <stop offset="0" stop-color="#ffedd2" stop-opacity="1"/>
+      <stop offset="0.19" stop-color="#ffedd2" stop-opacity="0.99"/>
+      <stop offset="0.37" stop-color="#edaa68" stop-opacity="0.94"/>
+      <stop offset="0.56" stop-color="#edaa68" stop-opacity="0.54"/>
+      <stop offset="0.8" stop-color="#edaa68" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#edaa68" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="spot-63">
+      <stop offset="0" stop-color="#ffdfdf" stop-opacity="1"/>
+      <stop offset="0.19" stop-color="#ffdfdf" stop-opacity="0.99"/>
+      <stop offset="0.37" stop-color="#e39395" stop-opacity="0.94"/>
+      <stop offset="0.56" stop-color="#e39395" stop-opacity="0.54"/>
+      <stop offset="0.8" stop-color="#e39395" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#e39395" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <g id="fiber-interface" inkscape:label="Fiber inputs, circulator and activated output" inkscape:groupmode="layer">
+    <g id="input-fiber" inkscape:label="Port 1 · from the Matmul">
+      <path d="M 48,281 H 139 Q 158,281 171,301 L 223,383.895" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path d="M 48,281 H 139 Q 158,281 171,301 L 223,383.895" fill="none" stroke="url(#data-core)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+    </g>
+    <g id="common-fiber" inkscape:label="Port 2 · shared launch and return">
+      <path d="M 289,422 H 349 Q 362,422 372,416.875 L 407,399.2" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path d="M 289,422 H 349 Q 362,422 372,416.875 L 407,399.2" fill="none" stroke="url(#data-core)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+    </g>
+    <g id="output-fiber" inkscape:label="Port 3 · activated output">
+      <path d="M 223,460.105 L 180,534.6 Q 168,552 147,552 H 48" fill="none" stroke="#e3e8ef" stroke-width="12" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path d="M 223,460.105 L 180,534.6 Q 168,552 147,552 H 48" fill="none" stroke="url(#data-core)" stroke-width="4" stroke-linecap="butt" stroke-linejoin="round"/>
+    </g>
+    <path d="M 0,0 L -17,-6 L -13.26,0 L -17,6 Z" transform="translate(123 281) rotate(0)" fill="#2477bc"/>
+    <path d="M 0,0 L -17,-6 L -13.26,0 L -17,6 Z" transform="translate(91 552) rotate(180)" fill="#2477bc"/>
+    <path d="M 0,0 L -13,-4.8 L -10.14,0 L -13,4.8 Z" transform="translate(312 422) rotate(0)" fill="#2477bc"/>
+    <path d="M 0,0 L -13,-4.8 L -10.14,0 L -13,4.8 Z" transform="translate(329 422) rotate(180)" fill="#2477bc"/>
+    <g id="three-port-circulator" inkscape:label="Optical circulator · 1 → 2 → 3">
+      <circle cx="245" cy="422" r="44" fill="url(#circulator-face)" stroke="#899fae" stroke-width="2.6"/>
+      <path d="M 233.551,429.154 A 13.5,13.5 0 1 1 246.177,435.449" stroke="#526c82" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <path d="M 0,0 L -8.5,-3.8 L -6.63,0 L -8.5,3.8 Z" transform="translate(246.177 435.449) rotate(535)" fill="#526c82"/>
+      <text x="228" y="403" font-size="18" font-weight="600" fill="#4d647a" text-anchor="middle" id="circulator-port-1">1</text>
+      <text x="274.2" y="428.5" font-size="18" font-weight="600" fill="#4d647a" text-anchor="middle" id="circulator-port-2">2</text>
+      <text x="228" y="450" font-size="18" font-weight="600" fill="#4d647a" text-anchor="middle" id="circulator-port-3">3</text>
+    </g>
+  </g>
+  <g id="free-space-launch" inkscape:label="Free-space launch and collimation" inkscape:groupmode="layer">
+    <path d="M 407,399.2 L 478,348.845 L 647,263.5 V 292.5 L 478,377.845 Z" fill="url(#collimated-field)"/>
+    <path d="M 407,399.2 L 478,348.845 L 647,263.5" fill="none" stroke="#4483b3" stroke-width="2.7" stroke-linejoin="round"/>
+    <path d="M 647,292.5 L 478,377.845 L 407,399.2" fill="none" stroke="#4483b3" stroke-width="2.45" stroke-dasharray="8 5" stroke-linejoin="round"/>
+    <path d="M 0,0 L -14.5,-5 L -11.31,0 L -14.5,5 Z" transform="translate(564 305.415) rotate(-26.794)" fill="#387bae"/>
+    <path d="M 0,0 L -14.5,-5 L -11.31,0 L -14.5,5 Z" transform="translate(533 350.07) rotate(153.206)" fill="#387bae"/>
+  </g>
+  <g id="comb-spectra" inkscape:label="Illustrative input and output comb powers" inkscape:groupmode="layer">
+    <g id="input-spectrum" inkscape:label="Input comb">
+      <line x1="49" y1="262" x2="147" y2="262" stroke="#b4c4d1" stroke-width="1.8"/>
+      <path d="M 58.0,262 C 61.8,262 63.3,257.76 64.1,229.67000000000002 Q 65.05,209 66.0,209 Q 66.95,209 67.9,229.67000000000002 C 68.7,257.76 70.2,262 74.0,262" fill="url(#peak-0)" stroke="#7652a2" stroke-width="2.65" stroke-linejoin="round" data-comb-index="0" data-relative-power="53"/>
+      <path d="M 79.5,262 C 83.3,262 84.8,259.84 85.6,245.53 Q 86.55,235 87.5,235 Q 88.45,235 89.4,245.53 C 90.2,259.84 91.7,262 95.5,262" fill="url(#peak-1)" stroke="#276fa7" stroke-width="2.65" stroke-linejoin="round" data-comb-index="1" data-relative-power="27"/>
+      <path d="M 101.0,262 C 104.8,262 106.3,256.4 107.1,219.3 Q 108.05,192 109.0,192 Q 109.95,192 110.9,219.3 C 111.7,256.4 113.2,262 117.0,262" fill="url(#peak-2)" stroke="#167b72" stroke-width="2.65" stroke-linejoin="round" data-comb-index="2" data-relative-power="70"/>
+      <path d="M 122.5,262 C 126.3,262 127.8,258.8 128.6,237.6 Q 129.55,222 130.5,222 Q 131.45,222 132.4,237.6 C 133.2,258.8 134.7,262 138.5,262" fill="url(#peak-3)" stroke="#ac621e" stroke-width="2.65" stroke-linejoin="round" data-comb-index="3" data-relative-power="40"/>
+    </g>
+    <g id="activated-spectrum" inkscape:label="Activated comb">
+      <line x1="49" y1="533" x2="147" y2="533" stroke="#b4c4d1" stroke-width="1.8"/>
+      <path d="M 58.0,533 C 61.8,533 63.3,530.1601636363637 64.1,511.3462477272727 Q 65.05,497.50204545454545 66.0,497.50204545454545 Q 66.95,497.50204545454545 67.9,511.3462477272727 C 68.7,530.1601636363637 70.2,533 74.0,533" fill="url(#peak-0)" stroke="#7652a2" stroke-width="2.65" stroke-linejoin="round" data-comb-index="0" data-relative-power="35.5"/>
+      <path d="M 79.5,533 C 83.3,533 84.8,531.8342967741936 85.6,524.1115129032258 Q 86.55,518.4287096774193 87.5,518.4287096774193 Q 88.45,518.4287096774193 89.4,524.1115129032258 C 90.2,531.8342967741936 91.7,533 95.5,533" fill="url(#peak-1)" stroke="#276fa7" stroke-width="2.65" stroke-linejoin="round" data-comb-index="1" data-relative-power="14.57"/>
+      <path d="M 101.0,533 C 104.8,533 106.3,528.968 107.1,502.256 Q 108.05,482.6 109.0,482.6 Q 109.95,482.6 110.9,502.256 C 111.7,528.968 113.2,533 117.0,533" fill="url(#peak-2)" stroke="#167b72" stroke-width="2.65" stroke-linejoin="round" data-comb-index="2" data-relative-power="50.4"/>
+      <path d="M 122.5,533 C 126.3,533 127.8,531.0288 128.6,517.9696 Q 129.55,508.36 130.5,508.36 Q 131.45,508.36 132.4,517.9696 C 133.2,531.0288 134.7,533 138.5,533" fill="url(#peak-3)" stroke="#ac621e" stroke-width="2.65" stroke-linejoin="round" data-comb-index="3" data-relative-power="24.64"/>
+    </g>
+  </g>
+  <g id="wavelength-rays" inkscape:label="Dispersed comb lines · solid incident and dashed reflected rays" inkscape:groupmode="layer">
+    <g id="comb-line-0-optical-path" data-comb-index="0" inkscape:label="Comb line 0 · incident and reflected rays">
+      <path d="M 647,263.5 L 932,170.5 L 1217,185 L 932,199.5 L 647,292.5 Z" fill="url(#beam-0)"/>
+      <path d="M 647,263.5 L 932,170.5 L 1217,185" id="incident-ray-0" fill="none" stroke="#7652a2" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M 1217,185 L 932,199.5 L 647,292.5" id="reflected-ray-0" fill="none" stroke="#7652a2" stroke-width="2.5" stroke-dasharray="8 5" stroke-linejoin="round"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1069 177.47) rotate(2.913)" fill="#7652a2" id="incident-direction-0"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1017 195.175) rotate(177.087)" fill="#7652a2" id="reflected-direction-0"/>
+    </g>
+    <g id="comb-line-1-optical-path" data-comb-index="1" inkscape:label="Comb line 1 · incident and reflected rays">
+      <path d="M 647,263.5 L 932,232.5 L 1217,247 L 932,261.5 L 647,292.5 Z" fill="url(#beam-1)"/>
+      <path d="M 647,263.5 L 932,232.5 L 1217,247" id="incident-ray-1" fill="none" stroke="#276fa7" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M 1217,247 L 932,261.5 L 647,292.5" id="reflected-ray-1" fill="none" stroke="#276fa7" stroke-width="2.5" stroke-dasharray="8 5" stroke-linejoin="round"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1069 239.47) rotate(2.913)" fill="#276fa7" id="incident-direction-1"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1017 257.175) rotate(177.087)" fill="#276fa7" id="reflected-direction-1"/>
+    </g>
+    <g id="comb-line-2-optical-path" data-comb-index="2" inkscape:label="Comb line 2 · incident and reflected rays">
+      <path d="M 647,263.5 L 932,294.5 L 1217,309 L 932,323.5 L 647,292.5 Z" fill="url(#beam-2)"/>
+      <path d="M 647,263.5 L 932,294.5 L 1217,309" id="incident-ray-2" fill="none" stroke="#167b72" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M 1217,309 L 932,323.5 L 647,292.5" id="reflected-ray-2" fill="none" stroke="#167b72" stroke-width="2.5" stroke-dasharray="8 5" stroke-linejoin="round"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1069 301.47) rotate(2.913)" fill="#167b72" id="incident-direction-2"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1017 319.175) rotate(177.087)" fill="#167b72" id="reflected-direction-2"/>
+    </g>
+    <g id="comb-line-3-optical-path" data-comb-index="3" inkscape:label="Comb line 3 · incident and reflected rays">
+      <path d="M 647,263.5 L 932,356.5 L 1217,371 L 932,385.5 L 647,292.5 Z" fill="url(#beam-3)"/>
+      <path d="M 647,263.5 L 932,356.5 L 1217,371" id="incident-ray-3" fill="none" stroke="#ac621e" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M 1217,371 L 932,385.5 L 647,292.5" id="reflected-ray-3" fill="none" stroke="#ac621e" stroke-width="2.5" stroke-dasharray="8 5" stroke-linejoin="round"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1069 363.47) rotate(2.913)" fill="#ac621e" id="incident-direction-3"/>
+      <path d="M 0,0 L -15.5,-5.4 L -12.09,0 L -15.5,5.4 Z" transform="translate(1017 381.175) rotate(177.087)" fill="#ac621e" id="reflected-direction-3"/>
+    </g>
+  </g>
+  <g id="relay-optics" inkscape:label="Fiber facet, collimator, grating, focusing lens and absorber mirror" inkscape:groupmode="layer">
+    <g id="fiber-array-facet" transform="translate(407 399.2) rotate(-26.794)" inkscape:label="Fiber array facet · lane 0 in section">
+      <path d="M -23,-5.7 L -16,-9 H 0 V 9 H -16 L -23,5.7 Z" fill="#e1e8ee" stroke="#afc0ce" stroke-width="1.25"/>
+      <line x1="-23" y1="0" x2="0" y2="0" stroke="#2477bc" stroke-width="4"/>
+      <line x1="0" y1="-9" x2="0" y2="9" stroke="#8ca6bb" stroke-width="1.8"/>
+    </g>
+    <g id="collimator" transform="translate(478 363.345) rotate(-26.794)" inkscape:label="Collimator">
+      <path d="M -2,-38.5 Q 0,-39.5 2,-38.5 C 11.39,-20.405 11.39,20.405 2,38.5 Q 0,39.5 -2,38.5 C -11.39,20.405 -11.39,-20.405 -2,-38.5 Z" fill="url(#optical-glass)" stroke="#6895a7" stroke-width="2"/>
+      <path d="M -2,-33.5 C -9.520000000000001,-19.25 -9.520000000000001,19.25 -2,33.5" fill="none" stroke="#f3fcff" stroke-opacity="0.86" stroke-width="2.2"/>
+    </g>
+    <g id="transmission-grating" transform="translate(647 278)" inkscape:label="Transmission diffraction grating">
+      <path d="M -8,-64 L 5,-65 L 9,-61 V 64 L -4,66 L -8,63 Z" fill="url(#grating-substrate)" stroke="#6d8596" stroke-width="2"/>
+      <path d="M -6,-50.3 L 5,-56" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,-41.3 L 5,-47" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,-32.3 L 5,-38" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,-23.3 L 5,-29" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,-14.3 L 5,-20" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,-5.3 L 5,-11" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,3.7 L 5,-2" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,12.7 L 5,7" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,21.7 L 5,16" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,30.7 L 5,25" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,39.7 L 5,34" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,48.7 L 5,43" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M -6,57.7 L 5,52" fill="none" stroke="#728b9b" stroke-width="1.9" stroke-linecap="round"/>
+      <path d="M 5,-64 V 63" fill="none" stroke="#f2f8fb" stroke-width="1.4" stroke-opacity="0.9"/>
+    </g>
+    <g id="focusing-lens" transform="translate(932 278) rotate(0)" inkscape:label="Focusing and imaging lens">
+      <path d="M -2,-131.5 Q 0,-132.5 2,-131.5 C 23.450000000000003,-69.69500000000001 23.450000000000003,69.69500000000001 2,131.5 Q 0,132.5 -2,131.5 C -23.450000000000003,69.69500000000001 -23.450000000000003,-69.69500000000001 -2,-131.5 Z" fill="url(#optical-glass)" stroke="#6895a7" stroke-width="2"/>
+      <path d="M -2,-126.5 C -19.6,-65.75 -19.6,65.75 -2,126.5" fill="none" stroke="#f3fcff" stroke-opacity="0.86" stroke-width="2.2"/>
+    </g>
+    <g id="absorber-mirror-edge" inkscape:label="Reflective saturable absorber in section">
+      <rect x="1222" y="145" width="19" height="266" rx="2" fill="url(#mirror-backing-edge)" stroke="#536175" stroke-width="1.75"/>
+      <rect x="1217" y="145" width="7" height="266" rx="1.2" fill="url(#mirror-coating-edge)" stroke="#725470" stroke-width="1.4"/>
+      <line x1="1227" y1="146" x2="1227" y2="410" stroke="#d9e2eb" stroke-width="1.65" stroke-opacity="0.85"/>
+      <line x1="1231" y1="146" x2="1231" y2="410" stroke="#c6d2df" stroke-width="1.1" stroke-opacity="0.7"/>
+      <ellipse id="side-spot-0" cx="1217" cy="185" rx="5.9" ry="8.2" fill="url(#spot-0)"/>
+      <ellipse cx="1217" cy="185" rx="2.8" ry="3.2" fill="#b58bdf"/>
+      <ellipse id="side-spot-1" cx="1217" cy="247" rx="5.9" ry="8.2" fill="url(#spot-1)"/>
+      <ellipse cx="1217" cy="247" rx="2.8" ry="3.2" fill="#69b1e5"/>
+      <ellipse id="side-spot-2" cx="1217" cy="309" rx="5.9" ry="8.2" fill="url(#spot-2)"/>
+      <ellipse cx="1217" cy="309" rx="2.8" ry="3.2" fill="#61cbb8"/>
+      <ellipse id="side-spot-3" cx="1217" cy="371" rx="5.9" ry="8.2" fill="url(#spot-3)"/>
+      <ellipse cx="1217" cy="371" rx="2.8" ry="3.2" fill="#edaa68"/>
+    </g>
+  </g>
+  <g id="mirror-plane" inkscape:label="Mirror front view · eight fiber rows, selected comb-line columns" inkscape:groupmode="layer">
+    <g id="continuous-mirror-surface" inkscape:label="Continuous saturable absorber surface">
+      <path d="M 1942,167 l 9,6 V 547 l -9,-6 Z" fill="#66758a" stroke="#546376" stroke-width="1.3"/>
+      <path d="M 1462,541 H 1942 l 9,6 H 1471 Z" fill="#8c91a2" stroke="#687287" stroke-width="1.2"/>
+      <rect x="1462" y="167" width="480" height="374" rx="2" fill="url(#mirror-front-surface)" stroke="#4e596e" stroke-width="2"/>
+      <path d="M 1463.3,539.7 V 168.3 H 1940.8" fill="none" stroke="#aa89a4" stroke-width="2.7" stroke-opacity="0.96"/>
+    </g>
+    <g id="fiber-row-0" data-fiber="0" inkscape:label="Fiber 0">
+      <circle id="front-spot-fiber-0-line-0" cx="1507" cy="202" r="16" fill="url(#spot-0)" opacity="0.786" data-comb-index="0" data-relative-power="53"/>
+      <circle id="front-spot-fiber-0-line-1" cx="1580" cy="202" r="16" fill="url(#spot-1)" opacity="0.474" data-comb-index="1" data-relative-power="27"/>
+      <circle id="front-spot-fiber-0-line-2" cx="1653" cy="202" r="16" fill="url(#spot-2)" opacity="0.99" data-comb-index="2" data-relative-power="70"/>
+      <circle id="front-spot-fiber-0-line-3" cx="1726" cy="202" r="16" fill="url(#spot-3)" opacity="0.63" data-comb-index="3" data-relative-power="40"/>
+      <circle id="front-spot-fiber-0-line-63" cx="1891" cy="202" r="16" fill="url(#spot-63)" opacity="0.51" data-comb-index="63" data-relative-power="30"/>
+      <circle cx="1794" cy="202" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="202" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="202" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-1" data-fiber="1" inkscape:label="Fiber 1">
+      <circle id="front-spot-fiber-1-line-0" cx="1507" cy="245" r="16" fill="url(#spot-0)" opacity="0.51" data-comb-index="0" data-relative-power="30"/>
+      <circle id="front-spot-fiber-1-line-1" cx="1580" cy="245" r="16" fill="url(#spot-1)" opacity="0.942" data-comb-index="1" data-relative-power="66"/>
+      <circle id="front-spot-fiber-1-line-2" cx="1653" cy="245" r="16" fill="url(#spot-2)" opacity="0.666" data-comb-index="2" data-relative-power="43"/>
+      <circle id="front-spot-fiber-1-line-3" cx="1726" cy="245" r="16" fill="url(#spot-3)" opacity="0.462" data-comb-index="3" data-relative-power="26"/>
+      <circle id="front-spot-fiber-1-line-63" cx="1891" cy="245" r="16" fill="url(#spot-63)" opacity="0.858" data-comb-index="63" data-relative-power="59"/>
+      <circle cx="1794" cy="245" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="245" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="245" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-2" data-fiber="2" inkscape:label="Fiber 2">
+      <circle id="front-spot-fiber-2-line-0" cx="1507" cy="288" r="16" fill="url(#spot-0)" opacity="0.894" data-comb-index="0" data-relative-power="62"/>
+      <circle id="front-spot-fiber-2-line-1" cx="1580" cy="288" r="16" fill="url(#spot-1)" opacity="0.618" data-comb-index="1" data-relative-power="39"/>
+      <circle id="front-spot-fiber-2-line-2" cx="1653" cy="288" r="16" fill="url(#spot-2)" opacity="0.438" data-comb-index="2" data-relative-power="24"/>
+      <circle id="front-spot-fiber-2-line-3" cx="1726" cy="288" r="16" fill="url(#spot-3)" opacity="0.918" data-comb-index="3" data-relative-power="64"/>
+      <circle id="front-spot-fiber-2-line-63" cx="1891" cy="288" r="16" fill="url(#spot-63)" opacity="0.69" data-comb-index="63" data-relative-power="45"/>
+      <circle cx="1794" cy="288" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="288" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="288" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-3" data-fiber="3" inkscape:label="Fiber 3">
+      <circle id="front-spot-fiber-3-line-0" cx="1507" cy="331" r="16" fill="url(#spot-0)" opacity="0.426" data-comb-index="0" data-relative-power="23"/>
+      <circle id="front-spot-fiber-3-line-1" cx="1580" cy="331" r="16" fill="url(#spot-1)" opacity="0.75" data-comb-index="1" data-relative-power="50"/>
+      <circle id="front-spot-fiber-3-line-2" cx="1653" cy="331" r="16" fill="url(#spot-2)" opacity="0.942" data-comb-index="2" data-relative-power="66"/>
+      <circle id="front-spot-fiber-3-line-3" cx="1726" cy="331" r="16" fill="url(#spot-3)" opacity="0.51" data-comb-index="3" data-relative-power="30"/>
+      <circle id="front-spot-fiber-3-line-63" cx="1891" cy="331" r="16" fill="url(#spot-63)" opacity="0.93" data-comb-index="63" data-relative-power="65"/>
+      <circle cx="1794" cy="331" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="331" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="331" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-4" data-fiber="4" inkscape:label="Fiber 4">
+      <circle id="front-spot-fiber-4-line-0" cx="1507" cy="374" r="16" fill="url(#spot-0)" opacity="0.738" data-comb-index="0" data-relative-power="49"/>
+      <circle id="front-spot-fiber-4-line-1" cx="1580" cy="374" r="16" fill="url(#spot-1)" opacity="0.99" data-comb-index="1" data-relative-power="70"/>
+      <circle id="front-spot-fiber-4-line-2" cx="1653" cy="374" r="16" fill="url(#spot-2)" opacity="0.558" data-comb-index="2" data-relative-power="34"/>
+      <circle id="front-spot-fiber-4-line-3" cx="1726" cy="374" r="16" fill="url(#spot-3)" opacity="0.822" data-comb-index="3" data-relative-power="56"/>
+      <circle id="front-spot-fiber-4-line-63" cx="1891" cy="374" r="16" fill="url(#spot-63)" opacity="0.462" data-comb-index="63" data-relative-power="26"/>
+      <circle cx="1794" cy="374" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="374" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="374" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-5" data-fiber="5" inkscape:label="Fiber 5">
+      <circle id="front-spot-fiber-5-line-0" cx="1507" cy="417" r="16" fill="url(#spot-0)" opacity="0.942" data-comb-index="0" data-relative-power="66"/>
+      <circle id="front-spot-fiber-5-line-1" cx="1580" cy="417" r="16" fill="url(#spot-1)" opacity="0.438" data-comb-index="1" data-relative-power="24"/>
+      <circle id="front-spot-fiber-5-line-2" cx="1653" cy="417" r="16" fill="url(#spot-2)" opacity="0.834" data-comb-index="2" data-relative-power="57"/>
+      <circle id="front-spot-fiber-5-line-3" cx="1726" cy="417" r="16" fill="url(#spot-3)" opacity="0.618" data-comb-index="3" data-relative-power="39"/>
+      <circle id="front-spot-fiber-5-line-63" cx="1891" cy="417" r="16" fill="url(#spot-63)" opacity="0.762" data-comb-index="63" data-relative-power="51"/>
+      <circle cx="1794" cy="417" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="417" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="417" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-6" data-fiber="6" inkscape:label="Fiber 6">
+      <circle id="front-spot-fiber-6-line-0" cx="1507" cy="460" r="16" fill="url(#spot-0)" opacity="0.558" data-comb-index="0" data-relative-power="34"/>
+      <circle id="front-spot-fiber-6-line-1" cx="1580" cy="460" r="16" fill="url(#spot-1)" opacity="0.798" data-comb-index="1" data-relative-power="54"/>
+      <circle id="front-spot-fiber-6-line-2" cx="1653" cy="460" r="16" fill="url(#spot-2)" opacity="0.486" data-comb-index="2" data-relative-power="28"/>
+      <circle id="front-spot-fiber-6-line-3" cx="1726" cy="460" r="16" fill="url(#spot-3)" opacity="0.966" data-comb-index="3" data-relative-power="68"/>
+      <circle id="front-spot-fiber-6-line-63" cx="1891" cy="460" r="16" fill="url(#spot-63)" opacity="0.57" data-comb-index="63" data-relative-power="35"/>
+      <circle cx="1794" cy="460" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="460" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="460" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <g id="fiber-row-7" data-fiber="7" inkscape:label="Fiber 7">
+      <circle id="front-spot-fiber-7-line-0" cx="1507" cy="503" r="16" fill="url(#spot-0)" opacity="0.81" data-comb-index="0" data-relative-power="55"/>
+      <circle id="front-spot-fiber-7-line-1" cx="1580" cy="503" r="16" fill="url(#spot-1)" opacity="0.534" data-comb-index="1" data-relative-power="32"/>
+      <circle id="front-spot-fiber-7-line-2" cx="1653" cy="503" r="16" fill="url(#spot-2)" opacity="0.93" data-comb-index="2" data-relative-power="65"/>
+      <circle id="front-spot-fiber-7-line-3" cx="1726" cy="503" r="16" fill="url(#spot-3)" opacity="0.438" data-comb-index="3" data-relative-power="24"/>
+      <circle id="front-spot-fiber-7-line-63" cx="1891" cy="503" r="16" fill="url(#spot-63)" opacity="0.894" data-comb-index="63" data-relative-power="62"/>
+      <circle cx="1794" cy="503" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1805" cy="503" r="1.9" fill="#adbaca" opacity="0.69"/>
+      <circle cx="1816" cy="503" r="1.9" fill="#adbaca" opacity="0.69"/>
+    </g>
+    <path d="M 1474,188 h -5 v 28 h 5" fill="none" stroke="#b9d8f1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" id="fiber-zero-section-mark"/>
+    <path d="M 1750,188 h 5 v 28 h -5" fill="none" stroke="#b9d8f1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" id="fiber-zero-section-end"/>
+  </g>
+  <g id="optical-labels" inkscape:label="Labels and directions" inkscape:groupmode="layer">
+    <text x="31" y="54" font-size="33" font-weight="700" fill="#273648" text-anchor="start" id="panel-letter">b</text>
+    <text x="1383" y="55" font-size="32" font-weight="600" fill="#273648" text-anchor="start" id="front-view-heading">Mirror, front view</text>
+    <text x="1384" y="94" font-size="25" font-weight="400" fill="#4d647a" text-anchor="start" id="full-aperture-count">8 fibers × 64 comb lines</text>
+    <text x="48" y="173" font-size="26" font-weight="500" fill="#273648" text-anchor="start" id="input-label">From Matmul</text>
+    <text x="48" y="595" font-size="26" font-weight="500" fill="#273648" text-anchor="start" id="output-label">Activated comb</text>
+    <text x="285" y="510" font-size="25" font-weight="400" fill="#273648" text-anchor="middle" id="circulator-label">Circulator</text>
+    <path d="M 406,416 V 449" id="fiber-facet-leader" fill="none" stroke="#a6b6c5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="406" y="478" font-size="25" font-weight="400" fill="#273648" text-anchor="middle" id="fiber-array-label">Fiber array</text>
+    <path d="M 506,396.345 l 15,26 h 10" id="collimator-leader" fill="none" stroke="#a6b6c5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="539" y="431.345" font-size="25" font-weight="400" fill="#273648" text-anchor="start" id="collimator-label">Collimator</text>
+    <path d="M 647,190 V 204" id="grating-leader" fill="none" stroke="#a6b6c5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="647" y="178" font-size="26" font-weight="400" fill="#273648" text-anchor="middle" id="grating-label">Grating</text>
+    <path d="M 932,128 V 139" id="focusing-lens-leader" fill="none" stroke="#a6b6c5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="932" y="115" font-size="26" font-weight="400" fill="#273648" text-anchor="middle" id="focusing-lens-label">Focusing lens</text>
+    <path d="M 1227,128 V 138" id="mirror-leader" fill="none" stroke="#a6b6c5" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <text x="1227" y="115" font-size="26" font-weight="400" fill="#273648" text-anchor="middle" id="edge-view-label">Absorber mirror</text>
+    <text x="1164" y="174" font-size="24" font-weight="500" fill="#7652a2" text-anchor="middle" id="ray-label-0">λ<tspan dy="5" font-size="18">0</tspan>
+    </text>
+    <text x="1164" y="236" font-size="24" font-weight="500" fill="#276fa7" text-anchor="middle" id="ray-label-1">λ<tspan dy="5" font-size="18">1</tspan>
+    </text>
+    <text x="1164" y="298" font-size="24" font-weight="500" fill="#167b72" text-anchor="middle" id="ray-label-2">λ<tspan dy="5" font-size="18">2</tspan>
+    </text>
+    <text x="1164" y="360" font-size="24" font-weight="500" fill="#ac621e" text-anchor="middle" id="ray-label-3">λ<tspan dy="5" font-size="18">3</tspan>
+    </text>
+    <text x="1442" y="147" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-axis-label">Fiber</text>
+    <text x="1507" y="145" font-size="25" font-weight="500" fill="#7652a2" text-anchor="middle" id="column-index-0">λ<tspan dy="5" font-size="18">0</tspan>
+    </text>
+    <text x="1580" y="145" font-size="25" font-weight="500" fill="#276fa7" text-anchor="middle" id="column-index-1">λ<tspan dy="5" font-size="18">1</tspan>
+    </text>
+    <text x="1653" y="145" font-size="25" font-weight="500" fill="#167b72" text-anchor="middle" id="column-index-2">λ<tspan dy="5" font-size="18">2</tspan>
+    </text>
+    <text x="1726" y="145" font-size="25" font-weight="500" fill="#ac621e" text-anchor="middle" id="column-index-3">λ<tspan dy="5" font-size="18">3</tspan>
+    </text>
+    <text x="1891" y="145" font-size="25" font-weight="500" fill="#ae5558" text-anchor="middle" id="column-index-63">λ<tspan dy="5" font-size="18">63</tspan>
+    </text>
+    <text x="1805" y="143" font-size="24" font-weight="400" fill="#4d647a" text-anchor="middle" id="omitted-columns">⋯</text>
+    <text x="1442" y="210" font-size="23" font-weight="650" fill="#244f72" text-anchor="end" id="fiber-index-0">0</text>
+    <text x="1442" y="253" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-1">1</text>
+    <text x="1442" y="296" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-2">2</text>
+    <text x="1442" y="339" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-3">3</text>
+    <text x="1442" y="382" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-4">4</text>
+    <text x="1442" y="425" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-5">5</text>
+    <text x="1442" y="468" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-6">6</text>
+    <text x="1442" y="511" font-size="23" font-weight="400" fill="#4d647a" text-anchor="end" id="fiber-index-7">7</text>
+    <g id="propagation-key" inkscape:label="Direction along the shared optics">
+      <line x1="656" y1="502" x2="714" y2="502" stroke="#566c80" stroke-width="2.9"/>
+      <path d="M 0,0 L -16,-5.5 L -12.48,0 L -16,5.5 Z" transform="translate(714 502) rotate(0)" fill="#566c80"/>
+      <text x="726" y="510" font-size="25" font-weight="400" fill="#4d647a" text-anchor="start">Incident</text>
+      <line x1="872" y1="502" x2="930" y2="502" stroke="#566c80" stroke-width="2.6" stroke-dasharray="8 5"/>
+      <path d="M 0,0 L -16,-5.5 L -12.48,0 L -16,5.5 Z" transform="translate(872 502) rotate(180)" fill="#566c80"/>
+      <text x="941" y="510" font-size="25" font-weight="400" fill="#4d647a" text-anchor="start">Reflected</text>
+    </g>
+  </g>
+  <g id="local-reflectance" inkscape:label="Illustrative local intensity response" inkscape:groupmode="layer">
+    <text x="1106" y="462" font-size="22" font-weight="400" fill="#4d647a" text-anchor="start" id="reflectance-axis-label">Reflectance</text>
+    <path d="M 1109,475 V 554 H 1270" fill="none" stroke="#a2b2c0" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" id="reflectance-axes"/>
+    <path d="M 1109,538.2 L 1113.025,529.832 L 1117.05,523.465 L 1121.075,518.458 L 1125.1,514.417 L 1129.125,511.087 L 1133.15,508.296 L 1137.175,505.923 L 1141.2,503.88 L 1145.225,502.103 L 1149.25,500.543 L 1153.275,499.163 L 1157.3,497.933 L 1161.325,496.831 L 1165.35,495.836 L 1169.375,494.935 L 1173.4,494.114 L 1177.425,493.364 L 1181.45,492.675 L 1185.475,492.04 L 1189.5,491.454 L 1193.525,490.91 L 1197.55,490.405 L 1201.575,489.934 L 1205.6,489.494 L 1209.625,489.083 L 1213.65,488.696 L 1217.675,488.333 L 1221.7,487.991 L 1225.725,487.668 L 1229.75,487.363 L 1233.775,487.075 L 1237.8,486.801 L 1241.825,486.542 L 1245.85,486.295 L 1249.875,486.06 L 1253.9,485.836 L 1257.925,485.623 L 1261.95,485.419 L 1265.975,485.224 L 1270,485.038" fill="none" stroke="#865d83" stroke-width="3.7" stroke-linecap="round" stroke-linejoin="round" id="saturable-reflectance-curve"/>
+    <text x="1189.5" y="584" font-size="22" font-weight="400" fill="#4d647a" text-anchor="middle" id="intensity-axis-label">Spot intensity</text>
+  </g>
+</svg>

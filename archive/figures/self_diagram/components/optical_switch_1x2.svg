@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="300" height="160" viewBox="0 0 300 160"
+     version="1.1" role="img" aria-labelledby="os12-title os12-description">
+  <title id="os12-title">Electrically controlled 1×2 optical switch</title>
+  <desc id="os12-description">Editable, annotation-free top-down functional
+    symbol for a Mach–Zehnder optical switch. One centered optical input
+    enters a symmetric splitter and two interferometer arms. A gold electrode
+    and one electrical control terminal represent a voltage-controlled phase
+    shifter in the upper arm; the electrical return is omitted. The arms
+    approach one another in a nominal 50:50 directional output coupler,
+    remaining distinct waveguides, then separate into two optical outputs.
+    A calibrated differential phase selects either output; a pi change
+    exchanges the selected output. The equal-phase splitter and directional
+    coupler require the appropriate static phase bias. Both outputs are drawn
+    identically because no switch state is selected in this symbol. This is
+    a functional schematic, not a fabrication layout: coupling length,
+    gap, bend radii, actuator technology, wavelength band and switching time
+    are unspecified. Reverse-access and radiation modes of the input splitter
+    are omitted. Short external leads, continuous pale gray cladding and blue
+    cores match the component library. There are no fiber outlines, enclosing
+    box, visible labels or background. All artwork is native vector SVG with
+    separate Inkscape layers for cladding, cores and electrical control.
+    Optical port centers: input (16,80), upper output (284,48), lower output
+    (284,112). Electrical terminal center: (126,13).</desc>
+
+  <g id="os12-optical-cladding" inkscape:groupmode="layer"
+     inkscape:label="Optical cladding" fill="none"
+     stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="os12-input-guide" d="M 16,80 H 34"/>
+    <path id="os12-upper-arm-guide"
+          d="M 34,80 C 60,80 62,44 88,44 H 164
+             C 188,44 190,70 210,70 H 232
+             C 250,70 248,48 266,48 H 284"/>
+    <path id="os12-lower-arm-guide"
+          d="M 34,80 C 60,80 62,116 88,116 H 164
+             C 188,116 190,90 210,90 H 232
+             C 250,90 248,112 266,112 H 284"/>
+  </g>
+
+  <g id="os12-optical-cores" inkscape:groupmode="layer"
+     inkscape:label="Optical cores" fill="none"
+     stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="os12-input-core" d="M 16,80 H 34"/>
+    <path id="os12-upper-arm-core"
+          d="M 34,80 C 60,80 62,44 88,44 H 164
+             C 188,44 190,70 210,70 H 232
+             C 250,70 248,48 266,48 H 284"/>
+    <path id="os12-lower-arm-core"
+          d="M 34,80 C 60,80 62,116 88,116 H 164
+             C 188,116 190,90 210,90 H 232
+             C 250,90 248,112 266,112 H 284"/>
+  </g>
+
+  <g id="os12-electrical-control" inkscape:groupmode="layer"
+     inkscape:label="Electrical control">
+    <rect id="os12-phase-control-electrode"
+          x="94" y="29" width="64" height="6" rx="2"
+          fill="#d5b477" stroke="none"/>
+    <g id="os12-control-connection" fill="none"
+       stroke="#b18a4c" stroke-width="2">
+      <path id="os12-control-lead" d="M 126,17 V 29"/>
+      <circle id="os12-control-terminal" cx="126" cy="13" r="4"/>
+    </g>
+  </g>
+</svg>

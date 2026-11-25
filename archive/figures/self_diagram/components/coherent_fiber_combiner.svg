@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="400" height="400" viewBox="0 0 400 400"
+     version="1.1" role="img" aria-labelledby="cfc-title cfc-description">
+  <title id="cfc-title">Two-input coherent fiber combiner — top view</title>
+  <desc id="cfc-description">Editable conceptual top-down view of a nominal
+    50:50, two-input, two-output fused-fiber coupler used for coherent combining.
+    Two fiber cores approach inside a shared fused cladding region and separate
+    into a selected output and a complementary output. The core paths are shown
+    schematically through the cladding; they do not depict separate free-space
+    beams or a physical crossing. The selected output combines complex field
+    amplitudes with the coupler's transfer phase. Concentrating all input power
+    into that output requires appropriately matched coherent inputs, including
+    relative phase and polarization; the complementary output is not generally
+    dark. Phase control is external and is not shown. This is not a wavelength
+    multiplexer for combining disjoint pump and signal bands. Blue is a diagram
+    accent, not an emitted wavelength. Geometry, core spacing and taper lengths
+    are illustrative and have no physical scale. Hide the Annotations layer
+    for a plain component. The canvas has a 1:1 aspect ratio; the shortened
+    fiber paths retain gentle horizontal approaches to the coupling region.
+    All artwork is native editable SVG.</desc>
+
+  <defs>
+    <marker id="cfc-flow-arrow" markerWidth="9" markerHeight="8"
+            refX="8" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 0,0 L 9,4 L 0,8 Z" fill="#516176"/>
+    </marker>
+    <!-- Reuse the same centerlines for cladding and cores, preserving thickness. -->
+    <path id="cfc-upper-centerline"
+          d="M 32,150 H 82 C 128,150 132,194 174,194
+             H 226 C 268,194 272,150 318,150 H 368"/>
+    <path id="cfc-lower-centerline"
+          d="M 32,250 H 82 C 128,250 132,206 174,206
+             H 226 C 268,206 272,250 318,250 H 368"/>
+    <clipPath id="cfc-waist-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="174" y="184" width="52" height="32"/>
+    </clipPath>
+  </defs>
+
+  <g id="cfc-geometry" inkscape:groupmode="layer" inkscape:label="Fiber geometry"
+     fill="none" stroke-linecap="butt" stroke-linejoin="round">
+    <!-- Paint both outlines before both interiors so the waist is shared. -->
+    <g id="cfc-cladding-outline" stroke="#455267" stroke-width="20">
+      <use id="cfc-upper-outline" xlink:href="#cfc-upper-centerline"/>
+      <use id="cfc-lower-outline" xlink:href="#cfc-lower-centerline"/>
+    </g>
+    <g id="cfc-fused-cladding" stroke="#e3e8ef" stroke-width="16.5">
+      <use id="cfc-upper-cladding" xlink:href="#cfc-upper-centerline"/>
+      <use id="cfc-lower-cladding" xlink:href="#cfc-lower-centerline"/>
+    </g>
+    <g id="cfc-coupling-region" stroke="#dceaf7" stroke-width="16.5"
+       clip-path="url(#cfc-waist-clip)">
+      <use id="cfc-upper-waist" xlink:href="#cfc-upper-centerline"/>
+      <use id="cfc-lower-waist" xlink:href="#cfc-lower-centerline"/>
+    </g>
+    <!-- Cores approach but do not cross or join at a Y junction. -->
+    <g id="cfc-cores" stroke="#5d8db4" stroke-width="3.5">
+      <use id="cfc-upper-core" xlink:href="#cfc-upper-centerline"/>
+      <use id="cfc-lower-core" xlink:href="#cfc-lower-centerline"/>
+    </g>
+    <g id="cfc-port-faces" stroke="#455267" stroke-width="1.75">
+      <path d="M 32,140 V 160 M 368,140 V 160 M 32,240 V 260 M 368,240 V 260"/>
+    </g>
+  </g>
+
+  <g id="cfc-annotations" inkscape:groupmode="layer" inkscape:label="Annotations"
+     font-family="DejaVu Sans, Arial, sans-serif" font-size="16" fill="#253246">
+    <text id="cfc-operation-label" x="200" y="48" text-anchor="middle"
+          font-size="21" font-weight="600" fill="#376c9a">2×2 fiber combiner</text>
+    <text id="cfc-input-1-label" x="32" y="115">Input 1</text>
+    <text id="cfc-input-2-label" x="32" y="299">Input 2</text>
+    <text id="cfc-selected-output-label" x="368" y="115"
+          text-anchor="end">Output 1</text>
+    <text id="cfc-complementary-output-label" x="368" y="299"
+          text-anchor="end">Output 2</text>
+
+    <g id="cfc-flow-indicators" fill="none" stroke="#516176" stroke-width="1.6">
+      <path id="cfc-input-1-flow" d="M 32,128 H 82" marker-end="url(#cfc-flow-arrow)"/>
+      <path id="cfc-input-2-flow" d="M 32,275 H 82" marker-end="url(#cfc-flow-arrow)"/>
+      <path id="cfc-selected-output-flow" d="M 318,128 H 368" marker-end="url(#cfc-flow-arrow)"/>
+      <path id="cfc-complementary-output-flow" d="M 318,275 H 368" marker-end="url(#cfc-flow-arrow)"/>
+    </g>
+
+    <g id="cfc-component-notes" font-size="14" fill="#647087">
+      <text id="cfc-waist-note" x="200" y="146" text-anchor="middle">50:50 coupling</text>
+      <path id="cfc-waist-leader" d="M 200,155 V 178"
+            fill="none" stroke="#7698b6" stroke-width="1.2"/>
+      <text id="cfc-device-note" x="200" y="353"
+            text-anchor="middle">Fused-fiber coupler · schematic</text>
+    </g>
+  </g>
+</svg>

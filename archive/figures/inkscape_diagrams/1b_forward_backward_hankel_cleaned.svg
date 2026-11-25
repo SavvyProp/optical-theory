@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="190mm" height="115mm" viewBox="0 0 1900 1150" version="1.1" id="figure-1b-hankel-memory-and-pump-switch" role="img" aria-labelledby="figure-title figure-description">
+  <title id="figure-title">Figure 1b: recirculating Hankel coefficients and forward–adjoint pump switching</title>
+  <desc id="figure-description">Functional architecture view of the simplified Hankel cell in Figure 1a. A recirculating fiber loop stores W(t) as time-multiplexed coefficient-comb pulses; t denotes time within the coefficient frame, and minus/plus superscripts denote old/updated state. Pulse silhouettes are schematic envelopes, not waveguide geometry or scalar representations of the complex coefficients. A weak directional read tap supplies copies of old W to one input of a true two-input, two-output Mach–Zehnder switch. Fixed M supplies the other input. The bar routing sends W to DFG pump 1 and M to DFG pump 2; the cross routing exchanges these assignments. The switch is outside the circulating-memory path. Persistent coefficients remain entirely outside the black box. After the weak read tap they traverse an external loop amplitude/phase trim, enter the upper input of a coherent injection coupler, and leave its selected upper output through external loop gain and fiber storage. The lower coupler input receives the cell’s weight increment Delta W, produced by its cross-SFG, coefficient filter and write amplitude/phase control. The other output is terminated. The selected output is a calibrated field sum, not an intrinsically lossless adder: loop trim/gain and the write scaling compensate coupler transfer factors, phases and passive losses in the effective update W_plus = W_minus + Delta W. Delta W labels the algorithmic increment with the optical interface calibration understood. With write enable off, no increment is injected and physical loss compensation preserves the state ideally. The loop has no old-weight injection input to the arithmetic cell; only a tapped pump copy enters it via the 2x2 switch. Logical retention is applied once per state update and is not implemented by unconditional decay on every lap. The black box retains the Figure 1a saved-forward-input port for the cross-SFG writer. Forward u=x and adjoint u=e use the same pair of DFGs, with separate sequential visits and no pipelining between heads. Old-state read copies must be held/replayed and aligned for both passes before writeback, including path delay to the second DFG. These holding/alignment elements and exact controller timing are abstracted by the note, not physically specified in this base panel. The write-enable line represents scheduling rather than a separate optical path. Full-comb pump-band switch response, coherent route phases, read-tap attenuation, loop loss/noise and gain remain design requirements. The diagram makes no numeric latency, switching-speed, loop-length or efficiency claim. Source sketch preserved; DejaVu Sans text and all artwork remain editable native SVG. Figure 1a waveguide colors and widths are preserved. Transparent background, no embedded raster images.</desc>
+  <metadata id="source-provenance">{
+  "source": "inkscape_diagrams/1b_forward_backward_hankel.svg",
+  "source_sha256": "6f7f6a9db966fce4fb090cc06c1b9705387f7ba59115837e552ec0839495d6e7",
+  "figure_1a": "inkscape_diagrams/simplified_hankel_multiplier_cleaned.svg",
+  "font": "DejaVu Sans",
+  "scope": "Figure 1b base: external coefficient memory, coherent addition, and pump exchange; timing abstracted",
+  "memory_path": "external coherent addition -&gt; external loop gain -&gt; fiber storage -&gt; weak read tap through port -&gt; loop trim -&gt; external coherent addition",
+  "cell_update_output": "calibrated cross-SFG increment Delta W; no old-weight injection port",
+  "update_equation": "W_plus = W_minus + Delta W after interface calibration",
+  "switch_inputs": [
+    "old W read copy",
+    "fixed M"
+  ],
+  "switch_outputs": [
+    "DFG pump 1",
+    "DFG pump 2"
+  ],
+  "forward": [
+    "W^-",
+    "M"
+  ],
+  "adjoint": [
+    "M",
+    "W^-"
+  ]
+}</metadata>
+  <g id="functional-blocks" inkscape:groupmode="layer" inkscape:label="Hankel cell block">
+    <rect id="hankel-cell-enclosure" x="1000" y="500" width="480" height="430" rx="26" fill="#f7ecef" stroke="#b58e9a" stroke-width="2.2"/>
+  </g>
+  <g id="waveguide-cladding" inkscape:groupmode="layer" inkscape:label="Waveguide cladding">
+    <path id="coefficient-storage-return-cladding" d="M 1560,290 H 1580 Q 1640,290 1640,230 V 170 Q 1640,110 1580,110 H 240 Q 180,110 180,170 V 230 Q 180,290 240,290 H 300" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="stored-weight-to-trim-cladding" d="M 450,290 H 600" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="stored-weight-to-addition-cladding" d="M 814.4,290 H 1300" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="old-weight-read-copy-cladding" d="M 450,370 H 470 Q 500,370 500,400 V 560 Q 500,590 530,590 H 550" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="fixed-partner-input-cladding" d="M 300,641.2 H 550" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="pump-1-feed-cladding" d="M 844.4,590 H 1000" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="pump-2-feed-cladding" d="M 844.4,641.2 C 900,641.2 905,670 950,670 H 1000" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="reader-data-input-cladding" d="M 790,770 H 1000" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="saved-forward-input-cladding" d="M 790,850 H 1000" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="reader-result-cladding" d="M 1480,770 H 1760" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="weight-increment-output-cladding" d="M 1120,500 V 440 Q 1120,410 1150,410 H 1300" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="coherent-addition-to-gain-cladding" d="M 1440,290 H 1480" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="loop-gain-axis-cladding" d="M 1480,290 H 1560" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+  </g>
+  <g id="waveguide-cores" inkscape:groupmode="layer" inkscape:label="Waveguide cores">
+    <path id="coefficient-storage-return-core" d="M 1560,290 H 1580 Q 1640,290 1640,230 V 170 Q 1640,110 1580,110 H 240 Q 180,110 180,170 V 230 Q 180,290 240,290 H 300" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="1560,290" data-end="300,290" data-band="P"/>
+    <path id="stored-weight-to-trim-core" d="M 450,290 H 600" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="450,290" data-end="600,290" data-band="P"/>
+    <path id="stored-weight-to-addition-core" d="M 814.4,290 H 1300" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="814.4,290" data-end="1300,290" data-band="P"/>
+    <path id="old-weight-read-copy-core" d="M 450,370 H 470 Q 500,370 500,400 V 560 Q 500,590 530,590 H 550" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="450,370" data-end="550,590" data-band="P"/>
+    <path id="fixed-partner-input-core" d="M 300,641.2 H 550" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="300,641.2" data-end="550,641.2" data-band="P"/>
+    <path id="pump-1-feed-core" d="M 844.4,590 H 1000" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="844.4,590" data-end="1000,590" data-band="P"/>
+    <path id="pump-2-feed-core" d="M 844.4,641.2 C 900,641.2 905,670 950,670 H 1000" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="844.4,641.2" data-end="1000,670" data-band="P"/>
+    <path id="reader-data-input-core" d="M 790,770 H 1000" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="790,770" data-end="1000,770" data-band="A"/>
+    <path id="saved-forward-input-core" d="M 790,850 H 1000" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="790,850" data-end="1000,850" data-band="A"/>
+    <path id="reader-result-core" d="M 1480,770 H 1760" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="1480,770" data-end="1760,770" data-band="A"/>
+    <path id="weight-increment-output-core" d="M 1120,500 V 440 Q 1120,410 1150,410 H 1300" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="1120,500" data-end="1300,410" data-band="P"/>
+    <path id="coherent-addition-to-gain-core" d="M 1440,290 H 1480" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="1440,290" data-end="1480,290" data-band="P"/>
+    <path id="loop-gain-axis-core" d="M 1480,290 H 1560" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round" data-start="1480,290" data-end="1560,290" data-band="P"/>
+  </g>
+  <g id="optical-components" inkscape:groupmode="layer" inkscape:label="Read tap, MZIs, coherent addition and loop gain">
+    <g id="loop-amplitude-phase" transform="translate(587.2 229.2) scale(0.8)"><g id="loop-amplitude-phase-mzi-optical-guides" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="loop-amplitude-phase-mzi-input-guide" d="M 16,76 H 38"/>
+    <path id="loop-amplitude-phase-mzi-upper-guide" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76"/>
+    <path id="loop-amplitude-phase-mzi-lower-guide" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76"/>
+    <path id="loop-amplitude-phase-mzi-output-guide" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="loop-amplitude-phase-mzi-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="loop-amplitude-phase-mzi-input-core" d="M 16,76 H 38"/>
+    <path id="loop-amplitude-phase-mzi-upper-core" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76"/>
+    <path id="loop-amplitude-phase-mzi-lower-core" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76"/>
+    <path id="loop-amplitude-phase-mzi-output-core" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="loop-amplitude-phase-mzi-electrical-controls">
+    <g id="loop-amplitude-phase-mzi-actuator-marks" fill="#d5b477" stroke="none">
+      <rect id="loop-amplitude-phase-mzi-upper-phase-shifter" x="118" y="29" width="64" height="6" rx="2"/>
+      <rect id="loop-amplitude-phase-mzi-lower-phase-shifter" x="118" y="117" width="64" height="6" rx="2"/>
+    </g>
+    <g id="loop-amplitude-phase-mzi-control-leads" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="loop-amplitude-phase-mzi-upper-control-lead" d="M 150,17 V 29"/>
+      <path id="loop-amplitude-phase-mzi-lower-control-lead" d="M 150,123 V 135"/>
+      <circle id="loop-amplitude-phase-mzi-upper-control-terminal" cx="150" cy="13" r="4"/>
+      <circle id="loop-amplitude-phase-mzi-lower-control-terminal" cx="150" cy="139" r="4"/>
+    </g>
+  </g>
+</g>
+    <g id="weak-weight-read-tap" data-component="weak-directional-read-tap">
+      <path id="read-tap-through-cladding" d="M 300,290 C 328,290 332,322 355,322 H 395 C 418,322 422,290 450,290" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="read-tap-read-cladding" d="M 300,370 C 328,370 332,338 355,338 H 395 C 418,338 422,370 450,370" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="read-tap-through-core" d="M 300,290 C 328,290 332,322 355,322 H 395 C 418,322 422,290 450,290" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="read-tap-read-core" d="M 300,370 C 328,370 332,338 355,338 H 395 C 418,338 422,370 450,370" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <rect id="read-tap-unused-input" x="296.5" y="360" width="7" height="20" rx="1" fill="#66778a"/>
+    </g>
+    <g id="pump-swap-mzi" transform="translate(537.2 551.6) scale(0.8)"><g id="pump-swap-mzi-os22-optical-cladding" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="pump-swap-mzi-os22-upper-arm-guide" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="pump-swap-mzi-os22-lower-arm-guide" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="pump-swap-mzi-os22-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="pump-swap-mzi-os22-upper-arm-core" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="pump-swap-mzi-os22-lower-arm-core" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="pump-swap-mzi-os22-electrical-control">
+    <rect id="pump-swap-mzi-os22-phase-control-electrode" x="164" y="29" width="72" height="6" rx="2" fill="#d5b477" stroke="none"/>
+    <g id="pump-swap-mzi-os22-control-connection" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="pump-swap-mzi-os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="pump-swap-mzi-os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</g>
+    <g id="external-coherent-weight-addition" data-component="coherent-injection">
+      <path id="coherent-addition-stored-weight-cladding" d="M 1300,290 C 1328,290 1332,342 1355,342 H 1385 C 1408,342 1412,290 1440,290" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="coherent-addition-weight-increment-cladding" d="M 1300,410 C 1328,410 1332,358 1355,358 H 1385 C 1408,358 1412,410 1440,410" fill="none" stroke="#e3e8ef" stroke-width="12.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="coherent-addition-stored-weight-core" d="M 1300,290 C 1328,290 1332,342 1355,342 H 1385 C 1408,342 1412,290 1440,290" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="coherent-addition-weight-increment-core" d="M 1300,410 C 1328,410 1332,358 1355,358 H 1385 C 1408,358 1412,410 1440,410" fill="none" stroke="#5d8db4" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <rect id="coherent-addition-unused-output" x="1436.5" y="400" width="7" height="20" rx="1" fill="#66778a"/>
+    </g>
+    <g id="external-weight-loop-gain" data-component="amplifier">
+      <path id="loop-gain-body" d="M 1480,254 L 1560,290 L 1480,326 Z" fill="#f3dfe3" stroke="#a36d7a" stroke-width="1.5"/>
+    </g>
+  </g>
+  <g id="coefficient-pulse-envelopes" inkscape:groupmode="layer" inkscape:label="Weight pulses — schematic envelopes">
+    <path id="coefficient-pulse-0" d="M 517,110 C 529,110 530,83 540,83 C 550,83 551,110 563,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-1" d="M 587,110 C 599,110 600,71 610,71 C 620,71 621,110 633,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-2" d="M 657,110 C 669,110 670,80 680,80 C 690,80 691,110 703,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-3" d="M 727,110 C 739,110 740,68 750,68 C 760,68 761,110 773,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-4" d="M 797,110 C 809,110 810,78 820,78 C 830,78 831,110 843,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-5" d="M 867,110 C 879,110 880,74 890,74 C 900,74 901,110 913,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+    <path id="coefficient-pulse-6" d="M 937,110 C 949,110 950,82 960,82 C 970,82 971,110 983,110 Z" fill="#5d8db4" fill-opacity=".16" stroke="#5d8db4" stroke-width="2.2"/>
+  </g>
+  <g id="electrical-controls" inkscape:groupmode="layer" inkscape:label="Electrical controls">
+    <path id="pump-mode-control-lead" d="M 697.2,535 V 558.8" fill="none" stroke="#b18a4c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="5 4"/>
+    <path id="write-enable-lead" d="M 1340,930 V 954" fill="none" stroke="#b18a4c" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="5 4"/>
+    <circle id="write-enable-terminal" cx="1340" cy="930" r="4" fill="#d5b477"/>
+  </g>
+  <g id="propagation-arrows" inkscape:groupmode="layer" inkscape:label="Propagation arrows">
+    <path id="loop-up" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1640 210) rotate(-90)"/>
+    <path id="loop-left" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1230 110) rotate(180)"/>
+    <path id="loop-left-2" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(370 110) rotate(180)"/>
+    <path id="loop-down" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(180 210) rotate(90)"/>
+    <path id="before-loop-trim" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(525 290) rotate(0)"/>
+    <path id="stored-weight" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1030 290) rotate(0)"/>
+    <path id="increment-up" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1120 466) rotate(-90)"/>
+    <path id="increment-right" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1220 410) rotate(0)"/>
+    <path id="read-copy" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(470 370) rotate(0)"/>
+    <path id="read-copy-down" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(500 510) rotate(90)"/>
+    <path id="fixed-M" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(420 641.2) rotate(0)"/>
+    <path id="pump-1" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(922 590) rotate(0)"/>
+    <path id="pump-2" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(972 670) rotate(0)"/>
+    <path id="data-input" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(925 770) rotate(0)"/>
+    <path id="saved-input" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(925 850) rotate(0)"/>
+    <path id="readout" d="M -7,-5 L 7,0 L -7,5 Z" fill="#416985" transform="translate(1650 770) rotate(0)"/>
+  </g>
+  <g id="component-and-port-labels" inkscape:groupmode="layer" inkscape:label="Component and port labels" font-family="DejaVu Sans, sans-serif" fill="#273648">
+    <text id="memory-label" x="790" y="48" font-size="29" text-anchor="middle" font-weight="500" fill="#273648">Recirculating coefficient memory  W(t)</text>
+    <text id="pulse-note" x="750" y="154" font-size="22" text-anchor="middle" font-weight="400" fill="#5a6c80">Time slots; each pulse carries a coefficient comb</text>
+    <text id="storage-label" x="1300" y="192" font-size="23" text-anchor="middle" font-weight="400" fill="#5a6c80">Fiber storage</text>
+    <text id="loop-trim-label" x="707.2" y="212" font-size="23" text-anchor="middle" font-weight="400" fill="#273648">Loop amplitude / phase</text>
+    <text id="stored-weight-label" x="1030" y="268" font-size="24" text-anchor="middle" font-weight="400" fill="#273648">Stored W⁻</text>
+    <text id="addition-label" x="1370" y="459" font-size="23" text-anchor="middle" font-weight="400" fill="#273648">Coherent addition</text>
+    <text id="loop-gain-label" x="1530" y="363" font-size="23" text-anchor="middle" font-weight="400" fill="#273648">Loop gain</text>
+    <text id="updated-weight-label" x="1580" y="250" font-size="25" text-anchor="middle" font-weight="400" fill="#273648">W⁺</text>
+    <text id="increment-path-label" x="1200" y="390" font-size="25" text-anchor="middle" font-weight="400" fill="#273648">ΔW</text>
+    <text id="read-tap-label" x="300" y="420" font-size="22" text-anchor="start" font-weight="400" fill="#273648">Weak read tap</text>
+    <text id="old-copy-label" x="493" y="610" font-size="25" text-anchor="end" font-weight="400" fill="#273648">W⁻</text>
+    <text id="fixed-M-label" x="300" y="681" font-size="25" text-anchor="start" font-weight="400" fill="#273648">Fixed M(t)</text>
+    <text id="switch-title" x="697.2" y="499" font-size="26" text-anchor="middle" font-weight="500" fill="#273648">2×2 MZI pump switch</text>
+    <text id="switch-control-label" x="697.2" y="527" font-size="21" text-anchor="middle" font-weight="400" fill="#997539">Forward / adjoint</text>
+    <text id="pump1-assignment" x="920" y="570" font-size="21" text-anchor="middle" font-weight="400" fill="#273648">W⁻ / M</text>
+    <text id="pump2-assignment" x="920" y="708" font-size="21" text-anchor="middle" font-weight="400" fill="#273648">M / W⁻</text>
+    <text id="increment-port" x="1120" y="534" font-size="25" text-anchor="middle" font-weight="400" fill="#273648">ΔW</text>
+    <text id="pump1-port" x="1022" y="597" font-size="22" text-anchor="start" font-weight="400" fill="#273648">Pump 1</text>
+    <text id="pump2-port" x="1022" y="677" font-size="22" text-anchor="start" font-weight="400" fill="#273648">Pump 2</text>
+    <text id="cell-name" x="1240" y="720" font-size="31" text-anchor="middle" font-weight="500" fill="#273648">Hankel multiplier</text>
+    <text id="cell-reference" x="1240" y="753" font-size="23" text-anchor="middle" font-weight="400" fill="#667386">Cell of Fig. 1a</text>
+    <text id="input-port" x="1022" y="777" font-size="22" text-anchor="start" font-weight="400" fill="#273648">u</text>
+    <text id="saved-port" x="1022" y="857" font-size="22" text-anchor="start" font-weight="400" fill="#273648">saved x</text>
+    <text id="readout-port" x="1457" y="753" font-size="21" text-anchor="end" font-weight="400" fill="#273648">Readout</text>
+    <text id="cell-increment-note" x="1240" y="898" font-size="22" text-anchor="middle" font-weight="400" fill="#745f6b">Cross-SFG weight increment</text>
+    <text id="data-input-label" x="790" y="746" font-size="26" text-anchor="start" font-weight="400" fill="#273648">u = x / e</text>
+    <text id="saved-input-label" x="790" y="826" font-size="23" text-anchor="start" font-weight="400" fill="#273648">Saved forward x</text>
+    <text id="result-label" x="1620" y="735" font-size="24" text-anchor="middle" font-weight="400" fill="#273648">Forward / adjoint</text>
+    <text id="result-label-2" x="1620" y="810" font-size="23" text-anchor="middle" font-weight="400" fill="#5a6c80">result</text>
+    <text id="write-control-label" x="1340" y="981" font-size="21" text-anchor="middle" font-weight="400" fill="#997539">Write enable</text>
+  </g>
+  <g id="mode-and-timing-notes" inkscape:groupmode="layer" inkscape:label="Mode key and timing notes — optional caption" font-family="DejaVu Sans, sans-serif" fill="#273648">
+    <path id="mode-key-divider" d="M 180,1020 H 1760" fill="none" stroke="#dbe1e8" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="round"/>
+    <text id="forward-mode-key" x="180" y="1058" font-size="24" text-anchor="start" font-weight="400" fill="#273648">Forward: u = x; pumps (W⁻, M)</text>
+    <text id="adjoint-mode-key" x="1030" y="1058" font-size="24" text-anchor="start" font-weight="400" fill="#273648">Adjoint: u = e; pumps (M, W⁻)</text>
+    <text id="old-state-timing-note" x="180" y="1098" font-size="22" text-anchor="start" font-weight="400" fill="#5a6c80">Hold and align W⁻ for both reads; then apply W⁺ = W⁻ + ΔW with calibrated coherent injection.</text>
+  </g>
+  <metadata id="optical-route-inventory">{
+  "coefficient-storage-return": {
+    "start": [
+      1560,
+      290
+    ],
+    "end": [
+      300,
+      290
+    ],
+    "band": "P"
+  },
+  "stored-weight-to-trim": {
+    "start": [
+      450,
+      290
+    ],
+    "end": [
+      600,
+      290
+    ],
+    "band": "P"
+  },
+  "stored-weight-to-addition": {
+    "start": [
+      814.4,
+      290
+    ],
+    "end": [
+      1300,
+      290
+    ],
+    "band": "P"
+  },
+  "old-weight-read-copy": {
+    "start": [
+      450,
+      370
+    ],
+    "end": [
+      550,
+      590
+    ],
+    "band": "P"
+  },
+  "fixed-partner-input": {
+    "start": [
+      300,
+      641.2
+    ],
+    "end": [
+      550,
+      641.2
+    ],
+    "band": "P"
+  },
+  "pump-1-feed": {
+    "start": [
+      844.4,
+      590
+    ],
+    "end": [
+      1000,
+      590
+    ],
+    "band": "P"
+  },
+  "pump-2-feed": {
+    "start": [
+      844.4,
+      641.2
+    ],
+    "end": [
+      1000,
+      670
+    ],
+    "band": "P"
+  },
+  "reader-data-input": {
+    "start": [
+      790,
+      770
+    ],
+    "end": [
+      1000,
+      770
+    ],
+    "band": "A"
+  },
+  "saved-forward-input": {
+    "start": [
+      790,
+      850
+    ],
+    "end": [
+      1000,
+      850
+    ],
+    "band": "A"
+  },
+  "reader-result": {
+    "start": [
+      1480,
+      770
+    ],
+    "end": [
+      1760,
+      770
+    ],
+    "band": "A"
+  },
+  "weight-increment-output": {
+    "start": [
+      1120,
+      500
+    ],
+    "end": [
+      1300,
+      410
+    ],
+    "band": "P"
+  },
+  "coherent-addition-to-gain": {
+    "start": [
+      1440,
+      290
+    ],
+    "end": [
+      1480,
+      290
+    ],
+    "band": "P"
+  },
+  "loop-gain-axis": {
+    "start": [
+      1480,
+      290
+    ],
+    "end": [
+      1560,
+      290
+    ],
+    "band": "P"
+  }
+}</metadata>
+</svg>

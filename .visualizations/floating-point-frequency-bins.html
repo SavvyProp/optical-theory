@@ -1,0 +1,80 @@
+<section id="fp-frequency-bins" aria-labelledby="fp-bins-heading">
+  <h3 id="fp-bins-heading">Two products across exponent bins · base 2</h3>
+  <div class="viz-controls">
+    <label class="form-label">Second product’s mantissa
+      <select class="form-select" id="fp-bins-mantissa">
+        <option value="0.5">+0.5</option>
+        <option value="-0.5">−0.5</option>
+      </select>
+    </label>
+    <label class="form-label">Second product’s exponent
+      <select class="form-select" id="fp-bins-exponent">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
+    </label>
+  </div>
+  <table class="table table-sm tabular-nums" aria-label="Signed product contributions grouped by exponent">
+    <thead><tr><th scope="col">Exponent bin</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">First product</th><td>—</td><td>—</td><td class="fp-occupied">+0.5</td></tr>
+      <tr data-row="variable"><th scope="row">Second product</th><td class="fp-occupied">+0.5</td><td>—</td><td>—</td></tr>
+      <tr data-row="subtotal"><th scope="row">Mantissa sum</th><td>0.5</td><td>0</td><td>0.5</td></tr>
+      <tr data-row="weighted"><th scope="row">After scaling by 2<sup>bin</sup></th><td>0.5</td><td>0</td><td>2</td></tr>
+    </tbody>
+  </table>
+  <div>Decoded dot product <output id="fp-bins-value" class="tabular-nums" aria-live="polite">2.5</output></div>
+</section>
+<style>
+  #fp-frequency-bins { display: grid; gap: calc(var(--font-size-base) * 0.8); }
+  #fp-frequency-bins th { font-weight: 500; }
+  #fp-frequency-bins :is(th, td):not(:first-child) { text-align: center; width: 17%; }
+  #fp-frequency-bins .fp-occupied { background: color-mix(in srgb, var(--viz-series-1) 13%, transparent); }
+  #fp-bins-value { margin-inline-start: 0.6em; font-weight: 500; }
+</style>
+<script>
+(() => {
+  const root = document.getElementById("fp-frequency-bins");
+  const mantissa = root.querySelector("#fp-bins-mantissa");
+  const exponent = root.querySelector("#fp-bins-exponent");
+  const terms = root.querySelector('[data-row="variable"]');
+  const subtotals = root.querySelector('[data-row="subtotal"]');
+  const scaled = root.querySelector('[data-row="weighted"]');
+  const result = root.querySelector("#fp-bins-value");
+  function render() {
+    const m = Number(mantissa.value);
+    const e = Number(exponent.value);
+    let total = 0;
+    for (let bin = 0; bin <= 2; bin += 1) {
+      const occupied = bin === e;
+      const term = terms.cells[bin + 1];
+      term.textContent = occupied ? (m > 0 ? "+0.5" : "−0.5") : "—";
+      term.classList.toggle("fp-occupied", occupied);
+      const subtotal = (bin === 2 ? 0.5 : 0) + (occupied ? m : 0);
+      const contribution = subtotal * (2 ** bin);
+      subtotals.cells[bin + 1].textContent = String(subtotal).replace("-", "−");
+      scaled.cells[bin + 1].textContent = String(contribution).replace("-", "−");
+      total += contribution;
+    }
+    result.textContent = String(total);
+  }
+  function restore(state) {
+    const settings = state?.modelContent;
+    mantissa.value = settings?.mantissa === -0.5 ? "-0.5" : "0.5";
+    exponent.value = [0, 1, 2].includes(settings?.exponent) ? String(settings.exponent) : "0";
+    render();
+  }
+  restore(window.openai?.widgetState);
+  window.addEventListener("openai:set_globals", event => {
+    const globals = event.detail?.globals;
+    if (globals && "widgetState" in globals) restore(globals.widgetState);
+  });
+  root.addEventListener("change", () => {
+    render();
+    window.openai?.setWidgetState?.({
+      modelContent: { mantissa: Number(mantissa.value), exponent: Number(exponent.value) }
+    })?.catch(() => {});
+  });
+})();
+</script>

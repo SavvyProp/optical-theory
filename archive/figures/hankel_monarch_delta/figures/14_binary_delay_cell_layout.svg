@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1250" viewBox="0 0 1600 1250" role="img" aria-labelledby="title desc">
+  <title id="title">Physical concept of one passive binary delay cell</title>
+  <desc id="desc">Plan-view schematic of a single split-delay-recombine cell in silicon nitride on a silicon substrate. An input enters a balanced two-by-two coupler; its second input is terminated and undriven. The upper reference arm follows a short route. The lower arm contains additional folded waveguide of length delta L. Both arms enter a second balanced coupler. Its selected output advances to the next cell, while the other output is terminated. The selected transfer is one half times one plus the binary delay operator, with calibrated carrier phase and ideal equal arm amplitudes. There is no fast electro-optic control. One accumulator branch contains six such two-arm cells, with differential delays ten through three hundred twenty picoseconds and approximate extra lengths one point five through forty-eight millimeters at group index two. This figure is a connectivity and placement concept, not a mask layout or a scale drawing.</desc>
+  <defs>
+    <marker id="teal-arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#0f766e"/></marker>
+    <marker id="muted-arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L10 6 L1 11 Z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1600" height="1250" fill="#f8fafc"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="48" y="62" fill="#0f172a" font-size="31" font-weight="700">Inside one binary delay cell</text>
+    <text x="48" y="103" fill="#475569" font-size="22">Passive SiN split–delay–recombine circuit · plan-view connectivity concept</text>
+    <rect x="48" y="134" width="1504" height="79" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+    <text x="73" y="167" fill="#0f766e" font-size="23" font-weight="700">One accumulator branch still contains two arms in each cell.</text>
+    <text x="73" y="197" fill="#475569" font-size="20">The baseline cascades six cells in one chain; it does not duplicate the complete accumulator.</text>
+
+    <rect x="48" y="243" width="1504" height="555" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="73" y="277" fill="#475569" font-size="19">SiN routing plane on silicon · bend radius, pitch and coupler geometry set by the process</text>
+
+    <!-- Two distinct arms and all four ports of each coupler are explicit. -->
+    <g fill="none" stroke="#0f766e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M100 370 H270" marker-end="url(#teal-arrow)"/>
+      <path d="M360 370 H1250"/>
+      <path d="M360 450 H420 V530 Q420 550 440 550 H1095 Q1120 550 1120 575 Q1120 600 1095 600 H550 Q525 600 525 625 Q525 650 550 650 H1095 Q1120 650 1120 675 Q1120 700 1095 700 H550 Q525 700 525 725 Q525 750 550 750 H1170 Q1200 750 1200 720 V475 Q1200 450 1225 450 H1250"/>
+      <path d="M1340 370 H1490" marker-end="url(#teal-arrow)"/>
+    </g>
+    <path d="M600 370 H670" fill="none" stroke="#0f766e" stroke-width="5" marker-end="url(#teal-arrow)"/>
+    <path d="M820 550 H880" fill="none" stroke="#0f766e" stroke-width="5" marker-end="url(#teal-arrow)"/>
+    <path d="M850 600 H790" fill="none" stroke="#0f766e" stroke-width="5" marker-end="url(#teal-arrow)"/>
+    <path d="M1200 520 V480" fill="none" stroke="#0f766e" stroke-width="5" marker-end="url(#teal-arrow)"/>
+
+    <!-- Couplers are symbolic blocks, not fabrication shapes. -->
+    <rect x="270" y="330" width="90" height="160" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <rect x="1250" y="330" width="90" height="160" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <g fill="#2563eb" font-size="19" text-anchor="middle">
+      <text x="315" y="395" font-weight="700">50:50</text><text x="315" y="425">2 × 2</text>
+      <text x="1295" y="395" font-weight="700">50:50</text><text x="1295" y="425">2 × 2</text>
+    </g>
+    <text x="315" y="316" text-anchor="middle" fill="#2563eb" font-size="19">Splitter</text>
+    <text x="1295" y="316" text-anchor="middle" fill="#2563eb" font-size="19">Recombiner</text>
+    <text x="103" y="348" fill="#0f766e" font-size="21" font-weight="700">Input comb</text>
+    <text x="1362" y="327" fill="#0f766e" font-size="20" font-weight="700">Selected port</text>
+    <text x="1362" y="350" fill="#475569" font-size="18">to next cell</text>
+
+    <!-- Unused input and rejected output terminate locally; they are not joined. -->
+    <path d="M200 450 H270" fill="none" stroke="#64748b" stroke-width="4"/>
+    <rect x="187" y="434" width="13" height="32" rx="2" fill="#64748b"/>
+    <text x="77" y="500" fill="#475569" font-size="18">Unused input:</text>
+    <text x="77" y="525" fill="#475569" font-size="18">terminated / undriven</text>
+    <path d="M1340 450 H1460" fill="none" stroke="#64748b" stroke-width="4" marker-end="url(#muted-arrow)"/>
+    <rect x="1467" y="434" width="13" height="32" rx="2" fill="#64748b"/>
+    <text x="1360" y="500" fill="#475569" font-size="18">Reject port:</text>
+    <text x="1360" y="525" fill="#475569" font-size="18">optical dump</text>
+
+    <text x="790" y="343" text-anchor="middle" fill="#0f766e" font-size="22" font-weight="600">Short reference arm · L₀</text>
+    <text x="790" y="411" text-anchor="middle" fill="#475569" font-size="19">Fixed relative phase, calibrated for the selected sum port</text>
+    <text x="790" y="480" text-anchor="middle" fill="#0f766e" font-size="22" font-weight="600">Long arm · L₀ + ΔL</text>
+    <text x="790" y="512" text-anchor="middle" fill="#475569" font-size="19">Folded path shown; compact spirals serve the longer delays</text>
+    <text x="73" y="769" fill="#475569" font-size="18">Waveguide widths and folds are exaggerated. Common paths contribute latency, not the differential delay.</text>
+
+    <rect x="48" y="824" width="795" height="325" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="74" y="865" fill="#0f172a" font-size="23" font-weight="700">Ideal selected-port transfer</text>
+    <text x="74" y="915" fill="#0f766e" font-size="28" font-weight="600">E_out(t) = [E_in(t) + E_in(t − Δt)] / 2</text>
+    <text x="74" y="959" fill="#475569" font-size="21">Δt = n_g ΔL / c = 2ʲ τ, with τ = 10 ps</text>
+    <text x="74" y="1000" fill="#475569" font-size="20">Two 50:50 couplers give a 1/2 field weight per path.</text>
+    <text x="74" y="1033" fill="#475569" font-size="20">The complementary output is discarded; there is no gain.</text>
+    <text x="74" y="1066" fill="#475569" font-size="20">Six cells yield (1/64) Σ Dʳ, with r = 0…63.</text>
+    <text x="74" y="1099" fill="#475569" font-size="20">No fast EO switch; phase stability is still required.</text>
+    <text x="74" y="1129" fill="#64748b" font-size="17">Equal amplitudes, negligible dispersion and aligned comb phases assumed.</text>
+
+    <rect x="870" y="824" width="682" height="325" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="896" y="865" fill="#0f172a" font-size="23" font-weight="700">Six cells in the single lattice</text>
+    <path d="M893 919 H1528 M893 1116 H1528" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+    <g fill="#475569" font-size="20" text-anchor="middle">
+      <text x="945" y="901" font-weight="600">Cell j</text>
+      <text x="1117" y="901" font-weight="600">Δt (ps)</text>
+      <text x="1382" y="901" font-weight="600">ΔL (mm), n_g ≈ 2</text>
+      <text x="945" y="946">0</text><text x="1117" y="946">10</text><text x="1382" y="946">1.5</text>
+      <text x="945" y="978">1</text><text x="1117" y="978">20</text><text x="1382" y="978">3</text>
+      <text x="945" y="1010">2</text><text x="1117" y="1010">40</text><text x="1382" y="1010">6</text>
+      <text x="945" y="1042">3</text><text x="1117" y="1042">80</text><text x="1382" y="1042">12</text>
+      <text x="945" y="1074">4</text><text x="1117" y="1074">160</text><text x="1382" y="1074">24</text>
+      <text x="945" y="1106">5</text><text x="1117" y="1106">320</text><text x="1382" y="1106">48</text>
+    </g>
+    <text x="896" y="1140" fill="#0f766e" font-size="19" font-weight="600">Total extra path: ≈94.5 mm · 12 passive couplers</text>
+    <text x="48" y="1191" fill="#475569" font-size="20">Concept only: not a routed mask, a verified bend design or a specified coupler implementation.</text>
+    <text x="48" y="1223" fill="#475569" font-size="20">Coupler phase, loss and wavelength dependence must be included when translating this topology into a PDK.</text>
+  </g>
+</svg>

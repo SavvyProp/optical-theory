@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1140" viewBox="0 0 1600 1140" role="img" aria-labelledby="title desc">
+  <title id="title">One selected layer and head: optical Hankel–Monarch core with two local delta updates</title>
+  <desc id="desc">Electronic token projections drive coherent encoders. The first bank updates its directly stored Hankel coefficients from a local optical residual, then reads a query. A wavelength-preserving spatial permutation routes this output to the second bank, which performs its own local update and read. Each bank has a recirculating coefficient memory. There is no residual feedback between banks in this baseline.</desc>
+  <defs>
+    <marker id="dataArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#0f766e"/></marker>
+    <marker id="memoryArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#7c3aed"/></marker>
+    <marker id="controlArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#b45309"/></marker>
+    <marker id="errorArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#be123c"/></marker>
+    <marker id="grayArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0,0 L10,5 L0,10 Z" fill="#475569"/></marker>
+  </defs>
+  <rect width="1600" height="1140" fill="#f8fafc"/>
+  <g font-family="Inter, DejaVu Sans, Arial, sans-serif" fill="#0f172a">
+<text x="60" y="65" font-size="38" fill="#0f172a" font-weight="700" text-anchor="start">Optical Hankel–Monarch memory</text>
+<text x="60" y="104" font-size="22" fill="#475569" font-weight="400" text-anchor="start">One selected layer / head · two local delta updates · fixed partners b · adaptive coefficients a</text>
+<rect x="60" y="145" width="1480" height="120" rx="16" fill="#fffbeb" stroke="#fcd34d" stroke-width="2"/>
+<text x="90" y="183" font-size="18" fill="#b45309" font-weight="700" text-anchor="start">ELECTRONIC TOKEN PROJECTIONS AND CONTROL</text>
+<text x="90" y="218" font-size="23" fill="#0f172a" font-weight="400" text-anchor="start">Generate k₁, q₁, v₁, v₂ and scalar gates α₁, η₁, α₂, η₂ from the input token.</text>
+<text x="90" y="246" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Residual subtraction and coefficient-gradient generation occur in the optical paths below.</text>
+<path d="M800,265 L800,300" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="8 6" marker-end="url(#controlArrow)"/>
+<rect x="60" y="300" width="1480" height="108" rx="16" fill="white" stroke="#99f6e4" stroke-width="2"/>
+<text x="90" y="334" font-size="18" fill="#0f766e" font-weight="700" text-anchor="start">COHERENT ENCODERS</text>
+<text x="90" y="375" font-size="21" fill="#0f766e" font-weight="400" text-anchor="start">Key / query combs k₁, q₁</text>
+<text x="515" y="375" font-size="21" fill="#0f766e" font-weight="400" text-anchor="start">Target comb v₁</text>
+<text x="1100" y="375" font-size="21" fill="#0f766e" font-weight="400" text-anchor="start">Target comb v₂</text>
+<path d="M180,408 L180,616 L280,616" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<text x="72" y="590" font-size="20" fill="#0f766e" font-weight="600" text-anchor="start">k₁, q₁</text>
+<path d="M540,408 L540,475" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<text x="552" y="450" font-size="20" fill="#0f766e" font-weight="400" text-anchor="start">v₁</text>
+<path d="M1185,408 L1185,475" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<text x="1197" y="450" font-size="20" fill="#0f766e" font-weight="400" text-anchor="start">v₂</text>
+<rect x="280" y="475" width="350" height="270" rx="16" fill="white" stroke="#0f766e" stroke-width="2"/>
+<text x="305" y="515" font-size="24" fill="#0f766e" font-weight="700" text-anchor="start">BANK 1</text>
+<text x="305" y="548" font-size="20" fill="#0f172a" font-weight="600" text-anchor="start">Local full-Hankel blocks</text>
+<text x="305" y="586" font-size="20" fill="#0f172a" font-weight="400" text-anchor="start">Predict with B₁⁻ k₁</text>
+<text x="305" y="619" font-size="18" fill="#be123c" font-weight="400" text-anchor="start">Local residual e₁ = v₁ − B₁⁻ k₁</text>
+<text x="305" y="652" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Write Δa₁; commit all slots</text>
+<text x="305" y="685" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Read B₁⁺ q₁ after the update</text>
+<text x="305" y="722" font-size="18" fill="#7c3aed" font-weight="400" text-anchor="start">Fixed b₁,m · adaptive a₁,m</text>
+<path d="M630,616 L705,616" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="705" y="551" width="190" height="130" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="2"/>
+<text x="800" y="589" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">SHUFFLE P</text>
+<text x="800" y="621" font-size="18" fill="#0f172a" font-weight="400" text-anchor="middle">Spatial routing</text>
+<text x="800" y="650" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Same frequencies</text>
+<path d="M895,616 L970,616" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<text x="902" y="598" font-size="21" fill="#0f766e" font-weight="600" text-anchor="start">z</text>
+<text x="800" y="717" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">z = P B₁⁺ q₁</text>
+<rect x="970" y="475" width="350" height="270" rx="16" fill="white" stroke="#0f766e" stroke-width="2"/>
+<text x="995" y="515" font-size="24" fill="#0f766e" font-weight="700" text-anchor="start">BANK 2</text>
+<text x="995" y="548" font-size="20" fill="#0f172a" font-weight="600" text-anchor="start">Local full-Hankel blocks</text>
+<text x="995" y="586" font-size="20" fill="#0f172a" font-weight="400" text-anchor="start">Key and query: z</text>
+<text x="995" y="619" font-size="18" fill="#be123c" font-weight="400" text-anchor="start">Local residual e₂ = v₂ − B₂⁻ z</text>
+<text x="995" y="652" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Write Δa₂; commit all slots</text>
+<text x="995" y="685" font-size="19" fill="#0f172a" font-weight="400" text-anchor="start">Read B₂⁺ z after the update</text>
+<text x="995" y="722" font-size="18" fill="#7c3aed" font-weight="400" text-anchor="start">Fixed b₂,m · adaptive a₂,m</text>
+<path d="M1320,616 L1370,616" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#dataArrow)"/>
+<rect x="1370" y="552" width="170" height="128" rx="16" fill="white" stroke="#0f766e" stroke-width="2"/>
+<text x="1455" y="590" font-size="19" fill="#0f766e" font-weight="700" text-anchor="middle">OUTPUT</text>
+<text x="1455" y="624" font-size="17" fill="#0f172a" font-weight="400" text-anchor="middle">Coherent read</text>
+<text x="1455" y="653" font-size="17" fill="#0f172a" font-weight="400" text-anchor="middle">+ electronics</text>
+<text x="1350" y="721" font-size="21" fill="#0f766e" font-weight="600" text-anchor="start">y = B₂⁺ z</text>
+<path d="M710,265 L710,443 L610,443 L610,475" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#controlArrow)"/>
+<text x="667" y="460" font-size="18" fill="#b45309" font-weight="400" text-anchor="start">α₁, η₁</text>
+<path d="M1342,265 L1342,443 L1298,443 L1298,475" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 6" marker-end="url(#controlArrow)"/>
+<text x="1360" y="460" font-size="18" fill="#b45309" font-weight="400" text-anchor="start">α₂, η₂</text>
+<rect x="280" y="825" width="350" height="125" rx="16" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="2"/>
+<text x="305" y="863" font-size="18" fill="#7c3aed" font-weight="700" text-anchor="start">Recirculating coefficient fiber</text>
+<text x="305" y="895" font-size="18" fill="#0f172a" font-weight="400" text-anchor="start">Stored a₁,m: 2K − 1 lines / slot</text>
+<text x="305" y="924" font-size="18" fill="#475569" font-weight="400" text-anchor="start">R slots per local K × K block</text>
+<path d="M355,825 L355,745" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<path d="M555,745 L555,825" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<text x="367" y="786" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="start">read</text>
+<text x="469" y="786" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="start">inject Δa</text>
+<path d="M630,855 C677,855 677,925 630,925" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<rect x="970" y="825" width="350" height="125" rx="16" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="2"/>
+<text x="995" y="863" font-size="18" fill="#7c3aed" font-weight="700" text-anchor="start">Recirculating coefficient fiber</text>
+<text x="995" y="895" font-size="18" fill="#0f172a" font-weight="400" text-anchor="start">Stored a₂,m: 2K − 1 lines / slot</text>
+<text x="995" y="924" font-size="18" fill="#475569" font-weight="400" text-anchor="start">R slots per local K × K block</text>
+<path d="M1045,825 L1045,745" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<path d="M1245,745 L1245,825" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<text x="1057" y="786" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="start">read</text>
+<text x="1159" y="786" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="start">inject Δa</text>
+<path d="M1320,855 C1367,855 1367,925 1320,925" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#memoryArrow)"/>
+<rect x="60" y="1000" width="1480" height="100" rx="16" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+<text x="85" y="1036" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Local residuals drive local optical writes. The inter-bank shuffle carries the forward signal only.</text>
+<text x="85" y="1073" font-size="19" fill="#475569" font-weight="400" text-anchor="start">Teal: optical data   ·   Violet: coefficient memory   ·   Amber dashed: electrical gates   ·   Red: optical residuals</text>
+</g></svg>

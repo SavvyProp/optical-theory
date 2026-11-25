@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="300" height="152" viewBox="0 0 300 152"
+     version="1.1" role="img" aria-labelledby="mzi-title mzi-description">
+  <title id="mzi-title">MZI amplitude and phase modulator — simplified symbol</title>
+  <desc id="mzi-description">Editable, annotation-free functional symbol
+    with one optical input on the left and one selected optical output on the
+    right. A symmetric split-arm-recombine motif represents a Mach–Zehnder
+    modulator. Two gold actuator marks and electrical control terminals
+    represent independently controlled arm phase shifts. Their reference
+    connections and detailed electrodes are omitted. Differential arm phase
+    controls transmission magnitude; common arm phase controls output phase.
+    For ideal balanced splitting and recombination, the selected transmission
+    is exp(i phi_average) cos(delta_phi/2), up to a fixed coupler phase.
+    Rejected optical power leaves through an omitted complementary channel
+    or radiation/termination modes, depending on implementation. The branches
+    are functional symbols, not a physical mask or a claim of lossless
+    three-port operation. Actuator technology, voltage range and bandwidth
+    are unspecified. Continuous pale gray optical guides and blue cores
+    match the component library. No overall enclosure is drawn. All artwork
+    is native editable SVG on a transparent background, with separate layers
+    for optical cladding, optical cores and electrical control symbols.</desc>
+
+  <g id="mzi-optical-guides" inkscape:groupmode="layer"
+     inkscape:label="Optical cladding" fill="none"
+     stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="mzi-input-guide" d="M 16,76 H 38"/>
+    <path id="mzi-upper-guide"
+          d="M 38,76 C 62,76 66,44 94,44 H 206
+             C 234,44 238,76 262,76"/>
+    <path id="mzi-lower-guide"
+          d="M 38,76 C 62,76 66,108 94,108 H 206
+             C 234,108 238,76 262,76"/>
+    <path id="mzi-output-guide" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="mzi-optical-cores" inkscape:groupmode="layer"
+     inkscape:label="Optical cores" fill="none"
+     stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="mzi-input-core" d="M 16,76 H 38"/>
+    <path id="mzi-upper-core"
+          d="M 38,76 C 62,76 66,44 94,44 H 206
+             C 234,44 238,76 262,76"/>
+    <path id="mzi-lower-core"
+          d="M 38,76 C 62,76 66,108 94,108 H 206
+             C 234,108 238,76 262,76"/>
+    <path id="mzi-output-core" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="mzi-electrical-controls" inkscape:groupmode="layer"
+     inkscape:label="Electrical phase controls">
+    <g id="mzi-actuator-marks" fill="#d5b477" stroke="none">
+      <rect id="mzi-upper-phase-shifter" x="118" y="29" width="64" height="6" rx="2"/>
+      <rect id="mzi-lower-phase-shifter" x="118" y="117" width="64" height="6" rx="2"/>
+    </g>
+    <g id="mzi-control-leads" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="mzi-upper-control-lead" d="M 150,17 V 29"/>
+      <path id="mzi-lower-control-lead" d="M 150,123 V 135"/>
+      <circle id="mzi-upper-control-terminal" cx="150" cy="13" r="4"/>
+      <circle id="mzi-lower-control-terminal" cx="150" cy="139" r="4"/>
+    </g>
+  </g>
+</svg>

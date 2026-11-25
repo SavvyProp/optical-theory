@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     width="400" height="160" viewBox="0 0 400 160"
+     version="1.1" role="img" aria-labelledby="os22-title os22-description">
+  <title id="os22-title">Electrically controlled 2×2 Mach–Zehnder optical switch</title>
+  <desc id="os22-description">Editable, annotation-free top-down functional
+    symbol for a two-input, two-output Mach–Zehnder optical switch. Two
+    distinct waveguides approach in a nominal balanced directional coupler,
+    separate into equal-length interferometer arms, approach in a second
+    nominal balanced directional coupler, then separate into two outputs.
+    There are no Y junctions or crossings. A gold electrode and electrical
+    control terminal represent differential phase control on the upper arm;
+    the electrical return and any static bias elements are omitted.
+    Calibrated differential phase selects the bar or cross routing state;
+    a pi change exchanges the two outputs. Route phases must be calibrated
+    when the switch carries coherent signals. Both optical outputs are
+    retained. This is a functional schematic, not a fabrication layout:
+    coupling length, waveguide spacing, bends, actuator technology,
+    operating wavelength, optical bandwidth, extinction and switching time
+    are unspecified. Short leads, continuous pale gray cladding and blue
+    cores match the component library. There are no fiber outlines,
+    enclosing box, visible labels or background. All artwork is native
+    vector SVG with separate editable layers. Optical port centers:
+    upper input (16,48), lower input (16,112), upper output (384,48),
+    lower output (384,112). Electrical terminal center: (200,13).
+    Directional coupling regions occupy x=66 to 98 and x=302 to 334,
+    with guide centers at y=70 and y=90.</desc>
+
+  <g id="os22-optical-cladding" inkscape:groupmode="layer"
+     inkscape:label="Optical cladding" fill="none"
+     stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="os22-upper-arm-guide"
+          d="M 16,48 H 34 C 50,48 50,70 66,70 H 98
+             C 118,70 122,44 142,44 H 258
+             C 278,44 282,70 302,70 H 334
+             C 350,70 350,48 366,48 H 384"/>
+    <path id="os22-lower-arm-guide"
+          d="M 16,112 H 34 C 50,112 50,90 66,90 H 98
+             C 118,90 122,116 142,116 H 258
+             C 278,116 282,90 302,90 H 334
+             C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="os22-optical-cores" inkscape:groupmode="layer"
+     inkscape:label="Optical cores" fill="none"
+     stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt"
+     stroke-linejoin="round">
+    <path id="os22-upper-arm-core"
+          d="M 16,48 H 34 C 50,48 50,70 66,70 H 98
+             C 118,70 122,44 142,44 H 258
+             C 278,44 282,70 302,70 H 334
+             C 350,70 350,48 366,48 H 384"/>
+    <path id="os22-lower-arm-core"
+          d="M 16,112 H 34 C 50,112 50,90 66,90 H 98
+             C 118,90 122,116 142,116 H 258
+             C 278,116 282,90 302,90 H 334
+             C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="os22-electrical-control" inkscape:groupmode="layer"
+     inkscape:label="Electrical control">
+    <rect id="os22-phase-control-electrode"
+          x="164" y="29" width="72" height="6" rx="2"
+          fill="#d5b477" stroke="none"/>
+    <g id="os22-control-connection" fill="none"
+       stroke="#b18a4c" stroke-width="2">
+      <path id="os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</svg>

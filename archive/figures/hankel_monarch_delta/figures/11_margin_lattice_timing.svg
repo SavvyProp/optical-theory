@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="2650" viewBox="0 0 2200 2650" role="img" aria-labelledby="title desc">
+<title id="title">Margin-configurable two-path delay network: 70-tap example</title>
+<desc id="desc">A uniform 70-tap passive accumulator is factored as H2(D) times H5(D squared) times H7(D to the tenth). Each Hn is the normalized sum of n consecutive delays. The 5-tap group uses a direct path and a delayed 4-tap path with matched splitter and combiner power ratios one fifth and four fifths. The 7-tap group similarly uses a direct path and a delayed 6-tap path with ratios one seventh and six sevenths. Its 6-tap branch contains a balanced 2-tap cell and a nested 3-tap two-arm network, whose ratios are one third and two thirds. No junction splits into three paths. There are eight cells: five balanced and three unequal joins. The network creates a 390-picosecond completed plateau for a 320-picosecond input frame, leaving 35 picoseconds of margin on either side of the centered useful window. Frames alternate between two networks every 400 picoseconds. No output shutter is used. Receiving nonlinear conversion, replay and memory capture must respect valid windows. The final panel defines how to choose the tap count from a requested fractional plateau increase and absolute left and right arrival budgets. Device settling, phase and bandwidth performance remain unvalidated.</desc>
+<defs>
+<marker id="arrow-data" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#0f766e"/></marker>
+<marker id="arrow-pump" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#7c3aed"/></marker>
+<marker id="arrow-ctrl" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#b45309"/></marker>
+<marker id="arrow-error" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#be123c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#475569"/></marker>
+</defs>
+<rect width="2200" height="2650" fill="#f8fafc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="48" y="61" font-size="34" fill="#0f172a" font-weight="700" text-anchor="start">Margin-configurable delay network · two-way junctions only</text>
+<text x="48" y="98" font-size="22" fill="#475569" font-weight="400" text-anchor="start">Example: R = 32 terms · τ = 10 ps · L = 70 taps · 390 ps plateau for a 320 ps useful input · no output shutter</text>
+<rect x="40" y="135" width="2120" height="854" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="177" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">ONE PASSIVE ACCUMULATOR · nested branch filters produce exactly 70 uniform taps</text>
+<text x="68" y="211" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Hₙ(z) = (1 + z + ⋯ + zⁿ⁻¹) / n. Blocks multiply in sequence; weighted joins add their two branch fields.</text>
+<rect x="70" y="239" width="340" height="639" rx="12" fill="#f0fdfa" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="240" y="280" font-size="29" fill="#0f766e" font-weight="700" text-anchor="middle">H₂(D)</text>
+<text x="240" y="316" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">One balanced cell</text>
+<path d="M95 455 H111" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="111" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="357" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M123 443 V407 H357 V443" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M123 467 V497 H139 V483 H156 V510 H343 V497 H357 V467" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M369 455 H385" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="240.0" y="560" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">10 ps</text>
+<text x="240" y="659" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">50:50 power couplers</text>
+<text x="240" y="693" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">One-slot difference</text>
+<text x="240" y="727" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">Two uniform taps</text>
+<path d="M385 455 H480" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<rect x="440" y="239" width="680" height="639" rx="12" fill="#f0fdfa" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="780" y="280" font-size="29" fill="#0f766e" font-weight="700" text-anchor="middle">H₅(D²)</text>
+<text x="780" y="316" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">Matched power ratios 1/5 : 4/5</text>
+<rect x="480" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1080" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M492 443 V365 H1080 V443" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="780" y="350" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Direct branch · field weight 1/5</text>
+<path d="M492 467 V650 H535" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="535" y="620" width="100" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="585.0" y="646" font-size="21" fill="#7c3aed" font-weight="600" text-anchor="middle">D²</text>
+<text x="585.0" y="671" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="middle">20 ps</text>
+<path d="M635 650 H665" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<rect x="665" y="540" width="380" height="234" rx="10" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="855" y="576" font-size="19" fill="#0f766e" font-weight="700" text-anchor="middle">H₄(D²) · two balanced cells</text>
+<path d="M680 650 H696" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="696" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="822" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M708 638 V602 H822 V638" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M708 662 V692 H724 V678 H741 V705 H808 V692 H822 V662" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M834 650 H850" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="765.0" y="750" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">20 ps</text>
+<path d="M860 650 H876" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="876" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1002" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M888 638 V602 H1002 V638" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M888 662 V692 H904 V678 H921 V705 H988 V692 H1002 V662" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1014 650 H1030" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="945.0" y="750" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">40 ps</text>
+<path d="M850 650 H860" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1030 650 H1080 V467" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="780" y="822" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Delayed H₄ branch · field weight 4/5</text>
+<path d="M1092 455 H1170" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<rect x="1150" y="239" width="980" height="639" rx="12" fill="#f0fdfa" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="1640" y="280" font-size="29" fill="#0f766e" font-weight="700" text-anchor="middle">H₇(D¹⁰)</text>
+<text x="1640" y="316" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">Matched power ratios 1/7 : 6/7</text>
+<rect x="1170" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="2100" y="432" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1182 443 V365 H2100 V443" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1640" y="350" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Direct branch · field weight 1/7</text>
+<path d="M1182 467 V650 H1220" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1220" y="620" width="100" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1270.0" y="646" font-size="21" fill="#7c3aed" font-weight="600" text-anchor="middle">D¹⁰</text>
+<text x="1270.0" y="671" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="middle">100 ps</text>
+<path d="M1320 650 H1340" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1340 650 H1356" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1356" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1492" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1368 638 V602 H1492 V638" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1368 662 V692 H1384 V678 H1401 V705 H1478 V692 H1492 V662" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1504 650 H1520" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="1430.0" y="759" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">100 ps</text>
+<text x="1430" y="575" font-size="18" fill="#0f766e" font-weight="700" text-anchor="middle">H₂(D¹⁰)</text>
+<path d="M1520 650 H1570" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<rect x="1545" y="490" width="530" height="348" rx="10" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="1810" y="524" font-size="19" fill="#0f766e" font-weight="700" text-anchor="middle">H₃(D²⁰) · matched 1/3 : 2/3</text>
+<rect x="1570" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="2045" y="627" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1582 638 V588 H2045 V638" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1810" y="572" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Direct branch · field weight 1/3</text>
+<path d="M1582 662 V740 H1610" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1610" y="710" width="100" height="60" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1660.0" y="736" font-size="21" fill="#7c3aed" font-weight="600" text-anchor="middle">D²⁰</text>
+<text x="1660.0" y="761" font-size="17" fill="#7c3aed" font-weight="400" text-anchor="middle">200 ps</text>
+<path d="M1710 740 H1730" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1730 740 H1746" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="1746" y="717" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1987" y="717" width="12" height="46" rx="2" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1758 728 V692 H1987 V728" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1758 752 V782 H1774 V768 H1791 V795 H1973 V782 H1987 V752" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1999 740 H2015" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="1872.5" y="822" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">200 ps</text>
+<text x="1870" y="675" font-size="18" fill="#0f766e" font-weight="700" text-anchor="middle">H₂(D²⁰)</text>
+<path d="M2015 740 H2045 V662" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M2057 650 H2100 V467" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M2112 455 H2150" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="1640" y="864" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Delayed H₆ branch · field weight 6/7</text>
+<path d="M385 455 H480" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1092 455 H1170" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M635 650 H680" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<path d="M1520 650 H1570" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-data)"/>
+<text x="80" y="924" font-size="29" fill="#0f766e" font-weight="600" text-anchor="start">H₇₀(D) = H₂(D) H₅(D²) H₇(D¹⁰) = (1 + D + ⋯ + D⁶⁹) / 70</text>
+<text x="80" y="963" font-size="20" fill="#475569" font-weight="400" text-anchor="start">8 cells = 5 balanced + 3 unequal joins. Both couplers of each join use the stated power ratios; branch phases are calibrated.</text>
+<rect x="40" y="1024" width="2120" height="687" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="1065" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">DUAL-NETWORK READ SCHEDULE · 390 ps completed plateau, with a centered 320 ps acceptance window</text>
+<text x="68" y="1102" font-size="20" fill="#be123c" font-weight="600" text-anchor="start">35 ps per edge is an engineered arrival / settling budget, not a validated tolerance. Receiver pump edges must satisfy their own waveform model.</text>
+<path d="M390.0 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="390.0" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">0</text>
+<path d="M601.4 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="601.4" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">200</text>
+<path d="M812.8 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="812.8" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">400</text>
+<path d="M1024.1999999999998 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1024.1999999999998" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">600</text>
+<path d="M1235.6 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1235.6" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">800</text>
+<path d="M1447.0 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1447.0" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">1000</text>
+<path d="M1658.3999999999999 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1658.3999999999999" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">1200</text>
+<path d="M1869.8 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1869.8" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">1400</text>
+<path d="M2081.2 1160 V1600" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2081.2" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">1600</text>
+<text x="2130" y="1142" font-size="19" fill="#475569" font-weight="400" text-anchor="start">ps</text>
+<text x="78" y="1221" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Core / DFG pair</text>
+<path d="M390 1242 H2081.2" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78" y="1333" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Network 0: full sum</text>
+<path d="M390 1354 H2081.2" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78" y="1445" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Network 1: full sum</text>
+<path d="M390 1466 H2081.2" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="78" y="1557" font-size="22" fill="#0f172a" font-weight="600" text-anchor="start">Receiver: accepts</text>
+<path d="M390 1578 H2081.2" fill="none" stroke="#dbe3ec" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="390.0" y="1186" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="559.12" y="1220" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₀</text>
+<rect x="812.8" y="1186" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="981.92" y="1220" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">B₀</text>
+<rect x="1235.6" y="1186" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1404.7199999999998" y="1220" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₁</text>
+<rect x="1658.3999999999999" y="1186" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1827.52" y="1220" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">B₁</text>
+<rect x="728.24" y="1186" width="84.56" height="53" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<text x="770.52" y="1220" font-size="19" fill="#475569" font-weight="600" text-anchor="middle">guard</text>
+<rect x="1151.04" y="1186" width="84.56" height="53" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<text x="1193.32" y="1220" font-size="19" fill="#475569" font-weight="600" text-anchor="middle">guard</text>
+<rect x="1573.84" y="1186" width="84.56" height="53" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<text x="1616.12" y="1220" font-size="19" fill="#475569" font-weight="600" text-anchor="middle">guard</text>
+<rect x="1996.6399999999999" y="1186" width="84.56" height="53" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<text x="2038.9199999999998" y="1220" font-size="19" fill="#475569" font-weight="600" text-anchor="middle">guard</text>
+<rect x="717.67" y="1298" width="412.22999999999996" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="923.785" y="1332" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₀ · 390 ps</text>
+<rect x="1563.27" y="1298" width="412.22999999999996" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1769.385" y="1332" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₁ · 390 ps</text>
+<rect x="1140.4699999999998" y="1410" width="412.22999999999996" height="53" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1346.5849999999998" y="1444" font-size="19" fill="#7c3aed" font-weight="600" text-anchor="middle">B₀ · 390 ps</text>
+<rect x="1986.07" y="1410" width="95.13" height="53" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="2033.635" y="1444" font-size="19" fill="#7c3aed" font-weight="600" text-anchor="middle">B₁ →</text>
+<rect x="390.0" y="1522" width="1691.1999999999998" height="53" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.8"/>
+<rect x="754.665" y="1522" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="923.785" y="1556" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₀ · 320 ps</text>
+<rect x="1177.465" y="1522" width="338.24" height="53" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1346.585" y="1556" font-size="19" fill="#7c3aed" font-weight="600" text-anchor="middle">B₀ · 320 ps</text>
+<rect x="1600.2649999999999" y="1522" width="338.24" height="53" rx="6" fill="#ccfbf1" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1769.3849999999998" y="1556" font-size="19" fill="#0f766e" font-weight="600" text-anchor="middle">A₁ · 320 ps</text>
+<rect x="2023.0649999999998" y="1522" width="58.135" height="53" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="2052.1324999999997" y="1556" font-size="19" fill="#7c3aed" font-weight="600" text-anchor="middle">→</text>
+<text x="80" y="1635" font-size="21" fill="#0f172a" font-weight="600" text-anchor="start">Frames alternate every 400 ps; each network is revisited every 800 ps. Ideal reader-core duty = 80%; separate writes still need time.</text>
+<text x="80" y="1675" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Delay sum = 69τ = 690 ps; differential path = 103.5 mm per network, 207 mm per pair at n_g = 2. Largest single delay = 200 ps.</text>
+<rect x="40" y="1745" width="2120" height="299" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="1786" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">OUTPUT SELECTOR CHANGEOVER · the receiver rejects light during this 80 ps interval</text>
+<rect x="140.0" y="1825" width="346.875" height="64" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+<text x="313.4375" y="1865" font-size="19" fill="#b45309" font-weight="600" text-anchor="middle">Holdoff · 15 ps</text>
+<rect x="486.875" y="1825" width="1156.25" height="64" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1065.0" y="1865" font-size="19" fill="#475569" font-weight="600" text-anchor="middle">Change output selector · 50 ps</text>
+<rect x="1643.125" y="1825" width="346.875" height="64" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+<text x="1816.5625" y="1865" font-size="19" fill="#b45309" font-weight="600" text-anchor="middle">Settle · 15 ps</text>
+<text x="140.0" y="1919" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">665 ps</text>
+<text x="486.875" y="1919" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">680 ps</text>
+<text x="1643.125" y="1919" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">730 ps</text>
+<text x="1990.0" y="1919" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">745 ps</text>
+<text x="80" y="1963" font-size="20" fill="#475569" font-weight="400" text-anchor="start">No output darkness is assumed. Next DFG: timed coefficient pump accepts useful light; its B filter rejects the unconverted input.</text>
+<text x="80" y="2002" font-size="20" fill="#475569" font-weight="400" text-anchor="start">The 50 ps selector transition is not a pump-edge allowance. A wider input plateau does not make unintended converted tails valid terms.</text>
+<rect x="40" y="2079" width="2120" height="243" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="2120" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">COMPARISON · the 70-tap example supplies 21.875% more plateau duration than the 320 ps useful frame</text>
+<rect x="70" y="2147" width="650" height="143" rx="12" fill="white" stroke="#475569" stroke-width="1.8"/>
+<text x="395" y="2178" font-size="21" fill="#475569" font-weight="700" text-anchor="middle">Prior compact candidate</text>
+<text x="395" y="2211" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">64 taps · 6 balanced cells · 400 ps frame</text>
+<text x="395" y="2238" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">330 ps plateau · 5 ps per edge</text>
+<text x="395" y="2265" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">189 mm differential path per pair</text>
+<rect x="760" y="2147" width="650" height="143" rx="12" fill="white" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1085" y="2178" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">Margin-designed example shown</text>
+<text x="1085" y="2211" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">70 taps · 8 two-path cells · 400 ps frame</text>
+<text x="1085" y="2238" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">390 ps plateau · 35 ps per edge</text>
+<text x="1085" y="2265" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">207 mm differential path per pair</text>
+<rect x="1450" y="2147" width="650" height="143" rx="12" fill="white" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1775" y="2178" font-size="21" fill="#7c3aed" font-weight="700" text-anchor="middle">Larger timing-margin alternative</text>
+<text x="1775" y="2211" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">128 taps · 7 balanced cells · 520 ps frame</text>
+<text x="1775" y="2238" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">490 ps clean plateau · 90 / 80 ps margins</text>
+<text x="1775" y="2265" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">381 mm differential path per pair</text>
+<rect x="40" y="2357" width="2120" height="243" rx="16" fill="white" stroke="#dbe3ec" stroke-width="1.8"/>
+<text x="68" y="2398" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">DESIGN THE MARGINS · choose a plateau requirement first, then synthesize the two-path network</text>
+<text x="80" y="2442" font-size="27" fill="#0f766e" font-weight="600" text-anchor="start">T_required = max[(1 + μ) T_in, T_in + g_left + g_right]      L = R − 1 + ceil(T_required / τ)</text>
+<text x="80" y="2481" font-size="21" fill="#475569" font-weight="400" text-anchor="start">For μ = 20% total and T_in = 320 ps:  T_required = 384 ps → L = 70 → T_valid = 390 ps → 35 ps per edge if centered.</text>
+<text x="80" y="2520" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Specify g_left and g_right from arrival uncertainty, settling and other waveform requirements; use asymmetric placement when needed.</text>
+<text x="80" y="2559" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Any integer L can use nested two-arm joins; ordinary balanced doubling alone rounds to powers of two. Check frame-reuse interference too.</text>
+<text x="48" y="2633" font-size="19" fill="#be123c" font-weight="600" text-anchor="start">All lengths omit common routing. Physical coupler bandwidth, branch loss, phase stability and receiver waveform requirements remain to be validated.</text>
+</g>
+</svg>

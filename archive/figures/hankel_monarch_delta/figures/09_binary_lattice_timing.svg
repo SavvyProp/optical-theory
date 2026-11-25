@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2200" height="1840" viewBox="0 0 2200 1840" role="img" aria-labelledby="title desc">
+<title id="title">Single passive binary delay lattice and shared-pump timing</title><desc id="desc">Six balanced two-path stages implement a 64-tap uniform field impulse response. Stage delays are 10, 20, 40, 80, 160 and 320 picoseconds, corresponding to 1.5, 3, 6, 12, 24 and 48 millimeters at group index two. Total differential waveguide length is 94.5 millimeters. Each 32-slot coefficient burst lasts 320 picoseconds and is followed by a 320 picosecond blank b_m interval. Frame starts are separated by 640 picoseconds. Frame zero has a full plateau from 310 to 640 picoseconds and an accepted window from 320 to 640 picoseconds. The next reader b_m sequence follows this valid window plus propagation latency. The raw lattice output remains connected and contains unaccepted transients; it is not selected by a shutter. All delays and pump edges are ideal, and the 1.5625 gigahertz reader frame rate is not a neural-network token rate.</desc>
+<defs>
+<marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#0f766e"/></marker>
+<marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#7c3aed"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#475569"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 1 L8 5 L0 9 Z" fill="#be123c"/></marker>
+</defs>
+<rect width="2200" height="1840" fill="#f8fafc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif">
+<text x="48" y="62" font-size="35" fill="#0f172a" font-weight="700" text-anchor="start">Single binary delay lattice · ideal shared-pump timing</text>
+<text x="48" y="102" font-size="22" fill="#475569" font-weight="400" text-anchor="start">Six balanced two-way cells; one permanent optical path through the accumulator; perfect phase and delay</text>
+<rect x="40" y="137" width="2120" height="565" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="68" y="180" font-size="25" fill="#0f172a" font-weight="700" text-anchor="start">PASSIVE 64-TAP FIELD SUM</text>
+<text x="68" y="226" font-size="28" fill="#0f766e" font-weight="600" text-anchor="start">H₆₄(D) = [(1 + D) / 2] [(1 + D²) / 2] ⋯ [(1 + D³²) / 2] = (1 + D + ⋯ + D⁶³) / 64</text>
+<text x="68" y="266" font-size="21" fill="#475569" font-weight="400" text-anchor="start">D delays the optical field by τ = 10 ps. Static path phases align the selected output port at every stage.</text>
+<text x="215" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 1</text>
+<rect x="83" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="103" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="314" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M117 420 H139 V370 H293 V420 H314" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M117 440 H139 V488 H293 V440 H314" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="216" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="216" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+10 ps</text>
+<text x="216" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">1.5 mm delay</text>
+<text x="216" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<path d="M328 430 H453" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="216" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^1) / 2</text>
+<text x="565" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 2</text>
+<rect x="433" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="453" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="664" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M467 420 H489 V370 H643 V420 H664" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M467 440 H489 V488 H643 V440 H664" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="566" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="566" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+20 ps</text>
+<text x="566" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">3 mm delay</text>
+<text x="566" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<path d="M678 430 H803" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="566" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^2) / 2</text>
+<text x="915" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 3</text>
+<rect x="783" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="803" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1014" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M817 420 H839 V370 H993 V420 H1014" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M817 440 H839 V488 H993 V440 H1014" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="916" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="916" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+40 ps</text>
+<text x="916" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">6 mm delay</text>
+<text x="916" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<path d="M1028 430 H1153" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="916" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^4) / 2</text>
+<text x="1265" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 4</text>
+<rect x="1133" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1153" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1364" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1167 420 H1189 V370 H1343 V420 H1364" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1167 440 H1189 V488 H1343 V440 H1364" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1266" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="1266" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+80 ps</text>
+<text x="1266" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">12 mm delay</text>
+<text x="1266" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<path d="M1378 430 H1503" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="1266" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^8) / 2</text>
+<text x="1615" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 5</text>
+<rect x="1483" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1503" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1714" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1517 420 H1539 V370 H1693 V420 H1714" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1517 440 H1539 V488 H1693 V440 H1714" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1616" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="1616" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+160 ps</text>
+<text x="1616" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">24 mm delay</text>
+<text x="1616" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<path d="M1728 430 H1853" fill="none" stroke="#0f766e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-teal)"/>
+<text x="1616" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^16) / 2</text>
+<text x="1965" y="315" font-size="23" fill="#0f172a" font-weight="700" text-anchor="middle">Stage 6</text>
+<rect x="1833" y="340" width="265" height="180" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="1853" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<rect x="2064" y="413" width="14" height="34" rx="1" fill="#0f766e" stroke="#0f766e" stroke-width="1.8"/>
+<path d="M1867 420 H1889 V370 H2043 V420 H2064" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M1867 440 H1889 V488 H2043 V440 H2064" fill="none" stroke="#0f766e" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1966" y="396" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">reference arm</text>
+<text x="1966" y="476" font-size="21" fill="#0f766e" font-weight="600" text-anchor="middle">+320 ps</text>
+<text x="1966" y="553" font-size="22" fill="#0f766e" font-weight="600" text-anchor="middle">48 mm delay</text>
+<text x="1966" y="586" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">2 × 50:50 couplers</text>
+<text x="1966" y="624" font-size="19" fill="#475569" font-weight="400" text-anchor="middle">(1 + D^32) / 2</text>
+<path d="M55 430 H103 M2078 430 H2125" fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#arrow-teal)"/>
+<text x="68" y="675" font-size="22" fill="#475569" font-weight="400" text-anchor="start">Total: 6 cells · 12 couplers · 630 ps differential delay · 94.5 mm at n_g = 2. Unused coupler ports are terminated.</text>
+<rect x="40" y="732" width="2120" height="672" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="68" y="777" font-size="25" fill="#0f172a" font-weight="700" text-anchor="start">ONE FRAME EVERY 640 ps · bₘ DOES THE OPTICAL ACCEPTANCE</text>
+<text x="68" y="816" font-size="22" fill="#475569" font-weight="400" text-anchor="start">R = 32 terms · 320 ps generation burst · 320 ps blank burst interval · common propagation latency omitted</text>
+<path d="M360.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="360.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">0</text>
+<path d="M650.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="650.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">320</text>
+<path d="M940.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="940.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">640</text>
+<path d="M1230.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="1230.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">960</text>
+<path d="M1520.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="1520.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">1280</text>
+<path d="M1810.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="1810.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">1600</text>
+<path d="M2100.0 870 V1231" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4 7"/>
+<text x="2100.0" y="857" font-size="20" fill="#475569" font-weight="400" text-anchor="middle">1920 ps</text>
+<text x="332" y="920" font-size="22" fill="#0f172a" font-weight="600" text-anchor="end">Local bₘ pump</text>
+<text x="332" y="1003" font-size="22" fill="#0f172a" font-weight="600" text-anchor="end">Generated terms</text>
+<text x="332" y="1086" font-size="22" fill="#0f172a" font-weight="600" text-anchor="end">Raw lattice output</text>
+<text x="332" y="1169" font-size="22" fill="#0f172a" font-weight="600" text-anchor="end">Next reader bₘ</text>
+<rect x="360.0" y="886" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="505.0" y="919" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">phase sequence 0</text>
+<rect x="650.0" y="886" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="795.0" y="919" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="360.0" y="969" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="505.0" y="1002" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">32 terms · frame 0</text>
+<rect x="650.0" y="969" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="795.0" y="1002" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">no new term</text>
+<rect x="360.0" y="1052" width="290.0" height="51" rx="5" fill="#fff1f2" stroke="#be123c" stroke-width="1.8"/>
+<text x="505.0" y="1085" font-size="20" fill="#be123c" font-weight="600" text-anchor="middle">unaccepted</text>
+<rect x="650.0" y="1052" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="795.0" y="1085" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">valid sum 0</text>
+<rect x="360.0" y="1135" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="505.0" y="1168" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="650.0" y="1135" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="795.0" y="1168" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">accept frame 0</text>
+<rect x="940.0" y="886" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1085.0" y="919" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">phase sequence 1</text>
+<rect x="1230.0" y="886" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1375.0" y="919" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="940.0" y="969" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1085.0" y="1002" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">32 terms · frame 1</text>
+<rect x="1230.0" y="969" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1375.0" y="1002" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">no new term</text>
+<rect x="940.0" y="1052" width="290.0" height="51" rx="5" fill="#fff1f2" stroke="#be123c" stroke-width="1.8"/>
+<text x="1085.0" y="1085" font-size="20" fill="#be123c" font-weight="600" text-anchor="middle">unaccepted</text>
+<rect x="1230.0" y="1052" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1375.0" y="1085" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">valid sum 1</text>
+<rect x="940.0" y="1135" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1085.0" y="1168" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="1230.0" y="1135" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1375.0" y="1168" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">accept frame 1</text>
+<rect x="1520.0" y="886" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1665.0" y="919" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">phase sequence 2</text>
+<rect x="1810.0" y="886" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1955.0" y="919" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="1520.0" y="969" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1665.0" y="1002" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">32 terms · frame 2</text>
+<rect x="1810.0" y="969" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1955.0" y="1002" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">no new term</text>
+<rect x="1520.0" y="1052" width="290.0" height="51" rx="5" fill="#fff1f2" stroke="#be123c" stroke-width="1.8"/>
+<text x="1665.0" y="1085" font-size="20" fill="#be123c" font-weight="600" text-anchor="middle">unaccepted</text>
+<rect x="1810.0" y="1052" width="290.0" height="51" rx="5" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.8"/>
+<text x="1955.0" y="1085" font-size="20" fill="#0f766e" font-weight="600" text-anchor="middle">valid sum 2</text>
+<rect x="1520.0" y="1135" width="290.0" height="51" rx="5" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+<text x="1665.0" y="1168" font-size="20" fill="#475569" font-weight="600" text-anchor="middle">bₘ = 0</text>
+<rect x="1810.0" y="1135" width="290.0" height="51" rx="5" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="1955.0" y="1168" font-size="20" fill="#7c3aed" font-weight="600" text-anchor="middle">accept frame 2</text>
+<text x="68" y="1271" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">Frame 0: full plateau [310, 640) ps; accept [320, 640) ps. Later accepted windows repeat every 640 ps.</text>
+<text x="68" y="1313" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Unaccepted intervals can contain rising sums, old tails and overlap. The raw optical path remains connected.</text>
+<text x="68" y="1354" font-size="21" fill="#475569" font-weight="400" text-anchor="start">The next reader adds its link + core latency to the bₘ schedule; only its DFG 2 terms enter the next sum.</text>
+<rect x="40" y="1432" width="1040" height="298" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="68" y="1477" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">WHY THE SINGLE LATTICE WORKS</text>
+<text x="68" y="1525" font-size="22" fill="#475569" font-weight="400" text-anchor="start">32 active slots + 32 zero slots isolate successive sums.</text>
+<text x="68" y="1571" font-size="23" fill="#0f766e" font-weight="600" text-anchor="start">Each accepted 32-slot window contains Σ zₘ / 64.</text>
+<text x="68" y="1617" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Generation may overlap an older tail inside the lattice.</text>
+<text x="68" y="1660" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Only completed windows are converted by the next reader.</text>
+<text x="68" y="1698" font-size="20" fill="#be123c" font-weight="600" text-anchor="start">At 320 ps frame spacing, a single lattice mixes frames.</text>
+<rect x="1110" y="1432" width="1050" height="298" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.8"/>
+<text x="1138" y="1477" font-size="24" fill="#0f172a" font-weight="700" text-anchor="start">SIMPLE THEORETICAL BASELINE</text>
+<text x="1138" y="1525" font-size="22" fill="#0f766e" font-weight="600" text-anchor="start">No EO input router, output selector, or output shutter.</text>
+<text x="1138" y="1571" font-size="23" fill="#475569" font-weight="400" text-anchor="start">Reader frame rate: 1 / 640 ps = 1.5625 GHz.</text>
+<text x="1138" y="1617" font-size="21" fill="#475569" font-weight="400" text-anchor="start">This is not the complete recurrent-model token rate.</text>
+<text x="1138" y="1660" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Pump edges, delay, loss balance and carrier phase are ideal.</text>
+<text x="1138" y="1698" font-size="20" fill="#475569" font-weight="400" text-anchor="start">Figures 10–11 retain a separate engineering alternative.</text>
+<text x="48" y="1785" font-size="21" fill="#475569" font-weight="400" text-anchor="start">Differential lengths exclude common paths, bends and routing. Engineering margins and finite pump extinction require separate validation.</text>
+</g></svg>

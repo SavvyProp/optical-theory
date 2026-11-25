@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="300mm"
+   height="200mm"
+   viewBox="0 0 300 200"
+   version="1.1"
+   id="svg19753"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="1b_forward_backward_hankel.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview19755"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.2946437"
+     inkscape:cx="337.5446"
+     inkscape:cy="188.08263"
+     inkscape:window-width="1374"
+     inkscape:window-height="831"
+     inkscape:window-x="66"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs19750">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect29597"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <marker
+       style="overflow:visible"
+       id="TriangleStart"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-9-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleStart-9-3-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="TriangleStart"
+       markerWidth="5.3244081"
+       markerHeight="6.155385"
+       viewBox="0 0 5.3244081 6.1553851"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-0-3-5" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ff2f2f;fill-opacity:0.527702;stroke:#000000;stroke-width:0.2;stroke-linejoin:round"
+       id="rect19874"
+       width="61.410244"
+       height="29.142242"
+       x="64.66037"
+       y="39.79353"
+       ry="8.3824291" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-opacity:0"
+       x="80.101898"
+       y="54.871559"
+       id="text21073"><tspan
+         sodipodi:role="line"
+         id="tspan21071"
+         style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-opacity:0"
+         x="80.101898"
+         y="54.871559">Hankel Multiplier</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-opacity:0"
+       x="43.294846"
+       y="44.994171"
+       id="text21073-6"><tspan
+         sodipodi:role="line"
+         id="tspan21071-8"
+         style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-opacity:0"
+         x="43.294846"
+         y="44.994171">W(t)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-opacity:0"
+       x="41.519749"
+       y="53.579399"
+       id="text21073-6-8"><tspan
+         sodipodi:role="line"
+         id="tspan21071-8-7"
+         style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-opacity:0"
+         x="41.519749"
+         y="53.579399">M(t)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-opacity:0"
+       x="41.036144"
+       y="60.991474"
+       id="text21073-6-8-3"><tspan
+         sodipodi:role="line"
+         id="tspan21071-8-7-2"
+         style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-opacity:0"
+         x="41.036144"
+         y="60.991474">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:0;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-linejoin:round;stroke-opacity:0"
+       x="133.72208"
+       y="58.147766"
+       id="text21073-6-8-3-6"><tspan
+         sodipodi:role="line"
+         id="tspan21071-8-7-2-5"
+         style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.2;stroke-opacity:0"
+         x="133.72208"
+         y="58.147766">\sum M(t)W(t)x</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+       d="M 18.489567,47.241585 H 62.9228"
+       id="path23101" />
+    <path
+       style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart-9)"
+       d="M 18.032501,54.342858 H 62.465734"
+       id="path23101-6" />
+    <path
+       style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart-9-3)"
+       d="M 18.304847,62.51203 H 62.73808"
+       id="path23101-6-7" />
+    <path
+       style="fill:#000000;fill-opacity:0.958198;stroke:#000000;stroke-width:0.6;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart-9-3-6)"
+       d="m 125.91702,61.344805 h 44.43323"
+       id="path23101-6-7-2" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.600001;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart)"
+       d="m 125.99329,50.416031 c 2.56411,0 5.12796,0 6.40976,-2.94945 1.28179,-2.949449 1.28179,-8.848379 -1.09865,-13.172379 -2.38043,-4.324 -7.14142,-7.072758 -16.6479,-8.447254 -9.50649,-1.374495 -23.75777,-1.374495 -34.305064,-1.374495 -10.547294,0 -17.390049,0 -24.380342,0 -6.990293,0 -14.127701,0 -18.598139,1.561496 -4.470438,1.561497 -6.273379,4.68428 -6.75856,7.79925 -0.485181,3.114969 0.347268,6.221709 1.856358,8.405939 1.509091,2.18423 3.69449,3.445971 5.728422,4.076764 2.033932,0.630793 3.916329,0.630793 5.798495,0.630793"
+       id="path29595"
+       inkscape:path-effect="#path-effect29597"
+       inkscape:original-d="m 125.99329,50.416031 c 2.56411,2.64e-4 5.12796,2.64e-4 7.69155,0 2.6e-4,-5.898899 2.6e-4,-11.797829 0,-17.697138 -4.76092,-2.748605 -9.52191,-5.497361 -14.28325,-8.24644 -14.25158,2.64e-4 -28.50286,2.64e-4 -42.754686,0 -6.842762,2.64e-4 -13.685517,2.64e-4 -20.528674,0 -7.137429,2.64e-4 -14.274837,2.64e-4 -21.412652,0 -1.802749,3.123173 -3.605689,6.245957 -5.40893,9.368538 0.832747,3.107129 1.665195,6.213869 2.497397,9.320406 2.185749,1.262057 4.371149,2.523796 6.55633,3.785298 1.882732,2.65e-4 3.765129,2.65e-4 5.647295,0" />
+  </g>
+</svg>

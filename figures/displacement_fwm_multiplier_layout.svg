@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="fig-title fig-description" font-family="DejaVu Sans, sans-serif">
+<title id="fig-title">Forward-written FWM matrix multiplier with two circulating frequency bands</title>
+<desc id="fig-description">Proposed functional optical layout for the 32 by 32 displacement-encoded matrix. Panel A traces the read loop. A query enters the high half of a 64-tooth data packet with the low answer half dark. The same guide receives a fixed reference pump and a weight packet with a fixed central tone. A pass rejects pumps, restores idler gain and routes the two halves through a diplexer and two clocked bar/cross switches. The query crosses a sign-selectable single-sideband shifter. The coherent answer crosses a matched bypass. A second diplexer reassembles the bands. The band edge filter rejects overflow. After 32 visits the low band contains Wq. The lower panel shows separate write slots in the very same guide. A held residual, two signed key tones and the reference mix. The selected increment is coherently injected into the corresponding packet of a recirculating fiber memory. A gated weight tap supplies the read pump mux. Source and carrier selection at the shared guide are shown by separate read and write views. Path lengths and device efficiencies are unspecified.</desc>
+<defs>
+<linearGradient id="fwm-body" x2="0.9" y2="1"><stop stop-color="#f4eff7"/><stop offset=".5" stop-color="#e1d4ec"/><stop offset="1" stop-color="#cdbbdc"/></linearGradient>
+<linearGradient id="amp-body" x2="0" y2="1"><stop stop-color="#fbf1f4"/><stop offset="1" stop-color="#e4c9d2"/></linearGradient>
+<linearGradient id="inject-core"><stop stop-color="#bd526b"/><stop offset="1" stop-color="#7758a5"/></linearGradient>
+</defs>
+<rect x="0" y="0" width="1600" height="1000" rx="0" fill="#ffffff" stroke="none" stroke-width="1.5"/>
+<g id="header" inkscape:label="Figure heading" inkscape:groupmode="layer">
+<text x="54" y="55" font-size="37" fill="#20364c" font-weight="700" text-anchor="start" >Forward-written FWM matrix multiplier</text>
+<text x="1546" y="51" font-size="19" fill="#526b7d" font-weight="400" text-anchor="end" >32 × 32 head   ·   50 GHz tooth spacing</text>
+<path d="M54 82 L1546 82" fill="none" stroke="#d4dfe5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<g id="read-layout" inkscape:label="A · Optical read loop" inkscape:groupmode="layer">
+<rect x="54" y="107" width="27" height="26" rx="6" fill="#e9f0f4" stroke="none" stroke-width="1.5"/>
+<text x="67.5" y="126" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >a</text>
+<text x="95" y="127" font-size="24" fill="#20364c" font-weight="700" text-anchor="start" >Forward matrix read</text>
+<text x="1546" y="126" font-size="16" fill="#526b7d" font-weight="400" text-anchor="end" >32 weight packets in time order   h₃₁ → h₀</text>
+<g id="read-pumps" inkscape:label="Reference pump and physical weight comb">
+<text x="54" y="191" font-size="17" fill="#7758a5" font-weight="700" text-anchor="start" >Weight-memory tap</text>
+<text x="54" y="212" font-size="15" fill="#526b7d" font-weight="400" text-anchor="start" >h<tspan baseline-shift="sub" font-size="75%">c</tspan>  +  fixed central tone</text>
+<rect x="54" y="228" width="38" height="20" rx="10" fill="white" stroke="#7758a5" stroke-width="1.5"/>
+<text x="73" y="243" font-size="12" fill="#7758a5" font-weight="700" text-anchor="middle" >h</text>
+<path d="M92 236 H230 Q250 236 260 249 L286 286 Q292 296 307 296 H315" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M92 236 H230 Q250 236 260 249 L286 286 Q292 296 307 296 H315" fill="none" stroke="#7758a5" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(214 236) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<text x="337" y="185" font-size="16" fill="#b66b21" font-weight="700" text-anchor="start" >Reference pump R</text>
+<path d="M351 201 H381 Q396 201 396 218 V272 Q396 296 420 296" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M351 201 H381 Q396 201 396 218 V272 Q396 296 420 296" fill="none" stroke="#b66b21" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(396 248) rotate(90)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#b66b21"/>
+</g>
+<g id="read-conversion" inkscape:label="Data launch, co-propagating pumps and FWM conversion">
+<path d="M54 319 H178" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M54 319 H178" fill="none" stroke="#1673b6" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M178 319 H438" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M178 319 H438" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M315 296 Q333 296 342 307 Q350 319 362 319" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M315 296 Q333 296 342 307 Q350 319 362 319" fill="none" stroke="#7758a5" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M420 296 Q430 296 438 307 Q446 319 457 319" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M420 296 Q430 296 438 307 Q446 319 457 319" fill="none" stroke="#b66b21" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M438 319 H551" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M438 319 H551" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M345 319 l11 -11 11 11 -11 11z" fill="#eaf1f5" stroke="#9cb3c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M346 319 L366 319" fill="none" stroke="#577691" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M439 319 l11 -11 11 11 -11 11z" fill="#eaf1f5" stroke="#9cb3c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M440 319 L460 319" fill="none" stroke="#577691" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M551 319 H760" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M551 319 H760" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M467 319 l12 -12 h93 l12 12 -12 12 h-93z" fill="url(#fwm-body)" stroke="#846c98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M469 319 h113" fill="none" stroke="#785690" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M506 313 L511 325" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M515 313 L520 325" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M524 313 L529 325" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M533 313 L538 325" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M542 313 L547 325" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="617" y="306" width="34" height="26" rx="3" fill="#f0f4f7" stroke="#91a9ba" stroke-width="1.5"/>
+<path d="M622 324 h5 l4 -10 h9 l4 10 h3" fill="none" stroke="#577691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M682 306 l30 13 -30 13z" fill="url(#amp-body)" stroke="#b390a0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="164" y="305" width="28" height="28" rx="4" fill="#eff3f6" stroke="#93a8b8" stroke-width="1.5"/>
+<path d="M169 319 h5 l7 -5 h5 M176 325 l4 -3" fill="none" stroke="#708ca1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+<text x="54" y="294" font-size="18" fill="#1673b6" font-weight="700" text-anchor="start" >Launch q</text>
+<text x="54" y="347" font-size="14" fill="#1673b6" font-weight="400" text-anchor="start" >High band in</text>
+<text x="54" y="366" font-size="14" fill="#526b7d" font-weight="400" text-anchor="start" >Low band dark</text>
+<path transform="translate(111 319) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#1673b6"/>
+<text x="356" y="353" font-size="14" fill="#526b7d" font-weight="400" text-anchor="middle" >Pump muxes</text>
+<text x="525" y="268" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >FWM waveguide</text>
+<text x="525" y="288" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >shared by read and write</text>
+<text x="634" y="366" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Idler filter</text>
+<text x="634" y="386" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >reject pumps</text>
+<text x="694" y="265" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Gain</text>
+<text x="694" y="285" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >restore idlers</text>
+<path transform="translate(594 319) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<path transform="translate(733 319) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+</g>
+<g id="band-routing" inkscape:label="Whole-band selection, shared shifter and inverse routing">
+<path d="M750 319 H763 C785 319 785 265 809 265 H854" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M750 319 H763 C785 319 785 265 809 265 H854" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M763 319 C785 319 785 371 809 371 H854" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M763 319 C785 319 785 371 809 371 H854" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M751 319 l12 -10 12 10 -12 10z" fill="#e7eff3" stroke="#8ca8ba" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M754 319 L771 319" fill="none" stroke="#577691" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<text x="755" y="206" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Diplexer</text>
+<text x="755" y="226" font-size="13" fill="#526b7d" font-weight="400" text-anchor="middle" >32 teeth per port</text>
+<text x="816" y="254" font-size="14" fill="#526b7d" font-weight="400" text-anchor="middle" >Low</text>
+<text x="816" y="398" font-size="14" fill="#526b7d" font-weight="400" text-anchor="middle" >High</text>
+<rect x="854" y="254" width="50" height="128" rx="6" fill="white" stroke="#97acbc" stroke-width="1.5"/>
+<path d="M854 265 h11 C875 265 883 371 893 371 h11" fill="none" stroke="#577691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M854 371 h11 C875 371 883 265 893 265 h11" fill="none" stroke="#577691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M859 265 h40" fill="none" stroke="#aab9c2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<path d="M859 371 h40" fill="none" stroke="#aab9c2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="879" y="177" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Route</text>
+<text x="879" y="198" font-size="13" fill="#526b7d" font-weight="400" text-anchor="middle" >bar / cross</text>
+<path d="M904 265 H1141" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M904 265 H1141" fill="none" stroke="#1673b6" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="967" y="249" width="105" height="32" rx="5" fill="#edf5fa" stroke="#78a3bc" stroke-width="1.5"/>
+<path d="M973 265 h15 c9 0 9 -5 17 -5 h25 c8 0 8 5 16 5 h20 M988 265 c9 0 9 5 17 5 h25 c8 0 8 -5 16 -5" fill="none" stroke="#1673b6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1007 252 L1030 252" fill="none" stroke="#aa853e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1007 278 L1030 278" fill="none" stroke="#aa853e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1020" y="194" font-size="18" fill="#1673b6" font-weight="700" text-anchor="middle" >Query band</text>
+<text x="1020" y="219" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Single-sideband shifter</text>
+<text x="1020" y="301" font-size="15" fill="#1673b6" font-weight="400" text-anchor="middle" >−50 / +50 GHz</text>
+<path transform="translate(932 265) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#1673b6"/>
+<path transform="translate(1105 265) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#1673b6"/>
+<path d="M904 371 H965 C978 371 978 381 991 381 H1045 C1058 381 1058 371 1071 371 H1141" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M904 371 H965 C978 371 978 381 991 381 H1045 C1058 381 1058 371 1071 371 H1141" fill="none" stroke="#008479" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1020" y="346" font-size="18" fill="#008479" font-weight="700" text-anchor="middle" >Answer band</text>
+<text x="1020" y="409" font-size="15" fill="#20364c" font-weight="400" text-anchor="middle" >Phase-matched bypass</text>
+<path transform="translate(932 371) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#008479"/>
+<path transform="translate(1105 371) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#008479"/>
+<rect x="1141" y="254" width="50" height="128" rx="6" fill="white" stroke="#97acbc" stroke-width="1.5"/>
+<path d="M1141 265 h11 C1162 265 1170 371 1180 371 h11" fill="none" stroke="#577691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1141 371 h11 C1162 371 1170 265 1180 265 h11" fill="none" stroke="#577691" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1146 265 h40" fill="none" stroke="#aab9c2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<path d="M1146 371 h40" fill="none" stroke="#aab9c2" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3"/>
+<text x="1166" y="177" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Restore ports</text>
+<text x="1166" y="198" font-size="13" fill="#526b7d" font-weight="400" text-anchor="middle" >inverse route</text>
+<path d="M1191 265 H1223 C1246 265 1246 319 1270 319 H1286" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1191 265 H1223 C1246 265 1246 319 1270 319 H1286" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1191 371 H1223 C1246 371 1246 319 1270 319" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1191 371 H1223 C1246 371 1246 319 1270 319" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1258 319 l12 -10 12 10 -12 10z" fill="#e7eff3" stroke="#8ca8ba" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1261 319 L1278 319" fill="none" stroke="#577691" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1267" y="223" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Recombine</text>
+<path d="M1286 319 H1441" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1286 319 H1441" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="1323" y="306" width="34" height="26" rx="3" fill="#f0f4f7" stroke="#91a9ba" stroke-width="1.5"/>
+<path d="M1328 324 h5 l4 -10 h9 l4 10 h3" fill="none" stroke="#577691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1340" y="368" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Band-edge filter</text>
+<text x="1340" y="388" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >discard overflow</text>
+<path transform="translate(1389 319) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+</g>
+<g id="data-return" inkscape:label="Return after passes 1–31 or extract the low band on pass 32">
+<path d="M1441 319 H1544" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1441 319 H1544" fill="none" stroke="#008479" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="1486" y="306" width="30" height="26" rx="3" fill="#f0f4f7" stroke="#91a9ba" stroke-width="1.5"/>
+<path d="M1491 324 h5 l4 -10 h5 l4 10 h3" fill="none" stroke="#577691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(1540 319) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#008479"/>
+<path d="M1441 319 V423 Q1441 449 1415 449 H205 Q178 449 178 422 V319" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1441 319 V423 Q1441 449 1415 449 H205 Q178 449 178 422 V319" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="1427" y="305" width="28" height="28" rx="4" fill="#eff3f6" stroke="#93a8b8" stroke-width="1.5"/>
+<path d="M1432 319 h5 l7 -5 h5 M1439 325 l4 -3" fill="none" stroke="#708ca1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="164" y="305" width="28" height="28" rx="4" fill="#eff3f6" stroke="#93a8b8" stroke-width="1.5"/>
+<path d="M169 319 h5 l7 -5 h5 M176 325 l4 -3" fill="none" stroke="#708ca1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1481" y="271" font-size="17" fill="#20364c" font-weight="700" text-anchor="middle" >Readout</text>
+<text x="1481" y="293" font-size="15" fill="#008479" font-weight="700" text-anchor="middle" >Low band · Wq</text>
+<path transform="translate(1441 397) rotate(90)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<path transform="translate(1225 449) rotate(180)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<path transform="translate(598 449) rotate(180)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<path transform="translate(178 383) rotate(-90)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<text x="795" y="475" font-size="15" fill="#526b7d" font-weight="400" text-anchor="middle" >Circulating data packet   ·   return on passes 1–31, extract the answer on pass 32</text>
+</g>
+</g>
+<g id="parity-and-shift" inkscape:label="Pass parity and logical query shift" inkscape:groupmode="layer">
+<rect x="54" y="505" width="1492" height="118" rx="10" fill="#f3f7f9" stroke="none" stroke-width="1.5"/>
+<text x="75" y="534" font-size="18" fill="#20364c" font-weight="700" text-anchor="start" >Routing after each FWM pass</text>
+<text x="76" y="560" font-size="14" fill="#526b7d" font-weight="700" text-anchor="start" >Pass</text>
+<text x="229" y="560" font-size="14" fill="#526b7d" font-weight="700" text-anchor="start" >Low-frequency band</text>
+<text x="490" y="560" font-size="14" fill="#526b7d" font-weight="700" text-anchor="start" >High-frequency band</text>
+<text x="76" y="585" font-size="15" fill="#20364c" font-weight="400" text-anchor="start" >Odd   1, 3, …</text>
+<text x="229" y="585" font-size="15" fill="#1673b6" font-weight="700" text-anchor="start" >Query   →   shift −50 GHz</text>
+<text x="490" y="585" font-size="15" fill="#008479" font-weight="400" text-anchor="start" >Answer   →   bypass</text>
+<text x="76" y="608" font-size="15" fill="#20364c" font-weight="400" text-anchor="start" >Even   2, 4, …</text>
+<text x="229" y="608" font-size="15" fill="#008479" font-weight="400" text-anchor="start" >Answer   →   bypass</text>
+<text x="490" y="608" font-size="15" fill="#1673b6" font-weight="700" text-anchor="start" >Query   →   shift +50 GHz</text>
+<path d="M778 522 L778 606" fill="none" stroke="#d5e1e8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<text x="804" y="534" font-size="18" fill="#20364c" font-weight="700" text-anchor="start" >One-tooth query shift</text>
+<text x="1521" y="534" font-size="13.5" fill="#526b7d" font-weight="400" text-anchor="end" >Logical tooth order</text>
+<path d="M812 594 L915 594" fill="none" stroke="#aabcc7" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M817 593 v-13" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M848 593 v-28" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M879 593 v-19" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M910 593 v-35" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<text x="817" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₀</text>
+<text x="848" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₁</text>
+<text x="879" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₂</text>
+<text x="910" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₃</text>
+<path d="M945 583 h45" fill="none" stroke="#577691" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(990 583) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#577691"/>
+<path d="M1014 594 L1117 594" fill="none" stroke="#aabcc7" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1019 592 L1019 597" fill="none" stroke="#9cb0bd" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1050 593 v-13" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1081 593 v-28" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1112 593 v-19" fill="none" stroke="#1673b6" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1019" y="614" font-size="13" fill="#688193" font-weight="400" text-anchor="middle" >0</text>
+<text x="1050" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₀</text>
+<text x="1081" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₁</text>
+<text x="1112" y="614" font-size="13" fill="#1673b6" font-weight="400" text-anchor="middle" >q₂</text>
+<path d="M1140 555 L1140 602" fill="none" stroke="#a0b2be" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1154 594 v-35" fill="none" stroke="#b4c1c9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 4"/>
+<text x="1154" y="614" font-size="13" fill="#688193" font-weight="400" text-anchor="middle" >q₃</text>
+<text x="1182" y="582" font-size="15" fill="#526b7d" font-weight="400" text-anchor="start" >Overflow leaves the register.</text>
+<text x="1182" y="606" font-size="13" fill="#688193" font-weight="400" text-anchor="start" >Four-tooth example.</text>
+</g>
+<g id="write-layout" inkscape:label="B · Forward write and circulating weight memory" inkscape:groupmode="layer">
+<rect x="54" y="657" width="27" height="26" rx="6" fill="#e9f0f4" stroke="none" stroke-width="1.5"/>
+<text x="67.5" y="676" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >b</text>
+<text x="95" y="677" font-size="24" fill="#20364c" font-weight="700" text-anchor="start" >Weight update</text>
+<text x="1546" y="676" font-size="16" fill="#526b7d" font-weight="400" text-anchor="end" >Same FWM waveguide in separate write slots</text>
+<g id="write-operands" inkscape:label="Held residual and stepped key pair">
+<text x="54" y="726" font-size="17" fill="#a14659" font-weight="700" text-anchor="start" >Held residual e</text>
+<text x="54" y="747" font-size="15" fill="#526b7d" font-weight="400" text-anchor="start" >e = v − Wk</text>
+<path d="M54 764 H241 Q259 764 270 777 L295 805 Q305 816 327 816" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M54 764 H241 Q259 764 270 777 L295 805 Q305 816 327 816" fill="none" stroke="#a14659" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(215 764) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#a14659"/>
+<text x="54" y="825" font-size="17" fill="#3c718e" font-weight="700" text-anchor="start" >Key comb k</text>
+<path d="M54 851 H158" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M54 851 H158" fill="none" stroke="#3c718e" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="158" y="833" width="126" height="36" rx="5" fill="#edf3f6" stroke="#a5b7c2" stroke-width="1.5"/>
+<text x="221" y="856" font-size="13" fill="#20364c" font-weight="700" text-anchor="middle" >2-tooth window</text>
+<path d="M284 851 H303 Q313 851 321 840 L330 828 Q338 816 347 816" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M284 851 H303 Q313 851 321 840 L330 828 Q338 816 347 816" fill="none" stroke="#3c718e" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<text x="164" y="893" font-size="15" fill="#3c718e" font-weight="700" text-anchor="start" >k<tspan baseline-shift="sub" font-size="75%">c</tspan> and −k<tspan baseline-shift="sub" font-size="75%">c+1</tspan></text>
+<text x="54" y="934" font-size="14" fill="#526b7d" font-weight="400" text-anchor="start" >Scan c = 31, …, 0</text>
+<text x="365" y="726" font-size="16" fill="#b66b21" font-weight="700" text-anchor="middle" >Reference R</text>
+<path d="M346 745 H370 Q385 745 385 761 V791 Q385 804 400 816" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M346 745 H370 Q385 745 385 761 V791 Q385 804 400 816" fill="none" stroke="#b66b21" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(385 777) rotate(90)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#b66b21"/>
+</g>
+<g id="write-guide" inkscape:label="One write conversion per weight packet">
+<path d="M327 816 H837" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M327 816 H837" fill="none" stroke="#577691" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M330 816 l11 -11 11 11 -11 11z" fill="#eaf1f5" stroke="#9cb3c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M331 816 L351 816" fill="none" stroke="#577691" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M389 816 l11 -11 11 11 -11 11z" fill="#eaf1f5" stroke="#9cb3c2" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M390 816 L410 816" fill="none" stroke="#577691" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M431 816 l12 -12 h93 l12 12 -12 12 h-93z" fill="url(#fwm-body)" stroke="#846c98" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M433 816 h113" fill="none" stroke="#785690" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M470 810 L475 822" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M479 810 L484 822" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M488 810 L493 822" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M497 810 L502 822" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M506 810 L511 822" fill="none" stroke="#9d86ac" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+<text x="487" y="757" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >FWM waveguide</text>
+<text x="487" y="777" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >same device as in a</text>
+<rect x="600" y="803" width="33" height="26" rx="3" fill="#f0f4f7" stroke="#91a9ba" stroke-width="1.5"/>
+<path d="M605 821 h5 l4 -10 h8 l4 10 h3" fill="none" stroke="#577691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+<text x="617" y="854" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Idler selector</text>
+<text x="617" y="874" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >alternate sideband</text>
+<path d="M633 816 H837" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M633 816 H837" fill="none" stroke="#bd526b" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(666 816) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#bd526b"/>
+<rect x="702" y="803" width="66" height="26" rx="4" fill="#f9eef0" stroke="#bd8891" stroke-width="1.5"/>
+<text x="735" y="821" font-size="15" fill="#a14659" font-weight="700" text-anchor="middle" >η, φ</text>
+<text x="735" y="758" font-size="16" fill="#20364c" font-weight="700" text-anchor="middle" >Write trim</text>
+<text x="735" y="778" font-size="13.3" fill="#526b7d" font-weight="400" text-anchor="middle" >gain and phase</text>
+<text x="808" y="842" font-size="16" fill="#bd526b" font-weight="700" text-anchor="middle" >Δh<tspan baseline-shift="sub" font-size="75%">c</tspan></text>
+<path transform="translate(800 816) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#bd526b"/>
+</g>
+<g id="fiber-memory" inkscape:label="Recirculating coefficient packets and the coherent injection port">
+<path d="M935 816 H1490 Q1520 816 1520 844 V884 Q1520 914 1490 914 H935 Q902 914 902 886 V846 Q902 816 935 816" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M935 816 H1490 Q1520 816 1520 844 V884 Q1520 914 1490 914 H935 Q902 914 902 886 V846 Q902 816 935 816" fill="none" stroke="#7758a5" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M837 816 H866 Q880 816 889 807 Q896 800 908 800 H928" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M837 816 H866 Q880 816 889 807 Q896 800 908 800 H928" fill="none" stroke="#bd526b" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<rect x="928" y="795" width="43" height="27" rx="4" fill="#f7f2f8" stroke="#ad94b4" stroke-width="1.5"/>
+<path d="M928 800 H935 C940 800 940 805 946 805 H953 C959 805 959 800 965 800 H971" fill="none" stroke="#bd526b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M928 816 H935 C940 816 940 811 946 811 H953 C959 811 959 816 965 816 H971" fill="none" stroke="url(#inject-core)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M971 800 H986" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M971 800 H986" fill="none" stroke="#b5aab8" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M986 795 L986 805" fill="none" stroke="#958999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+<text x="943" y="758" font-size="17" fill="#20364c" font-weight="700" text-anchor="middle" >Coherent injection</text>
+<text x="943" y="779" font-size="14" fill="#526b7d" font-weight="400" text-anchor="middle" >Add Δh<tspan baseline-shift="sub" font-size="75%">c</tspan> to returning h<tspan baseline-shift="sub" font-size="75%">c</tspan></text>
+<path transform="translate(1007 816) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<path transform="translate(1441 816) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<path transform="translate(1520 864) rotate(90)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<path transform="translate(1096 914) rotate(180)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<text x="1216" y="856" font-size="18" fill="#7758a5" font-weight="700" text-anchor="middle" >Recirculating fiber weight memory</text>
+<text x="1216" y="881" font-size="15" fill="#526b7d" font-weight="400" text-anchor="middle" >32 packets   ·   32 writable teeth per packet</text>
+<path d="M1136 749 H1177 Q1192 749 1200 764 L1219 798 Q1228 816 1247 816" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1136 749 H1177 Q1192 749 1200 764 L1219 798 Q1228 816 1247 816" fill="none" stroke="#7758a5" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<text x="1128" y="730" font-size="15" fill="#7758a5" font-weight="700" text-anchor="start" >Initialize weights</text>
+<path d="M1343 816 Q1367 816 1376 799 L1395 764 Q1403 750 1420 750 H1450" fill="none" stroke="#d9e3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M1343 816 Q1367 816 1376 799 L1395 764 Q1403 750 1420 750 H1450" fill="none" stroke="#7758a5" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round" />
+<path transform="translate(1429 750) rotate(0)" d="M-5 -4.4 L5 0 L-5 4.4Z" fill="#7758a5"/>
+<rect x="1450" y="742" width="38" height="20" rx="10" fill="white" stroke="#7758a5" stroke-width="1.5"/>
+<text x="1469" y="757" font-size="12" fill="#7758a5" font-weight="700" text-anchor="middle" >h</text>
+<text x="1468" y="729" font-size="15" fill="#7758a5" font-weight="700" text-anchor="middle" >Gated read tap</text>
+<text x="1214" y="943" font-size="14" fill="#526b7d" font-weight="400" text-anchor="middle" >Loop loss compensation and phase trim</text>
+<g transform="translate(2430 1828) rotate(180)">
+<path d="M1200 901 l30 13 -30 13z" fill="url(#amp-body)" stroke="#b390a0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+<rect x="1262" y="906" width="31" height="16" rx="3" fill="#f5ecf5" stroke="#ad98b4" stroke-width="1.5"/>
+<path d="M1268 914 L1286 914" fill="none" stroke="#7758a5" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+</g>
+<path d="M54 965 L1546 965" fill="none" stroke="#d4dfe5" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+<text x="54" y="988" font-size="15" fill="#20364c" font-weight="700" text-anchor="start" >h<tspan baseline-shift="sub" font-size="75%">c</tspan>[i] = W[i,c] − W[i+1,c+1]</text>
+<text x="479" y="988" font-size="15" fill="#20364c" font-weight="400" text-anchor="start" >Δh<tspan baseline-shift="sub" font-size="75%">c</tspan>[i] = η ( e[i] k[c]* − e[i+1] k[c+1]* )</text>
+<text x="1546" y="988" font-size="14" fill="#688193" font-weight="400" text-anchor="end" >Functional layout   ·   optical paths schematic</text>
+</svg>

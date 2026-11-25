@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1450" viewBox="0 0 1700 1450" role="img" aria-labelledby="title desc">
+  <title id="title">Four-die optical engine with parallel heads and time-multiplexed layers</title>
+  <desc id="desc">Two die pairs implement four complete parallel head engines. Each die contains sixteen full Hankel multipliers, divided into two groups of eight. Each pair has a first-bank die and a second-bank die with a frequency shuffle between the banks for each head. Eight lanes with sixty-four data wavelengths encode a five-hundred-twelve-coordinate head vector. Each physical head engine services four logical heads in time, for sixteen logical heads. The same hardware then services all twenty-four layers in sequence. Separate coefficient packets in external recirculating memory retain every logical head and layer state. Electronics collects all sixteen head outputs, computes the layer boundary, and supplies the next layer input after a scheduled guard. The illustrated sequence is a logical service order, not a completed read-write schedule or a claim that one token takes one memory roundtrip. The sixty-four-multiplier count excludes memory, writers, encoders, receivers, and electronics.</desc>
+  <defs>
+    <marker id="optical-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#0f766e"/></marker>
+    <marker id="electrical-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#7c3aed"/></marker>
+    <marker id="muted-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L11 6 L1 11 Z" fill="#64748b"/></marker>
+  </defs>
+  <rect width="1700" height="1450" fill="#f8fafc"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="48" y="62" font-size="31" font-weight="700" fill="#0f172a">Four dies: parallel heads, serial layers</text>
+    <text x="48" y="101" font-size="22" fill="#475569">4 physical head engines × 4 head slots × 24 layer slots · 16 logical heads per layer</text>
+    <rect x="48" y="126" width="1604" height="62" rx="12" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5"/>
+    <text x="72" y="165" font-size="22" font-weight="600" fill="#0f766e">Each head: 8 parallel lanes × 64 data wavelengths = 512 coordinates · 2 optical banks</text>
+
+    <!-- Pair A: two spatial head engines share each physical die. -->
+    <rect x="48" y="211" width="784" height="466" rx="14" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="72" y="246" font-size="24" font-weight="700" fill="#0f172a">Die pair A · physical heads p = 0, 1</text>
+    <rect x="72" y="266" width="736" height="73" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="440" y="294" text-anchor="middle" font-size="19" font-weight="600" fill="#c2410c">External recirculating coefficient memory</text>
+    <text x="440" y="321" text-anchor="middle" font-size="18" fill="#475569">Separate packets for every layer, head, bank and lane</text>
+    <path d="M217 339 V372 M663 339 V372" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <rect x="72" y="372" width="290" height="256" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <rect x="518" y="372" width="290" height="256" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="217" y="406" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8">Die A1 · bank 1</text>
+    <text x="663" y="406" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8">Die A2 · bank 2</text>
+    <g fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5">
+      <rect x="88" y="431" width="258" height="62" rx="8"/>
+      <rect x="88" y="518" width="258" height="62" rx="8"/>
+      <rect x="534" y="431" width="258" height="62" rx="8"/>
+      <rect x="534" y="518" width="258" height="62" rx="8"/>
+    </g>
+    <g text-anchor="middle" font-size="20" fill="#0f766e">
+      <text x="217" y="457" font-weight="700">p = 0 · 8 multipliers</text><text x="217" y="481" font-size="17">8-lane vector</text>
+      <text x="217" y="544" font-weight="700">p = 1 · 8 multipliers</text><text x="217" y="568" font-size="17">8-lane vector</text>
+      <text x="663" y="457" font-weight="700">p = 0 · 8 multipliers</text><text x="663" y="481" font-size="17">8-lane vector</text>
+      <text x="663" y="544" font-weight="700">p = 1 · 8 multipliers</text><text x="663" y="568" font-size="17">8-lane vector</text>
+    </g>
+    <g fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#optical-arrow)">
+      <path d="M346 462 H394"/><path d="M486 462 H534"/>
+      <path d="M346 549 H394"/><path d="M486 549 H534"/>
+    </g>
+    <g fill="white" stroke="#0f766e" stroke-width="1.5">
+      <rect x="394" y="441" width="92" height="42" rx="7"/><rect x="394" y="528" width="92" height="42" rx="7"/>
+    </g>
+    <g fill="#0f766e" text-anchor="middle" font-size="17"><text x="440" y="468">Shuffle</text><text x="440" y="555">Shuffle</text></g>
+    <g text-anchor="middle" font-size="18" fill="#475569"><text x="217" y="611">16 multipliers / die</text><text x="663" y="611">16 multipliers / die</text></g>
+    <text x="72" y="657" font-size="18" fill="#475569">Same two head engines reused at each head and layer slot.</text>
+
+    <!-- Pair B duplicates the spatial head capacity, not the layer count. -->
+    <rect x="868" y="211" width="784" height="466" rx="14" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="892" y="246" font-size="24" font-weight="700" fill="#0f172a">Die pair B · physical heads p = 2, 3</text>
+    <rect x="892" y="266" width="736" height="73" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="1260" y="294" text-anchor="middle" font-size="19" font-weight="600" fill="#c2410c">External recirculating coefficient memory</text>
+    <text x="1260" y="321" text-anchor="middle" font-size="18" fill="#475569">Separate packets for every layer, head, bank and lane</text>
+    <path d="M1037 339 V372 M1483 339 V372" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <rect x="892" y="372" width="290" height="256" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <rect x="1338" y="372" width="290" height="256" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="1037" y="406" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8">Die B1 · bank 1</text>
+    <text x="1483" y="406" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8">Die B2 · bank 2</text>
+    <g fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5">
+      <rect x="908" y="431" width="258" height="62" rx="8"/><rect x="908" y="518" width="258" height="62" rx="8"/>
+      <rect x="1354" y="431" width="258" height="62" rx="8"/><rect x="1354" y="518" width="258" height="62" rx="8"/>
+    </g>
+    <g text-anchor="middle" font-size="20" fill="#0f766e">
+      <text x="1037" y="457" font-weight="700">p = 2 · 8 multipliers</text><text x="1037" y="481" font-size="17">8-lane vector</text>
+      <text x="1037" y="544" font-weight="700">p = 3 · 8 multipliers</text><text x="1037" y="568" font-size="17">8-lane vector</text>
+      <text x="1483" y="457" font-weight="700">p = 2 · 8 multipliers</text><text x="1483" y="481" font-size="17">8-lane vector</text>
+      <text x="1483" y="544" font-weight="700">p = 3 · 8 multipliers</text><text x="1483" y="568" font-size="17">8-lane vector</text>
+    </g>
+    <g fill="none" stroke="#0f766e" stroke-width="3" marker-end="url(#optical-arrow)">
+      <path d="M1166 462 H1214"/><path d="M1306 462 H1354"/>
+      <path d="M1166 549 H1214"/><path d="M1306 549 H1354"/>
+    </g>
+    <g fill="white" stroke="#0f766e" stroke-width="1.5">
+      <rect x="1214" y="441" width="92" height="42" rx="7"/><rect x="1214" y="528" width="92" height="42" rx="7"/>
+    </g>
+    <g fill="#0f766e" text-anchor="middle" font-size="17"><text x="1260" y="468">Shuffle</text><text x="1260" y="555">Shuffle</text></g>
+    <g text-anchor="middle" font-size="18" fill="#475569"><text x="1037" y="611">16 multipliers / die</text><text x="1483" y="611">16 multipliers / die</text></g>
+    <text x="892" y="657" font-size="18" fill="#475569">Four dies contain 64 full Hankel multipliers in total.</text>
+
+    <!-- Electrical boundary is shared by all sixteen logical heads. -->
+    <path d="M788 628 V709 H700 V735 M1608 628 V709 H1000 V735" fill="none" stroke="#7c3aed" stroke-width="3" marker-end="url(#electrical-arrow)"/>
+    <rect x="260" y="735" width="1180" height="108" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="850" y="771" text-anchor="middle" font-size="23" font-weight="700" fill="#6d28d9">Electronic layer boundary</text>
+    <text x="850" y="804" text-anchor="middle" font-size="21" fill="#475569">Collect all 16 heads → output mixing / MLP → next-layer q, k, v and gates</text>
+    <text x="850" y="830" text-anchor="middle" font-size="17" fill="#64748b">Optical residual generation and coefficient updates remain in the optical update path.</text>
+    <path d="M260 789 H32 V606 H72" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#electrical-arrow)"/>
+    <path d="M1440 789 H1670 V701 H854 V606 H892" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#electrical-arrow)"/>
+    <text x="850" y="881" text-anchor="middle" font-size="20" fill="#6d28d9">After guard Gℓ, encoders return the next layer input to the same four head engines.</text>
+
+    <!-- A timeline of logical addresses; no per-token latency is asserted. -->
+    <rect x="48" y="915" width="1604" height="314" rx="12" fill="white" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="72" y="954" font-size="24" font-weight="700" fill="#0f172a">Logical service order for one layer</text>
+    <text x="72" y="988" font-size="20" fill="#475569">Four heads run in parallel in each slot; logical head h = 4j + p + 1.</text>
+    <g fill="#f0fdfa" stroke="#0f766e" stroke-width="1.5">
+      <rect x="72" y="1018" width="220" height="88" rx="9"/><rect x="322" y="1018" width="220" height="88" rx="9"/>
+      <rect x="572" y="1018" width="220" height="88" rx="9"/><rect x="822" y="1018" width="220" height="88" rx="9"/>
+    </g>
+    <g text-anchor="middle" fill="#0f766e" font-size="22" font-weight="700">
+      <text x="182" y="1052">Heads 1–4</text><text x="432" y="1052">Heads 5–8</text>
+      <text x="682" y="1052">Heads 9–12</text><text x="932" y="1052">Heads 13–16</text>
+    </g>
+    <g text-anchor="middle" fill="#475569" font-size="19">
+      <text x="182" y="1084">j = 0</text><text x="432" y="1084">j = 1</text><text x="682" y="1084">j = 2</text><text x="932" y="1084">j = 3</text>
+    </g>
+    <rect x="1072" y="1018" width="250" height="88" rx="9" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+    <text x="1197" y="1052" text-anchor="middle" font-size="22" font-weight="700" fill="#6d28d9">Guard Gℓ</text>
+    <text x="1197" y="1084" text-anchor="middle" font-size="19" fill="#475569">Electronic completion</text>
+    <rect x="1352" y="1018" width="276" height="88" rx="9" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="1490" y="1052" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8">Layer ℓ + 1</text>
+    <text x="1490" y="1084" text-anchor="middle" font-size="19" fill="#475569">Same hardware</text>
+    <g fill="none" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)">
+      <path d="M292 1062 H322"/><path d="M542 1062 H572"/><path d="M792 1062 H822"/><path d="M1042 1062 H1072"/><path d="M1322 1062 H1352"/>
+    </g>
+    <text x="72" y="1152" font-size="21" fill="#475569">Repeat across layers ℓ = 1…24; every head/layer combination retains an independent recurrent state.</text>
+    <text x="72" y="1190" font-size="20" fill="#475569">Each “head slot” is a logical service visit, not an assertion that a full update takes one read interval.</text>
+
+    <rect x="48" y="1255" width="1604" height="143" rx="12" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+    <text x="72" y="1293" font-size="23" font-weight="700" fill="#c2410c">Timing and physical scope</text>
+    <text x="72" y="1328" font-size="20" fill="#475569">Prediction read → optical residual / coefficient write → updated-state query still needs a causal access schedule.</text>
+    <text x="72" y="1357" font-size="20" fill="#475569">One token per memory roundtrip is not established. Guard duration must include the actual electronic boundary.</text>
+    <text x="72" y="1386" font-size="20" fill="#475569">The four-die count covers Hankel readers; external memory, writers, encoders, receivers and electronics are additional.</text>
+    <text x="48" y="1430" font-size="18" fill="#64748b">Conceptual allocation and connectivity · not a die floorplan, routed photonic layout or complete timing diagram</text>
+  </g>
+</svg>

@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="204mm" height="64mm" viewBox="0 0 2040 640" version="1.1" id="compact-forward-backward-hankel" role="img" aria-labelledby="figure-title figure-description">
+  <title id="figure-title">Figure 1b: one Hankel cell in forward and backward/update configurations</title>
+  <desc id="figure-description">Two copies of the same functional hardware illustrate separate operating modes; they do not represent two physically duplicated arithmetic cells. Left: forward matmul with x, pumps W-minus then M, and output y=F_W x. The saved-x and Delta W signals are zero; their waveguide cladding remains but their optical cores and propagation arrows are absent. Right: adjoint plus weight update with e, pumps M then the same old W-minus, adjoint output g_x=F_W dagger e, and saved forward x supplied to the cross-SFG writer. Each signal has a consistent color: W violet, M amber, x blue, e red, y cyan, adjoint result g_x magenta, and Delta W teal. Ordinary gradients vary brightness within one signal hue. Multicolor gradients in couplers and interferometer arms schematically indicate simultaneous field components and mixing, not actual optical wavelengths or quantitative intensities. Colors highlight functional signals; a terminated coupler output may still carry rejected circulating light. The cell is the Figure 1a block, with one shared DFG pair, filtered cross-SFG output and calibrated write amplitude/phase control. It has no old-state injection port. The stored coefficients stay in the external loop: load/hold switch -&gt; weak read tap -&gt; loop trim -&gt; coherent addition -&gt; gain -&gt; fiber storage -&gt; load/hold switch. A read copy alone enters the pump swap MZI. The weight increment joins the circulating field at an external coherent directional coupler; its unused output is terminated. Coupler factors, phases, gain and write amplitude are calibrated to implement W-plus=W-minus+Delta W; the drawing does not imply lossless passive addition. The loop trim symbol denotes calibration, not per-lap logical retention. The top pulse silhouettes represent time slots of coefficient combs, not scalar weights or waveguide geometry. The load/hold element is a true 2x2 MZI: upper input is circulating return, lower input is initialization frame W_0; upper output continues into storage and lower output is terminated. Both panels depict HOLD, so W_0 and the selected dark dump lead have no optical core. Both internal interferometer arms nevertheless carry circulating W after the first coupler. Similarly a read-tap or injection-coupler unused input has no core, while its coupled output may carry a nonzero field. LOAD exchanges routes to send W_0 into memory and old circulating contents to the dump. Disable Delta W injection during loading, replace a complete round trip/frame including any dark slots, then settle and close the switch in HOLD with calibrated phase. W_0 is off during ordinary forward and backward operation. The pump switch contains two physical couplers and two arms. Small bar/cross connectivity icons above it show the logical routing state; they are not extra optical waveguides or components. Pump identities on its outputs identify forward versus adjoint ordering. Old-state pump copies and saved x must be held/replayed and aligned before writing matching coefficient slots; teal update arrows denote the backward/update phase, not simultaneous overwriting before old-state capture. Exact holds, clock guards, coefficient-band performance, loop loss/noise and control electronics remain abstracted. No latency or efficiency value is asserted. DejaVu Sans text remains editable. Pale-gray unoutlined cladding, signal-colored gradient cores, gold electrical control and rose gain follow Figure 1a. All elements are native SVG; background transparent. Detailed prior diagrams are preserved. The backward view highlights W-plus using a persistent violet/teal blend from the coherent addition through gain and storage into the pulse envelopes, labeled W-plus(t). This blend illustrates the contribution of Delta W to the new coefficient frame; it does not represent fading, attenuation, wavelength conversion, or a quantitative pulse-amplitude change. The pulse geometry is unchanged. The purple W-minus read copy represents the previously captured old state needed by the adjoint pass, as specified by the scheduling abstraction.</desc>
+  <defs id="signal-color-gradients"><linearGradient id="signal-W" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#654097"/><stop offset="0.38" stop-color="#7653B5"/><stop offset="0.68" stop-color="#9B78CC"/><stop offset="1" stop-color="#654097"/></linearGradient><linearGradient id="signal-M" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#9E6515"/><stop offset="0.38" stop-color="#C48624"/><stop offset="0.68" stop-color="#DFB65E"/><stop offset="1" stop-color="#9E6515"/></linearGradient><linearGradient id="signal-x" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#1A5F9A"/><stop offset="0.38" stop-color="#2477BC"/><stop offset="0.68" stop-color="#5A9ACF"/><stop offset="1" stop-color="#1A5F9A"/></linearGradient><linearGradient id="signal-e" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#A82E4A"/><stop offset="0.38" stop-color="#C94D65"/><stop offset="0.68" stop-color="#E07E88"/><stop offset="1" stop-color="#A82E4A"/></linearGradient><linearGradient id="signal-y" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#1D6C81"/><stop offset="0.38" stop-color="#2A93AB"/><stop offset="0.68" stop-color="#6ABCCC"/><stop offset="1" stop-color="#1D6C81"/></linearGradient><linearGradient id="signal-g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#863970"/><stop offset="0.38" stop-color="#A64F91"/><stop offset="0.68" stop-color="#C482B6"/><stop offset="1" stop-color="#863970"/></linearGradient><linearGradient id="signal-dW" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="980" y2="540"><stop offset="0" stop-color="#126E60"/><stop offset="0.38" stop-color="#1B9C83"/><stop offset="0.68" stop-color="#5CC1A7"/><stop offset="1" stop-color="#126E60"/></linearGradient><linearGradient id="cell-surface" gradientUnits="userSpaceOnUse" x1="650" y1="340" x2="870" y2="555"><stop offset="0" stop-color="#fcf8fa"/><stop offset="0.5" stop-color="#f7ecef"/><stop offset="1" stop-color="#eddae2"/></linearGradient><linearGradient id="forward-panel-hold-arm-field" gradientUnits="userSpaceOnUse" x1="66" y1="90" x2="334" y2="90"><stop offset="0" stop-color="#7653B5" stop-opacity="0"/><stop offset="0.12" stop-color="#7653B5" stop-opacity="1"/><stop offset="0.5" stop-color="#9B78CC" stop-opacity="1"/><stop offset="0.88" stop-color="#7653B5" stop-opacity="1"/><stop offset="1" stop-color="#7653B5" stop-opacity="0"/></linearGradient><linearGradient id="forward-panel-tap-field" gradientUnits="userSpaceOnUse" x1="325" y1="265" x2="380" y2="265"><stop offset="0" stop-color="#7653B5" stop-opacity="0"/><stop offset="0.34" stop-color="#7653B5" stop-opacity="1"/><stop offset="1" stop-color="#9B78CC" stop-opacity="1"/></linearGradient><linearGradient id="forward-panel-pump-upper-field" gradientUnits="userSpaceOnUse" x1="16" y1="48" x2="384" y2="48"><stop offset="0" stop-color="#7653B5"/><stop offset="0.13" stop-color="#7653B5"/><stop offset="0.31" stop-color="#9B78CC"/><stop offset="0.5" stop-color="#C48624"/><stop offset="0.69" stop-color="#9B78CC"/><stop offset="0.87" stop-color="#7653B5"/><stop offset="1" stop-color="#7653B5"/></linearGradient><linearGradient id="forward-panel-pump-lower-field" gradientUnits="userSpaceOnUse" x1="16" y1="112" x2="384" y2="112"><stop offset="0" stop-color="#C48624"/><stop offset="0.13" stop-color="#C48624"/><stop offset="0.31" stop-color="#DFB65E"/><stop offset="0.5" stop-color="#7653B5"/><stop offset="0.69" stop-color="#DFB65E"/><stop offset="0.87" stop-color="#C48624"/><stop offset="1" stop-color="#C48624"/></linearGradient><linearGradient id="forward-panel-addition-dump-field" gradientUnits="userSpaceOnUse" x1="795" y1="265" x2="850" y2="265"><stop offset="0" stop-color="#7653B5" stop-opacity="0"/><stop offset="0.36" stop-color="#7653B5" stop-opacity="1"/><stop offset="1" stop-color="#9B78CC" stop-opacity="1"/></linearGradient><linearGradient id="backward-panel-hold-arm-field" gradientUnits="userSpaceOnUse" x1="66" y1="90" x2="334" y2="90"><stop offset="0" stop-color="#7653B5" stop-opacity="0"/><stop offset="0.12" stop-color="#7653B5" stop-opacity="1"/><stop offset="0.5" stop-color="#9B78CC" stop-opacity="1"/><stop offset="0.88" stop-color="#7653B5" stop-opacity="1"/><stop offset="1" stop-color="#7653B5" stop-opacity="0"/></linearGradient><linearGradient id="backward-panel-tap-field" gradientUnits="userSpaceOnUse" x1="325" y1="265" x2="380" y2="265"><stop offset="0" stop-color="#7653B5" stop-opacity="0"/><stop offset="0.34" stop-color="#7653B5" stop-opacity="1"/><stop offset="1" stop-color="#9B78CC" stop-opacity="1"/></linearGradient><linearGradient id="backward-panel-pump-upper-field" gradientUnits="userSpaceOnUse" x1="16" y1="48" x2="384" y2="48"><stop offset="0" stop-color="#7653B5"/><stop offset="0.13" stop-color="#7653B5"/><stop offset="0.31" stop-color="#9B78CC"/><stop offset="0.5" stop-color="#C48624"/><stop offset="0.69" stop-color="#9B78CC"/><stop offset="0.87" stop-color="#C48624"/><stop offset="1" stop-color="#C48624"/></linearGradient><linearGradient id="backward-panel-pump-lower-field" gradientUnits="userSpaceOnUse" x1="16" y1="112" x2="384" y2="112"><stop offset="0" stop-color="#C48624"/><stop offset="0.13" stop-color="#C48624"/><stop offset="0.31" stop-color="#DFB65E"/><stop offset="0.5" stop-color="#7653B5"/><stop offset="0.69" stop-color="#DFB65E"/><stop offset="0.87" stop-color="#7653B5"/><stop offset="1" stop-color="#7653B5"/></linearGradient><linearGradient id="legend-W-gradient" gradientUnits="userSpaceOnUse" x1="560" y1="608" x2="602" y2="608"><stop offset="0" stop-color="#654097"/><stop offset="0.5" stop-color="#9B78CC"/><stop offset="1" stop-color="#7653B5"/></linearGradient><linearGradient id="legend-M-gradient" gradientUnits="userSpaceOnUse" x1="750" y1="608" x2="792" y2="608"><stop offset="0" stop-color="#9E6515"/><stop offset="0.5" stop-color="#DFB65E"/><stop offset="1" stop-color="#C48624"/></linearGradient><linearGradient id="legend-x-gradient" gradientUnits="userSpaceOnUse" x1="940" y1="608" x2="982" y2="608"><stop offset="0" stop-color="#1A5F9A"/><stop offset="0.5" stop-color="#5A9ACF"/><stop offset="1" stop-color="#2477BC"/></linearGradient><linearGradient id="legend-e-gradient" gradientUnits="userSpaceOnUse" x1="1130" y1="608" x2="1172" y2="608"><stop offset="0" stop-color="#A82E4A"/><stop offset="0.5" stop-color="#E07E88"/><stop offset="1" stop-color="#C94D65"/></linearGradient><linearGradient id="legend-y-gradient" gradientUnits="userSpaceOnUse" x1="1320" y1="608" x2="1362" y2="608"><stop offset="0" stop-color="#1D6C81"/><stop offset="0.5" stop-color="#6ABCCC"/><stop offset="1" stop-color="#2A93AB"/></linearGradient><linearGradient id="legend-g-gradient" gradientUnits="userSpaceOnUse" x1="1510" y1="608" x2="1552" y2="608"><stop offset="0" stop-color="#863970"/><stop offset="0.5" stop-color="#C482B6"/><stop offset="1" stop-color="#A64F91"/></linearGradient><linearGradient id="legend-dW-gradient" gradientUnits="userSpaceOnUse" x1="1700" y1="608" x2="1742" y2="608"><stop offset="0" stop-color="#126E60"/><stop offset="0.5" stop-color="#5CC1A7"/><stop offset="1" stop-color="#1B9C83"/></linearGradient><linearGradient id="backward-panel-state-addition-field" gradientUnits="userSpaceOnUse" x1="760" y1="230" x2="850" y2="230"><stop offset="0" stop-color="#7653B5"/><stop offset="0.3" stop-color="#7653B5"/><stop offset="0.5" stop-color="#418F9D"/><stop offset="0.68" stop-color="#43B69F"/><stop offset="0.86" stop-color="#8B77C2"/><stop offset="1" stop-color="#6386AD"/></linearGradient><linearGradient id="backward-panel-increment-addition-field" gradientUnits="userSpaceOnUse" x1="760" y1="290" x2="850" y2="290"><stop offset="0" stop-color="#1B9C83"/><stop offset="0.4" stop-color="#1B9C83"/><stop offset="0.65" stop-color="#3CAB9C"/><stop offset="0.84" stop-color="#7778BA"/><stop offset="1" stop-color="#7653B5"/></linearGradient><linearGradient id="updated-weight-output-gradient" gradientUnits="userSpaceOnUse" x1="850" y1="230" x2="910" y2="230"><stop offset="0" stop-color="#6386AD"/><stop offset="0.35" stop-color="#9A78C9"/><stop offset="0.65" stop-color="#5CADAC"/><stop offset="1" stop-color="#32A88F"/></linearGradient><linearGradient id="updated-weight-storage-gradient" gradientUnits="userSpaceOnUse" x1="945" y1="230" x2="80" y2="100"><stop offset="0" stop-color="#32A88F"/><stop offset="0.2" stop-color="#7E78BB"/><stop offset="0.38" stop-color="#A080CC"/><stop offset="0.56" stop-color="#47B5A0"/><stop offset="0.73" stop-color="#8472BB"/><stop offset="0.88" stop-color="#4BA79F"/><stop offset="1" stop-color="#7653B5"/></linearGradient><linearGradient id="updated-pulse-0-gradient" gradientUnits="userSpaceOnUse" x1="386" y1="80" x2="414" y2="100"><stop offset="0" stop-color="#7653B5"/><stop offset="0.38" stop-color="#9673C4"/><stop offset="0.7" stop-color="#4BA7AA"/><stop offset="1" stop-color="#1B9C83"/></linearGradient><linearGradient id="updated-pulse-1-gradient" gradientUnits="userSpaceOnUse" x1="436" y1="80" x2="464" y2="100"><stop offset="0" stop-color="#7653B5"/><stop offset="0.38" stop-color="#9673C4"/><stop offset="0.7" stop-color="#4BA7AA"/><stop offset="1" stop-color="#1B9C83"/></linearGradient><linearGradient id="updated-pulse-2-gradient" gradientUnits="userSpaceOnUse" x1="486" y1="80" x2="514" y2="100"><stop offset="0" stop-color="#7653B5"/><stop offset="0.38" stop-color="#9673C4"/><stop offset="0.7" stop-color="#4BA7AA"/><stop offset="1" stop-color="#1B9C83"/></linearGradient><linearGradient id="updated-pulse-3-gradient" gradientUnits="userSpaceOnUse" x1="536" y1="80" x2="564" y2="100"><stop offset="0" stop-color="#7653B5"/><stop offset="0.38" stop-color="#9673C4"/><stop offset="0.7" stop-color="#4BA7AA"/><stop offset="1" stop-color="#1B9C83"/></linearGradient><linearGradient id="updated-weight-label-gradient" gradientUnits="userSpaceOnUse" x1="612" y1="85" x2="690" y2="85"><stop offset="0" stop-color="#7653B5"/><stop offset="0.55" stop-color="#7B77B8"/><stop offset="1" stop-color="#1B9C83"/></linearGradient></defs><metadata id="design-provenance">{
+  "figure_1a": "inkscape_diagrams/simplified_hankel_multiplier_cleaned.svg",
+  "detailed_reference": "inkscape_diagrams/1b_forward_backward_hankel_cleaned.svg",
+  "font": "DejaVu Sans",
+  "two_panels": "same hardware at separate operating phases",
+  "initialization": {
+    "hold": "return -&gt; loop; W0 -&gt; dump",
+    "load": "W0 -&gt; loop; old return -&gt; dump",
+    "frame": "replace complete round-trip frame, then hold"
+  },
+  "cell_boundary": "Delta W output; addition and memory external",
+  "signal_palette": {
+    "W": "#7653B5",
+    "M": "#C48624",
+    "x": "#2477BC",
+    "e": "#C94D65",
+    "y": "#2A93AB",
+    "g": "#A64F91",
+    "dW": "#1B9C83"
+  },
+  "zero_field_convention": "gray cladding only; no core or arrow",
+  "gradients": "single-hue shading on pure routes; mixed hues only in interaction regions",
+  "updated_weight_visual": "persistent violet/teal blend in return waveguide and unchanged pulse envelopes; W+(t) label"
+}</metadata>
+  <g id="forward-panel" transform="translate(40 0)" inkscape:groupmode="layer" inkscape:label="Matmul — forward" font-family="DejaVu Sans, sans-serif">
+    <g id="forward-panel-blocks">
+      <rect id="forward-panel-cell" x="650" y="340" width="220" height="215" rx="16" fill="url(#cell-surface)" stroke="#b58e9a" stroke-width="1.6"/>
+    </g>
+    <g id="forward-panel-cladding">
+      <path id="forward-panel-storage-return-cladding" d="M 910,230 H 915 Q 945,230 945,200 V 140 Q 945,100 905,100 H 80 Q 40,100 40,140 V 190 Q 40,230 80,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-initial-weight-input-cladding" d="M 30,262 H 80" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-load-to-read-tap-cladding" d="M 264,230 H 290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-read-tap-upper-cladding" d="M 290,230 C 308,230 310,255.0 325,255.0 H 345 C 360,255.0 362,230 380,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-read-tap-lower-cladding" d="M 290,290 C 308,290 310,265.0 325,265.0 H 345 C 360,265.0 362,290 380,290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-tap-to-loop-trim-cladding" d="M 380,230 H 440" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-trim-to-update-cladding" d="M 574,230 H 760" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-coherent-update-upper-cladding" d="M 760,230 C 778,230 780,255.0 795,255.0 H 815 C 830,255.0 832,230 850,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-coherent-update-lower-cladding" d="M 760,290 C 778,290 780,265.0 795,265.0 H 815 C 830,265.0 832,290 850,290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-update-to-gain-cladding" d="M 850,230 H 875" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-gain-axis-cladding" d="M 875,230 H 910" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-weight-read-copy-cladding" d="M 380,290 Q 390,290 390,305 V 350 Q 390,370 410,370" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-fixed-M-cladding" d="M 330,402 H 410" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-pump-1-cladding" d="M 594,370 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-pump-2-cladding" d="M 594,402 C 614,402 624,410 650,410" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-data-input-cladding" d="M 560,480 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-readout-cladding" d="M 870,480 H 950" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-saved-x-cladding" d="M 560,530 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-weight-increment-cladding" d="M 700,340 V 320 Q 700,290 730,290 H 760" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    </g>
+    <g id="forward-panel-cores">
+      <path id="forward-panel-storage-return-core" d="M 910,230 H 915 Q 945,230 945,200 V 140 Q 945,100 905,100 H 80 Q 40,100 40,140 V 190 Q 40,230 80,230" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-load-to-read-tap-core" d="M 264,230 H 290" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-read-tap-upper-core" d="M 290,230 C 308,230 310,255.0 325,255.0 H 345 C 360,255.0 362,230 380,230" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-read-tap-lower-core" d="M 325,265 H 345 C 360,265 362,290 380,290" fill="none" stroke="url(#forward-panel-tap-field)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-tap-to-loop-trim-core" d="M 380,230 H 440" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-trim-to-update-core" d="M 574,230 H 760" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-coherent-update-upper-core" d="M 760,230 C 778,230 780,255.0 795,255.0 H 815 C 830,255.0 832,230 850,230" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-coherent-update-lower-core" d="M 795,265 H 815 C 830,265 832,290 850,290" fill="none" stroke="url(#forward-panel-addition-dump-field)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-update-to-gain-core" d="M 850,230 H 875" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-gain-axis-core" d="M 875,230 H 910" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-weight-read-copy-core" d="M 380,290 Q 390,290 390,305 V 350 Q 390,370 410,370" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-fixed-M-core" d="M 330,402 H 410" fill="none" stroke="url(#signal-M)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="M"/>
+      <path id="forward-panel-pump-1-core" d="M 594,370 H 650" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="forward-panel-pump-2-core" d="M 594,402 C 614,402 624,410 650,410" fill="none" stroke="url(#signal-M)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="M"/>
+      <path id="forward-panel-data-input-core" d="M 560,480 H 650" fill="none" stroke="url(#signal-x)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+      <path id="forward-panel-readout-core" d="M 870,480 H 950" fill="none" stroke="url(#signal-y)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="y"/>
+      </g>
+    <g id="forward-panel-components">
+      <g id="forward-panel-load-hold-switch" transform="translate(72 206) scale(0.5)"><g id="forward-panel-load-hold-switch-os22-optical-cladding" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-load-hold-switch-os22-upper-arm-guide" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="forward-panel-load-hold-switch-os22-lower-arm-guide" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="forward-panel-load-hold-switch-os22-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-load-hold-switch-os22-upper-arm-core" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="forward-panel-load-hold-switch-os22-lower-arm-core" d="M 66,90 H 98 C 118,90 122,116 142,116 H 258 C 278,116 282,90 302,90 H 334" stroke="url(#forward-panel-hold-arm-field)" stroke-width="5.4" data-signal="W"/>
+  </g>
+
+  <g id="forward-panel-load-hold-switch-os22-electrical-control">
+    <rect id="forward-panel-load-hold-switch-os22-phase-control-electrode" x="164" y="29" width="72" height="6" rx="2" fill="#d5b477" stroke="none"/>
+    <g id="forward-panel-load-hold-switch-os22-control-connection" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="forward-panel-load-hold-switch-os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="forward-panel-load-hold-switch-os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</g>
+      <rect id="forward-panel-initialization-dump" x="261.5" y="256" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <rect id="forward-panel-read-tap-unused-input" x="287.5" y="284" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <g id="forward-panel-loop-trim" transform="translate(432 192) scale(0.5)"><g id="forward-panel-loop-trim-mzi-optical-guides" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-loop-trim-mzi-input-guide" d="M 16,76 H 38"/>
+    <path id="forward-panel-loop-trim-mzi-upper-guide" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76"/>
+    <path id="forward-panel-loop-trim-mzi-lower-guide" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76"/>
+    <path id="forward-panel-loop-trim-mzi-output-guide" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="forward-panel-loop-trim-mzi-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-loop-trim-mzi-input-core" d="M 16,76 H 38" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="forward-panel-loop-trim-mzi-upper-core" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="forward-panel-loop-trim-mzi-lower-core" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="forward-panel-loop-trim-mzi-output-core" d="M 262,76 H 284" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+  </g>
+
+  <g id="forward-panel-loop-trim-mzi-electrical-controls">
+    <g id="forward-panel-loop-trim-mzi-actuator-marks" fill="#d5b477" stroke="none">
+      <rect id="forward-panel-loop-trim-mzi-upper-phase-shifter" x="118" y="29" width="64" height="6" rx="2"/>
+      <rect id="forward-panel-loop-trim-mzi-lower-phase-shifter" x="118" y="117" width="64" height="6" rx="2"/>
+    </g>
+    <g id="forward-panel-loop-trim-mzi-control-leads" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="forward-panel-loop-trim-mzi-upper-control-lead" d="M 150,17 V 29"/>
+      <path id="forward-panel-loop-trim-mzi-lower-control-lead" d="M 150,123 V 135"/>
+      <circle id="forward-panel-loop-trim-mzi-upper-control-terminal" cx="150" cy="13" r="4"/>
+      <circle id="forward-panel-loop-trim-mzi-lower-control-terminal" cx="150" cy="139" r="4"/>
+    </g>
+  </g>
+</g>
+      <rect id="forward-panel-coherent-update-dump" x="847.5" y="284" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <path id="forward-panel-loop-gain" d="M 875,210 L 910,230 L 875,250 Z" fill="#f3dfe3" stroke="#a36d7a" stroke-width="1.2"/>
+      <g id="forward-panel-pump-switch" transform="translate(402 346) scale(0.5)"><g id="forward-panel-pump-switch-os22-optical-cladding" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-pump-switch-os22-upper-arm-guide" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="forward-panel-pump-switch-os22-lower-arm-guide" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="forward-panel-pump-switch-os22-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="forward-panel-pump-switch-os22-upper-arm-core" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384" stroke="url(#forward-panel-pump-upper-field)" stroke-width="5.4" data-signal="W+M inside interferometer"/>
+    <path id="forward-panel-pump-switch-os22-lower-arm-core" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384" stroke="url(#forward-panel-pump-lower-field)" stroke-width="5.4" data-signal="W+M inside interferometer"/>
+  </g>
+
+  <g id="forward-panel-pump-switch-os22-electrical-control">
+    <rect id="forward-panel-pump-switch-os22-phase-control-electrode" x="164" y="29" width="72" height="6" rx="2" fill="#d5b477" stroke="none"/>
+    <g id="forward-panel-pump-switch-os22-control-connection" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="forward-panel-pump-switch-os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="forward-panel-pump-switch-os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</g>
+    </g>
+    <g id="forward-panel-pulse-envelopes">
+      <path id="forward-panel-pulse-0" d="M 386,100 C 393,100 394,84 400,84 C 406,84 407,100 414,100 Z" fill="#7653B5" fill-opacity=".22" stroke="url(#signal-W)" stroke-width="1.5"/>
+      <path id="forward-panel-pulse-1" d="M 436,100 C 443,100 444,76 450,76 C 456,76 457,100 464,100 Z" fill="#7653B5" fill-opacity=".22" stroke="url(#signal-W)" stroke-width="1.5"/>
+      <path id="forward-panel-pulse-2" d="M 486,100 C 493,100 494,82 500,82 C 506,82 507,100 514,100 Z" fill="#7653B5" fill-opacity=".22" stroke="url(#signal-W)" stroke-width="1.5"/>
+      <path id="forward-panel-pulse-3" d="M 536,100 C 543,100 544,79 550,79 C 556,79 557,100 564,100 Z" fill="#7653B5" fill-opacity=".22" stroke="url(#signal-W)" stroke-width="1.5"/>
+    </g>
+    <g id="forward-panel-arrows">
+      <path id="forward-panel-memory-up" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(945 174) rotate(-90)" data-signal="W"/>
+      <path id="forward-panel-memory-left" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(785 100) rotate(180)" data-signal="W"/>
+      <path id="forward-panel-memory-left-2" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(210 100) rotate(180)" data-signal="W"/>
+      <path id="forward-panel-memory-down" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(40 169) rotate(90)" data-signal="W"/>
+      <path id="forward-panel-stored-weight" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(644 230) rotate(0)" data-signal="W"/>
+      <path id="forward-panel-weight-tap" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(390 334) rotate(90)" data-signal="W"/>
+      <path id="forward-panel-fixed-M-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#C48624" transform="translate(366 402) rotate(0)" data-signal="M"/>
+      <path id="forward-panel-pump-one" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(631 370) rotate(0)" data-signal="W"/>
+      <path id="forward-panel-pump-two" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#C48624" transform="translate(633 408) rotate(0)" data-signal="M"/>
+      <path id="forward-panel-input-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#2477BC" transform="translate(614 480) rotate(0)" data-signal="x"/>
+      <path id="forward-panel-readout-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#2A93AB" transform="translate(922 480) rotate(0)" data-signal="y"/>
+      </g>
+    <g id="forward-panel-route-state">
+      <path id="forward-panel-route-state-0" d="M 478,300 L 526,300" fill="none" stroke="#7653B5" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-route-state-arrow-0" d="M 521,297 L 527,300 L 521,303" fill="#7653B5" data-signal="W"/>
+      <path id="forward-panel-route-state-1" d="M 478,320 L 526,320" fill="none" stroke="#C48624" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="forward-panel-route-state-arrow-1" d="M 521,317 L 527,320 L 521,323" fill="#C48624" data-signal="M"/>
+      <path id="forward-panel-state-control" d="M 502,332 V 350.5" fill="none" stroke="#b18a4c" stroke-width="1.4" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3 3"/>
+    </g>
+    <g id="forward-panel-labels">
+      <text id="forward-panel-heading" x="490" y="37" font-size="28" text-anchor="middle" fill="#273648" font-weight="500">Matmul · forward</text>
+      <text id="forward-panel-memory-label" x="650" y="85" font-size="25" text-anchor="middle" fill="#7653B5" font-weight="400" data-signal="W">W(t)</text>
+      <text id="forward-panel-load-control-label" x="172" y="185" font-size="21" text-anchor="middle" fill="#273648" font-weight="400">Load / hold</text>
+      <text id="forward-panel-initial-weight-label" x="30" y="292" font-size="24" text-anchor="start" fill="#7e8c9a" font-weight="400">W₀</text>
+      <text id="forward-panel-weight-read-label" x="372" y="367" font-size="24" text-anchor="end" fill="#7653B5" font-weight="400" data-signal="W">W⁻</text>
+      <text id="forward-panel-fixed-M-label" x="316" y="410" font-size="24" text-anchor="end" fill="#C48624" font-weight="400" data-signal="M">M</text>
+      <text id="forward-panel-route-state-label" x="542" y="317" font-size="20" text-anchor="start" fill="#78899a" font-weight="400">bar</text>
+      <text id="forward-panel-pump1-label" x="622" y="353" font-size="24" text-anchor="middle" fill="#7653B5" font-weight="400" data-signal="W">W⁻</text>
+      <text id="forward-panel-pump2-label" x="622" y="440" font-size="24" text-anchor="middle" fill="#C48624" font-weight="400" data-signal="M">M</text>
+      <text id="forward-panel-cell-name" x="760" y="458" font-size="26" text-anchor="middle" fill="#273648" font-weight="500">Hankel cell</text>
+      <text id="forward-panel-input-label" x="540" y="488" font-size="27" text-anchor="end" fill="#2477BC" font-weight="400" data-signal="x">x</text>
+      <text id="forward-panel-output-label" x="949" y="458" font-size="27" text-anchor="end" fill="#2A93AB" font-weight="400" data-signal="y">y</text>
+      <text id="forward-panel-saved-x-label" x="540" y="538" font-size="21" text-anchor="end" fill="#9aa6b2" font-weight="400">saved x</text>
+      <text id="forward-panel-increment-label" x="704" y="274" font-size="25" text-anchor="start" fill="#9aa6b2" font-weight="400">ΔW</text>
+    </g>
+  </g>
+  <g id="backward-panel" transform="translate(1060 0)" inkscape:groupmode="layer" inkscape:label="Training — backward / update" font-family="DejaVu Sans, sans-serif">
+    <g id="backward-panel-blocks">
+      <rect id="backward-panel-cell" x="650" y="340" width="220" height="215" rx="16" fill="url(#cell-surface)" stroke="#b58e9a" stroke-width="1.6"/>
+    </g>
+    <g id="backward-panel-cladding">
+      <path id="backward-panel-storage-return-cladding" d="M 910,230 H 915 Q 945,230 945,200 V 140 Q 945,100 905,100 H 80 Q 40,100 40,140 V 190 Q 40,230 80,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-initial-weight-input-cladding" d="M 30,262 H 80" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-load-to-read-tap-cladding" d="M 264,230 H 290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-read-tap-upper-cladding" d="M 290,230 C 308,230 310,255.0 325,255.0 H 345 C 360,255.0 362,230 380,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-read-tap-lower-cladding" d="M 290,290 C 308,290 310,265.0 325,265.0 H 345 C 360,265.0 362,290 380,290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-tap-to-loop-trim-cladding" d="M 380,230 H 440" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-trim-to-update-cladding" d="M 574,230 H 760" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-coherent-update-upper-cladding" d="M 760,230 C 778,230 780,255.0 795,255.0 H 815 C 830,255.0 832,230 850,230" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-coherent-update-lower-cladding" d="M 760,290 C 778,290 780,265.0 795,265.0 H 815 C 830,265.0 832,290 850,290" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-update-to-gain-cladding" d="M 850,230 H 875" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-gain-axis-cladding" d="M 875,230 H 910" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-weight-read-copy-cladding" d="M 380,290 Q 390,290 390,305 V 350 Q 390,370 410,370" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-fixed-M-cladding" d="M 330,402 H 410" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-pump-1-cladding" d="M 594,370 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-pump-2-cladding" d="M 594,402 C 614,402 624,410 650,410" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-data-input-cladding" d="M 560,480 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-readout-cladding" d="M 870,480 H 950" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-saved-x-cladding" d="M 560,530 H 650" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-weight-increment-cladding" d="M 700,340 V 320 Q 700,290 730,290 H 760" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="backward-panel-storage-return-cladding-update-tint" d="M 910,230 H 915 Q 945,230 945,200 V 140 Q 945,100 905,100 H 80 Q 40,100 40,140 V 190 Q 40,230 80,230" fill="none" stroke="url(#updated-weight-storage-gradient)" stroke-width="7.5" stroke-opacity=".18" stroke-linecap="butt" stroke-linejoin="round"/><path id="backward-panel-update-to-gain-cladding-update-tint" d="M 850,230 H 875" fill="none" stroke="url(#updated-weight-output-gradient)" stroke-width="7.5" stroke-opacity=".18" stroke-linecap="butt" stroke-linejoin="round"/></g>
+    <g id="backward-panel-cores">
+      <path id="backward-panel-storage-return-core" d="M 910,230 H 915 Q 945,230 945,200 V 140 Q 945,100 905,100 H 80 Q 40,100 40,140 V 190 Q 40,230 80,230" fill="none" stroke="url(#updated-weight-storage-gradient)" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="round" data-signal="W+ after coherent update"/>
+      <path id="backward-panel-load-to-read-tap-core" d="M 264,230 H 290" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-read-tap-upper-core" d="M 290,230 C 308,230 310,255.0 325,255.0 H 345 C 360,255.0 362,230 380,230" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-read-tap-lower-core" d="M 325,265 H 345 C 360,265 362,290 380,290" fill="none" stroke="url(#backward-panel-tap-field)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-tap-to-loop-trim-core" d="M 380,230 H 440" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-trim-to-update-core" d="M 574,230 H 760" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-coherent-update-upper-core" d="M 760,230 C 778,230 780,255.0 795,255.0 H 815 C 830,255.0 832,230 850,230" fill="none" stroke="url(#backward-panel-state-addition-field)" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="round" data-signal="coherent W and Delta W superposition"/>
+      <path id="backward-panel-coherent-update-lower-core" d="M 760,290 C 778,290 780,265.0 795,265.0 H 815 C 830,265.0 832,290 850,290" fill="none" stroke="url(#backward-panel-increment-addition-field)" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="round" data-signal="coherent W and Delta W superposition"/>
+      <path id="backward-panel-update-to-gain-core" d="M 850,230 H 875" fill="none" stroke="url(#updated-weight-output-gradient)" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="round" data-signal="W+ after coherent update"/>
+      <path id="backward-panel-weight-read-copy-core" d="M 380,290 Q 390,290 390,305 V 350 Q 390,370 410,370" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-fixed-M-core" d="M 330,402 H 410" fill="none" stroke="url(#signal-M)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="M"/>
+      <path id="backward-panel-pump-1-core" d="M 594,370 H 650" fill="none" stroke="url(#signal-M)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="M"/>
+      <path id="backward-panel-pump-2-core" d="M 594,402 C 614,402 624,410 650,410" fill="none" stroke="url(#signal-W)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="W"/>
+      <path id="backward-panel-data-input-core" d="M 560,480 H 650" fill="none" stroke="url(#signal-e)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="e"/>
+      <path id="backward-panel-readout-core" d="M 870,480 H 950" fill="none" stroke="url(#signal-g)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="g"/>
+      <path id="backward-panel-saved-x-core" d="M 560,530 H 650" fill="none" stroke="url(#signal-x)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+      <path id="backward-panel-weight-increment-core" d="M 700,340 V 320 Q 700,290 730,290 H 760" fill="none" stroke="url(#signal-dW)" stroke-width="2.7" stroke-linecap="butt" stroke-linejoin="round" data-signal="dW"/>
+    </g>
+    <g id="backward-panel-components">
+      <g id="backward-panel-load-hold-switch" transform="translate(72 206) scale(0.5)"><g id="backward-panel-load-hold-switch-os22-optical-cladding" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-load-hold-switch-os22-upper-arm-guide" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="backward-panel-load-hold-switch-os22-lower-arm-guide" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="backward-panel-load-hold-switch-os22-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-load-hold-switch-os22-upper-arm-core" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="backward-panel-load-hold-switch-os22-lower-arm-core" d="M 66,90 H 98 C 118,90 122,116 142,116 H 258 C 278,116 282,90 302,90 H 334" stroke="url(#backward-panel-hold-arm-field)" stroke-width="5.4" data-signal="W"/>
+  </g>
+
+  <g id="backward-panel-load-hold-switch-os22-electrical-control">
+    <rect id="backward-panel-load-hold-switch-os22-phase-control-electrode" x="164" y="29" width="72" height="6" rx="2" fill="#d5b477" stroke="none"/>
+    <g id="backward-panel-load-hold-switch-os22-control-connection" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="backward-panel-load-hold-switch-os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="backward-panel-load-hold-switch-os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</g>
+      <rect id="backward-panel-initialization-dump" x="261.5" y="256" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <rect id="backward-panel-read-tap-unused-input" x="287.5" y="284" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <g id="backward-panel-loop-trim" transform="translate(432 192) scale(0.5)"><g id="backward-panel-loop-trim-mzi-optical-guides" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-loop-trim-mzi-input-guide" d="M 16,76 H 38"/>
+    <path id="backward-panel-loop-trim-mzi-upper-guide" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76"/>
+    <path id="backward-panel-loop-trim-mzi-lower-guide" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76"/>
+    <path id="backward-panel-loop-trim-mzi-output-guide" d="M 262,76 H 284"/>
+  </g>
+
+  <g id="backward-panel-loop-trim-mzi-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-loop-trim-mzi-input-core" d="M 16,76 H 38" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="backward-panel-loop-trim-mzi-upper-core" d="M 38,76 C 62,76 66,44 94,44 H 206              C 234,44 238,76 262,76" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="backward-panel-loop-trim-mzi-lower-core" d="M 38,76 C 62,76 66,108 94,108 H 206              C 234,108 238,76 262,76" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+    <path id="backward-panel-loop-trim-mzi-output-core" d="M 262,76 H 284" stroke="url(#signal-W)" stroke-width="5.4" data-signal="W"/>
+  </g>
+
+  <g id="backward-panel-loop-trim-mzi-electrical-controls">
+    <g id="backward-panel-loop-trim-mzi-actuator-marks" fill="#d5b477" stroke="none">
+      <rect id="backward-panel-loop-trim-mzi-upper-phase-shifter" x="118" y="29" width="64" height="6" rx="2"/>
+      <rect id="backward-panel-loop-trim-mzi-lower-phase-shifter" x="118" y="117" width="64" height="6" rx="2"/>
+    </g>
+    <g id="backward-panel-loop-trim-mzi-control-leads" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="backward-panel-loop-trim-mzi-upper-control-lead" d="M 150,17 V 29"/>
+      <path id="backward-panel-loop-trim-mzi-lower-control-lead" d="M 150,123 V 135"/>
+      <circle id="backward-panel-loop-trim-mzi-upper-control-terminal" cx="150" cy="13" r="4"/>
+      <circle id="backward-panel-loop-trim-mzi-lower-control-terminal" cx="150" cy="139" r="4"/>
+    </g>
+  </g>
+</g>
+      <rect id="backward-panel-coherent-update-dump" x="847.5" y="284" width="5" height="12" rx="0.7" fill="#78899a"/>
+      <path id="backward-panel-loop-gain" d="M 875,210 L 910,230 L 875,250 Z" fill="#f3dfe3" stroke="#a36d7a" stroke-width="1.2"/>
+      <g id="backward-panel-pump-switch" transform="translate(402 346) scale(0.5)"><g id="backward-panel-pump-switch-os22-optical-cladding" fill="none" stroke="#e3e8ef" stroke-width="16" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-pump-switch-os22-upper-arm-guide" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384"/>
+    <path id="backward-panel-pump-switch-os22-lower-arm-guide" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384"/>
+  </g>
+
+  <g id="backward-panel-pump-switch-os22-optical-cores" fill="none" stroke="#5d8db4" stroke-width="3.5" stroke-linecap="butt" stroke-linejoin="round">
+    <path id="backward-panel-pump-switch-os22-upper-arm-core" d="M 16,48 H 34 C 50,48 50,70 66,70 H 98              C 118,70 122,44 142,44 H 258              C 278,44 282,70 302,70 H 334              C 350,70 350,48 366,48 H 384" stroke="url(#backward-panel-pump-upper-field)" stroke-width="5.4" data-signal="W+M inside interferometer"/>
+    <path id="backward-panel-pump-switch-os22-lower-arm-core" d="M 16,112 H 34 C 50,112 50,90 66,90 H 98              C 118,90 122,116 142,116 H 258              C 278,116 282,90 302,90 H 334              C 350,90 350,112 366,112 H 384" stroke="url(#backward-panel-pump-lower-field)" stroke-width="5.4" data-signal="W+M inside interferometer"/>
+  </g>
+
+  <g id="backward-panel-pump-switch-os22-electrical-control">
+    <rect id="backward-panel-pump-switch-os22-phase-control-electrode" x="164" y="29" width="72" height="6" rx="2" fill="#d5b477" stroke="none"/>
+    <g id="backward-panel-pump-switch-os22-control-connection" fill="none" stroke="#b18a4c" stroke-width="2">
+      <path id="backward-panel-pump-switch-os22-control-lead" d="M 200,17 V 29"/>
+      <circle id="backward-panel-pump-switch-os22-control-terminal" cx="200" cy="13" r="4"/>
+    </g>
+  </g>
+</g>
+    <path id="backward-panel-gain-axis-core" d="M 875,230 H 910" fill="none" stroke="url(#updated-weight-output-gradient)" stroke-width="3.25" stroke-linecap="butt" stroke-linejoin="round" data-signal="W+ after coherent update"/>
+      </g>
+    <g id="backward-panel-pulse-envelopes">
+      <path id="backward-panel-pulse-0" d="M 386,100 C 393,100 394,84 400,84 C 406,84 407,100 414,100 Z" fill="url(#updated-pulse-0-gradient)" fill-opacity=".48" stroke="url(#updated-pulse-0-gradient)" stroke-width="1.9" data-signal="updated coefficient pulse W+"/>
+      <path id="backward-panel-pulse-1" d="M 436,100 C 443,100 444,76 450,76 C 456,76 457,100 464,100 Z" fill="url(#updated-pulse-1-gradient)" fill-opacity=".48" stroke="url(#updated-pulse-1-gradient)" stroke-width="1.9" data-signal="updated coefficient pulse W+"/>
+      <path id="backward-panel-pulse-2" d="M 486,100 C 493,100 494,82 500,82 C 506,82 507,100 514,100 Z" fill="url(#updated-pulse-2-gradient)" fill-opacity=".48" stroke="url(#updated-pulse-2-gradient)" stroke-width="1.9" data-signal="updated coefficient pulse W+"/>
+      <path id="backward-panel-pulse-3" d="M 536,100 C 543,100 544,79 550,79 C 556,79 557,100 564,100 Z" fill="url(#updated-pulse-3-gradient)" fill-opacity=".48" stroke="url(#updated-pulse-3-gradient)" stroke-width="1.9" data-signal="updated coefficient pulse W+"/>
+    </g>
+    <g id="backward-panel-arrows">
+      <path id="backward-panel-memory-up" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#398E9B" transform="translate(945 174) rotate(-90)" data-signal="W"/>
+      <path id="backward-panel-memory-left" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#8471BD" transform="translate(785 100) rotate(180)" data-signal="W"/>
+      <path id="backward-panel-memory-left-2" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#4E9DA5" transform="translate(210 100) rotate(180)" data-signal="W"/>
+      <path id="backward-panel-memory-down" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(40 169) rotate(90)" data-signal="W"/>
+      <path id="backward-panel-stored-weight" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(644 230) rotate(0)" data-signal="W"/>
+      <path id="backward-panel-weight-tap" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(390 334) rotate(90)" data-signal="W"/>
+      <path id="backward-panel-fixed-M-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#C48624" transform="translate(366 402) rotate(0)" data-signal="M"/>
+      <path id="backward-panel-pump-one" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#C48624" transform="translate(631 370) rotate(0)" data-signal="M"/>
+      <path id="backward-panel-pump-two" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#7653B5" transform="translate(633 408) rotate(0)" data-signal="W"/>
+      <path id="backward-panel-input-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#C94D65" transform="translate(614 480) rotate(0)" data-signal="e"/>
+      <path id="backward-panel-readout-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#A64F91" transform="translate(922 480) rotate(0)" data-signal="g"/>
+      <path id="backward-panel-saved-x-arrow" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#2477BC" transform="translate(614 530) rotate(0)" data-signal="x"/>
+      <path id="backward-panel-increment-up" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#1B9C83" transform="translate(700 323) rotate(-90)" data-signal="dW"/>
+      <path id="backward-panel-increment-to-addition" d="M -5.2,-3.5 L 5.2,0 L -5.2,3.5 Z" fill="#1B9C83" transform="translate(742 290) rotate(0)" data-signal="dW"/>
+    </g>
+    <g id="backward-panel-route-state">
+      <path id="backward-panel-route-state-0" d="M 478,300 L 526,320" fill="none" stroke="#7653B5" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-route-state-arrow-0" d="M 521,317 L 527,320 L 521,323" fill="#7653B5" data-signal="W"/>
+      <path id="backward-panel-route-state-1" d="M 478,320 L 526,300" fill="none" stroke="#C48624" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round"/>
+      <path id="backward-panel-route-state-arrow-1" d="M 521,297 L 527,300 L 521,303" fill="#C48624" data-signal="M"/>
+      <path id="backward-panel-state-control" d="M 502,332 V 350.5" fill="none" stroke="#b18a4c" stroke-width="1.4" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3 3"/>
+    </g>
+    <g id="backward-panel-labels">
+      <text id="backward-panel-heading" x="490" y="37" font-size="28" text-anchor="middle" fill="#273648" font-weight="500">Training · backward</text>
+      <text id="backward-panel-memory-label" x="650" y="85" font-size="25" text-anchor="middle" fill="url(#updated-weight-label-gradient)" font-weight="400" data-signal="W+">W⁺(t)</text>
+      <text id="backward-panel-load-control-label" x="172" y="185" font-size="21" text-anchor="middle" fill="#273648" font-weight="400">Load / hold</text>
+      <text id="backward-panel-initial-weight-label" x="30" y="292" font-size="24" text-anchor="start" fill="#7e8c9a" font-weight="400">W₀</text>
+      <text id="backward-panel-weight-read-label" x="372" y="367" font-size="24" text-anchor="end" fill="#7653B5" font-weight="400" data-signal="W">W⁻</text>
+      <text id="backward-panel-fixed-M-label" x="316" y="410" font-size="24" text-anchor="end" fill="#C48624" font-weight="400" data-signal="M">M</text>
+      <text id="backward-panel-route-state-label" x="542" y="317" font-size="20" text-anchor="start" fill="#78899a" font-weight="400">cross</text>
+      <text id="backward-panel-pump1-label" x="622" y="353" font-size="24" text-anchor="middle" fill="#C48624" font-weight="400" data-signal="M">M</text>
+      <text id="backward-panel-pump2-label" x="622" y="440" font-size="24" text-anchor="middle" fill="#7653B5" font-weight="400" data-signal="W">W⁻</text>
+      <text id="backward-panel-cell-name" x="760" y="458" font-size="26" text-anchor="middle" fill="#273648" font-weight="500">Hankel cell</text>
+      <text id="backward-panel-input-label" x="540" y="488" font-size="27" text-anchor="end" fill="#C94D65" font-weight="400" data-signal="e">e</text>
+      <text id="backward-panel-output-label" x="949" y="458" font-size="27" text-anchor="end" fill="#A64F91" font-weight="400" data-signal="g">gₓ</text>
+      <text id="backward-panel-saved-x-label" x="540" y="538" font-size="21" text-anchor="end" fill="#2477BC" font-weight="400" data-signal="x">saved x</text>
+      <text id="backward-panel-increment-label" x="704" y="274" font-size="25" text-anchor="start" fill="#1B9C83" font-weight="400" data-signal="dW">ΔW</text>
+    </g>
+  </g>
+  <g id="shared-caption" font-family="DejaVu Sans, sans-serif" fill="#66778a" inkscape:groupmode="layer" inkscape:label="Shared key — optional caption">
+    <path id="panel-divider" d="M 1020,70 V 560" fill="none" stroke="#dbe1e8" stroke-width="1.3" stroke-linecap="butt" stroke-linejoin="round"/>
+    <text id="same-hardware-note" x="70" y="615" font-size="21" text-anchor="start">Same cell, two modes</text><path id="legend-W-cladding" d="M 560,608 H 602" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-W-core" d="M 560,608 H 602" fill="none" stroke="url(#legend-W-gradient)" stroke-width="3"/><text id="legend-W-label" x="615" y="615" font-size="23" fill="#7653B5">W</text><path id="legend-M-cladding" d="M 750,608 H 792" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-M-core" d="M 750,608 H 792" fill="none" stroke="url(#legend-M-gradient)" stroke-width="3"/><text id="legend-M-label" x="805" y="615" font-size="23" fill="#C48624">M</text><path id="legend-x-cladding" d="M 940,608 H 982" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-x-core" d="M 940,608 H 982" fill="none" stroke="url(#legend-x-gradient)" stroke-width="3"/><text id="legend-x-label" x="995" y="615" font-size="23" fill="#2477BC">x</text><path id="legend-e-cladding" d="M 1130,608 H 1172" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-e-core" d="M 1130,608 H 1172" fill="none" stroke="url(#legend-e-gradient)" stroke-width="3"/><text id="legend-e-label" x="1185" y="615" font-size="23" fill="#C94D65">e</text><path id="legend-y-cladding" d="M 1320,608 H 1362" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-y-core" d="M 1320,608 H 1362" fill="none" stroke="url(#legend-y-gradient)" stroke-width="3"/><text id="legend-y-label" x="1375" y="615" font-size="23" fill="#2A93AB">y</text><path id="legend-g-cladding" d="M 1510,608 H 1552" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-g-core" d="M 1510,608 H 1552" fill="none" stroke="url(#legend-g-gradient)" stroke-width="3"/><text id="legend-g-label" x="1565" y="615" font-size="23" fill="#A64F91">gₓ</text><path id="legend-dW-cladding" d="M 1700,608 H 1742" fill="none" stroke="#e3e8ef" stroke-width="8"/><path id="legend-dW-core" d="M 1700,608 H 1742" fill="none" stroke="url(#legend-dW-gradient)" stroke-width="3"/><text id="legend-dW-label" x="1755" y="615" font-size="23" fill="#1B9C83">ΔW</text></g>
+</svg>

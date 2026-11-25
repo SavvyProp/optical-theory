@@ -1,0 +1,856 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="200mm" height="89mm" viewBox="0 0 2000 890" version="1.1" id="figure-2a-full-matmul-shuffle" role="img" aria-labelledby="figure-title figure-description">
+  <title id="figure-title">Figure 2a. Full Matmul banks and cyclic optical shuffle</title>
+  <desc id="figure-description">Two banks of four representative Full Matmul units surround a cyclic optical shuffle. Each unit has a local purple recirculating loop for weights a_m. An amber shared reference b_m feeds all units. Full Matmul includes the temporal accumulation. Only the blue data field x passes through the shuffle. Each row depicts the comb carried by one fiber. Varying stem heights depict illustrative comb-line intensities. The comb lines are laid out by group, with dotted separators marking the groups directly above their tiles. Each group contains interleaved frequencies. The four displayed lines in a group have indices r, r+4, r+8 and r+12. Letters and colors identify the source Full Matmul: A, B, C and D correspond to input fibers 0, 1, 2 and 3. Group r from input j goes to output (j+r) modulo 4 and retains its frequency indices. Each colored line connects the lower edge of an input tile to the matching output tile. The arrows indicate the direction of group transfer. Crossings pass over one another. The output strip carries the same illustrative intensities for each routed group. Each output fiber receives one group from each source. In the eight-fiber, 64-line design, group r contains indices r+8q for q=0 through 7. The figure uses an abstract optical shuffle. A cyclic AWGR is the reference implementation and a configured wavelength-selective cross-connect is an alternative.</desc>
+  <defs id="figure-definitions">
+    <linearGradient id="matmul-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#fcf8fa"/>
+      <stop offset=".5" stop-color="#f7ecef"/>
+      <stop offset="1" stop-color="#eddae2"/>
+    </linearGradient>
+    <linearGradient id="reference-surface" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0" stop-color="#fffaf1"/>
+      <stop offset="1" stop-color="#f3e5c9"/>
+    </linearGradient>
+    <linearGradient id="x-field" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#1a5f9a"/>
+      <stop offset=".48" stop-color="#5a9acf"/>
+      <stop offset="1" stop-color="#2477bc"/>
+    </linearGradient>
+    <linearGradient id="weight-field" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#654097"/>
+      <stop offset=".5" stop-color="#a17dcd"/>
+      <stop offset="1" stop-color="#7653b5"/>
+    </linearGradient>
+    <linearGradient id="reference-field" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0" stop-color="#9e6515"/>
+      <stop offset=".5" stop-color="#dfb65e"/>
+      <stop offset="1" stop-color="#c48624"/>
+    </linearGradient>
+    <linearGradient id="shuffle-frame-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#FCFDFE"/>
+      <stop offset="1" stop-color="#F4F8FB"/>
+    </linearGradient>
+    <linearGradient id="source-A-tile-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#F1F7FD"/>
+      <stop offset="1" stop-color="#CADFF3"/>
+    </linearGradient>
+    <linearGradient id="source-B-tile-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#EFF9F5"/>
+      <stop offset="1" stop-color="#BCE1D3"/>
+    </linearGradient>
+    <linearGradient id="source-C-tile-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#FEF4EF"/>
+      <stop offset="1" stop-color="#F1CEC0"/>
+    </linearGradient>
+    <linearGradient id="source-D-tile-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0" stop-color="#FCF4FA"/>
+      <stop offset="1" stop-color="#E8CFE4"/>
+    </linearGradient>
+    <marker id="shuffle-arrow-A" viewBox="0 0 9 8" refX="8" refY="4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 L 2 4 Z" fill="#426F9C"/>
+    </marker>
+    <marker id="shuffle-arrow-B" viewBox="0 0 9 8" refX="8" refY="4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 L 2 4 Z" fill="#377F70"/>
+    </marker>
+    <marker id="shuffle-arrow-C" viewBox="0 0 9 8" refX="8" refY="4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 L 2 4 Z" fill="#B16C54"/>
+    </marker>
+    <marker id="shuffle-arrow-D" viewBox="0 0 9 8" refX="8" refY="4" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 L 2 4 Z" fill="#946082"/>
+    </marker>
+  </defs>
+  <g id="shared-reference-distribution" inkscape:groupmode="layer" inkscape:label="Shared reference b_m">
+    <rect id="shared-reference-source" x="922" y="45" width="156" height="72" rx="13" fill="url(#reference-surface)" stroke="#c5a56b" stroke-width="1.5"/>
+    <path id="reference-left-distribution-cladding" d="M 922 81 H 510 Q 490 81 490 101 V 720" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="reference-left-distribution-core" d="M 922 81 H 510 Q 490 81 490 101 V 720" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m"/>
+    <path id="reference-right-distribution-cladding" d="M 1078 81 H 1490 Q 1510 81 1510 101 V 720" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="reference-right-distribution-core" d="M 1078 81 H 1490 Q 1510 81 1510 101 V 720" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m"/>
+    <path id="bank-1-matmul-0-reference-feed-cladding" d="M 490 210 H 440 V 240" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-1-matmul-0-reference-feed-core" d="M 490 210 H 440 V 240" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m"/>
+    <circle id="bank-1-matmul-0-reference-tap" cx="490" cy="210" r="3" fill="#c48624"/>
+    <path id="bank-1-matmul-1-reference-feed-cladding" d="M 490 420 H 440 V 450" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-1-matmul-1-reference-feed-core" d="M 490 420 H 440 V 450" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -40)"/>
+    <circle id="bank-1-matmul-1-reference-tap" cx="490" cy="420" r="3" fill="#c48624" transform="translate(0 -40)"/>
+    <path id="bank-1-matmul-2-reference-feed-cladding" d="M 490 630 H 440 V 660" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-1-matmul-2-reference-feed-core" d="M 490 630 H 440 V 660" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -80)"/>
+    <circle id="bank-1-matmul-2-reference-tap" cx="490" cy="630" r="3" fill="#c48624" transform="translate(0 -80)"/>
+    <path id="bank-1-matmul-3-reference-feed-cladding" d="M 490 840 H 440 V 870" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-1-matmul-3-reference-feed-core" d="M 490 840 H 440 V 870" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -120)"/>
+    <circle id="bank-1-matmul-3-reference-tap" cx="490" cy="840" r="3" fill="#c48624" transform="translate(0 -120)"/>
+    <path id="bank-2-matmul-0-reference-feed-cladding" d="M 1510 210 H 1560 V 240" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-2-matmul-0-reference-feed-core" d="M 1510 210 H 1560 V 240" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m"/>
+    <circle id="bank-2-matmul-0-reference-tap" cx="1510" cy="210" r="3" fill="#c48624"/>
+    <path id="bank-2-matmul-1-reference-feed-cladding" d="M 1510 420 H 1560 V 450" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-2-matmul-1-reference-feed-core" d="M 1510 420 H 1560 V 450" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -40)"/>
+    <circle id="bank-2-matmul-1-reference-tap" cx="1510" cy="420" r="3" fill="#c48624" transform="translate(0 -40)"/>
+    <path id="bank-2-matmul-2-reference-feed-cladding" d="M 1510 630 H 1560 V 660" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-2-matmul-2-reference-feed-core" d="M 1510 630 H 1560 V 660" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -80)"/>
+    <circle id="bank-2-matmul-2-reference-tap" cx="1510" cy="630" r="3" fill="#c48624" transform="translate(0 -80)"/>
+    <path id="bank-2-matmul-3-reference-feed-cladding" d="M 1510 840 H 1560 V 870" fill="none" stroke="#e3e8ef" stroke-width="7" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-2-matmul-3-reference-feed-core" d="M 1510 840 H 1560 V 870" fill="none" stroke="url(#reference-field)" stroke-width="2.1" stroke-linecap="butt" stroke-linejoin="round" data-signal="b_m" transform="translate(0 -120)"/>
+    <circle id="bank-2-matmul-3-reference-tap" cx="1510" cy="840" r="3" fill="#c48624" transform="translate(0 -120)"/>
+  </g>
+  <g id="optical-shuffle-frame" inkscape:groupmode="layer" inkscape:label="Optical shuffle boundary">
+    <rect id="shuffle-boundary" x="546" y="165" width="908" height="702" rx="18" fill="url(#shuffle-frame-surface)" stroke="#C6D5E2" stroke-width="1.6"/>
+  </g>
+  <g id="data-waveguides" inkscape:groupmode="layer" inkscape:label="Data x — one core per fiber">
+    <path id="data-lane-0-input-cladding" d="M 130 280 H 230" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-0-input-core" d="M 130 280 H 230" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-0-bank-1-output-cladding" d="M 470 280 H 546" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-0-bank-1-output-core" d="M 470 280 H 546" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-0-bank-2-input-cladding" d="M 1454 280 H 1530" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-0-bank-2-input-core" d="M 1454 280 H 1530" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-0-output-cladding" d="M 1770 280 H 1870" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-0-output-core" d="M 1770 280 H 1870" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-1-input-cladding" d="M 130 450 H 230" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-1-input-core" d="M 130 450 H 230" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-1-bank-1-output-cladding" d="M 470 450 H 546" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-1-bank-1-output-core" d="M 470 450 H 546" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-1-bank-2-input-cladding" d="M 1454 450 H 1530" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-1-bank-2-input-core" d="M 1454 450 H 1530" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-1-output-cladding" d="M 1770 450 H 1870" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-1-output-core" d="M 1770 450 H 1870" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-2-input-cladding" d="M 130 620 H 230" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-2-input-core" d="M 130 620 H 230" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-2-bank-1-output-cladding" d="M 470 620 H 546" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-2-bank-1-output-core" d="M 470 620 H 546" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-2-bank-2-input-cladding" d="M 1454 620 H 1530" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-2-bank-2-input-core" d="M 1454 620 H 1530" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-2-output-cladding" d="M 1770 620 H 1870" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-2-output-core" d="M 1770 620 H 1870" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-3-input-cladding" d="M 130 790 H 230" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-3-input-core" d="M 130 790 H 230" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-3-bank-1-output-cladding" d="M 470 790 H 546" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-3-bank-1-output-core" d="M 470 790 H 546" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-3-bank-2-input-cladding" d="M 1454 790 H 1530" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-3-bank-2-input-core" d="M 1454 790 H 1530" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+    <path id="data-lane-3-output-cladding" d="M 1770 790 H 1870" fill="none" stroke="#e3e8ef" stroke-width="10" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="data-lane-3-output-core" d="M 1770 790 H 1870" fill="none" stroke="url(#x-field)" stroke-width="3" stroke-linecap="butt" stroke-linejoin="round" data-signal="x"/>
+  </g>
+  <g id="full-matmul-units" inkscape:groupmode="layer" inkscape:label="Full Matmul banks">
+    <rect id="bank-1-matmul-0-body" x="230" y="240" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6"/>
+    <rect id="bank-1-matmul-1-body" x="230" y="450" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -40)"/>
+    <rect id="bank-1-matmul-2-body" x="230" y="660" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -80)"/>
+    <rect id="bank-1-matmul-3-body" x="230" y="870" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -120)"/>
+    <rect id="bank-2-matmul-0-body" x="1530" y="240" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6"/>
+    <rect id="bank-2-matmul-1-body" x="1530" y="450" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -40)"/>
+    <rect id="bank-2-matmul-2-body" x="1530" y="660" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -80)"/>
+    <rect id="bank-2-matmul-3-body" x="1530" y="870" width="240" height="80" rx="13" fill="url(#matmul-surface)" stroke="#b58e9a" stroke-width="1.6" transform="translate(0 -120)"/>
+  </g>
+  <g id="weight-storage" inkscape:groupmode="layer" inkscape:label="Local recirculating weights a_m">
+    <path id="bank-1-matmul-0-weight-loop-cladding" d="M 304 169 H 396 Q 412 169 412 185 V 197 Q 412 213 396 213 H 304 Q 288 213 288 197 V 185 Q 288 169 304 169 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-1-matmul-0-weight-loop-core" d="M 304 169 H 396 Q 412 169 412 185 V 197 Q 412 213 396 213 H 304 Q 288 213 288 197 V 185 Q 288 169 304 169 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m"/>
+    <path id="bank-1-matmul-0-weight-read-cladding" d="M 392 213 V 240" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-1-matmul-0-weight-read-core" d="M 392 213 V 240" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m"/>
+    <circle id="bank-1-matmul-0-weight-tap" cx="392" cy="213" r="3.3" fill="#7653b5"/>
+    <g id="bank-1-matmul-0-circulation" transform="translate(358.0 169) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-1-matmul-0-weight-read-direction" transform="translate(392 236) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-1-matmul-1-weight-loop-cladding" d="M 304 379 H 396 Q 412 379 412 395 V 407 Q 412 423 396 423 H 304 Q 288 423 288 407 V 395 Q 288 379 304 379 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-1-matmul-1-weight-loop-core" d="M 304 379 H 396 Q 412 379 412 395 V 407 Q 412 423 396 423 H 304 Q 288 423 288 407 V 395 Q 288 379 304 379 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -40)"/>
+    <path id="bank-1-matmul-1-weight-read-cladding" d="M 392 423 V 450" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-1-matmul-1-weight-read-core" d="M 392 423 V 450" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -40)"/>
+    <circle id="bank-1-matmul-1-weight-tap" cx="392" cy="423" r="3.3" fill="#7653b5" transform="translate(0 -40)"/>
+    <g id="bank-1-matmul-1-circulation" transform="translate(0 -40) translate(358.0 379) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-1-matmul-1-weight-read-direction" transform="translate(0 -40) translate(392 446) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-1-matmul-2-weight-loop-cladding" d="M 304 589 H 396 Q 412 589 412 605 V 617 Q 412 633 396 633 H 304 Q 288 633 288 617 V 605 Q 288 589 304 589 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-1-matmul-2-weight-loop-core" d="M 304 589 H 396 Q 412 589 412 605 V 617 Q 412 633 396 633 H 304 Q 288 633 288 617 V 605 Q 288 589 304 589 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -80)"/>
+    <path id="bank-1-matmul-2-weight-read-cladding" d="M 392 633 V 660" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-1-matmul-2-weight-read-core" d="M 392 633 V 660" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -80)"/>
+    <circle id="bank-1-matmul-2-weight-tap" cx="392" cy="633" r="3.3" fill="#7653b5" transform="translate(0 -80)"/>
+    <g id="bank-1-matmul-2-circulation" transform="translate(0 -80) translate(358.0 589) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-1-matmul-2-weight-read-direction" transform="translate(0 -80) translate(392 656) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-1-matmul-3-weight-loop-cladding" d="M 304 799 H 396 Q 412 799 412 815 V 827 Q 412 843 396 843 H 304 Q 288 843 288 827 V 815 Q 288 799 304 799 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-1-matmul-3-weight-loop-core" d="M 304 799 H 396 Q 412 799 412 815 V 827 Q 412 843 396 843 H 304 Q 288 843 288 827 V 815 Q 288 799 304 799 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -120)"/>
+    <path id="bank-1-matmul-3-weight-read-cladding" d="M 392 843 V 870" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-1-matmul-3-weight-read-core" d="M 392 843 V 870" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -120)"/>
+    <circle id="bank-1-matmul-3-weight-tap" cx="392" cy="843" r="3.3" fill="#7653b5" transform="translate(0 -120)"/>
+    <g id="bank-1-matmul-3-circulation" transform="translate(0 -120) translate(358.0 799) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-1-matmul-3-weight-read-direction" transform="translate(0 -120) translate(392 866) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-2-matmul-0-weight-loop-cladding" d="M 1604 169 H 1696 Q 1712 169 1712 185 V 197 Q 1712 213 1696 213 H 1604 Q 1588 213 1588 197 V 185 Q 1588 169 1604 169 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-2-matmul-0-weight-loop-core" d="M 1604 169 H 1696 Q 1712 169 1712 185 V 197 Q 1712 213 1696 213 H 1604 Q 1588 213 1588 197 V 185 Q 1588 169 1604 169 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m"/>
+    <path id="bank-2-matmul-0-weight-read-cladding" d="M 1692 213 V 240" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round"/>
+    <path id="bank-2-matmul-0-weight-read-core" d="M 1692 213 V 240" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m"/>
+    <circle id="bank-2-matmul-0-weight-tap" cx="1692" cy="213" r="3.3" fill="#7653b5"/>
+    <g id="bank-2-matmul-0-circulation" transform="translate(1658.0 169) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-2-matmul-0-weight-read-direction" transform="translate(1692 236) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-2-matmul-1-weight-loop-cladding" d="M 1604 379 H 1696 Q 1712 379 1712 395 V 407 Q 1712 423 1696 423 H 1604 Q 1588 423 1588 407 V 395 Q 1588 379 1604 379 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-2-matmul-1-weight-loop-core" d="M 1604 379 H 1696 Q 1712 379 1712 395 V 407 Q 1712 423 1696 423 H 1604 Q 1588 423 1588 407 V 395 Q 1588 379 1604 379 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -40)"/>
+    <path id="bank-2-matmul-1-weight-read-cladding" d="M 1692 423 V 450" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -40)"/>
+    <path id="bank-2-matmul-1-weight-read-core" d="M 1692 423 V 450" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -40)"/>
+    <circle id="bank-2-matmul-1-weight-tap" cx="1692" cy="423" r="3.3" fill="#7653b5" transform="translate(0 -40)"/>
+    <g id="bank-2-matmul-1-circulation" transform="translate(0 -40) translate(1658.0 379) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-2-matmul-1-weight-read-direction" transform="translate(0 -40) translate(1692 446) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-2-matmul-2-weight-loop-cladding" d="M 1604 589 H 1696 Q 1712 589 1712 605 V 617 Q 1712 633 1696 633 H 1604 Q 1588 633 1588 617 V 605 Q 1588 589 1604 589 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-2-matmul-2-weight-loop-core" d="M 1604 589 H 1696 Q 1712 589 1712 605 V 617 Q 1712 633 1696 633 H 1604 Q 1588 633 1588 617 V 605 Q 1588 589 1604 589 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -80)"/>
+    <path id="bank-2-matmul-2-weight-read-cladding" d="M 1692 633 V 660" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -80)"/>
+    <path id="bank-2-matmul-2-weight-read-core" d="M 1692 633 V 660" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -80)"/>
+    <circle id="bank-2-matmul-2-weight-tap" cx="1692" cy="633" r="3.3" fill="#7653b5" transform="translate(0 -80)"/>
+    <g id="bank-2-matmul-2-circulation" transform="translate(0 -80) translate(1658.0 589) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-2-matmul-2-weight-read-direction" transform="translate(0 -80) translate(1692 656) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <path id="bank-2-matmul-3-weight-loop-cladding" d="M 1604 799 H 1696 Q 1712 799 1712 815 V 827 Q 1712 843 1696 843 H 1604 Q 1588 843 1588 827 V 815 Q 1588 799 1604 799 Z" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-2-matmul-3-weight-loop-core" d="M 1604 799 H 1696 Q 1712 799 1712 815 V 827 Q 1712 843 1696 843 H 1604 Q 1588 843 1588 827 V 815 Q 1588 799 1604 799 Z" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -120)"/>
+    <path id="bank-2-matmul-3-weight-read-cladding" d="M 1692 843 V 870" fill="none" stroke="#e3e8ef" stroke-width="8" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 -120)"/>
+    <path id="bank-2-matmul-3-weight-read-core" d="M 1692 843 V 870" fill="none" stroke="url(#weight-field)" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="round" data-signal="a_m" transform="translate(0 -120)"/>
+    <circle id="bank-2-matmul-3-weight-tap" cx="1692" cy="843" r="3.3" fill="#7653b5" transform="translate(0 -120)"/>
+    <g id="bank-2-matmul-3-circulation" transform="translate(0 -120) translate(1658.0 799) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+    <g id="bank-2-matmul-3-weight-read-direction" transform="translate(0 -120) translate(1692 866) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#7653b5"/>
+    </g>
+  </g>
+  <g xmlns:xlink="http://www.w3.org/1999/xlink" id="shuffle-group-routes" inkscape:groupmode="layer" inkscape:label="Cyclic routing of comb groups">
+    <title>Whole frequency groups routed between fibers</title>
+    <g id="shuffle-route-A-group-0-to-fiber-0" data-source-lane="0" data-frequency-group="0" data-destination-lane="0" fill="none" stroke="#426F9C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-A)" inkscape:label="Matmul A, group 0 to fiber 0">
+      <title>Group 0 from Matmul A to output fiber 0</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-A-group-0-to-fiber-0-path"/>
+      <path id="shuffle-route-A-group-0-to-fiber-0-path" d="M 598 307 V 312 Q 598 317 603 317 H 831 C 952 317 1046 317 1169 317 H 1202 Q 1207 317 1207 312 V 307"/>
+    </g>
+    <g id="shuffle-route-A-group-1-to-fiber-1" data-source-lane="0" data-frequency-group="1" data-destination-lane="1" fill="none" stroke="#426F9C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-A)" inkscape:label="Matmul A, group 1 to fiber 1">
+      <title>Group 1 from Matmul A to output fiber 1</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-A-group-1-to-fiber-1-path"/>
+      <path id="shuffle-route-A-group-1-to-fiber-1-path" d="M 663 307 V 322 Q 663 327 668 327 H 831 C 952 327 1104 487 1169 487 H 1267 Q 1272 487 1272 482 V 477"/>
+    </g>
+    <g id="shuffle-route-B-group-3-to-fiber-0" data-source-lane="1" data-frequency-group="3" data-destination-lane="0" fill="none" stroke="#377F70" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-B)" inkscape:label="Matmul B, group 3 to fiber 0">
+      <title>Group 3 from Matmul B to output fiber 0</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-B-group-3-to-fiber-0-path"/>
+      <path id="shuffle-route-B-group-3-to-fiber-0-path" d="M 793 477 V 482 Q 793 487 798 487 H 831 C 900 487 1046 327 1169 327 H 1397 Q 1402 327 1402 322 V 307"/>
+    </g>
+    <g id="shuffle-route-A-group-2-to-fiber-2" data-source-lane="0" data-frequency-group="2" data-destination-lane="2" fill="none" stroke="#426F9C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-A)" inkscape:label="Matmul A, group 2 to fiber 2">
+      <title>Group 2 from Matmul A to output fiber 2</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-A-group-2-to-fiber-2-path"/>
+      <path id="shuffle-route-A-group-2-to-fiber-2-path" d="M 728 307 V 332 Q 728 337 733 337 H 831 C 952 337 1103 657 1169 657 H 1332 Q 1337 657 1337 652 V 647"/>
+    </g>
+    <g id="shuffle-route-C-group-2-to-fiber-0" data-source-lane="2" data-frequency-group="2" data-destination-lane="0" fill="none" stroke="#B16C54" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-C)" inkscape:label="Matmul C, group 2 to fiber 0">
+      <title>Group 2 from Matmul C to output fiber 0</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-C-group-2-to-fiber-0-path"/>
+      <path id="shuffle-route-C-group-2-to-fiber-0-path" d="M 728 647 V 652 Q 728 657 733 657 H 831 C 936 657 1046 337 1169 337 H 1332 Q 1337 337 1337 332 V 307"/>
+    </g>
+    <g id="shuffle-route-B-group-0-to-fiber-1" data-source-lane="1" data-frequency-group="0" data-destination-lane="1" fill="none" stroke="#377F70" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-B)" inkscape:label="Matmul B, group 0 to fiber 1">
+      <title>Group 0 from Matmul B to output fiber 1</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-B-group-0-to-fiber-1-path"/>
+      <path id="shuffle-route-B-group-0-to-fiber-1-path" d="M 598 477 V 492 Q 598 497 603 497 H 831 C 900 497 1104 497 1169 497 H 1202 Q 1207 497 1207 492 V 477"/>
+    </g>
+    <g id="shuffle-route-A-group-3-to-fiber-3" data-source-lane="0" data-frequency-group="3" data-destination-lane="3" fill="none" stroke="#426F9C" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-A)" inkscape:label="Matmul A, group 3 to fiber 3">
+      <title>Group 3 from Matmul A to output fiber 3</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-A-group-3-to-fiber-3-path"/>
+      <path id="shuffle-route-A-group-3-to-fiber-3-path" d="M 793 307 V 342 Q 793 347 798 347 H 831 C 952 347 1104 827 1169 827 H 1397 Q 1402 827 1402 822 V 817"/>
+    </g>
+    <g id="shuffle-route-D-group-1-to-fiber-0" data-source-lane="3" data-frequency-group="1" data-destination-lane="0" fill="none" stroke="#946082" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-D)" inkscape:label="Matmul D, group 1 to fiber 0">
+      <title>Group 1 from Matmul D to output fiber 0</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-D-group-1-to-fiber-0-path"/>
+      <path id="shuffle-route-D-group-1-to-fiber-0-path" d="M 663 817 V 822 Q 663 827 668 827 H 831 C 945 827 1046 347 1169 347 H 1267 Q 1272 347 1272 342 V 307"/>
+    </g>
+    <g id="shuffle-route-B-group-1-to-fiber-2" data-source-lane="1" data-frequency-group="1" data-destination-lane="2" fill="none" stroke="#377F70" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-B)" inkscape:label="Matmul B, group 1 to fiber 2">
+      <title>Group 1 from Matmul B to output fiber 2</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-B-group-1-to-fiber-2-path"/>
+      <path id="shuffle-route-B-group-1-to-fiber-2-path" d="M 663 477 V 502 Q 663 507 668 507 H 831 C 900 507 1103 667 1169 667 H 1267 Q 1272 667 1272 662 V 647"/>
+    </g>
+    <g id="shuffle-route-C-group-3-to-fiber-1" data-source-lane="2" data-frequency-group="3" data-destination-lane="1" fill="none" stroke="#B16C54" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-C)" inkscape:label="Matmul C, group 3 to fiber 1">
+      <title>Group 3 from Matmul C to output fiber 1</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-C-group-3-to-fiber-1-path"/>
+      <path id="shuffle-route-C-group-3-to-fiber-1-path" d="M 793 647 V 662 Q 793 667 798 667 H 831 C 936 667 1104 507 1169 507 H 1397 Q 1402 507 1402 502 V 477"/>
+    </g>
+    <g id="shuffle-route-B-group-2-to-fiber-3" data-source-lane="1" data-frequency-group="2" data-destination-lane="3" fill="none" stroke="#377F70" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-B)" inkscape:label="Matmul B, group 2 to fiber 3">
+      <title>Group 2 from Matmul B to output fiber 3</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-B-group-2-to-fiber-3-path"/>
+      <path id="shuffle-route-B-group-2-to-fiber-3-path" d="M 728 477 V 512 Q 728 517 733 517 H 831 C 900 517 1104 837 1169 837 H 1332 Q 1337 837 1337 832 V 817"/>
+    </g>
+    <g id="shuffle-route-D-group-2-to-fiber-1" data-source-lane="3" data-frequency-group="2" data-destination-lane="1" fill="none" stroke="#946082" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-D)" inkscape:label="Matmul D, group 2 to fiber 1">
+      <title>Group 2 from Matmul D to output fiber 1</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-D-group-2-to-fiber-1-path"/>
+      <path id="shuffle-route-D-group-2-to-fiber-1-path" d="M 728 817 V 832 Q 728 837 733 837 H 831 C 945 837 1104 517 1169 517 H 1332 Q 1337 517 1337 512 V 477"/>
+    </g>
+    <g id="shuffle-route-C-group-0-to-fiber-2" data-source-lane="2" data-frequency-group="0" data-destination-lane="2" fill="none" stroke="#B16C54" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-C)" inkscape:label="Matmul C, group 0 to fiber 2">
+      <title>Group 0 from Matmul C to output fiber 2</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-C-group-0-to-fiber-2-path"/>
+      <path id="shuffle-route-C-group-0-to-fiber-2-path" d="M 598 647 V 672 Q 598 677 603 677 H 831 C 936 677 1103 677 1169 677 H 1202 Q 1207 677 1207 672 V 647"/>
+    </g>
+    <g id="shuffle-route-C-group-1-to-fiber-3" data-source-lane="2" data-frequency-group="1" data-destination-lane="3" fill="none" stroke="#B16C54" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-C)" inkscape:label="Matmul C, group 1 to fiber 3">
+      <title>Group 1 from Matmul C to output fiber 3</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-C-group-1-to-fiber-3-path"/>
+      <path id="shuffle-route-C-group-1-to-fiber-3-path" d="M 663 647 V 682 Q 663 687 668 687 H 831 C 936 687 1104 847 1169 847 H 1267 Q 1272 847 1272 842 V 817"/>
+    </g>
+    <g id="shuffle-route-D-group-3-to-fiber-2" data-source-lane="3" data-frequency-group="3" data-destination-lane="2" fill="none" stroke="#946082" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-D)" inkscape:label="Matmul D, group 3 to fiber 2">
+      <title>Group 3 from Matmul D to output fiber 2</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-D-group-3-to-fiber-2-path"/>
+      <path id="shuffle-route-D-group-3-to-fiber-2-path" d="M 793 817 V 842 Q 793 847 798 847 H 831 C 945 847 1103 687 1169 687 H 1397 Q 1402 687 1402 682 V 647"/>
+    </g>
+    <g id="shuffle-route-D-group-0-to-fiber-3" data-source-lane="3" data-frequency-group="0" data-destination-lane="3" fill="none" stroke="#946082" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#shuffle-arrow-D)" inkscape:label="Matmul D, group 0 to fiber 3">
+      <title>Group 0 from Matmul D to output fiber 3</title>
+      <use stroke="#F8FBFD" stroke-width="5.8" marker-end="none" xlink:href="#shuffle-route-D-group-0-to-fiber-3-path"/>
+      <path id="shuffle-route-D-group-0-to-fiber-3-path" d="M 598 817 V 852 Q 598 857 603 857 H 831 C 945 857 1104 857 1169 857 H 1202 Q 1207 857 1207 852 V 817"/>
+    </g>
+  </g>
+  <g id="shuffle-arrays" inkscape:groupmode="layer" inkscape:label="Shuffle contents before and after routing">
+    <g id="shuffle-input-array" inkscape:label="Before shuffle">
+      <text id="shuffle-input-heading" x="695.5" y="197" fill="#273648" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="600">Before shuffle</text>
+      <g id="shuffle-input-fiber-0" inkscape:label="Input fiber 0">
+        <g id="shuffle-input-fiber-0-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-input-fiber-0-comb-baseline" d="M 568 249 H 823" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-input-fiber-0-comb-group-0" data-source-lane="0" data-comb-group="0" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-input-fiber-0-comb-group-0-line-0" d="M 578.00 249 v -18" data-frequency-index="0"/>
+            <path id="shuffle-input-fiber-0-comb-group-0-line-1" d="M 591.33 249 v -33" data-frequency-index="4"/>
+            <path id="shuffle-input-fiber-0-comb-group-0-line-2" d="M 604.67 249 v -24" data-frequency-index="8"/>
+            <path id="shuffle-input-fiber-0-comb-group-0-line-3" d="M 618.00 249 v -13" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-input-fiber-0-group-divider-0" d="M 630.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-0-comb-group-1" data-source-lane="0" data-comb-group="1" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-input-fiber-0-comb-group-1-line-0" d="M 643.00 249 v -36" data-frequency-index="1"/>
+            <path id="shuffle-input-fiber-0-comb-group-1-line-1" d="M 656.33 249 v -17" data-frequency-index="5"/>
+            <path id="shuffle-input-fiber-0-comb-group-1-line-2" d="M 669.67 249 v -27" data-frequency-index="9"/>
+            <path id="shuffle-input-fiber-0-comb-group-1-line-3" d="M 683.00 249 v -20" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-input-fiber-0-group-divider-1" d="M 695.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-0-comb-group-2" data-source-lane="0" data-comb-group="2" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-input-fiber-0-comb-group-2-line-0" d="M 708.00 249 v -15" data-frequency-index="2"/>
+            <path id="shuffle-input-fiber-0-comb-group-2-line-1" d="M 721.33 249 v -28" data-frequency-index="6"/>
+            <path id="shuffle-input-fiber-0-comb-group-2-line-2" d="M 734.67 249 v -37" data-frequency-index="10"/>
+            <path id="shuffle-input-fiber-0-comb-group-2-line-3" d="M 748.00 249 v -22" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-input-fiber-0-group-divider-2" d="M 760.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-0-comb-group-3" data-source-lane="0" data-comb-group="3" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-input-fiber-0-comb-group-3-line-0" d="M 773.00 249 v -23" data-frequency-index="3"/>
+            <path id="shuffle-input-fiber-0-comb-group-3-line-1" d="M 786.33 249 v -13" data-frequency-index="7"/>
+            <path id="shuffle-input-fiber-0-comb-group-3-line-2" d="M 799.67 249 v -29" data-frequency-index="11"/>
+            <path id="shuffle-input-fiber-0-comb-group-3-line-3" d="M 813.00 249 v -35" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-input-fiber-0-group-0" data-source-lane="0" data-frequency-group="0" data-destination-lane="0" inkscape:label="G₀ from Matmul A">
+          <title>G₀ from Matmul A, input fiber 0 to output fiber 0</title>
+          <rect id="shuffle-input-fiber-0-group-0-background" x="568" y="253.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-0-group-0-source" x="598" y="289" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-input-fiber-0-group-1" data-source-lane="0" data-frequency-group="1" data-destination-lane="1" inkscape:label="G₁ from Matmul A">
+          <title>G₁ from Matmul A, input fiber 0 to output fiber 1</title>
+          <rect id="shuffle-input-fiber-0-group-1-background" x="633" y="253.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-0-group-1-source" x="663" y="289" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-input-fiber-0-group-2" data-source-lane="0" data-frequency-group="2" data-destination-lane="2" inkscape:label="G₂ from Matmul A">
+          <title>G₂ from Matmul A, input fiber 0 to output fiber 2</title>
+          <rect id="shuffle-input-fiber-0-group-2-background" x="698" y="253.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-0-group-2-source" x="728" y="289" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-input-fiber-0-group-3" data-source-lane="0" data-frequency-group="3" data-destination-lane="3" inkscape:label="G₃ from Matmul A">
+          <title>G₃ from Matmul A, input fiber 0 to output fiber 3</title>
+          <rect id="shuffle-input-fiber-0-group-3-background" x="763" y="253.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-0-group-3-source" x="793" y="289" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+      </g>
+      <g id="shuffle-input-fiber-1" inkscape:label="Input fiber 1">
+        <g id="shuffle-input-fiber-1-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-input-fiber-1-comb-baseline" d="M 568 419 H 823" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-input-fiber-1-comb-group-0" data-source-lane="1" data-comb-group="0" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-input-fiber-1-comb-group-0-line-0" d="M 578.00 419 v -33" data-frequency-index="0"/>
+            <path id="shuffle-input-fiber-1-comb-group-0-line-1" d="M 591.33 419 v -18" data-frequency-index="4"/>
+            <path id="shuffle-input-fiber-1-comb-group-0-line-2" d="M 604.67 419 v -12" data-frequency-index="8"/>
+            <path id="shuffle-input-fiber-1-comb-group-0-line-3" d="M 618.00 419 v -25" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-input-fiber-1-group-divider-0" d="M 630.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-1-comb-group-1" data-source-lane="1" data-comb-group="1" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-input-fiber-1-comb-group-1-line-0" d="M 643.00 419 v -22" data-frequency-index="1"/>
+            <path id="shuffle-input-fiber-1-comb-group-1-line-1" d="M 656.33 419 v -37" data-frequency-index="5"/>
+            <path id="shuffle-input-fiber-1-comb-group-1-line-2" d="M 669.67 419 v -25" data-frequency-index="9"/>
+            <path id="shuffle-input-fiber-1-comb-group-1-line-3" d="M 683.00 419 v -16" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-input-fiber-1-group-divider-1" d="M 695.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-1-comb-group-2" data-source-lane="1" data-comb-group="2" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-input-fiber-1-comb-group-2-line-0" d="M 708.00 419 v -30" data-frequency-index="2"/>
+            <path id="shuffle-input-fiber-1-comb-group-2-line-1" d="M 721.33 419 v -19" data-frequency-index="6"/>
+            <path id="shuffle-input-fiber-1-comb-group-2-line-2" d="M 734.67 419 v -23" data-frequency-index="10"/>
+            <path id="shuffle-input-fiber-1-comb-group-2-line-3" d="M 748.00 419 v -13" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-input-fiber-1-group-divider-2" d="M 760.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-1-comb-group-3" data-source-lane="1" data-comb-group="3" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-input-fiber-1-comb-group-3-line-0" d="M 773.00 419 v -14" data-frequency-index="3"/>
+            <path id="shuffle-input-fiber-1-comb-group-3-line-1" d="M 786.33 419 v -32" data-frequency-index="7"/>
+            <path id="shuffle-input-fiber-1-comb-group-3-line-2" d="M 799.67 419 v -18" data-frequency-index="11"/>
+            <path id="shuffle-input-fiber-1-comb-group-3-line-3" d="M 813.00 419 v -27" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-input-fiber-1-group-0" data-source-lane="1" data-frequency-group="0" data-destination-lane="1" inkscape:label="G₀ from Matmul B">
+          <title>G₀ from Matmul B, input fiber 1 to output fiber 1</title>
+          <rect id="shuffle-input-fiber-1-group-0-background" x="568" y="423.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-1-group-0-source" x="598" y="459" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-input-fiber-1-group-1" data-source-lane="1" data-frequency-group="1" data-destination-lane="2" inkscape:label="G₁ from Matmul B">
+          <title>G₁ from Matmul B, input fiber 1 to output fiber 2</title>
+          <rect id="shuffle-input-fiber-1-group-1-background" x="633" y="423.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-1-group-1-source" x="663" y="459" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-input-fiber-1-group-2" data-source-lane="1" data-frequency-group="2" data-destination-lane="3" inkscape:label="G₂ from Matmul B">
+          <title>G₂ from Matmul B, input fiber 1 to output fiber 3</title>
+          <rect id="shuffle-input-fiber-1-group-2-background" x="698" y="423.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-1-group-2-source" x="728" y="459" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-input-fiber-1-group-3" data-source-lane="1" data-frequency-group="3" data-destination-lane="0" inkscape:label="G₃ from Matmul B">
+          <title>G₃ from Matmul B, input fiber 1 to output fiber 0</title>
+          <rect id="shuffle-input-fiber-1-group-3-background" x="763" y="423.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-1-group-3-source" x="793" y="459" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+      </g>
+      <g id="shuffle-input-fiber-2" inkscape:label="Input fiber 2">
+        <g id="shuffle-input-fiber-2-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-input-fiber-2-comb-baseline" d="M 568 589 H 823" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-input-fiber-2-comb-group-0" data-source-lane="2" data-comb-group="0" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-input-fiber-2-comb-group-0-line-0" d="M 578.00 589 v -20" data-frequency-index="0"/>
+            <path id="shuffle-input-fiber-2-comb-group-0-line-1" d="M 591.33 589 v -12" data-frequency-index="4"/>
+            <path id="shuffle-input-fiber-2-comb-group-0-line-2" d="M 604.67 589 v -32" data-frequency-index="8"/>
+            <path id="shuffle-input-fiber-2-comb-group-0-line-3" d="M 618.00 589 v -24" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-input-fiber-2-group-divider-0" d="M 630.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-2-comb-group-1" data-source-lane="2" data-comb-group="1" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-input-fiber-2-comb-group-1-line-0" d="M 643.00 589 v -17" data-frequency-index="1"/>
+            <path id="shuffle-input-fiber-2-comb-group-1-line-1" d="M 656.33 589 v -27" data-frequency-index="5"/>
+            <path id="shuffle-input-fiber-2-comb-group-1-line-2" d="M 669.67 589 v -20" data-frequency-index="9"/>
+            <path id="shuffle-input-fiber-2-comb-group-1-line-3" d="M 683.00 589 v -35" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-input-fiber-2-group-divider-1" d="M 695.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-2-comb-group-2" data-source-lane="2" data-comb-group="2" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-input-fiber-2-comb-group-2-line-0" d="M 708.00 589 v -38" data-frequency-index="2"/>
+            <path id="shuffle-input-fiber-2-comb-group-2-line-1" d="M 721.33 589 v -25" data-frequency-index="6"/>
+            <path id="shuffle-input-fiber-2-comb-group-2-line-2" d="M 734.67 589 v -14" data-frequency-index="10"/>
+            <path id="shuffle-input-fiber-2-comb-group-2-line-3" d="M 748.00 589 v -29" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-input-fiber-2-group-divider-2" d="M 760.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-2-comb-group-3" data-source-lane="2" data-comb-group="3" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-input-fiber-2-comb-group-3-line-0" d="M 773.00 589 v -31" data-frequency-index="3"/>
+            <path id="shuffle-input-fiber-2-comb-group-3-line-1" d="M 786.33 589 v -16" data-frequency-index="7"/>
+            <path id="shuffle-input-fiber-2-comb-group-3-line-2" d="M 799.67 589 v -23" data-frequency-index="11"/>
+            <path id="shuffle-input-fiber-2-comb-group-3-line-3" d="M 813.00 589 v -12" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-input-fiber-2-group-0" data-source-lane="2" data-frequency-group="0" data-destination-lane="2" inkscape:label="G₀ from Matmul C">
+          <title>G₀ from Matmul C, input fiber 2 to output fiber 2</title>
+          <rect id="shuffle-input-fiber-2-group-0-background" x="568" y="593.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-2-group-0-source" x="598" y="629" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-input-fiber-2-group-1" data-source-lane="2" data-frequency-group="1" data-destination-lane="3" inkscape:label="G₁ from Matmul C">
+          <title>G₁ from Matmul C, input fiber 2 to output fiber 3</title>
+          <rect id="shuffle-input-fiber-2-group-1-background" x="633" y="593.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-2-group-1-source" x="663" y="629" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-input-fiber-2-group-2" data-source-lane="2" data-frequency-group="2" data-destination-lane="0" inkscape:label="G₂ from Matmul C">
+          <title>G₂ from Matmul C, input fiber 2 to output fiber 0</title>
+          <rect id="shuffle-input-fiber-2-group-2-background" x="698" y="593.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-2-group-2-source" x="728" y="629" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-input-fiber-2-group-3" data-source-lane="2" data-frequency-group="3" data-destination-lane="1" inkscape:label="G₃ from Matmul C">
+          <title>G₃ from Matmul C, input fiber 2 to output fiber 1</title>
+          <rect id="shuffle-input-fiber-2-group-3-background" x="763" y="593.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-2-group-3-source" x="793" y="629" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+      </g>
+      <g id="shuffle-input-fiber-3" inkscape:label="Input fiber 3">
+        <g id="shuffle-input-fiber-3-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-input-fiber-3-comb-baseline" d="M 568 759 H 823" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-input-fiber-3-comb-group-0" data-source-lane="3" data-comb-group="0" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-input-fiber-3-comb-group-0-line-0" d="M 578.00 759 v -27" data-frequency-index="0"/>
+            <path id="shuffle-input-fiber-3-comb-group-0-line-1" d="M 591.33 759 v -12" data-frequency-index="4"/>
+            <path id="shuffle-input-fiber-3-comb-group-0-line-2" d="M 604.67 759 v -23" data-frequency-index="8"/>
+            <path id="shuffle-input-fiber-3-comb-group-0-line-3" d="M 618.00 759 v -36" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-input-fiber-3-group-divider-0" d="M 630.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-3-comb-group-1" data-source-lane="3" data-comb-group="1" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-input-fiber-3-comb-group-1-line-0" d="M 643.00 759 v -16" data-frequency-index="1"/>
+            <path id="shuffle-input-fiber-3-comb-group-1-line-1" d="M 656.33 759 v -28" data-frequency-index="5"/>
+            <path id="shuffle-input-fiber-3-comb-group-1-line-2" d="M 669.67 759 v -34" data-frequency-index="9"/>
+            <path id="shuffle-input-fiber-3-comb-group-1-line-3" d="M 683.00 759 v -14" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-input-fiber-3-group-divider-1" d="M 695.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-3-comb-group-2" data-source-lane="3" data-comb-group="2" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-input-fiber-3-comb-group-2-line-0" d="M 708.00 759 v -24" data-frequency-index="2"/>
+            <path id="shuffle-input-fiber-3-comb-group-2-line-1" d="M 721.33 759 v -13" data-frequency-index="6"/>
+            <path id="shuffle-input-fiber-3-comb-group-2-line-2" d="M 734.67 759 v -35" data-frequency-index="10"/>
+            <path id="shuffle-input-fiber-3-comb-group-2-line-3" d="M 748.00 759 v -21" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-input-fiber-3-group-divider-2" d="M 760.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-input-fiber-3-comb-group-3" data-source-lane="3" data-comb-group="3" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-input-fiber-3-comb-group-3-line-0" d="M 773.00 759 v -21" data-frequency-index="3"/>
+            <path id="shuffle-input-fiber-3-comb-group-3-line-1" d="M 786.33 759 v -37" data-frequency-index="7"/>
+            <path id="shuffle-input-fiber-3-comb-group-3-line-2" d="M 799.67 759 v -18" data-frequency-index="11"/>
+            <path id="shuffle-input-fiber-3-comb-group-3-line-3" d="M 813.00 759 v -26" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-input-fiber-3-group-0" data-source-lane="3" data-frequency-group="0" data-destination-lane="3" inkscape:label="G₀ from Matmul D">
+          <title>G₀ from Matmul D, input fiber 3 to output fiber 3</title>
+          <rect id="shuffle-input-fiber-3-group-0-background" x="568" y="763.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-3-group-0-source" x="598" y="799" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-input-fiber-3-group-1" data-source-lane="3" data-frequency-group="1" data-destination-lane="0" inkscape:label="G₁ from Matmul D">
+          <title>G₁ from Matmul D, input fiber 3 to output fiber 0</title>
+          <rect id="shuffle-input-fiber-3-group-1-background" x="633" y="763.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-3-group-1-source" x="663" y="799" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-input-fiber-3-group-2" data-source-lane="3" data-frequency-group="2" data-destination-lane="1" inkscape:label="G₂ from Matmul D">
+          <title>G₂ from Matmul D, input fiber 3 to output fiber 1</title>
+          <rect id="shuffle-input-fiber-3-group-2-background" x="698" y="763.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-3-group-2-source" x="728" y="799" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-input-fiber-3-group-3" data-source-lane="3" data-frequency-group="3" data-destination-lane="2" inkscape:label="G₃ from Matmul D">
+          <title>G₃ from Matmul D, input fiber 3 to output fiber 2</title>
+          <rect id="shuffle-input-fiber-3-group-3-background" x="763" y="763.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-input-fiber-3-group-3-source" x="793" y="799" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+      </g>
+    </g>
+    <g id="shuffle-output-array" inkscape:label="After shuffle">
+      <text id="shuffle-output-heading" x="1304.5" y="197" fill="#273648" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="26" font-weight="600">After shuffle</text>
+      <g id="shuffle-output-fiber-0" inkscape:label="Output fiber 0">
+        <g id="shuffle-output-fiber-0-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-output-fiber-0-comb-baseline" d="M 1177 249 H 1432" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-output-fiber-0-comb-group-0" data-source-lane="0" data-comb-group="0" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-output-fiber-0-comb-group-0-line-0" d="M 1187.00 249 v -18" data-frequency-index="0"/>
+            <path id="shuffle-output-fiber-0-comb-group-0-line-1" d="M 1200.33 249 v -33" data-frequency-index="4"/>
+            <path id="shuffle-output-fiber-0-comb-group-0-line-2" d="M 1213.67 249 v -24" data-frequency-index="8"/>
+            <path id="shuffle-output-fiber-0-comb-group-0-line-3" d="M 1227.00 249 v -13" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-output-fiber-0-group-divider-0" d="M 1239.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-0-comb-group-1" data-source-lane="3" data-comb-group="1" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-output-fiber-0-comb-group-1-line-0" d="M 1252.00 249 v -16" data-frequency-index="1"/>
+            <path id="shuffle-output-fiber-0-comb-group-1-line-1" d="M 1265.33 249 v -28" data-frequency-index="5"/>
+            <path id="shuffle-output-fiber-0-comb-group-1-line-2" d="M 1278.67 249 v -34" data-frequency-index="9"/>
+            <path id="shuffle-output-fiber-0-comb-group-1-line-3" d="M 1292.00 249 v -14" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-output-fiber-0-group-divider-1" d="M 1304.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-0-comb-group-2" data-source-lane="2" data-comb-group="2" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-output-fiber-0-comb-group-2-line-0" d="M 1317.00 249 v -38" data-frequency-index="2"/>
+            <path id="shuffle-output-fiber-0-comb-group-2-line-1" d="M 1330.33 249 v -25" data-frequency-index="6"/>
+            <path id="shuffle-output-fiber-0-comb-group-2-line-2" d="M 1343.67 249 v -14" data-frequency-index="10"/>
+            <path id="shuffle-output-fiber-0-comb-group-2-line-3" d="M 1357.00 249 v -29" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-output-fiber-0-group-divider-2" d="M 1369.5 208 V 253" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-0-comb-group-3" data-source-lane="1" data-comb-group="3" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-output-fiber-0-comb-group-3-line-0" d="M 1382.00 249 v -14" data-frequency-index="3"/>
+            <path id="shuffle-output-fiber-0-comb-group-3-line-1" d="M 1395.33 249 v -32" data-frequency-index="7"/>
+            <path id="shuffle-output-fiber-0-comb-group-3-line-2" d="M 1408.67 249 v -18" data-frequency-index="11"/>
+            <path id="shuffle-output-fiber-0-comb-group-3-line-3" d="M 1422.00 249 v -27" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-output-fiber-0-group-0" data-source-lane="0" data-frequency-group="0" data-destination-lane="0" inkscape:label="G₀ from Matmul A">
+          <title>G₀ from Matmul A, input fiber 0 to output fiber 0</title>
+          <rect id="shuffle-output-fiber-0-group-0-background" x="1177" y="253.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-0-group-0-source" x="1207" y="289" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-output-fiber-0-group-1" data-source-lane="3" data-frequency-group="1" data-destination-lane="0" inkscape:label="G₁ from Matmul D">
+          <title>G₁ from Matmul D, input fiber 3 to output fiber 0</title>
+          <rect id="shuffle-output-fiber-0-group-1-background" x="1242" y="253.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-0-group-1-source" x="1272" y="289" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-output-fiber-0-group-2" data-source-lane="2" data-frequency-group="2" data-destination-lane="0" inkscape:label="G₂ from Matmul C">
+          <title>G₂ from Matmul C, input fiber 2 to output fiber 0</title>
+          <rect id="shuffle-output-fiber-0-group-2-background" x="1307" y="253.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-0-group-2-source" x="1337" y="289" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-output-fiber-0-group-3" data-source-lane="1" data-frequency-group="3" data-destination-lane="0" inkscape:label="G₃ from Matmul B">
+          <title>G₃ from Matmul B, input fiber 1 to output fiber 0</title>
+          <rect id="shuffle-output-fiber-0-group-3-background" x="1372" y="253.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-0-group-3-source" x="1402" y="289" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+      </g>
+      <g id="shuffle-output-fiber-1" inkscape:label="Output fiber 1">
+        <g id="shuffle-output-fiber-1-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-output-fiber-1-comb-baseline" d="M 1177 419 H 1432" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-output-fiber-1-comb-group-0" data-source-lane="1" data-comb-group="0" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-output-fiber-1-comb-group-0-line-0" d="M 1187.00 419 v -33" data-frequency-index="0"/>
+            <path id="shuffle-output-fiber-1-comb-group-0-line-1" d="M 1200.33 419 v -18" data-frequency-index="4"/>
+            <path id="shuffle-output-fiber-1-comb-group-0-line-2" d="M 1213.67 419 v -12" data-frequency-index="8"/>
+            <path id="shuffle-output-fiber-1-comb-group-0-line-3" d="M 1227.00 419 v -25" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-output-fiber-1-group-divider-0" d="M 1239.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-1-comb-group-1" data-source-lane="0" data-comb-group="1" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-output-fiber-1-comb-group-1-line-0" d="M 1252.00 419 v -36" data-frequency-index="1"/>
+            <path id="shuffle-output-fiber-1-comb-group-1-line-1" d="M 1265.33 419 v -17" data-frequency-index="5"/>
+            <path id="shuffle-output-fiber-1-comb-group-1-line-2" d="M 1278.67 419 v -27" data-frequency-index="9"/>
+            <path id="shuffle-output-fiber-1-comb-group-1-line-3" d="M 1292.00 419 v -20" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-output-fiber-1-group-divider-1" d="M 1304.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-1-comb-group-2" data-source-lane="3" data-comb-group="2" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-output-fiber-1-comb-group-2-line-0" d="M 1317.00 419 v -24" data-frequency-index="2"/>
+            <path id="shuffle-output-fiber-1-comb-group-2-line-1" d="M 1330.33 419 v -13" data-frequency-index="6"/>
+            <path id="shuffle-output-fiber-1-comb-group-2-line-2" d="M 1343.67 419 v -35" data-frequency-index="10"/>
+            <path id="shuffle-output-fiber-1-comb-group-2-line-3" d="M 1357.00 419 v -21" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-output-fiber-1-group-divider-2" d="M 1369.5 378 V 423" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-1-comb-group-3" data-source-lane="2" data-comb-group="3" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-output-fiber-1-comb-group-3-line-0" d="M 1382.00 419 v -31" data-frequency-index="3"/>
+            <path id="shuffle-output-fiber-1-comb-group-3-line-1" d="M 1395.33 419 v -16" data-frequency-index="7"/>
+            <path id="shuffle-output-fiber-1-comb-group-3-line-2" d="M 1408.67 419 v -23" data-frequency-index="11"/>
+            <path id="shuffle-output-fiber-1-comb-group-3-line-3" d="M 1422.00 419 v -12" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-output-fiber-1-group-0" data-source-lane="1" data-frequency-group="0" data-destination-lane="1" inkscape:label="G₀ from Matmul B">
+          <title>G₀ from Matmul B, input fiber 1 to output fiber 1</title>
+          <rect id="shuffle-output-fiber-1-group-0-background" x="1177" y="423.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-1-group-0-source" x="1207" y="459" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-output-fiber-1-group-1" data-source-lane="0" data-frequency-group="1" data-destination-lane="1" inkscape:label="G₁ from Matmul A">
+          <title>G₁ from Matmul A, input fiber 0 to output fiber 1</title>
+          <rect id="shuffle-output-fiber-1-group-1-background" x="1242" y="423.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-1-group-1-source" x="1272" y="459" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-output-fiber-1-group-2" data-source-lane="3" data-frequency-group="2" data-destination-lane="1" inkscape:label="G₂ from Matmul D">
+          <title>G₂ from Matmul D, input fiber 3 to output fiber 1</title>
+          <rect id="shuffle-output-fiber-1-group-2-background" x="1307" y="423.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-1-group-2-source" x="1337" y="459" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-output-fiber-1-group-3" data-source-lane="2" data-frequency-group="3" data-destination-lane="1" inkscape:label="G₃ from Matmul C">
+          <title>G₃ from Matmul C, input fiber 2 to output fiber 1</title>
+          <rect id="shuffle-output-fiber-1-group-3-background" x="1372" y="423.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-1-group-3-source" x="1402" y="459" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+      </g>
+      <g id="shuffle-output-fiber-2" inkscape:label="Output fiber 2">
+        <g id="shuffle-output-fiber-2-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-output-fiber-2-comb-baseline" d="M 1177 589 H 1432" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-output-fiber-2-comb-group-0" data-source-lane="2" data-comb-group="0" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-output-fiber-2-comb-group-0-line-0" d="M 1187.00 589 v -20" data-frequency-index="0"/>
+            <path id="shuffle-output-fiber-2-comb-group-0-line-1" d="M 1200.33 589 v -12" data-frequency-index="4"/>
+            <path id="shuffle-output-fiber-2-comb-group-0-line-2" d="M 1213.67 589 v -32" data-frequency-index="8"/>
+            <path id="shuffle-output-fiber-2-comb-group-0-line-3" d="M 1227.00 589 v -24" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-output-fiber-2-group-divider-0" d="M 1239.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-2-comb-group-1" data-source-lane="1" data-comb-group="1" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-output-fiber-2-comb-group-1-line-0" d="M 1252.00 589 v -22" data-frequency-index="1"/>
+            <path id="shuffle-output-fiber-2-comb-group-1-line-1" d="M 1265.33 589 v -37" data-frequency-index="5"/>
+            <path id="shuffle-output-fiber-2-comb-group-1-line-2" d="M 1278.67 589 v -25" data-frequency-index="9"/>
+            <path id="shuffle-output-fiber-2-comb-group-1-line-3" d="M 1292.00 589 v -16" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-output-fiber-2-group-divider-1" d="M 1304.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-2-comb-group-2" data-source-lane="0" data-comb-group="2" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-output-fiber-2-comb-group-2-line-0" d="M 1317.00 589 v -15" data-frequency-index="2"/>
+            <path id="shuffle-output-fiber-2-comb-group-2-line-1" d="M 1330.33 589 v -28" data-frequency-index="6"/>
+            <path id="shuffle-output-fiber-2-comb-group-2-line-2" d="M 1343.67 589 v -37" data-frequency-index="10"/>
+            <path id="shuffle-output-fiber-2-comb-group-2-line-3" d="M 1357.00 589 v -22" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-output-fiber-2-group-divider-2" d="M 1369.5 548 V 593" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-2-comb-group-3" data-source-lane="3" data-comb-group="3" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-output-fiber-2-comb-group-3-line-0" d="M 1382.00 589 v -21" data-frequency-index="3"/>
+            <path id="shuffle-output-fiber-2-comb-group-3-line-1" d="M 1395.33 589 v -37" data-frequency-index="7"/>
+            <path id="shuffle-output-fiber-2-comb-group-3-line-2" d="M 1408.67 589 v -18" data-frequency-index="11"/>
+            <path id="shuffle-output-fiber-2-comb-group-3-line-3" d="M 1422.00 589 v -26" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-output-fiber-2-group-0" data-source-lane="2" data-frequency-group="0" data-destination-lane="2" inkscape:label="G₀ from Matmul C">
+          <title>G₀ from Matmul C, input fiber 2 to output fiber 2</title>
+          <rect id="shuffle-output-fiber-2-group-0-background" x="1177" y="593.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-2-group-0-source" x="1207" y="629" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-output-fiber-2-group-1" data-source-lane="1" data-frequency-group="1" data-destination-lane="2" inkscape:label="G₁ from Matmul B">
+          <title>G₁ from Matmul B, input fiber 1 to output fiber 2</title>
+          <rect id="shuffle-output-fiber-2-group-1-background" x="1242" y="593.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-2-group-1-source" x="1272" y="629" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-output-fiber-2-group-2" data-source-lane="0" data-frequency-group="2" data-destination-lane="2" inkscape:label="G₂ from Matmul A">
+          <title>G₂ from Matmul A, input fiber 0 to output fiber 2</title>
+          <rect id="shuffle-output-fiber-2-group-2-background" x="1307" y="593.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-2-group-2-source" x="1337" y="629" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+        <g id="shuffle-output-fiber-2-group-3" data-source-lane="3" data-frequency-group="3" data-destination-lane="2" inkscape:label="G₃ from Matmul D">
+          <title>G₃ from Matmul D, input fiber 3 to output fiber 2</title>
+          <rect id="shuffle-output-fiber-2-group-3-background" x="1372" y="593.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-2-group-3-source" x="1402" y="629" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+      </g>
+      <g id="shuffle-output-fiber-3" inkscape:label="Output fiber 3">
+        <g id="shuffle-output-fiber-3-comb" inkscape:label="Comb lines grouped by route">
+          <title>Illustrative comb line intensities arranged by interleaved frequency group</title>
+          <path id="shuffle-output-fiber-3-comb-baseline" d="M 1177 759 H 1432" stroke="#ADBECC" stroke-width="1.3" fill="none"/>
+          <g id="shuffle-output-fiber-3-comb-group-0" data-source-lane="3" data-comb-group="0" fill="none" stroke="#7C476D" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul D">
+            <path id="shuffle-output-fiber-3-comb-group-0-line-0" d="M 1187.00 759 v -27" data-frequency-index="0"/>
+            <path id="shuffle-output-fiber-3-comb-group-0-line-1" d="M 1200.33 759 v -12" data-frequency-index="4"/>
+            <path id="shuffle-output-fiber-3-comb-group-0-line-2" d="M 1213.67 759 v -23" data-frequency-index="8"/>
+            <path id="shuffle-output-fiber-3-comb-group-0-line-3" d="M 1227.00 759 v -36" data-frequency-index="12"/>
+          </g>
+          <path id="shuffle-output-fiber-3-group-divider-0" d="M 1239.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-3-comb-group-1" data-source-lane="2" data-comb-group="1" fill="none" stroke="#984B3A" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul C">
+            <path id="shuffle-output-fiber-3-comb-group-1-line-0" d="M 1252.00 759 v -17" data-frequency-index="1"/>
+            <path id="shuffle-output-fiber-3-comb-group-1-line-1" d="M 1265.33 759 v -27" data-frequency-index="5"/>
+            <path id="shuffle-output-fiber-3-comb-group-1-line-2" d="M 1278.67 759 v -20" data-frequency-index="9"/>
+            <path id="shuffle-output-fiber-3-comb-group-1-line-3" d="M 1292.00 759 v -35" data-frequency-index="13"/>
+          </g>
+          <path id="shuffle-output-fiber-3-group-divider-1" d="M 1304.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-3-comb-group-2" data-source-lane="1" data-comb-group="2" fill="none" stroke="#226859" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul B">
+            <path id="shuffle-output-fiber-3-comb-group-2-line-0" d="M 1317.00 759 v -30" data-frequency-index="2"/>
+            <path id="shuffle-output-fiber-3-comb-group-2-line-1" d="M 1330.33 759 v -19" data-frequency-index="6"/>
+            <path id="shuffle-output-fiber-3-comb-group-2-line-2" d="M 1343.67 759 v -23" data-frequency-index="10"/>
+            <path id="shuffle-output-fiber-3-comb-group-2-line-3" d="M 1357.00 759 v -13" data-frequency-index="14"/>
+          </g>
+          <path id="shuffle-output-fiber-3-group-divider-2" d="M 1369.5 718 V 763" stroke="#71899F" stroke-width="2" stroke-dasharray="0.8 4.6" stroke-linecap="round" fill="none"/>
+          <g id="shuffle-output-fiber-3-comb-group-3" data-source-lane="0" data-comb-group="3" fill="none" stroke="#315B83" stroke-width="3.4" stroke-linecap="round" opacity="0.86" inkscape:label="Interleaved lines from Matmul A">
+            <path id="shuffle-output-fiber-3-comb-group-3-line-0" d="M 1382.00 759 v -23" data-frequency-index="3"/>
+            <path id="shuffle-output-fiber-3-comb-group-3-line-1" d="M 1395.33 759 v -13" data-frequency-index="7"/>
+            <path id="shuffle-output-fiber-3-comb-group-3-line-2" d="M 1408.67 759 v -29" data-frequency-index="11"/>
+            <path id="shuffle-output-fiber-3-comb-group-3-line-3" d="M 1422.00 759 v -35" data-frequency-index="15"/>
+          </g>
+        </g>
+        <g id="shuffle-output-fiber-3-group-0" data-source-lane="3" data-frequency-group="0" data-destination-lane="3" inkscape:label="G₀ from Matmul D">
+          <title>G₀ from Matmul D, input fiber 3 to output fiber 3</title>
+          <rect id="shuffle-output-fiber-3-group-0-background" x="1177" y="763.0" width="60" height="54" rx="5" fill="url(#source-D-tile-surface)" stroke="#EDDAE9" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-3-group-0-source" x="1207" y="799" fill="#7C476D" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">D</text>
+        </g>
+        <g id="shuffle-output-fiber-3-group-1" data-source-lane="2" data-frequency-group="1" data-destination-lane="3" inkscape:label="G₁ from Matmul C">
+          <title>G₁ from Matmul C, input fiber 2 to output fiber 3</title>
+          <rect id="shuffle-output-fiber-3-group-1-background" x="1242" y="763.0" width="60" height="54" rx="5" fill="url(#source-C-tile-surface)" stroke="#F5D8CA" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-3-group-1-source" x="1272" y="799" fill="#984B3A" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">C</text>
+        </g>
+        <g id="shuffle-output-fiber-3-group-2" data-source-lane="1" data-frequency-group="2" data-destination-lane="3" inkscape:label="G₂ from Matmul B">
+          <title>G₂ from Matmul B, input fiber 1 to output fiber 3</title>
+          <rect id="shuffle-output-fiber-3-group-2-background" x="1307" y="763.0" width="60" height="54" rx="5" fill="url(#source-B-tile-surface)" stroke="#CCEADF" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-3-group-2-source" x="1337" y="799" fill="#226859" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">B</text>
+        </g>
+        <g id="shuffle-output-fiber-3-group-3" data-source-lane="0" data-frequency-group="3" data-destination-lane="3" inkscape:label="G₃ from Matmul A">
+          <title>G₃ from Matmul A, input fiber 0 to output fiber 3</title>
+          <rect id="shuffle-output-fiber-3-group-3-background" x="1372" y="763.0" width="60" height="54" rx="5" fill="url(#source-A-tile-surface)" stroke="#D6E7F7" stroke-width="1.6"/>
+          <text id="shuffle-output-fiber-3-group-3-source" x="1402" y="799" fill="#315B83" text-anchor="middle" font-family="DejaVu Sans, sans-serif" font-size="27" font-weight="600">A</text>
+        </g>
+      </g>
+    </g>
+  </g>
+  <g id="labels-and-directions" inkscape:groupmode="layer" inkscape:label="Labels and propagation direction">
+    <text id="shared-reference-title" x="1000" y="28" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#8e6b2f" text-anchor="middle">Shared reference</text>
+    <text id="shared-reference-symbol" x="1000" y="88" font-family="DejaVu Sans, sans-serif" font-size="29" fill="#9e6515" text-anchor="middle" font-style="italic">b<tspan font-size="20.3" baseline-shift="sub">m</tspan></text>
+    <g id="reference-left-direction" transform="translate(740 81) rotate(180) scale(1)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <g id="reference-right-direction" transform="translate(1260 81) rotate(0) scale(1)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <g id="bank-1-matmul-0-reference-direction" transform="translate(440 237) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-1-matmul-0-name" x="350.0" y="289" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500">Full Matmul</text>
+    <text id="bank-1-matmul-0-weight-label" x="350.0" y="198" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-1-matmul-1-reference-direction" transform="translate(0 -40) translate(440 447) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-1-matmul-1-name" x="350.0" y="499" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -40)">Full Matmul</text>
+    <text id="bank-1-matmul-1-weight-label" x="350.0" y="408" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -40)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-1-matmul-2-reference-direction" transform="translate(0 -80) translate(440 657) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-1-matmul-2-name" x="350.0" y="709" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -80)">Full Matmul</text>
+    <text id="bank-1-matmul-2-weight-label" x="350.0" y="618" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -80)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-1-matmul-3-reference-direction" transform="translate(0 -120) translate(440 867) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-1-matmul-3-name" x="350.0" y="919" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -120)">Full Matmul</text>
+    <text id="bank-1-matmul-3-weight-label" x="350.0" y="828" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -120)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-2-matmul-0-reference-direction" transform="translate(1560 237) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-2-matmul-0-name" x="1650.0" y="289" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500">Full Matmul</text>
+    <text id="bank-2-matmul-0-weight-label" x="1650.0" y="198" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-2-matmul-1-reference-direction" transform="translate(0 -40) translate(1560 447) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-2-matmul-1-name" x="1650.0" y="499" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -40)">Full Matmul</text>
+    <text id="bank-2-matmul-1-weight-label" x="1650.0" y="408" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -40)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-2-matmul-2-reference-direction" transform="translate(0 -80) translate(1560 657) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-2-matmul-2-name" x="1650.0" y="709" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -80)">Full Matmul</text>
+    <text id="bank-2-matmul-2-weight-label" x="1650.0" y="618" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -80)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="bank-2-matmul-3-reference-direction" transform="translate(0 -120) translate(1560 867) rotate(90) scale(0.7)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#b98934"/>
+    </g>
+    <text id="bank-2-matmul-3-name" x="1650.0" y="919" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#273648" text-anchor="middle" font-weight="500" transform="translate(0 -120)">Full Matmul</text>
+    <text id="bank-2-matmul-3-weight-label" x="1650.0" y="828" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#7653b5" text-anchor="middle" font-style="italic" transform="translate(0 -120)">a<tspan font-size="15.4" baseline-shift="sub">m</tspan></text>
+    <g id="data-lane-0-input-direction" transform="translate(180.0 280) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-0-bank-1-output-direction" transform="translate(523 280) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-0-bank-2-input-direction" transform="translate(1477 280) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-0-output-direction" transform="translate(1820.0 280) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <text id="data-input-0-label" x="100" y="288" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">x<tspan font-size="17.5" baseline-shift="sub">0</tspan></text>
+    <text id="data-output-0-label" x="1903" y="288" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">y<tspan font-size="17.5" baseline-shift="sub">0</tspan></text>
+    <g id="data-lane-1-input-direction" transform="translate(180.0 450) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-1-bank-1-output-direction" transform="translate(523 450) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-1-bank-2-input-direction" transform="translate(1477 450) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-1-output-direction" transform="translate(1820.0 450) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <text id="data-input-1-label" x="100" y="458" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">x<tspan font-size="17.5" baseline-shift="sub">1</tspan></text>
+    <text id="data-output-1-label" x="1903" y="458" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">y<tspan font-size="17.5" baseline-shift="sub">1</tspan></text>
+    <g id="data-lane-2-input-direction" transform="translate(180.0 620) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-2-bank-1-output-direction" transform="translate(523 620) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-2-bank-2-input-direction" transform="translate(1477 620) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-2-output-direction" transform="translate(1820.0 620) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <text id="data-input-2-label" x="100" y="628" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">x<tspan font-size="17.5" baseline-shift="sub">2</tspan></text>
+    <text id="data-output-2-label" x="1903" y="628" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">y<tspan font-size="17.5" baseline-shift="sub">2</tspan></text>
+    <g id="data-lane-3-input-direction" transform="translate(180.0 790) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-3-bank-1-output-direction" transform="translate(523 790) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-3-bank-2-input-direction" transform="translate(1477 790) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <g id="data-lane-3-output-direction" transform="translate(1820.0 790) rotate(0) scale(0.9)">
+      <path d="M -7 -4 L 3 0 L -7 4 Z" fill="#2477bc"/>
+    </g>
+    <text id="data-input-3-label" x="100" y="798" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">x<tspan font-size="17.5" baseline-shift="sub">3</tspan></text>
+    <text id="data-output-3-label" x="1903" y="798" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#2477bc" text-anchor="middle" font-style="italic">y<tspan font-size="17.5" baseline-shift="sub">3</tspan></text>
+    <text id="panel-label" x="40" y="45" font-family="DejaVu Sans, sans-serif" font-size="29" fill="#273648" text-anchor="middle" font-weight="600">a</text>
+    <text id="bank-1-heading" x="350" y="152" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#66778a" text-anchor="middle">Matmul bank 1</text>
+    <text id="bank-2-heading" x="1650" y="152" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#66778a" text-anchor="middle">Matmul bank 2</text>
+    <text id="shuffle-heading" x="1000" y="152" font-family="DejaVu Sans, sans-serif" font-size="29" fill="#273648" text-anchor="middle" font-weight="500">Cyclic optical shuffle</text>
+  </g>
+</svg>

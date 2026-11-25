@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1370" viewBox="0 0 1600 1370" role="img" aria-labelledby="title desc">
+<title id="title">Local optical gradient update of directly stored Hankel coefficients</title>
+<desc id="desc">One fiber contains R temporal Hankel-pair slots. Two DFG interactions and K-channel filters produce each forward contribution; a coherent sum and optical subtraction produce a shared residual. For each slot, DFG of fixed b with the residual followed by a K-channel filter and full cross-SFG with the delayed key generates all 2K minus 1 adaptive a coefficients. Writes occur only after old-state reads finish. The equations use a calibrated real signed-amplitude convention.</desc>
+<defs>
+<marker id="arrow-teal" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 8 5 L 0 9 Z" fill="#0f766e"/></marker>
+<marker id="arrow-violet" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 8 5 L 0 9 Z" fill="#7c3aed"/></marker>
+<marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 8 5 L 0 9 Z" fill="#b45309"/></marker>
+<marker id="arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 8 5 L 0 9 Z" fill="#be123c"/></marker>
+<marker id="arrow-muted" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 8 5 L 0 9 Z" fill="#475569"/></marker>
+</defs>
+<rect width="1600" height="1370" fill="#f8fafc"/>
+<g font-family="DejaVu Sans, Arial, sans-serif" fill="#0f172a">
+<text x="40" y="50" font-size="30" fill="#0f172a" font-weight="700" text-anchor="start">Local writer: Hankel residual transform → full SFG convolution</text>
+<text x="40" y="84" font-size="20" fill="#475569" font-weight="400" text-anchor="start">One fiber • R coefficient slots • a adapts; its Hankel partner b stays fixed within the sequence</text>
+<path d="M 45 118 H 83" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="95" y="124" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Optical data / keys</text>
+<path d="M 365 118 H 403" fill="none" stroke="#be123c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="415" y="124" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Optical residual</text>
+<path d="M 660 118 H 698" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="710" y="124" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Coefficient comb / pump</text>
+<path d="M 1110 118 H 1148" fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1160" y="124" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Electrical control</text>
+<rect x="32" y="150" width="1536" height="350" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+<rect x="52" y="170" width="36" height="36" rx="10" fill="#e2e8f0" stroke="#e2e8f0" stroke-width="0"/>
+<text x="70" y="195" font-size="21" fill="#0f172a" font-weight="700" text-anchor="middle">1</text>
+<text x="105" y="195" font-size="23" fill="#0f172a" font-weight="700" text-anchor="start">Read the old state and form the complete local prediction</text>
+<text x="105" y="226" font-size="17" fill="#475569" font-weight="400" text-anchor="start">Repeat the pair for m = 0, …, R−1. All K entries of the key are present in one frequency comb.</text>
+<rect x="60" y="333" width="150" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="135.0" y="364" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Key k</text>
+<text x="135.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">K lines · band A</text>
+<rect x="260" y="333" width="180" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="350.0" y="364" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">DFG</text>
+<text x="350.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">H(a⁻ₘ) k</text>
+<rect x="485" y="333" width="140" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="555.0" y="364" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Filter</text>
+<text x="555.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Keep K · B</text>
+<rect x="675" y="333" width="180" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="765.0" y="364" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">DFG</text>
+<text x="765.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">H(bₘ) uₘ</text>
+<rect x="900" y="333" width="140" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="970.0" y="364" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Filter</text>
+<text x="970.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Keep K · A</text>
+<rect x="1090" y="333" width="190" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="1185.0" y="364" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">Coherent sum</text>
+<text x="1185.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Accumulate R slots</text>
+<rect x="1330" y="333" width="200" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="1430.0" y="364" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">Prediction ŷ</text>
+<text x="1430.0" y="393" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">K lines · band A</text>
+<path d="M 210 378 H 260" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 440 378 H 485" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 625 378 H 675" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 855 378 H 900" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 1040 378 H 1090" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 1280 378 H 1330" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<rect x="260" y="251" width="180" height="57" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="350.0" y="286.5" font-size="18" fill="#7c3aed" font-weight="700" text-anchor="middle">Old a⁻ₘ · 2K−1</text>
+<rect x="675" y="251" width="180" height="57" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="765.0" y="286.5" font-size="18" fill="#7c3aed" font-weight="700" text-anchor="middle">Fixed bₘ · 2K−1</text>
+<path d="M 350 308 V 333" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<path d="M 765 308 V 333" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<text x="555" y="454" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">uₘ: K-line intermediate</text>
+<text x="1185" y="454" font-size="18" fill="#0f172a" font-weight="400" text-anchor="middle">ŷ = Σₘ H(bₘ)H(a⁻ₘ)k</text>
+<rect x="32" y="525" width="1536" height="200" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+<rect x="52" y="545" width="36" height="36" rx="10" fill="#e2e8f0" stroke="#e2e8f0" stroke-width="0"/>
+<text x="70" y="570" font-size="21" fill="#0f172a" font-weight="700" text-anchor="middle">2</text>
+<text x="105" y="570" font-size="23" fill="#0f172a" font-weight="700" text-anchor="start">Form one shared residual optically</text>
+<text x="105" y="601" font-size="17" fill="#475569" font-weight="400" text-anchor="start">Coherent subtraction supplies the signed error; no photodetection is used.</text>
+<rect x="540" y="630" width="180" height="65" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="630.0" y="661" font-size="21" fill="#0f766e" font-weight="700" text-anchor="middle">Target v</text>
+<text x="630.0" y="690" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">K lines · A</text>
+<rect x="815" y="623" width="240" height="85" rx="16" fill="#fff1f2" stroke="#be123c" stroke-width="1.6"/>
+<text x="935.0" y="654" font-size="20" fill="#be123c" font-weight="700" text-anchor="middle">Coherent subtract</text>
+<text x="935.0" y="683" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">e = v − ŷ</text>
+<rect x="1135" y="623" width="320" height="85" rx="16" fill="#fff1f2" stroke="#be123c" stroke-width="1.6"/>
+<text x="1295.0" y="654" font-size="21" fill="#be123c" font-weight="700" text-anchor="middle">Shared residual e</text>
+<text x="1295.0" y="683" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">K lines · A · broadcast to R slots</text>
+<path d="M 720 663 H 815" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 1430 423 V 510 H 935 V 623" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<text x="965" y="551" font-size="17" fill="#0f766e" font-weight="400" text-anchor="start">Prediction from the forward sum</text>
+<path d="M 1055 665 H 1135" fill="none" stroke="#be123c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+<rect x="32" y="750" width="1536" height="355" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+<rect x="52" y="770" width="36" height="36" rx="10" fill="#e2e8f0" stroke="#e2e8f0" stroke-width="0"/>
+<text x="70" y="795" font-size="21" fill="#0f172a" font-weight="700" text-anchor="middle">3</text>
+<text x="105" y="795" font-size="23" fill="#0f172a" font-weight="700" text-anchor="start">Generate every coefficient of the local update</text>
+<text x="105" y="826" font-size="17" fill="#475569" font-weight="400" text-anchor="start">For each slot m, replay the same residual and key while selecting that slot’s fixed bₘ pump.</text>
+<rect x="260" y="908" width="190" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="355.0" y="939" font-size="23" fill="#0f766e" font-weight="700" text-anchor="middle">DFG</text>
+<text x="355.0" y="968" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">H(bₘ) e</text>
+<rect x="500" y="908" width="150" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="575.0" y="939" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Filter</text>
+<text x="575.0" y="968" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Keep K · B</text>
+<rect x="750" y="908" width="220" height="90" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="860.0" y="939" font-size="22" fill="#0f766e" font-weight="700" text-anchor="middle">Cross-SFG</text>
+<text x="860.0" y="968" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">k_A × rₘ,B</text>
+<rect x="1040" y="908" width="200" height="90" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="1140.0" y="939" font-size="19" fill="#7c3aed" font-weight="700" text-anchor="middle">Output selection</text>
+<text x="1140.0" y="968" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Keep ALL 2K−1</text>
+<rect x="1310" y="908" width="220" height="90" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="1420.0" y="939" font-size="22" fill="#7c3aed" font-weight="700" text-anchor="middle">Update Δaₘ</text>
+<text x="1420.0" y="968" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">Pump band Ω</text>
+<path d="M 1455 665 H 1548 V 738 H 45 V 953 H 260" fill="none" stroke="#be123c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-red)"/>
+<text x="65" y="1028" font-size="17" fill="#be123c" font-weight="400" text-anchor="start">Residual replay</text>
+<text x="65" y="1052" font-size="17" fill="#be123c" font-weight="400" text-anchor="start">over R slots</text>
+<rect x="260" y="837" width="190" height="49" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="355.0" y="868.5" font-size="19" fill="#7c3aed" font-weight="700" text-anchor="middle">Fixed bₘ</text>
+<path d="M 355 886 V 908" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<rect x="750" y="837" width="220" height="49" rx="16" fill="#f0fdfa" stroke="#0f766e" stroke-width="1.6"/>
+<text x="860.0" y="868.5" font-size="18" fill="#0f766e" font-weight="700" text-anchor="middle">Delayed / replayed k</text>
+<path d="M 860 886 V 908" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 450 953 H 500" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<path d="M 650 953 H 750" fill="none" stroke="#0f766e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-teal)"/>
+<text x="698" y="931" font-size="19" fill="#0f766e" font-weight="400" text-anchor="middle">rₘ</text>
+<path d="M 970 953 H 1040" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<path d="M 1240 953 H 1310" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<text x="920" y="1035" font-size="24" fill="#0f172a" font-weight="400" text-anchor="middle">Δaₘ,s = η Σᵢ₊ⱼ₌ₛ kᵢ rₘ,j     ·     s = 0, …, 2K−2</text>
+<text x="920" y="1072" font-size="18" fill="#475569" font-weight="400" text-anchor="middle">Independent full-comb inputs; isolate cross-SFG. No single-tone sweep computes this convolution.</text>
+<rect x="32" y="1130" width="1536" height="185" rx="20" fill="white" stroke="#dbe3ec" stroke-width="1.6"/>
+<rect x="52" y="1150" width="36" height="36" rx="10" fill="#e2e8f0" stroke="#e2e8f0" stroke-width="0"/>
+<text x="70" y="1175" font-size="21" fill="#0f172a" font-weight="700" text-anchor="middle">4</text>
+<text x="105" y="1175" font-size="23" fill="#0f172a" font-weight="700" text-anchor="start">Write only after the old-state computations are complete</text>
+<rect x="60" y="1201" width="420" height="79" rx="16" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.6"/>
+<text x="270.0" y="1232" font-size="21" fill="#7c3aed" font-weight="700" text-anchor="middle">Coherent coefficient write</text>
+<text x="270.0" y="1261" font-size="17" fill="#475569" font-weight="400" text-anchor="middle">aₘ,new = a⁻ₘ + Δaₘ     ·     a⁻ₘ = α aₘ,old</text>
+<text x="525" y="1219" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Buffer or replay k and the optical residual; hold each a⁻ₘ until its read is finished.</text>
+<text x="525" y="1247" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Inject all 2K−1 update lines directly into pump-band memory; see figure 03.</text>
+<text x="525" y="1275" font-size="18" fill="#475569" font-weight="400" text-anchor="start">Conversion phases, signed amplitudes, splitting loss and scalar gains require calibration.</text>
+<path d="M 1420 998 V 1118 H 20 V 1240 H 60" fill="none" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-violet)"/>
+<text x="40" y="1349" font-size="17" fill="#475569" font-weight="400" text-anchor="start">Ideal calibrated real-amplitude diagram. b is fixed per slot; only a is fast state. Filtering to K after SFG would discard valid updates.</text>
+</g>
+</svg>
